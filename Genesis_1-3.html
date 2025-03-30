@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Chapters 1-3</title>
+    <style>
+        body {
+            font-family: "Trebuchet MS", sans-serif; /* Match font from original */
+            line-height: 1.6;
+            margin: 0; /* Remove default body margin */
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 200px; /* Fixed width for sidebar */
+            flex-shrink: 0; /* Prevent sidebar from shrinking */
+            background-color: #f0f0f0;
+            border-right: 1px solid #ccc;
+            padding: 1.5em 1em;
+            height: 100vh; /* Full viewport height */
+            position: sticky; /* Stick to the top */
+            top: 0;
+            overflow-y: auto; /* Add scroll if content overflows */
+            align-self: flex-start; /* Important for sticky positioning in flex */
+        }
+
+        nav h3 {
+            margin-top: 0;
+            color: #004d40; /* Teal shade for contrast */
+            font-size: 1.1em;
+            border-bottom: 1px solid #00796b; /* Darker teal */
+            padding-bottom: 0.3em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 0.6em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #00796b; /* Darker teal */
+            display: block; /* Make the whole area clickable */
+            padding: 0.2em 0;
+            font-size: 0.95em;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #004d40; /* Darkest teal */
+            text-decoration: underline;
+        }
+
+        main {
+            flex-grow: 1; /* Allow main content to take remaining space */
+            padding: 2em 3em; /* Add padding around the main content */
+            max-width: 800px; /* Keep content readable width */
+            margin-left: auto; /* Center the main content area if screen is wide */
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #004d40; /* Teal shade */
+            border-bottom: 2px solid #004d40;
+            padding-bottom: 0.5em;
+            margin-top: 0; /* Remove default margin */
+            font-size: 28pt; /* Closer to original title size */
+            font-family: "Times New Roman", serif; /* Heading font */
+        }
+        h2 {
+            color: #00796b; /* Darker teal */
+            margin-top: 2em;
+            border-bottom: 1px solid #00796b;
+            padding-bottom: 0.3em;
+            font-size: 18pt; /* Match original H2 */
+            font-weight: 700;
+            page-break-after: avoid;
+        }
+
+        p {
+            margin-bottom: 0.5em; /* Slightly less spacing */
+            text-align: left; /* Original was left-aligned */
+            font-size: 11.5pt; /* Match original text size */
+            line-height: 1.4; /* Adjust line height slightly */
+        }
+
+        /* Style for verse paragraphs */
+        .verse {
+            /* Default indentation like c0 */
+            padding-left: 27pt;
+            text-indent: -27pt; /* Hanging indent for verse number */
+            margin-bottom: 0.2em; /* Tighter spacing between verses */
+        }
+
+        /* Style for indented poetic lines (like c3) */
+        .poetic-indent {
+             padding-left: 36pt; /* Original c3 margin-left + text-indent */
+             text-indent: -9pt; /* Original c3 text-indent */
+             margin-bottom: 0.1em; /* Very tight spacing for poetic lines */
+        }
+
+        .verse-number {
+            font-weight: bold;
+            color: #555; /* Slightly darker grey */
+            margin-right: 0.5em;
+            display: inline-block; /* Keep number and text together */
+            min-width: 20pt; /* Ensure consistent spacing */
+            text-align: right; /* Align numbers if desired */
+        }
+
+        /* Basic responsiveness */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                height: auto; /* Auto height */
+                position: static; /* Remove sticky positioning */
+                border-right: none;
+                border-bottom: 1px solid #ccc;
+                overflow-y: visible;
+                padding: 1em;
+            }
+             nav ul {
+                display: flex; /* Arrange items horizontally */
+                flex-wrap: wrap; /* Allow wrapping */
+                gap: 1.5em; /* Add space between items */
+                justify-content: center;
+            }
+             nav h3 {
+                 text-align: center;
+                 margin-bottom: 0.5em;
+             }
+             main {
+                padding: 1.5em; /* Adjust padding for smaller screens */
+             }
+             .verse, .poetic-indent {
+                padding-left: 9pt; /* Reduce indent on smaller screens */
+                text-indent: -9pt;
+             }
+             .poetic-indent {
+                padding-left: 18pt;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#genesis-1"><strong>Genesis 1</strong></a></li>
+                <li><a href="#genesis-2"><strong>Genesis 2</strong></a></li>
+                <li><a href="#genesis-3"><strong>Genesis 3</strong></a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Genesis</h1>
+
+            <section id="genesis-1">
+                <h2>Genesis 1</h2>
+                <p class="verse"><span class="verse-number">1</span>When God began to create heaven and earth—</p>
+                <p class="verse"><span class="verse-number">2</span>the earth being unformed and void, with darkness over the surface of the deep and a wind from God sweeping over the water—</p>
+                <p class="verse"><span class="verse-number">3</span>God said, “Let there be light”; and there was light.</p>
+                <p class="verse"><span class="verse-number">4</span>God saw that the light was good, and God separated the light from the darkness.</p>
+                <p class="verse"><span class="verse-number">5</span>God called the light Day and called the darkness Night. And there was evening and there was morning, a first day.</p>
+                <p class="verse"><span class="verse-number">6</span>God said, “Let there be an expanse in the midst of the water, that it may separate water from water.”</p>
+                <p class="verse"><span class="verse-number">7</span>God made the expanse, and it separated the water which was below the expanse from the water which was above the expanse. And it was so.</p>
+                <p class="verse"><span class="verse-number">8</span>God called the expanse Sky. And there was evening and there was morning, a second day.</p>
+                <p class="verse"><span class="verse-number">9</span>God said, “Let the water below the sky be gathered into one area, that the dry land may appear.” And it was so.</p>
+                <p class="verse"><span class="verse-number">10</span>God called the dry land Earth and called the gathering of waters Seas. And God saw that this was good.</p>
+                <p class="verse"><span class="verse-number">11</span>And God said, “Let the earth sprout vegetation: seed-bearing plants, fruit trees of every kind on earth that bear fruit with the seed in it.” And it was so.</p>
+                <p class="verse"><span class="verse-number">12</span>The earth brought forth vegetation: seed-bearing plants of every kind, and trees of every kind bearing fruit with the seed in it. And God saw that this was good.</p>
+                <p class="verse"><span class="verse-number">13</span>And there was evening and there was morning, a third day.</p>
+                <p class="verse"><span class="verse-number">14</span>God said, “Let there be lights in the expanse of the sky to separate day from night; they shall serve as signs for the set times—the days and the years;</p>
+                <p class="verse"><span class="verse-number">15</span>and they shall serve as lights in the expanse of the sky to shine upon the earth.” And it was so.</p>
+                <p class="verse"><span class="verse-number">16</span>God made the two great lights, the greater light to dominate the day and the lesser light to dominate the night, and the stars.</p>
+                <p class="verse"><span class="verse-number">17</span>And God set them in the expanse of the sky to shine upon the earth,</p>
+                <p class="verse"><span class="verse-number">18</span>to dominate the day and the night, and to separate light from darkness. And God saw that this was good.</p>
+                <p class="verse"><span class="verse-number">19</span>And there was evening and there was morning, a fourth day.</p>
+                <p class="verse"><span class="verse-number">20</span>God said, “Let the waters bring forth swarms of living creatures, and birds that fly above the earth across the expanse of the sky.”</p>
+                <p class="verse"><span class="verse-number">21</span>God created the great sea monsters, and all the living creatures of every kind that creep, which the waters brought forth in swarms, and all the winged birds of every kind. And God saw that this was good.</p>
+                <p class="verse"><span class="verse-number">22</span>God blessed them, saying, “Be fertile and increase, fill the waters in the seas, and let the birds increase on the earth.”</p>
+                <p class="verse"><span class="verse-number">23</span>And there was evening and there was morning, a fifth day.</p>
+                <p class="verse"><span class="verse-number">24</span>God said, “Let the earth bring forth every kind of living creature: cattle, creeping things, and wild beasts of every kind.” And it was so.</p>
+                <p class="verse"><span class="verse-number">25</span>God made wild beasts of every kind and cattle of every kind, and all kinds of creeping things of the earth. And God saw that this was good.</p>
+                <p class="verse"><span class="verse-number">26</span>And God said, “Let us make humankind in our image, after our likeness. They shall rule the fish of the sea, the birds of the sky, the cattle, the whole earth, and all the creeping things that creep on earth.”</p>
+                <p class="verse"><span class="verse-number">27</span>And God created humankind in the divine image,</p>
+                <p class="poetic-indent">creating it in the image of God—</p> <!-- Mimicking original indent -->
+                <p class="poetic-indent">creating them male and female.</p> <!-- Mimicking original indent -->
+                <p class="verse"><span class="verse-number">28</span>God blessed them and God said to them, “Be fertile and increase, fill the earth and master it; and rule the fish of the sea, the birds of the sky, and all the living things that creep on earth.”</p>
+                <p class="verse"><span class="verse-number">29</span>God said, “See, I give you every seed-bearing plant that is upon all the earth, and every tree that has seed-bearing fruit; they shall be yours for food.</p>
+                <p class="verse"><span class="verse-number">30</span>And to all the animals on land, to all the birds of the sky, and to everything that creeps on earth, in which there is the breath of life, [I give] all the green plants for food.” And it was so.</p>
+                <p class="verse"><span class="verse-number">31</span>And God saw all that had been made, and found it very good. And there was evening and there was morning, the sixth day.</p>
+            </section>
+
+            <section id="genesis-2">
+                <h2>Genesis 2</h2>
+                <p class="verse"><span class="verse-number">1</span>The heaven and the earth were finished, and all their array.</p>
+                <p class="verse"><span class="verse-number">2</span>On the seventh day God finished the work that had been undertaken: [God] ceased on the seventh day from doing any of the work.</p>
+                <p class="verse"><span class="verse-number">3</span>And God blessed the seventh day and declared it holy—having ceased on it from all the work of creation that God had done.</p>
+                <p class="verse"><span class="verse-number">4</span>Such is the story of heaven and earth when they were created. When God יהוה made earth and heaven—</p>
+                <p class="verse"><span class="verse-number">5</span>when no shrub of the field was yet on earth and no grasses of the field had yet sprouted, because God יהוה had not sent rain upon the earth and there were no human beings to till the soil,</p>
+                <p class="verse"><span class="verse-number">6</span>but a flow would well up from the ground and water the whole surface of the earth—</p>
+                <p class="verse"><span class="verse-number">7</span>God יהוה formed the Human from the soil’s humus, blowing into his nostrils the breath of life: the Human became a living being.</p>
+                <p class="verse"><span class="verse-number">8</span>God יהוה planted a garden in Eden, in the east, and placed there the Human who had been fashioned.</p>
+                <p class="verse"><span class="verse-number">9</span>And from the ground God יהוה caused to grow every tree that was pleasing to the sight and good for food, with the tree of life in the middle of the garden, and the tree of knowledge of good and bad.</p>
+                <p class="verse"><span class="verse-number">10</span>A river issues from Eden to water the garden, and it then divides and becomes four branches.</p>
+                <p class="verse"><span class="verse-number">11</span>The name of the first is Pishon, the one that winds through the whole land of Havilah, where the gold is.</p>
+                <p class="verse"><span class="verse-number">12</span>(The gold of that land is good; bdellium is there, and lapis lazuli.)</p>
+                <p class="verse"><span class="verse-number">13</span>The name of the second river is Gihon, the one that winds through the whole land of Cush.</p>
+                <p class="verse"><span class="verse-number">14</span>The name of the third river is Tigris, the one that flows east of Asshur. And the fourth river is the Euphrates.</p>
+                <p class="verse"><span class="verse-number">15</span>God יהוה settled the Human in the garden of Eden, to till it and tend it.</p>
+                <p class="verse"><span class="verse-number">16</span>And God יהוה commanded the Human, saying, “Of every tree of the garden you are free to eat;</p>
+                <p class="verse"><span class="verse-number">17</span>but as for the tree of knowledge of good and bad, you must not eat of it; for as soon as you eat of it, you shall die.”</p>
+                <p class="verse"><span class="verse-number">18</span>God יהוה said, “It is not good for the Human to be alone; I will make a fitting counterpart for him.”</p>
+                <p class="verse"><span class="verse-number">19</span>And God יהוה formed out of the earth all the wild beasts and all the birds of the sky, and brought them to the Human to see what he would call them; and whatever the Human called each living creature, that would be its name.</p>
+                <p class="verse"><span class="verse-number">20</span>And the Human gave names to all the cattle and to the birds of the sky and to all the wild beasts; but no fitting counterpart for a human being was found.</p>
+                <p class="verse"><span class="verse-number">21</span>So God יהוה cast a deep sleep upon the Human; and, while he slept, [God] took one of his sides and closed up the flesh at that site.</p>
+                <p class="verse"><span class="verse-number">22</span>And God יהוה fashioned the side that had been taken from the Human into a woman, bringing her to the Human.</p>
+                <p class="verse"><span class="verse-number">23</span>Then the Human said,</p>
+                <p class="poetic-indent">“This one at last</p>
+                <p class="poetic-indent">Is bone of my bones</p>
+                <p class="poetic-indent">And flesh of my flesh.</p>
+                <p class="poetic-indent">This one shall be called Woman,</p>
+                <p class="poetic-indent">For from a Human was she taken.”</p>
+                <p class="verse"><span class="verse-number">24</span>Hence a man leaves his father and mother and clings to his wife, so that they become one flesh.</p>
+                <p class="verse"><span class="verse-number">25</span>The two of them were naked, the Human and his wife, yet they felt no shame.</p>
+            </section>
+
+            <section id="genesis-3">
+                <h2>Genesis 3</h2>
+                <p class="verse"><span class="verse-number">1</span>Now the serpent was the shrewdest of all the wild beasts that God יהוה had made. It said to the woman, “Did God really say: You shall not eat of any tree of the garden?”</p>
+                <p class="verse"><span class="verse-number">2</span>The woman replied to the serpent, “We may eat of the fruit of the other trees of the garden.</p>
+                <p class="verse"><span class="verse-number">3</span>It is only about fruit of the tree in the middle of the garden that God said: ‘You shall not eat of it or touch it, lest you die.’”</p>
+                <p class="verse"><span class="verse-number">4</span>And the serpent said to the woman, “You are not going to die,</p>
+                <p class="verse"><span class="verse-number">5</span>but God knows that as soon as you eat of it your eyes will be opened and you will be like divine beings who know good and bad.”</p>
+                <p class="verse"><span class="verse-number">6</span>When the woman saw that the tree was good for eating and a delight to the eyes, and that the tree was desirable as a source of wisdom, she took of its fruit and ate. She also gave some to her husband, and he ate.</p>
+                <p class="verse"><span class="verse-number">7</span>Then the eyes of both of them were opened and they perceived that they were naked; and they sewed together fig leaves and made themselves loincloths.</p>
+                <p class="verse"><span class="verse-number">8</span>They heard the sound of God יהוה moving about in the garden at the breezy time of day; and the Human and his wife hid from God יהוה among the trees of the garden.</p>
+                <p class="verse"><span class="verse-number">9</span>God יהוה called out to the Human and said to him, “Where are you?”</p>
+                <p class="verse"><span class="verse-number">10</span>He replied, “I heard the sound of You in the garden, and I was afraid because I was naked, so I hid.”</p>
+                <p class="verse"><span class="verse-number">11</span>“Who told you that you were naked? Did you eat of the tree from which I had forbidden you to eat?”</p>
+                <p class="verse"><span class="verse-number">12</span>The Human said, “The woman You put at my side—she gave me of the tree, and I ate.”</p>
+                <p class="verse"><span class="verse-number">13</span>And God יהוה said to the woman, “What is this you have done!” The woman replied, “The serpent duped me, and I ate.”</p>
+                <p class="verse"><span class="verse-number">14</span>Then God יהוה said to the serpent,</p>
+                <p class="poetic-indent">“Because you did this,</p>
+                <p class="poetic-indent">More cursed shall you be</p>
+                <p class="poetic-indent">Than all cattle</p>
+                <p class="poetic-indent">And all the wild beasts:</p>
+                <p class="poetic-indent">On your belly shall you crawl</p>
+                <p class="poetic-indent">And dirt shall you eat</p>
+                <p class="poetic-indent">All the days of your life.</p>
+                <p class="verse"><span class="verse-number">15</span>I will put enmity</p>
+                <p class="poetic-indent">Between you and the woman,</p>
+                <p class="poetic-indent">And between your offspring and hers;</p>
+                <p class="poetic-indent">They shall strike at your head,</p>
+                <p class="poetic-indent">And you shall strike at their heel.”</p>
+                <p class="verse"><span class="verse-number">16</span>And to the woman [God] said,</p>
+                <p class="poetic-indent">“I will greatly expand</p>
+                <p class="poetic-indent">Your hard labor—and your pregnancies;</p>
+                <p class="poetic-indent">In hardship shall you bear children.</p>
+                <p class="poetic-indent">Yet your urge shall be for your husband,</p>
+                <p class="poetic-indent">And he shall rule over you.”</p>
+                <p class="verse"><span class="verse-number">17</span>To Adam [God] said, “Because you did as your wife said and ate of the tree about which I commanded you, ‘You shall not eat of it,’</p>
+                <p class="poetic-indent">Cursed be the ground because of you;</p> <!-- Note: Original had this as class c0, but contextually seems poetic -->
+                <p class="verse"><span class="verse-number">18</span>By hard labor shall you eat of it</p>
+                <p class="poetic-indent">All the days of your life:</p>
+                <p class="poetic-indent">Thorns and thistles shall it sprout for you.</p>
+                <p class="poetic-indent">But your food shall be the grasses of the field;</p>
+                <p class="verse"><span class="verse-number">19</span>By the sweat of your brow</p>
+                <p class="poetic-indent">Shall you get bread to eat,</p>
+                <p class="poetic-indent">Until you return to the ground—</p>
+                <p class="poetic-indent">For from it you were taken.</p>
+                <p class="poetic-indent">For dust you are,</p>
+                <p class="poetic-indent">And to dust you shall return.”</p>
+                <p class="verse"><span class="verse-number">20</span>The Human named his wife Eve, because she was the mother of all the living.</p>
+                <p class="verse"><span class="verse-number">21</span>And God יהוה made garments of skins for Adam and his wife, and clothed them.</p>
+                <p class="verse"><span class="verse-number">22</span>And God יהוה said, “Now that humankind has become like any of us, knowing good and bad, what if one should stretch out a hand and take also from the tree of life and eat, and live forever!”</p>
+                <p class="verse"><span class="verse-number">23</span>So God יהוה banished humankind from the garden of Eden, to till the humus from which it was taken:</p>
+                <p class="verse"><span class="verse-number">24</span>it was driven out; and east of the garden of Eden were stationed the cherubim and the fiery ever-turning sword, to guard the way to the tree of life.</p>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devi Mahatmyam Excerpts</title>
+    <style>
+        body {
+            font-family: Georgia, serif; /* Serif font often used for traditional texts */
+            line-height: 1.6;
+            margin: 0; /* Remove default body margin */
+            background-color: #fff8f0; /* Light cream background */
+            color: #4a0e0e; /* Dark reddish-brown text */
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 220px; /* Fixed width for sidebar */
+            flex-shrink: 0; /* Prevent sidebar from shrinking */
+            background-color: #ffe8cc; /* Lighter cream/peach for nav */
+            border-right: 1px solid #d3a87e; /* Soft brown border */
+            padding: 1.5em 1em;
+            height: 100vh; /* Full viewport height */
+            position: sticky; /* Stick to the top */
+            top: 0;
+            overflow-y: auto; /* Add scroll if content overflows */
+            align-self: flex-start; /* Important for sticky positioning in flex */
+        }
+
+        nav h3 {
+            margin-top: 0;
+            color: #8b0000; /* Dark Red */
+            font-size: 1.1em;
+            border-bottom: 1px solid #b22222; /* Firebrick */
+            padding-bottom: 0.3em;
+            font-family: sans-serif; /* Sans-serif for nav heading */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 0.6em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #b22222; /* Firebrick */
+            display: block; /* Make the whole area clickable */
+            padding: 0.2em 0;
+            font-size: 0.95em;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #8b0000; /* Dark Red */
+            text-decoration: underline;
+        }
+
+        main {
+            flex-grow: 1; /* Allow main content to take remaining space */
+            padding: 2em 3em; /* Add padding around the main content */
+            max-width: 800px; /* Keep content readable width */
+            margin-left: auto; /* Center the main content area if screen is wide */
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8b0000; /* Dark Red */
+            border-bottom: 2px solid #8b0000;
+            padding-bottom: 0.5em;
+            margin-top: 0; /* Remove default margin */
+            font-size: 26pt; /* Title size */
+            font-family: "Times New Roman", serif; /* Heading font */
+        }
+        h2 { /* Chapter Titles */
+            color: #b22222; /* Firebrick */
+            margin-top: 2.5em;
+            border-bottom: 1px solid #b22222;
+            padding-bottom: 0.3em;
+            font-size: 18pt;
+            font-weight: bold;
+            page-break-after: avoid;
+            font-family: "Times New Roman", serif;
+        }
+
+        p {
+            margin-bottom: 0.8em; /* Slightly more spacing */
+            text-align: justify;
+            font-size: 12pt; /* Base text size */
+        }
+
+        /* Style for verse paragraphs */
+        .verse {
+            padding-left: 3em; /* Indent text */
+            text-indent: -3em; /* Hanging indent for verse number */
+            margin-bottom: 0.3em; /* Tighter spacing between verses */
+        }
+
+        .verse-number {
+            font-weight: bold;
+            color: #663300; /* Medium brown for numbers */
+            margin-right: 0.6em;
+            display: inline-block; /* Keep number and text together */
+            min-width: 2.2em; /* Ensure consistent spacing */
+            text-align: right;
+        }
+        .speaker-note {
+             font-style: italic;
+             color: #804000; /* Darker brown for speaker */
+        }
+
+        /* Basic responsiveness */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                height: auto; /* Auto height */
+                position: static; /* Remove sticky positioning */
+                border-right: none;
+                border-bottom: 1px solid #d3a87e;
+                overflow-y: visible;
+                padding: 1em;
+            }
+             nav ul {
+                display: flex; /* Arrange items horizontally */
+                flex-wrap: wrap; /* Allow wrapping */
+                gap: 1.5em; /* Add space between items */
+                justify-content: center;
+            }
+             nav h3 {
+                 text-align: center;
+                 margin-bottom: 0.5em;
+             }
+             main {
+                padding: 1.5em; /* Adjust padding for smaller screens */
+             }
+             .verse {
+                padding-left: 1.5em; /* Reduce indent on smaller screens */
+                text-indent: -1.5em;
+             }
+             .verse-number {
+                min-width: 1.5em;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#chapter2"><strong>Chapter 2</strong></a></li>
+                <li><a href="#chapter3"><strong>Chapter 3</strong></a></li>
+                <li><a href="#chapter4"><strong>Chapter 4</strong></a></li>
+                <li><a href="#chapter8"><strong>Chapter 8</strong></a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Devi Mahatmyam Excerpts</h1>
+
+            <section id="chapter2">
+                <h2>Chapter 2: The Slaughter of Mahiṣāsura’s Armies</h2>
+                <p class="verse"><span class="verse-number">2.1</span><span class="speaker-note">The seer said:</span></p>
+                <p class="verse"><span class="verse-number">2.2</span>“Long ago, when Mahiṣa was chief of the asuras and Indra was chief of the gods, there was a war between their forces for a full hundred years.</p>
+                <p class="verse"><span class="verse-number">2.3</span>The valorous asuras vanquished the army of the gods, and after all were conquered, Mahiṣa became the lord of heaven.</p>
+                <p class="verse"><span class="verse-number">2.4</span>Then led by Brahmā, the lord of beings, the defeated gods went to Viṣṇu and Śiva</p>
+                <p class="verse"><span class="verse-number">2.5</span>and related in detail what had happened. The thirty gods told how Mahiṣāsura had wrought their defeat:</p>
+                <p class="verse"><span class="verse-number">2.6</span>‘He has usurped the authority of Sūrya, Indra, Agni, Vāyu, and Candra, and of Yama, Varuṇa, and all the others.</p>
+                <p class="verse"><span class="verse-number">2.7</span>Cast out from heaven by the evil Mahiṣa, all the multitudes of gods wander over the earth as mere mortals.</p>
+                <p class="verse"><span class="verse-number">2.8</span>We have related all that this foe of the gods has done, and we seek refuge in You. Be pleased to devise a means for his destruction.’</p>
+                <p class="verse"><span class="verse-number">2.9</span>When Viṣṇu and Śiva heard the entreaties of the gods, they knit their brows in fury and contorted their faces,</p>
+                <p class="verse"><span class="verse-number">2.10</span>whereupon a great radiance came forth from Viṣṇu’s rage- filled countenance, and so, too, from Brahmā’s and Śiva’s.</p>
+                <p class="verse"><span class="verse-number">2.11</span>And from Indra’s body and from the bodies of all the other gods, a very great light issued, and it united and became one.</p>
+                <p class="verse"><span class="verse-number">2.12</span>The gods saw before them a peak of light like a mountain, blazing brightly and pervading the sky in every direction with its flames.</p>
+                <p class="verse"><span class="verse-number">2.13</span>Unequaled light, born from the bodies of all the gods, coalesced into a female form and pervaded the three worlds with its splendor.</p>
+                <p class="verse"><span class="verse-number">2.14</span>From Śiva’s light came that which formed the Devī’s face. Yama’s radiance formed Her hair, and Viṣṇu’s effulgence became Her arms.</p>
+                <p class="verse"><span class="verse-number">2.15</span>The moon god’s soft light formed Her breasts, and Indra’s brilliance became Her waist. Varuṇa’s light became Her legs, and earth’s splendor formed Her hips.</p>
+                <p class="verse"><span class="verse-number">2.16</span>Her feet took shape from Brahmā’s light and Her toes from Sūrya’s brilliance. From the Vasus’ light Her fingers formed and from Kubera’s light, Her nose.</p>
+                <p class="verse"><span class="verse-number">2.17</span>From Prajāpati’s lustre came Her teeth, and from Agni’s radiance Her three eyes were born.</p>
+                <p class="verse"><span class="verse-number">2.18</span>Dawn and dusk became Her eyebrows, the wind god’s splendor shaped Her ears, and all else born of the other gods’ light shone too as the auspicious Devī.</p>
+                <p class="verse"><span class="verse-number">2.19</span>Then, beholding Her who appeared from out of their amassed light, all those gods, tormented by Mahiṣa, rejoiced.</p>
+                <p class="verse"><span class="verse-number">2.20</span>Then the gods bestowed on Her their own weapons and adornments. From his trident Śiva drew forth another and gave it to Her,</p>
+                <p class="verse"><span class="verse-number">2.21</span>and Viṣṇu bestowed a discus spun out from his own. Varuṇa gave Her a conch; and Agni, the eater of oblations, gave Her a spear.</p>
+                <p class="verse"><span class="verse-number">2.22</span>Vāyu, the wind god, presented a bow and two quivers filled with arrows. Extracting a thunderbolt from his own, Indra, the lord of the immortals,</p>
+                <p class="verse"><span class="verse-number">2.23</span>the all-seeing one, gave it to Her along with a bell from his elephant Airāvata. From his staff of death Yama produced another staff, and Varuṇa, the lord of waters, gave a noose.</p>
+                <p class="verse"><span class="verse-number">2.24</span>Brahmā, the lord of beings, gave prayer beads and an ascetic’s waterpot. Sūrya, the bringer of day, bestowed his rays of sunlight on all the pores of Her skin;</p>
+                <p class="verse"><span class="verse-number">2.25</span>and Kāla, the lord of time, presented a sword and shining shield. The ocean of milk bestowed a necklace of flawless pearls, ever-new garments,</p>
+                <p class="verse"><span class="verse-number">2.26</span>a celestial crest-jewel, earrings, and bracelets, a radiant crescent-shaped ornament, armlets for all Her arms,</p>
+                <p class="verse"><span class="verse-number">2.27</span>a pair of shining anklets, a necklace beyond compare, and bejeweled rings for all Her fingers.</p>
+                <p class="verse"><span class="verse-number">2.28</span>Viśvakarman gave Her a gleaming ax, weapons of all kinds, and impenetrable armor.</p>
+                <p class="verse"><span class="verse-number">2.29</span>Garlands of unfading lotuses for Her head and breast the ocean gave to Her, and yet another magnificent lotus to grace Her hand.</p>
+                <p class="verse"><span class="verse-number">2.30</span>Himālaya, the lord of mountains, gave Her a lion to ride upon and jewels of many kinds; and Kubera, the lord of wealth, presented a drinking vessel ever-brimming with wine.</p>
+                <p class="verse"><span class="verse-number">2.31</span>Śeṣa, the lord of serpents, who supports this earth, gave Her a garland of snakes, adorned with precious gems.</p>
+                <p class="verse"><span class="verse-number">2.32</span>Honored also by the other gods with adornments and weapons, the Devī laughed thunderously and defiantly again and again.</p>
+                <p class="verse"><span class="verse-number">2.33</span>She filled the entire sky with Her terrible roar, and from the immeasurable din a great echo resounded.</p>
+                <p class="verse"><span class="verse-number">2.34</span>All the worlds shook, and the oceans churned. The earth quaked, and the mountains heaved.</p>
+                <p class="verse"><span class="verse-number">2.35</span>In joy the gods exclaimed, ‘Victory!’ to the lion-mounted Devī; and with bodies bowed in devotion, the sages praised Her.</p>
+                <p class="verse"><span class="verse-number">2.36</span>When the enemies of the gods saw the three worlds in upheaval, they readied all their forces for battle and rose up as one, with weapons held high.</p>
+                <p class="verse"><span class="verse-number">2.37</span>‘Aha! What is this?’ Mahiṣāsura bellowed in wrath. Surrounded by countless asuras, he rushed toward the sound</p>
+                <p class="verse"><span class="verse-number">2.38</span>and then beheld the Devī, who pervaded the three worlds with Her radiance, bending the earth under Her tread, scraping the sky with Her diadem,</p>
+                <p class="verse"><span class="verse-number">2.39</span>shaking all the nether regions with the resonance of Her bowstring, and standing there, penetrating every direction with Her thousand arms.</p>
+                <p class="verse"><span class="verse-number">2.40</span>Thereupon, the battle began between the Devī and the enemies of the gods. Swords and missiles, hurled in every direction, lit up the quarters of the sky.</p>
+                <p class="verse"><span class="verse-number">2.41</span>Mahiṣāsura’s general, the great asura named Cikṣura, battled there, and Cāmara led cavalry, charioteers, elephant-drivers, and foot soldiers.</p>
+                <p class="verse"><span class="verse-number">2.42</span>The great asura called Udagra commanded sixty thousand chariots, Mahāhanu gave battle with his ten million,</p>
+                <p class="verse"><span class="verse-number">2.43</span>and the mighty Asiloman fought with forces fifty million strong. With sixty million Bāṣkala fought in the conflict.</p>
+                <p class="verse"><span class="verse-number">2.44</span>Encircled by streaming multitudes of elephants and horses, Parivārita fought in that battle with ten million chariots,</p>
+                <p class="verse"><span class="verse-number">2.45</span>and he who is called Biḍāla, with five billion chariots surrounding him, engaged in combat there.</p>
+                <p class="verse"><span class="verse-number">2.46</span>Amid chariots, elephants, and horses, myriads of other great asuras battled with the Devī,</p>
+                <p class="verse"><span class="verse-number">2.47</span>their countless chariots, elephants, and horses surrounding Māhiṣāsura there in the fray.</p>
+                <p class="verse"><span class="verse-number">2.48</span>With lances and javelins, spears and clubs, swords and axes, and sharp-edged spears, they fought with the Devī.</p>
+                <p class="verse"><span class="verse-number">2.49</span>Some hurled spears while others threw nooses; intent on killing Her, they began an assault with their swords.</p>
+                <p class="verse"><span class="verse-number">2.50</span>But She, the Devī Caṇḍikā, showered down all manner of weapons and cut through their armaments as if in play.</p>
+                <p class="verse"><span class="verse-number">2.51</span>Praised by gods and seers, She remained serene, even while unleashing Her weapons at the asuras’ bodies.</p>
+                <p class="verse"><span class="verse-number">2.52</span>Her lion-mount, shaking its mane in fury, stalked among the demon throngs as fire rages through a Forest.</p>
+                <p class="verse"><span class="verse-number">2.53</span>The sighs that Ambikā heaved while fighting became at once Her legions by the hundreds and thousands.</p>
+                <p class="verse"><span class="verse-number">2.54</span>They fought with axes, javelins, swords, and sharp- edged spears, and drawing strength from Her power, they destroyed the demon hordes.</p>
+                <p class="verse"><span class="verse-number">2.55</span>Some of Her throngs beat war drums resoundingly, some blew conches, and others drummed upon tabors in their zest for battle.</p>
+                <p class="verse"><span class="verse-number">2.56</span>Then the Devī, with Her trident, club, and volleys of spears, with Her swords and other weapons, slew great asuras by the hundreds</p>
+                <p class="verse"><span class="verse-number">2.57</span>and brought down still more with the confounding din of Her bell. Binding other asuras with Her noose, She dragged them along the ground.</p>
+                <p class="verse"><span class="verse-number">2.58</span>Her swordstrokes slashed others in two, while crushing blows from Her mace brought still more down,</p>
+                <p class="verse"><span class="verse-number">2.59</span>and those bludgeoned by Her club vomited forth blood. Others fell to the ground, pierced through the chest by Her trident.</p>
+                <p class="verse"><span class="verse-number">2.60</span>Her steady stream of arrows made some on that battlefield resemble bristling porcupines, and those tormenters of the gods breathed their last.</p>
+                <p class="verse"><span class="verse-number">2.61</span>Some had their arms severed, others their necks broken. The heads of others rolled, and still others had their bodies ripped apart.</p>
+                <p class="verse"><span class="verse-number">2.62</span>Great asuras, their legs cut from under them, toppled to the ground. Some, severed lengthwise by the Devī, were left one-armed, one-eyed, one-legged.</p>
+                <p class="verse"><span class="verse-number">2.63</span>While others there in the battle danced to the throbbing drums, those that She decapitated fell and rose again,</p>
+                <p class="verse"><span class="verse-number">2.64</span>headless bodies, still grasping swords, spears, and lances in hand. ‘Stop! Stop!’ other great asuras cried out to the Devī.</p>
+                <p class="verse"><span class="verse-number">2.65</span>Where that great battle raged, the earth was impassable with fallen chariots, elephants, horses, and corpses.</p>
+                <p class="verse"><span class="verse-number">2.66</span>Torrents of blood, like mighty rivers, gushed from elephants, asuras, and horses there in the midst of the demon army.</p>
+                <p class="verse"><span class="verse-number">2.67</span>In an instant, Ambikā led that vast legion of foes to its destruction, as quickly as fire consumes a heap of straw and wood.</p>
+                <p class="verse"><span class="verse-number">2.68</span>And Her lion, roaring thunderously and shaking its mane, prowled about in search of life- breath still issuing from the enemies’ bodies.</p>
+                <p class="verse"><span class="verse-number">2.69</span>So did the Devī’s hosts wage war against the asuras. So also did the gods in heaven shower down flowers in praise.”</p>
+            </section>
+
+            <section id="chapter3">
+                <h2>Chapter 3: The Slaying of Mahiṣāsura</h2>
+                <p class="verse"><span class="verse-number">3.1</span><span class="speaker-note">The seer said:</span></p>
+                <p class="verse"><span class="verse-number">3.2</span>“Now when he saw the army being slaughtered, Cikṣura, the great asura general, went forth in fury to battle with Ambikā.</p>
+                <p class="verse"><span class="verse-number">3.3</span>He rained showers of arrows on the Devī in the combat, just as a raincloud showers the summit of Mount Meru.</p>
+                <p class="verse"><span class="verse-number">3.4</span>But easily shattering his volley, the Devī killed his steeds and charioteer with Her arrows.</p>
+                <p class="verse"><span class="verse-number">3.5</span>Like lightning, She slashed through his bow and highflying banner. Having destroyed his bow, She wounded him in the limbs with Her swift arrows.</p>
+                <p class="verse"><span class="verse-number">3.6</span>With bow broken, chariot wrecked, and horses and charioteer slain, the asura, armed with sword and shield, rushed at the Devī.</p>
+                <p class="verse"><span class="verse-number">3.7</span>First striking Her lion on the head with his sharp-edged sword, he violently struck the Devī’s left arm.</p>
+                <p class="verse"><span class="verse-number">3.8</span>O king, as soon as the sword touched Her, it shattered. Then, the great asura, his eyes red with rage, seized his blazing lance</p>
+                <p class="verse"><span class="verse-number">3.9</span>and flung it at Bhadrakālī, as though he were hurling the very sun from the sky.</p>
+                <p class="verse"><span class="verse-number">3.10</span>Seeing it approach, the Devī released Her lance and shattered the great asura and his weapon into a hundred pieces.</p>
+                <p class="verse"><span class="verse-number">3.11</span>When Mahiṣa’s mighty general lay slain, Cāmara, the afflictor of the gods, advanced, mounted on an elephant.</p>
+                <p class="verse"><span class="verse-number">3.12</span>He dispatched his spear toward the Devī. Quickly Ambikā’s contemptuous outcry sent it hurtling powerless to the ground.</p>
+                <p class="verse"><span class="verse-number">3.13</span>Seeing it fallen and shattered, the enraged Cāmara flung a lance, and that, too, She destroyed with Her arrows.</p>
+                <p class="verse"><span class="verse-number">3.14</span>Her lion then leapt up and, astride the elephant’s forehead, engaged fiercely in direct combat with the enemy of the gods.</p>
+                <p class="verse"><span class="verse-number">3.15</span>Struggling, the two fell from the elephant to the ground, still locked in dreadful combat.</p>
+                <p class="verse"><span class="verse-number">3.16</span>In a flash the lion sprang skyward, then alighted and severed Cāmara’s head with a single blow of its paw.</p>
+                <p class="verse"><span class="verse-number">3.17</span>In the fighting the Devī assailed the asura Udagra with rocks and trees; and biting, punching, and slapping Karāla, She felled him, too.</p>
+                <p class="verse"><span class="verse-number">3.18</span>Enraged, the Devī crushed Uddhata to a pulp with the blows of Her mace. She killed Bāṣkala with Her javelin and Tāmra and Andhaka with Her arrows,</p>
+                <p class="verse"><span class="verse-number">3.19</span>and with Her trident the supreme three-eyed Goddess slew Ugrāsya, Ugravīrya, and also Mahāhanu.</p>
+                <p class="verse"><span class="verse-number">3.20</span>With Her sword She struck Biḍāla’s head from his body, and with Her arrows She dispatched both Durdhara and Durmukha to the abode of death.</p>
+                <p class="verse"><span class="verse-number">3.21</span>While his army thus met destruction, Mahiṣāsura terrified the Devī’s hosts with his own buffalo form,</p>
+                <p class="verse"><span class="verse-number">3.22</span>jostling some with his snout and pawing others with his hooves. Others he lashed with his tail and lacerated with his horns.</p>
+                <p class="verse"><span class="verse-number">3.23</span>He toppled some of them to the ground with the unleashed force of his bellowing and wheeling about, and the blast of his breath brought still others down.</p>
+                <p class="verse"><span class="verse-number">3.24</span>After destroying the great Goddess’s forces, Mahiṣāsura rushed forward to slay Her lion. At that, Ambikā became enraged.</p>
+                <p class="verse"><span class="verse-number">3.25</span>But Mahiṣāsura, great in valor, struck the earth angrily with his hooves, flung mountains skyward with his horns, and bellowed frightfully.</p>
+                <p class="verse"><span class="verse-number">3.26</span>Under his frenzied wheeling, the trampled earth broke apart. Lashed by his tail, the ocean overflowed all around.</p>
+                <p class="verse"><span class="verse-number">3.27</span>Thrashed by his horns, the clouds fragmented and dispersed. Tossed about on his blasting breath, mountains by the hundreds fell from the sky.</p>
+                <p class="verse"><span class="verse-number">3.28</span>When She saw the great asura approaching, inflated with rage, Caṇḍikā aroused Her wrath and prepared to slay him.</p>
+                <p class="verse"><span class="verse-number">3.29</span>She threw Her noose over him and bound him. Fettered thus in the fierce battle, the great asura left his buffalo form</p>
+                <p class="verse"><span class="verse-number">3.30</span>and assumed the shape of a lion. No sooner had Ambikā severed his head than he appeared as a man with sword in hand.</p>
+                <p class="verse"><span class="verse-number">3.31</span>Instantly, with Her arrows the Devī cut him to shreds along with his sword and shield. Then he took the form of a great elephant</p>
+                <p class="verse"><span class="verse-number">3.32</span>and dragged Her mighty lion along with his trunk, but while he trumpeted loudly, the Devī chopped off his trunk with Her sword.</p>
+                <p class="verse"><span class="verse-number">3.33</span>Once more the great asura assumed his buffalo form and caused the three worlds, with all that is moving and unmoving, to tremble.</p>
+                <p class="verse"><span class="verse-number">3.34</span>Angered, Caṇḍikā, the Mother of the worlds, drank a divine potion, and with eyes reddened She laughed again and again.</p>
+                <p class="verse"><span class="verse-number">3.35</span>The asura bellowed in return, intoxicated with his own might and valor, and with his horns he hurled mountains at Caṇḍikā.</p>
+                <p class="verse"><span class="verse-number">3.36</span>Her volley of arrows reduced them to dust. Her face flushed with inebriation from the divine drink, and She addressed him excitedly.</p>
+                <p class="verse"><span class="verse-number">3.37</span><span class="speaker-note">The Devī said:</span></p>
+                <p class="verse"><span class="verse-number">3.38</span>‘Bellow, you fool, bellow for now while I drink this potion. After I have slain you, the gods will cheer in this very place.”’</p>
+                <p class="verse"><span class="verse-number">3.39</span><span class="speaker-note">The seer said:</span></p>
+                <p class="verse"><span class="verse-number">3.40</span>“Having declared that, She leapt upon the great asura, pinned his neck down with Her foot, and pierced him through with Her spear.</p>
+                <p class="verse"><span class="verse-number">3.41</span>Trapped there under the Devī’s foot and crushed by Her might, he emerged half-way in his true form from his buffalo mouth.</p>
+                <p class="verse"><span class="verse-number">3.42</span>Half-revealed and fighting still, that great asura fell to the Devī, beheaded by Her great sword.</p>
+                <p class="verse"><span class="verse-number">3.43</span>Then crying out in alarm, the whole demon army perished, and all the divine hosts exulted.</p>
+                <p class="verse"><span class="verse-number">3.44</span>Together with the great heavenly seers the gods praised the Devī, the celestial musicians sang, and throngs of cloud-nymphs danced.</p>
+            </section>
+
+            <section id="chapter4">
+                 <h2>Chapter 4: Praise by Indra and the Other Gods</h2>
+                 <p class="verse"><span class="verse-number">4.1</span><span class="speaker-note">The seer said:</span></p>
+                 <p class="verse"><span class="verse-number">4.2</span>“When The Devī Had Struck Down the brave but wicked mahiṣāsura and his army of the Gods’ foes, Indra and the hosts of Gods lifted their voices to Her in praise, their heads bowed in reverence, their bodies made beautiful by the thrill of rapture.</p>
+                 <p class="verse"><span class="verse-number">4.3</span>‘To The Devī, Who Spreads Out this world Through Her Own Power and Who Embodies Herself As All The Powers of the hosts of Gods;</p>
+                 <p>to Ambikā, Who Is Worthy of worship by all the Gods and great seers, we bow down in devotion. May She Grant us that which is Auspicious.</p>
+                 <p class="verse"><span class="verse-number">4.4</span>May She Whose Unequalled Might and Splendor even the blessed Viṣṇu, Brahmā, and Śiva are powerless to describe,</p>
+                 <p>May She, Caṇḍikā, Be Intent on Protecting all the world and on Destroying the fear of misfortune.</p>
+                 <p class="verse"><span class="verse-number">4.5</span>O Devī, we bow before You</p>
+                 <p>Who Are Yourself Good Fortune in the dwellings of the virtuous and<br>
+                 Misfortune in the abodes of the wicked,<br>
+                 Intelligence in the hearts of the learned,<br>
+                 Faith in the hearts of the good, and<br>
+                 Modesty in the hearts of the high-born.<br>
+                 May You Protect the universe!</p>
+                 <p class="verse"><span class="verse-number">4.6</span>How can we describe This Form Of Yours, Which Surpasses thought?</p>
+                 <p>And Your Abundant, Exceeding Valor That destroys evil?<br>
+                 And Your Deeds in battle, O Devī, among all the throngs of Gods and demons?</p>
+                 <p class="verse"><span class="verse-number">4.7</span>You Are The Cause of all the worlds.</p>
+                 <p>Though Containing The triple forces of creation Within Yourself, You Are Untouched by any imperfection.<br>
+                 You Are Unfathomable even to Viṣṇu, Śiva, and the other Gods.<br>
+                 You Are The Resort of all. You Are This Entire, Manifold World and You Are Primordial Matter, Supreme And Untransformed.</p>
+             </section>
+
+            <section id="chapter8">
+                 <h2>Chapter 8: The Slaying of Raktabīja</h2>
+                 <p class="verse"><span class="verse-number">8.1</span><span class="speaker-note">ṛṣir uvāca (The seer said)</span></p> <!-- Added translation for clarity -->
+                 <p class="verse"><span class="verse-number">8.2</span>“After caṇḍa was killed, muṇḍa slain, and the vast armies annihilated, the lord of asuras</p>
+                 <p class="verse"><span class="verse-number">8.3</span>burned with rage. His reason overcome, śumbha ordered the marshaling of all the demon hosts:</p>
+                 <p class="verse"><span class="verse-number">8.4</span>‘Now let the daitya clans with all their troops go forth, the eighty-six udāyudha and the eighty-four kambu families, together with their forces.</p>
+                 <p class="verse"><span class="verse-number">8.5</span>Let the fifty koṭivīrya families and the hundred dhaumra clans depart at my command</p>
+                 <p class="verse"><span class="verse-number">8.6</span>So also at my command, let the kālaka, daurhṛda, maurya, and kālakeya asuras set out in haste, armed for battle.’</p>
+                 <p class="verse"><span class="verse-number">8.7</span>Having issued his orders, śumbha, the despotic lord of asuras, went forth, attended by many thousands of mighty troops.</p>
+                 <p class="verse"><span class="verse-number">8.8</span>Seeing that most formidable army approach, Caṇḍikā Filled the space between earth and sky with the resonance of Her Bowstring</p>
+                 <p class="verse"><span class="verse-number">8.9</span>Thereupon Her lion emitted a deafening roar, O king, and Ambikā Heightened the noise with Her Clanging Bell.</p>
+                 <p class="verse"><span class="verse-number">8.10</span>Kālī Drowned out the din of bowstring, lion, and bell, filling every direction With Terrifying Howls from Her Gaping Mouth.</p>
+                 <p class="verse"><span class="verse-number">8.11</span>Hearing the tumult, the enraged demon armies closed in on The Devī, Her lion, and Kālī from all four sides.</p>
+                 <p class="verse"><span class="verse-number">8.12</span>O king, at that very moment, to insure the well-being of the supreme Gods and to annihilate their adversaries, surpassingly brave and powerful</p>
+                 <p class="verse"><span class="verse-number">8.13</span>śaktis, the Gods’ embodied powers, sprang forth from the bodies of Brahmā, Śiva, Skanda, Viṣṇu, and Indra, mirroring the form of each. They approached Caṇḍikā.</p>
+                 <p class="verse"><span class="verse-number">8.14</span>Whatever that God’s form was, whatever his adornments and his mount, in that very form his śakti went forth to combat the asuras.</p>
+                 <p class="verse"><span class="verse-number">8.15</span>In a celestial chariot drawn by swans, Brahmā’s śakti came forth with prayer beads and waterpot in hand. She is called Brahmāṇī.</p>
+                 <p class="verse"><span class="verse-number">8.16</span>Māheśvarī arrived astride a bull, holding the finest trident, wearing great serpents for bracelets, and adorned with the crescent moon.</p>
+                 <p class="verse"><span class="verse-number">8.17</span>Ambikā, having the war God’s form and riding a fine peacock, came forth as Kaumārī with spear in hand to fight against the daityas.</p>
+                 <p class="verse"><span class="verse-number">8.18</span>Likewise the śakti Vaiṣṇavī, mounted on Garuda, approached holding conch, discus, mace, bow, and sword.</p>
+                 <p class="verse"><span class="verse-number">8.19</span>The śakti of Hari, Who Bears the Unique Form of The Sacrificial Boar, Came Forward As Vārāhī in that Boarlike Aspect.</p>
+                 <p class="verse"><span class="verse-number">8.20</span>Nārasiṁhī, resembling Viṣṇu’s embodiment as a man-lion, arrived there, scattering the constellations with the toss of Her Mane.</p>
+                 <p class="verse"><span class="verse-number">8.21</span>Thousand-eyed like Indra, and in like manner with thunderbolt in hand, Aindrī Arrived Riding on the lord of elephants.</p>
+                 <p class="verse"><span class="verse-number">8.22</span>Then Śiva, surrounded by those śaktis of the Gods, said to Caṇḍikā, ‘Let the asuras quickly be slain for My satisfaction.’</p>
+                 <p class="verse"><span class="verse-number">8.23</span>Thereupon from The Devī’s Body there issued Forth Caṇḍikā’s Own Terrifying śakti, savage in Her Fury and Howling like a hundred jackals.</p>
+                 <p class="verse"><span class="verse-number">8.24</span>And She, The Unvanquished One, said to Śiva of dark, matted locks, ‘Go, My Lord, as My Messenger to śumbha and niśumbha.</p>
+                 <p class="verse"><span class="verse-number">8.25</span>Say to those two arrogant dānavas, śumbha and niśumbha, and to the other dānavas assembled there for battle:</p>
+                 <p class="verse"><span class="verse-number">8.26</span>“Indra must regain the three worlds, the Gods must again enjoy the sacrificial oblations, and you must return to the nether world if you wish to live.</p>
+                 <p class="verse"><span class="verse-number">8.27</span>But if through the conceit of strength you are desirous of battle, then come and let My jackals be satiated with your flesh!”’</p>
+                 <p class="verse"><span class="verse-number">8.28</span>Since The Devī appointed Śiva himself as messenger, She Has Come to be Known in this world As Śivadūtī.</p>
+                 <p class="verse"><span class="verse-number">8.29</span>Hearing Śiva declare The Devī’s words, the great asuras were filled with indignation and went to where Kātyāyanī stood.</p>
+                 <p class="verse"><span class="verse-number">8.30</span>At the outbreak of battle, the Gods’ adversaries, arrogant in their anger, rained torrents of arrows, spears, and lances upon The Devī.</p>
+                 <p class="verse"><span class="verse-number">8.31</span>And She, with great arrows shot from Her resounding bow, playfully split asunder their hurtling arrows, lances, spears, and axes.</p>
+                 <p class="verse"><span class="verse-number">8.32</span>Kālī Roamed about the battlefront, Slashing Her enemies to Shreds with Her Spear and Crushing them with Her Skull-Topped Staff</p>
+                 <p class="verse"><span class="verse-number">8.33</span>And Brahmāṇī, wherever She Went, left Her enemies sapped of strength, disabled by the holy water sprinkled from Her waterpot.</p>
+                 <p class="verse"><span class="verse-number">8.34</span>Māheśvarī Slew the daityas with Her Trident; so, too, did Vaiṣṇavī with Her Discus, Kaumārī with Her Spear, and the Wrathful</p>
+                 <p class="verse"><span class="verse-number">8.35</span>Aindrī with Her Thunderbolt. Daityas and dānavas, torn asunder, fell by the hundreds, discharging torrents of blood upon the earth.</p>
+                 <p class="verse"><span class="verse-number">8.36</span>They fell, scattered by Blows from Vārāhī’s Boarlike Snout, Pierced through the chest by Her Tusks, and Ripped apart by Her Discus.</p>
+                 <p class="verse"><span class="verse-number">8.37</span>Nārasiṁhī, Tearing other great asuras apart with Her Claws and Devouring them, Roamed about the battlefield, Filling the sky with Her Roars.</p>
+                 <p class="verse"><span class="verse-number">8.38</span>Dazed by Śivadūtī’s violent Laughter, the asuras fell to the ground, and She Devoured those fallen ones.</p>
+                 <p class="verse"><span class="verse-number">8.39</span>When the enemy troops saw the enraged Band Of Mothers Crushing the mighty asuras by diverse means, they fled.</p>
+                 <p class="verse"><span class="verse-number">8.40</span>Seeing the remaining daityas flee, Tormented thus By The Band Of Mothers, the great asura raktabīja went forth in anger to do battle.</p>
+                 <p class="verse"><span class="verse-number">8.41</span>Whenever a drop of blood fell from his body to the ground, an asura of like measure would rise up from the earth.</p>
+                 <p class="verse"><span class="verse-number">8.42</span>With club in hand the great asura fought with Indra’s śakti. Then Aindrī Struck raktabīja with Her Thunderbolt.</p>
+                 <p class="verse"><span class="verse-number">8.43</span>Blood streamed in torrents from the stricken asura, and from that blood rose up warriors of identical form and might.</p>
+                 <p class="verse"><span class="verse-number">8.44</span>As many drops of blood fell from his body, so many beings of equal valor, strength, and courage arose,</p>
+                 <p class="verse"><span class="verse-number">8.45</span>and those who sprang up from his blood battled there with The Mothers ever more fiercely, hurling the most formidable of weapons.</p>
+                 <p class="verse"><span class="verse-number">8.46</span>When The Devī’s Thunderbolt Struck raktabīja’s head, blood flowed again, and from it asuras were born by the thousands</p>
+                 <p class="verse"><span class="verse-number">8.47</span>In the combat Vaiṣṇavī Attacked the lord of asuras with Her Discus, and Aindri Beat him with Her Mace.</p>
+                 <p class="verse"><span class="verse-number">8.48</span>Blood flowed from the cuts of Vaiṣṇavī’s Discus, and there from great asuras of equal measure arose by the thousands and filled the world.</p>
+                 <p class="verse"><span class="verse-number">8.49</span>Kaumārī with Her Spear, Vārāhī with Her Sword, and Māheśvarī with Her Trident Struck the great asura Raktabīja,</p>
+                 <p class="verse"><span class="verse-number">8.50</span>and he, the mighty, rage-filled daitya, struck All The Mothers one by one with his club.</p>
+                 <p class="verse"><span class="verse-number">8.51</span>Out of the blood that streamed upon the earth from the relentless wounds of spear, lance, and other weapons, asuras sprang up by the hundreds,</p>
+                 <p class="verse"><span class="verse-number">8.52</span>and those demons born from this one demon’s flowing blood pervaded all the world. Utter terror seized the Gods.</p>
+                 <p class="verse"><span class="verse-number">8.53</span>Caṇḍikā Burst into Laughter at their despair and said to Kālī, ‘O Cāmuṇḍā, open wide your mouth</p>
+                 <p class="verse"><span class="verse-number">8.54</span>and quickly drink in the drops of blood from my weapons’ blows and the great asuras born therefrom.</p>
+                 <p class="verse"><span class="verse-number">8.55</span>Roam about on the battlefield and devour the great demons sprung from Raktabīja. So shall this daitya, drained of blood, go to his destruction.</p>
+                 <p class="verse"><span class="verse-number">8.56</span>As You Consume those fierce asuras, others shall not arise.’ Having Spoken thus, The Devī Attacked raktabīja with Her Lance,</p>
+                 <p class="verse"><span class="verse-number">8.57</span>while Kālī avidly Lapped up his blood. raktabīja turned upon Caṇḍikā with his club,</p>
+                 <p class="verse"><span class="verse-number">8.58</span>but his cudgel blows caused Her not even the slightest pain. From his beaten body blood flowed copiously</p>
+                 <p class="verse"><span class="verse-number">8.59</span>in every direction, and Cāmuṇḍā Engulfed it with Her Mouth. And within Her Mouth those great asuras who sprang into being from the flow,</p>
+                 <p class="verse"><span class="verse-number">8.60</span>Cāmuṇḍā Devoured, while also Drinking his blood.</p> <!-- Note: Verse 8.60 appears combined with 8.59 in source; split for clarity -->
+                 <p class="verse"><span class="verse-number">8.61</span>The Devī Assailed raktabīja with Lance, Thunderbolt, Arrows, Swords, and Spears while Cāmuṇḍā Drank his blood.</p>
+                 <p class="verse"><span class="verse-number">8.62</span>O king, battered by that Array Of Weapons and drained of blood, the great asura raktabīja fell to the ground.</p>
+                 <!-- End of provided text for Chapter 8 -->
+             </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

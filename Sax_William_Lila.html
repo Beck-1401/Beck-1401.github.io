@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Līlā by William S. Sax</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0; /* Remove default body margin */
+            display: flex; /* Use flexbox for layout */
+        }
+
+        .sidebar {
+            width: 220px; /* Width of the sidebar */
+            background-color: #f4f4f4;
+            padding: 1em;
+            height: 100vh; /* Full viewport height */
+            overflow-y: auto; /* Allow scrolling if content overflows */
+            flex-shrink: 0; /* Prevent sidebar from shrinking */
+            border-right: 1px solid #ccc;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5em;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 0.7em;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            display: block; /* Make the whole area clickable */
+            padding: 0.2em 0;
+        }
+
+        .sidebar a:hover {
+            color: #007bff;
+            background-color: #e9e9e9;
+        }
+
+        .content {
+            flex-grow: 1; /* Allow content to take remaining space */
+            padding: 1em 2em; /* Padding for content area */
+            max-width: 800px; /* Maintain readability */
+            margin-left: auto; /* Center content if space allows */
+            margin-right: auto;
+            height: 100vh; /* Full viewport height */
+            overflow-y: auto; /* Allow content area to scroll */
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        h2 {
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 2em;
+        }
+        h3 { /* For section headers like NOTES, REFERENCES */
+            margin-top: 2em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.3em;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 1em;
+        }
+        blockquote {
+            margin-left: 2em;
+            margin-right: 2em;
+            font-style: italic;
+            color: #555;
+        }
+        sup {
+            vertical-align: super;
+            font-size: smaller;
+            line-height: 0; /* Prevent affecting line spacing */
+        }
+        i {
+            font-style: italic;
+        }
+        #notes ol, #references p {
+            margin-left: 1.5em;
+        }
+        #references p {
+            text-indent: -1.5em; /* Hanging indent for references */
+            margin-bottom: 0.5em;
+            text-align: left; /* Override justify for references */
+        }
+        #notes li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Make IDs scroll target slightly above the element for better visibility */
+        *[id]:before {
+          content: "";
+          display: block;
+          height: 60px; /* Adjust as needed, depends on potential fixed header */
+          margin-top: -60px; /* Negative margin */
+          visibility: hidden;
+        }
+
+        /* Basic responsiveness: stack layout on smaller screens */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto; /* Auto height when stacked */
+                border-right: none;
+                border-bottom: 1px solid #ccc;
+                position: sticky; /* Keep nav visible when scrolling */
+                top: 0;
+                z-index: 10; /* Ensure it's above content */
+            }
+            .content {
+                 height: auto; /* Auto height when stacked */
+                 padding: 1em; /* Adjust padding */
+                 max-width: none; /* Allow full width */
+                 margin-left: 0;
+                 margin-right: 0;
+            }
+            *[id]:before { /* Adjust scroll offset for stacked layout */
+                height: 80px;
+                margin-top: -80px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#theological-concept">Theological Concept</a></li>
+            <li><a href="#performative-drama">Performative Drama</a></li>
+            <li><a href="#defining-lila">Defining Līlā (Conference)</a></li>
+            <li><a href="#dimensions-of-play">Dimensions of Play</a></li>
+            <li><a href="#theatrical-play">Theatrical Play</a></li>
+            <li><a href="#freedom-spontaneity">Freedom & Spontaneity</a></li>
+            <li><a href="#social-historical">Social/Historical Effects</a></li>
+            <li><a href="#embodiment-ontology">Embodiment & Ontology</a></li>
+            <li><a href="#conclusion">Concluding Remarks</a></li>
+            <li><a href="#notes">Notes</a></li>
+            <li><a href="#references">References</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>Introduction</h1>
+        <h2>WILLIAM S. SAX</h2>
+
+        <p id="introduction">God is playful. God creates the world and enters into it in a spirit of play. These are the sorts of ideas that lie behind the important South Asian concept of <i>līlā</i>. Because <i>līlā</i> is so much a part of ordinary Hindu life, it should come as no surprise that when my wife, Sylvia, and I went to India in 1983 to do doctoral research, accompanied by our infant daughter, Hindus were almost always delighted that my daughter's name was Leela. When she grew older and began to be naughty like children everywhere, people would smile knowingly and say, "Oh, yes, that is the true play, the true <i>līlā</i> of God." And, in fact, the image of God as a playful and naughty child has great currency in India: when I asked people what <i>līlā</i> meant, they often answered that God created the world in a spirit of <i>līlā</i>, like a child who builds a sand castle and then, unattached to his or her creation, knocks it down and builds it up again. The same image is used by Tagore, who adds that</p>
+        <blockquote>
+            <p>"in truth, in self-willed joy, there is something in common between the lila of childhood and the works of God."<sup>1</sup></p>
+        </blockquote>
+        <p><i>Līlā</i>, then, is God's play: it refers not only to the supreme being's playful actions but also to the dramatic "plays" staged by human beings in memory of those actions. Thus <i>līlā</i> appears to mark a delightful difference between European and South Asian traditions, embodying a ludic dimension in Indian religious life that is muted or even absent in the dominant religions of the West.<sup>2</sup> Though there may be examples of "playfulness" in Judaism, Christianity, or Islam, still it seems fair to say that Hinduism has developed the doctrine of play more than any of the other so-called world religions, and that this idea has supported, particularly in the more recent religious history of the subcontinent, a pervasive attitude of joy and delight in God's <i>līlā</i>.</p>
+
+        <p id="theological-concept">There are several references to the playful nature of the gods as early as the Vedas and the Upaniṣads (see Coomaraswamy 1941), but the first use of <i>līlā</i> as a theological term is in the <i>Vedāntasūtras</i> of Badarāyaņa at 2.1.33, where the author maintains that the Supreme Lord creates the world "merely in play" (<i>līlākaivalyam</i>). The idea is that God's creation of the world is motivated not by any desire or lack, since these would be incompatible with his or her self-fulfilled and complete nature, but rather by a free and spontaneous creativity. Later commentators explain this passage through the metaphor of a great king who plays at sports in order to amuse himself, or a healthy man who, upon awakening from a sound sleep, dances from sheer exuberance. The doctrine of <i>līlā</i> thus becomes one way of dealing with the problem of theodicy since, from an ultimate perspective, human suffering is part of the mysterious play of God, and when Hindus are confronted with baffling or tragic events, they are more apt to say "it is God's play" than "it is God's will." <i>Līlā</i> also comes to refer, beyond God's world-creating activities, to his or her incarnation in any of several forms in order to sustain and protect the world; thus the <i>līlās</i> of such deities as Rāma and especially Kṛṣņa are the subject of much devotional art and literature. These and related ideas have been developed and elaborated by various Indian religious traditions: Vaiṣṇava (Haberman 1988; Hein 1987; Hospital 1980; Narayanan, this volume), Śaiva (Bäumer 1969; Bäumer, this volume; Goodwin, this volume), and Śākta (McLean, this volume).</p>
+
+        <p id="performative-drama">But <i>līlā</i> is much more than a theological concept. It is also a kind of religious drama that is found throughout India, especially in the north (see Haberman 1994; Hawley 1981; Hein 1972; Sax 1990; Schechner 1983, 1988; Lutgendorf 1991; Kapur 1990). Such performative <i>līlās</i> usually dramatize the lives and actions of incarnate gods, and thus have much in common with devotional and artistic notions of lila mentioned earlier. They involve the living presence of gods upon the stage, who temporarily inhabit the bodies of the "actors" who "play" their parts, so that going to see a <i>līlā</i> often involves a heightened religious experience. It is striking that those who have written about lila as performance usually have not been much concerned with its theological aspects, while those who have written about the theology of <i>līlā</i> usually have ignored its performative dimensions. Scholars of <i>līlā</i> as drama and scholars of <i>līlā</i> as theology often seem to "write past" each other, leading us to ask if the two sorts of <i>līlā</i> really are separate things or if the lack of communication has rather to do with the division of academic labor.</p>
+
+        <p>The problem is partly one of essentialism: if we fasten on some characteristic or set of characteristics that we deem to be the "essence" of lila, then we will have to define some of our texts and/or performances as <i>līlā</i> and exclude others. But who are we, as a group of (predominantly Western) scholars, to tell our Indian colleagues, friends, and informants that some of the things they call <i>līlās</i> aren't really <i>līlās</i>? Would it not be better to adapt the Wittgensteinian notion of family resemblances, the idea that several phenomena (in this case, the various kinds of <i>līlā</i>) may be members of a class, not by virtue of some shared essence or common property but because of a "network of partial, but overlapping, similarities'? (Poole 1986:426). The definitional problem is aggravated by disciplinary boundaries. Because <i>līlā</i> is generally thought of as a "religious" concept, it has most often been studied by historians of religion, who have traditionally focused on scripture and theology, that is, on texts. While such scholars may have been aware of performative <i>līlās</i>, they did not usually regard these as falling within their disciplinary expertise. On the other hand, when <i>līlā</i> is considered as a dramatic performance, it is a "cultural" item and therefore more likely to be studied by anthropologists and folklorists, whose knowledge of classical Indian thought is sometimes rather superficial. This creates problems for textual scholars because they fail to consider those performative contexts in which <i>līlās</i> are dramatized and in which they receive what is arguably their most public and influential expression. It creates problems for anthropologists and folklorists because in slighting or ignoring the ideology of lila, they fail to grapple with the intellectual history that lies behind their informants' understandings. Attending exclusively to performance is ahistorical, while an analysis of <i>līlā</i> without attention to its performative aspects easily degenerates into theology. Both approaches risk becoming, as Hindus might put it, "mere <i>līlās</i>.”</p>
+
+        <p id="defining-lila">For these and other reasons, I organized a conference at the Center for the Study of World Religions at Harvard University in April 1989 entitled "The Concept of <i>Līlā</i> in South Asia." One of the main goals of the conference was to unite the theological and anthropological approaches, to see if there was any common ground in their definitions of and approaches to lila. What we came up with was a definition that does not hinge on essences but rather on a number of family resemblances, the most important of which are freedom, spontaneity, and playfulness.</p>
+
+        <p id="dimensions-of-play">Play is, of course, an important part of the idea of <i>līlā</i>, and this is recognized by all of the contributors to this volume. Bäumer, for example, finds that the notion of divine playfulness (<i>krīdā</i>) pervades Saivism "like salt is mixed with food." Indeed, absolute divine freedom and spontaneity were so important to this school that, as Bäumer tells us, it was sometimes called <i>svatantriyavāda</i>. But it is important to remember that precisely what freedom, spontaneity, and playfulness might entail in different contexts and at different times in Indian history is not necessarily self-evident and certainly not always the same. For example, Hospital asks whether play in India is contrasted primarily with work, as it is in many Western cultures, while Wulff reminds us that although spontaneity and playfulness are among "the major characteristics of <i>līlā</i>," performances often involve grief and sorrow. In his conference paper (not reprinted in this volume) Neal Delmonico emphasized a dimension of "terror" in <i>līlā</i> that is often ignored. <i>Līlā</i> may invoke the idea of games, as in Bengal, where, as McLean tells us, the goddess's <i>līlā</i> is "like the game of a child." For Hawley the playfulness of <i>līlā</i> involves reversal, deception, and thievery; he argues that one of its main functions is to undermine everyday assumptions about life. Or, again, the sort of "play" that is connoted by <i>līlā</i> may be of a predominantly erotic kind, as it is for the Śrī Vaisnava community, for whom, according to Narayanan, play is in part "a celebration of the intimate and passionate love that [the Lord] has for Śrī and for his devotees." This erotic dimension of playfulness is especially important in Kashmir Śaivism, and is explored in detail by Goodwin in relation to the famous Sanskrit play <i>Śakuntalā</i>.</p>
+
+        <p id="theatrical-play">One of the most salient kinds of "play" included in the idea of <i>līlā</i> is that of a theatrical play or drama. India, of course, has a rich tradition of dramatic and aesthetic theory, and Haberman (1988), among others, has written of the influence of this body of theory on Vaisnava religious practice. It has been suggested that the notion of <i>līlā</i> actually originated in Vaisnava circles (see, e.g., Hein 1986), but this is disputed by Bäumer, who argues that the hypothesis has not been demonstrated. In their essays Bäumer and Goodwin show how classical dramatic theory was also an indispensable part of Kashmir Śaivism and its theory of <i>līlā</i>, in which, as Goodwin puts it, the universe "is a work of art, a play (in both senses), for it is nothing but transcendental consciousness taking form for its own delight." Clearly, the notion of <i>līlā</i> has been appropriated by a wide variety of religious traditions in India, and the question of its origin is still open to debate. Moreover, there are many genres of religious drama that owe little to classical dramatic theory. Some of those described and analyzed in this volume are <i>rās līlā</i> (Hawley, Wulff), <i>pāņdav līlā</i> (Hiltebeitel, Sax), <i>rām līlā</i> (Kumar, Hiltebeitel), <i>utsava</i> (Narayanan), <i>līlākīrtan</i> (Wulff), and <i>teruküttu</i> (Hiltebeitel).</p>
+
+        <p id="freedom-spontaneity"><i>Līlā</i> involves not just play but also freedom and spontaneity. This point is developed by Bäumer and Goodwin in relation to Kashmir Śaiva philosophy, as well as by Wulff, who writes that <i>līlā</i>'s connotations of freedom and spontaneity characterize not only the subject matter of <i>līlākīrtan</i> but "also to an important degree its form." McLean writes of the spontaneous or willful (<i>icchāmoy</i>) nature of a goddess whose actions "are never entirely predictable." For the Śākta devotee, to live in this world means to participate is such a goddess's <i>līlā</i>, and this leads to an attitude of resignation. But for most traditions that have embraced it, the concept of <i>līlā</i> has been regarded as emancipatory. In a very illuminating passage Goodwin notes that important precursors of the full-fledged ideal of <i>līlā</i> conceived as leading to freedom and spontaneity are to be found in the <i>Chāndogya Upaniṣad</i>, in Rāmānuja's writings, and especially in Kashmir Śaivism—but not in the philosophy of Śankara, the great Vedāntin. All of these systems, including Vedānta, can generally be said to agree upon the evanescence of conditioned world. But whereas the response of Vedānta, the most prestigious tradition of Hindu philosophy, is to renounce that world, <i>līlā</i> and associated ideas like <i>krīdā</i>—are integral parts of philosophical and religious alternatives to renunciation. Such systems are reluctant to turn their backs completely on the world of experience. As Goodwin puts it, they embody "an impulse to recuperate the phenomenal world in the face of a radical ascetic drive to renunciation.'</p>
+
+        <p id="social-historical">Clearly the notion of <i>līlā</i> has important philosophical implications. But does it have concrete social and historical effects as well? In addressing this question, our authors attempt to mediate the disjunction, noted earlier, between textual approaches, on the one hand, and anthropological and historical approaches, on the other. Something of this sort had already been attempted by Hein (1986), who argues that the freedom represented by the irrepressible, reckless Krsna was a desired relief from the social bondage of the Gupta age, a bondage that continues into our own day. He related this liberating, social freedom to contemporary and well-known Hindu child-rearing patterns, contrasting the freedom of childhood with the constraints of adulthood. Hein reiterated this hypothesis in his thoughtful and provocative remarks during the conference, and a lively debate ensued in which most of the participants appeared unwilling to grant that the lilä concept was so closely associated with a particular ("Krishnaite") religious tradition. Nevertheless, it is indisputable that the antinomianism seems to be an important aspect of <i>līlā</i>, and perhaps to be applicable to performative <i>līlās</i> as well as textual ones. In the present volume Hawley focuses on aspects of reversal and trickery in <i>rās līlā</i>, while Sax sees <i>pāndav līlā</i> as an opportunity for participants to "play with" their own identities. Other social and historical implications of the <i>līlā</i> concept are suggested by Wulff, who argues that the notion of <i>līlā</i> is related to a "democratizing process taking place within Bengali society" between the fourteenth and seventeenth centuries, and by Kumar, who finds, by contrast, that when <i>līlā</i> is analyzed as a gendered concept, it serves to exclude women in both performance and everyday existence. Concluding his comparison of <i>rām līlā</i>, <i>durgāpūjā</i>, and <i>pāņdav līlā</i>, Hiltebeitel boldly suggests that at least the first two "developed against the background of Muslim, and then British, rule as symbolic expressions of the ideal of an alternative mythical and ritual Hindu <i>rāj</i>."</p>
+
+        <p id="embodiment-ontology">It might be thought that these performative <i>līlās</i> are closely analogous to Christian "miracle plays''—and perhaps they are but there is at least one important difference. In most or all of the Indian traditions there is a tendency to assert that the performers are not merely "playing a part" but in some profound sense embody the characters they represent (cf. Vatsyayan 1987:454). Over and over, participants tell us that a player “is” Rāma, and nearly as often we turn around and write that he "symbolizes" Rāma. But rather than worrying about the epistemology of our translations, we should perhaps be examining more closely the ontology underlying them. Indeed, it makes little sense in the Hindu context to say that performers in these ritual dramas merely "symbolize" some character or other when scriptural precedent, ritual action, and native exegesis all insist that the relationship is one of identity and not merely representation. Such ideas were the subject of much lively discussion and virtually unanimous agreement at the conference, and they are illustrated by many of the selections in this volume. For instance, the <i>pāndav līlā</i> discussed by Sax clearly involves a kind of behavior sometimes called "possession" by Westerners and academics, even though the English word refers to a great many things that Garhwalis consider quite distinct—for example, auspicious possession versus possession by ghosts and demons, which is a kind of affliction. Narayanan describes the way in which the <i>araiyar</i> reciter of the <i>Tiruvaymoli</i> is identified with both the <i>alvar</i> poet and the Lord. Hawley tells us that the boys who play the parts of Krsna and Rādhā are regarded as divinities by the spectators at <i>rās līlā</i> (cf. Sax 1990 for a similar description of <i>rām līlā</i>). Although various goddesses possess their devotees in a variety of ritual performances, incarnations of Śiva are rare, perhaps even absent. As Hiltebeitel notes, the main <i>līlā</i> traditions have to do with <i>avataraņa</i>, more specifically with the human "descents" of Rama and Kṛṣņa. Perhaps the salience of these two gods derives from the theological meanings of <i>līlā</i>. Hospital reports that he is struck by the fact that in the <i>Bhagavata Purāņa</i> the notion of <i>līlā</i> is more closely associated with divine incarnations (<i>avatāra</i> and <i>līlāvatāra</i>) than with creation, preservation, and destruction. The idea that gods should temporarily incarnate themselves in the bodies of human devotees is not at all unusual in Hinduism, which, unlike the religions of the West, does not posit a sharp ontological rift between humans and gods. In other words, gods are people, too, and people sometimes become gods.</p>
+
+        <p id="conclusion">As John Carman remarked at the conference, there is something almost ludicrous in writing so seriously about a lighthearted topic like <i>līlā</i>. What can we do? As scholars and academics it is our dharma to write, but perhaps this is one occasion where we ought to take ourselves a bit less seriously. Speaking for myself, I'd like to report that I had lots of fun organizing and participating in the conference, and I'd like to thank those who attended it for that.</p>
+
+        <div id="notes">
+            <h3>NOTES</h3>
+            <ol>
+                <li>Quoted (in translation) in Dimock 1989:159. Dimock's essay was first presented at the Harvard conference in which this volume originated. (see p. 5).</li>
+                <li>As Hospital puts it, "The theologians of play find contemporary life in North America in general too beset by the ordered, the serious, the Apollonian—to the extent that even the playful is itself imprisoned within the structures and tensions of the Apollonian way" (1977:289). See also the beginning of Hospital's essay in this volume.</li>
+            </ol>
+        </div>
+
+        <div id="references">
+            <h3>REFERENCES</h3>
+            <p>Bäumer, Bettina. 1969. <i>Schöpfung als Spiel: Der Begriff līlā im Hinduismus, seine philosophische und theologische Bedeutung</i>. Ph.D. diss., Ludwig-Maximilians-Universität, Munich.</p>
+            <p>Coomaraswamy, Ananda K. 1941. Līlā. <i>Journal of the American Oriental Society</i> 61: 98-101.</p>
+            <p>Dimock, Edward C., Jr. 1989. Līlā. <i>History of Religions</i> 29(2): 159-73.</p>
+            <p>Haberman, David L. 1988. <i>Acting as a Way of Salvation: A Study of Rāgānuga Bhakti Sadhana</i>. New York: Oxford University Press.</p>
+            <p>—. 1994. <i>Journey Through the Twelve Forests: An Encounter With Krishna</i>. New York: Oxford University Press.</p>
+            <p>Hawley, John S., in association with Shrivatsa Goswami. 1981. <i>At Play with Krishna: Pilgrimage Dramas from Brindavan</i>. Princeton, N.J.: Princeton University Press.</p>
+            <p>Hein, Norvin. 1972. <i>The Miracle Plays of Mathura</i>. New Haven, Conn.: Yale University Press.</p>
+            <p>—. 1986. A Revolution in Krsnaism: The Cult of Gopala. <i>History of Religions</i> 25(3): 296-317.</p>
+            <p>—. 1987. Lila. In <i>The Encyclopedia of Religion</i>, ed. Mircea Eliade, et al., vol. 8: 550-54. New York: Macmillan.</p>
+            <p>Hospital, Clifford G. 1977. Krsna and the Theology of Play. <i>Studies in Religion/Sciences Religieuses</i> 6(3): 285-91.</p>
+            <p>—. 1980. Līlā in the Bhagavata Purāņa. <i>Purāņa</i> 22(1): 7-8.</p>
+            <p>Kapur, Anuradha. 1990. <i>Actors, Pilgrims, Kings and Gods: The Ramlila at Ramnagar</i>. Calcutta; Seagull Books.</p>
+            <p>Lutgendorf, Philip. 1991. <i>The Life of a Text: Performing the Ramcaritmanas of Tulsidas</i>. Berkeley: University of California Press.</p>
+            <p>Poole, Fitz John Porter. 1986. Metaphors and Maps: Towards Comparison in the Anthropology of Religion. <i>Journal of the American Academy of Religion</i> 54(3): 411-57.</p>
+            <p>Sax, William S. 1990. The Ramnagar Ramlila: Text, Performance, Pilgrimage. <i>History of Religions</i> 30(2): 129-53.</p>
+            <!-- NOTE: The reference section mentions other authors contributing to "this volume" (e.g., Narayanan, Bäumer, Goodwin, McLean, Wulff, Hawley, Kumar, Hiltebeitel). These references are internal to the book this introduction comes from and are not listed in the provided reference list itself. The reference list only contains works cited *within* this introductory text. -->
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proverbs 8-9 (JPS)</title>
+    <style>
+        body {
+            font-family: Georgia, serif; /* Classic serif font */
+            line-height: 1.6;
+            margin: 0; /* Remove default body margin */
+            background-color: #f0f4f8; /* Light blue-grey background */
+            color: #334e68; /* Dark blue-grey text */
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 180px; /* Standard sidebar width */
+            flex-shrink: 0; /* Prevent sidebar from shrinking */
+            background-color: #d9e2ec; /* Lighter blue-grey for nav */
+            border-right: 1px solid #b0c4de; /* Medium blue-grey border */
+            padding: 1.5em 1em;
+            height: 100vh; /* Full viewport height */
+            position: sticky; /* Stick to the top */
+            top: 0;
+            overflow-y: auto; /* Add scroll if content overflows */
+            align-self: flex-start; /* Important for sticky positioning in flex */
+        }
+
+        nav h3 {
+            margin-top: 0;
+            color: #102a43; /* Darkest blue */
+            font-size: 1.1em;
+            border-bottom: 1px solid #486581; /* Medium-dark blue */
+            padding-bottom: 0.3em;
+            font-family: sans-serif; /* Sans-serif for nav heading */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 0.6em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #486581; /* Medium-dark blue */
+            display: block; /* Make the whole area clickable */
+            padding: 0.2em 0;
+            font-size: 0.95em;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #102a43; /* Darkest blue */
+            text-decoration: underline;
+        }
+
+        main {
+            flex-grow: 1; /* Allow main content to take remaining space */
+            padding: 2em 3em; /* Add padding around the main content */
+            max-width: 800px; /* Keep content readable width */
+            margin-left: auto; /* Center the main content area if screen is wide */
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #102a43; /* Darkest blue */
+            border-bottom: 2px solid #102a43;
+            padding-bottom: 0.5em;
+            margin-top: 0; /* Remove default margin */
+            font-size: 28pt;
+            font-family: "Times New Roman", serif; /* Title font */
+        }
+        h2 { /* Chapter Titles */
+            color: #243b53; /* Darker blue */
+            margin-top: 2.5em;
+            border-bottom: 1px solid #486581;
+            padding-bottom: 0.3em;
+            font-size: 18pt;
+            font-weight: bold;
+            page-break-after: avoid;
+            font-family: "Times New Roman", serif;
+        }
+
+        p {
+            margin-bottom: 0.8em;
+            text-align: justify;
+            font-size: 12pt;
+        }
+
+        /* Style for verse paragraphs */
+        .verse {
+            padding-left: 2.5em; /* Indent text */
+            text-indent: -2.5em; /* Hanging indent for verse number */
+            margin-bottom: 0.3em; /* Tighter spacing between verses */
+        }
+
+        .verse-number {
+            font-weight: bold;
+            color: #627d98; /* Medium blue-grey for numbers */
+            margin-right: 0.6em;
+            display: inline-block; /* Keep number and text together */
+            min-width: 1.8em; /* Ensure consistent spacing */
+            text-align: right;
+        }
+
+        .footnote-marker {
+            font-size: 0.8em;
+            vertical-align: super;
+            line-height: 0;
+            color: #486581;
+        }
+
+        /* Basic responsiveness */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                height: auto; /* Auto height */
+                position: static; /* Remove sticky positioning */
+                border-right: none;
+                border-bottom: 1px solid #b0c4de;
+                overflow-y: visible;
+                padding: 1em;
+            }
+             nav ul {
+                display: flex; /* Arrange items horizontally */
+                flex-wrap: wrap; /* Allow wrapping */
+                gap: 1.5em; /* Add space between items */
+                justify-content: center;
+            }
+             nav h3 {
+                 text-align: center;
+                 margin-bottom: 0.5em;
+             }
+             main {
+                padding: 1.5em; /* Adjust padding for smaller screens */
+             }
+             .verse {
+                padding-left: 1.5em; /* Reduce indent on smaller screens */
+                text-indent: -1.5em;
+             }
+             .verse-number {
+                min-width: 1.5em;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#proverbs8"><strong>Proverbs 8</strong></a></li>
+                <li><a href="#proverbs9"><strong>Proverbs 9</strong></a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Proverbs 8-9</h1>
+            <p style="text-align:center; font-style: italic;">JPS Translation</p>
+
+            <section id="proverbs8">
+                <h2>Proverbs 8</h2>
+                <p class="verse"><span class="verse-number">1</span>It is Wisdom calling,<br>
+                    Understanding raising her voice.</p>
+                <p class="verse"><span class="verse-number">2</span>She takes her stand at the topmost heights,<br>
+                    By the wayside, at the crossroads,</p>
+                <p class="verse"><span class="verse-number">3</span>Near the gates at the city entrance;<br>
+                    At the entryways, she shouts,</p>
+                <p class="verse"><span class="verse-number">4</span>“O men, I call to you;<br>
+                    My cry is to all mankind.</p>
+                <p class="verse"><span class="verse-number">5</span>O simple ones, learn shrewdness;<br>
+                    O dullards, instruct your minds.</p>
+                <p class="verse"><span class="verse-number">6</span>Listen, for I speak noble things;<br>
+                    Uprightness comes from my lips;</p>
+                <p class="verse"><span class="verse-number">7</span>My mouth utters truth;<br>
+                    Wickedness is abhorrent to my lips.</p>
+                <p class="verse"><span class="verse-number">8</span>All my words are just,<br>
+                    None of them perverse or crooked;</p>
+                <p class="verse"><span class="verse-number">9</span>All are straightforward to the intelligent man,<br>
+                    And right to those who have attained knowledge.</p>
+                <p class="verse"><span class="verse-number">10</span>Accept my discipline rather than silver,<br>
+                    Knowledge rather than choice gold.</p>
+                <p class="verse"><span class="verse-number">11</span>For wisdom is better than rubies;<br>
+                    No goods can equal her.</p>
+                <p class="verse"><span class="verse-number">12</span>“I, Wisdom, live with Prudence;<br>
+                    I attain knowledge and foresight.</p>
+                <p class="verse"><span class="verse-number">13</span>To fear the LORD is to hate evil;<br>
+                    I hate pride, arrogance, the evil way,<br>
+                    And duplicity in speech.</p>
+                <p class="verse"><span class="verse-number">14</span>Mine are counsel and resourcefulness;<br>
+                    I am understanding; courage is mine.</p>
+                <p class="verse"><span class="verse-number">15</span>Through me kings reign<br>
+                    And rulers decree just laws;</p>
+                <p class="verse"><span class="verse-number">16</span>Through me princes rule,<br>
+                    Great men and all the righteous judges.<span class="footnote-marker">-a</span></p>
+                <p class="verse"><span class="verse-number">17</span>Those who love me I love,<br>
+                    And those who seek me will find me.</p>
+                <p class="verse"><span class="verse-number">18</span>Riches and honor belong to me,<br>
+                    Enduring wealth and success.</p>
+                <p class="verse"><span class="verse-number">19</span>My fruit is better than gold, fine gold,<br>
+                    And my produce better than choice silver.</p>
+                <p class="verse"><span class="verse-number">20</span>I walk on the way of righteousness,<br>
+                    On the paths of justice.</p>
+                <p class="verse"><span class="verse-number">21</span>I endow those who love me with substance;<br>
+                    I will fill their treasuries.</p>
+                <p class="verse"><span class="verse-number">22</span>“The LORD created me at the beginning of His course<br>
+                    As the first of His works of old.</p>
+                <p class="verse"><span class="verse-number">23</span>In the distant past I was fashioned,<br>
+                    At the beginning, at the origin of earth.</p>
+                <p class="verse"><span class="verse-number">24</span>There was still no deep when I was brought forth,<br>
+                    No springs rich in water;</p>
+                <p class="verse"><span class="verse-number">25</span>Before [the foundations of] the mountains were sunk,<br>
+                    Before the hills I was born.</p>
+                <p class="verse"><span class="verse-number">26</span>He had not yet made earth and fields,<br>
+                    Or the world’s first clumps of clay.</p>
+                <p class="verse"><span class="verse-number">27</span>I was there when He set the heavens into place;<br>
+                    When He fixed the horizon upon the deep;</p>
+                <p class="verse"><span class="verse-number">28</span>When He made the heavens above firm,<br>
+                    And the fountains of the deep gushed forth;</p>
+                <p class="verse"><span class="verse-number">29</span>When He assigned the sea its limits,<br>
+                    So that its waters never transgress His command;<br>
+                    When He fixed the foundations of the earth,</p>
+                <p class="verse"><span class="verse-number">30</span>I was with Him as a confidant,<br>
+                    A source of delight every day,<br>
+                    Rejoicing before Him at all times,</p>
+                <p class="verse"><span class="verse-number">31</span>Rejoicing in His inhabited world,<br>
+                    Finding delight with mankind.</p>
+                <p class="verse"><span class="verse-number">32</span>Now, sons, listen to me;<br>
+                    Happy are they who keep my ways.</p>
+                <p class="verse"><span class="verse-number">33</span>Heed discipline and become wise;<br>
+                    Do not spurn it.</p>
+                <p class="verse"><span class="verse-number">34</span>Happy is the man who listens to me,<br>
+                    Coming early to my gates each day,<br>
+                    Waiting outside my doors.</p>
+                <p class="verse"><span class="verse-number">35</span>For he who finds me finds life<br>
+                    And obtains favor from the LORD.</p>
+                <p class="verse"><span class="verse-number">36</span>But he who misses me destroys himself;<br>
+                    All who hate me love death.”</p>
+            </section>
+
+            <section id="proverbs9">
+                <h2>Proverbs 9</h2>
+                <p class="verse"><span class="verse-number">1</span>Wisdom has built her house,<br>
+                    She has hewn her seven pillars.</p>
+                <p class="verse"><span class="verse-number">2</span>She has prepared the feast,<br>
+                    Mixed the wine,<br>
+                    And also set the table.</p>
+                <p class="verse"><span class="verse-number">3</span>She has sent out her maids to announce<br>
+                    On the heights of the town,</p>
+                <p class="verse"><span class="verse-number">4</span>“Let the simple enter here”;<br>
+                    To those devoid of sense she says,</p>
+                <p class="verse"><span class="verse-number">5</span>“Come, eat my food<br>
+                    And drink the wine that I have mixed;</p>
+                <p class="verse"><span class="verse-number">6</span>Give up simpleness and live,<br>
+                    Walk in the way of understanding.”</p>
+                <p class="verse"><span class="verse-number">7</span>To correct a scoffer,<br>
+                    Or rebuke a wicked man for his blemish,<br>
+                    Is to call down abuse on oneself.</p>
+                <p class="verse"><span class="verse-number">8</span>Do not rebuke a scoffer, for he will hate you;<br>
+                    Reprove a wise man, and he will love you.</p>
+                <p class="verse"><span class="verse-number">9</span>Instruct a wise man, and he will grow wiser;<br>
+                    Teach a righteous man, and he will gain in learning.</p>
+                <p class="verse"><span class="verse-number">10</span>The beginning of wisdom is fear of the LORD,<br>
+                    And knowledge of the Holy One is understanding.</p>
+                <p class="verse"><span class="verse-number">11</span>For through me your days will increase,<br>
+                    And years be added to your life.</p>
+                <p class="verse"><span class="verse-number">12</span>If you are wise, you are wise for yourself;<br>
+                    If you are a scoffer, you bear it alone.</p>
+                <p class="verse"><span class="verse-number">13</span>The stupid woman bustles about;<br>
+                    She is simple and knows nothing.</p>
+                <p class="verse"><span class="verse-number">14</span>She sits in the doorway of her house,<br>
+                    Or on a chair at the heights of the town,</p>
+                <p class="verse"><span class="verse-number">15</span>Calling to all the wayfarers<br>
+                    Who go about their own affairs,</p>
+                <p class="verse"><span class="verse-number">16</span>“Let the simple enter here”;<br>
+                    And to those devoid of sense she says,</p>
+                <p class="verse"><span class="verse-number">17</span>“Stolen waters are sweet,<br>
+                    And bread eaten furtively is tasty.”</p>
+                <p class="verse"><span class="verse-number">18</span>He does not know that the shades are there,<br>
+                    That her guests are in the depths of Sheol.</p>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

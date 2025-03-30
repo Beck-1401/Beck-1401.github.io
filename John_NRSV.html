@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gospel According to John (Intro & Ch 1-21)</title>
+    <style>
+        body {
+            font-family: Georgia, serif; /* Serif font for main text */
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f8f9fa; /* Light grey background */
+            color: #212529; /* Dark text color */
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 220px;
+            flex-shrink: 0;
+            background-color: #e9ecef; /* Lighter grey for nav */
+            border-right: 1px solid #ced4da; /* Medium grey border */
+            padding: 1.5em 1em;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            overflow-y: auto;
+            align-self: flex-start;
+        }
+
+        nav h3 {
+            margin-top: 0;
+            color: #003366; /* Dark Blue */
+            font-size: 1.1em;
+            border-bottom: 1px solid #0056b3; /* Medium Blue */
+            padding-bottom: 0.3em;
+            font-family: sans-serif;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 0.6em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0056b3; /* Medium Blue */
+            display: block;
+            padding: 0.2em 0;
+            font-size: 0.95em;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #003366; /* Dark Blue */
+            text-decoration: underline;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 2em 3em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 { /* Gospel Title */
+            text-align: center;
+            color: #003366; /* Dark Blue */
+            border-bottom: 2px solid #003366;
+            padding-bottom: 0.5em;
+            margin-top: 0;
+            margin-bottom: 1.5em;
+            font-size: 28pt;
+            font-family: "Times New Roman", serif;
+        }
+        h2 { /* Chapter Titles */
+            color: #0056b3; /* Medium Blue */
+            margin-top: 2.5em;
+            border-bottom: 1px solid #0056b3;
+            padding-bottom: 0.3em;
+            font-size: 18pt;
+            font-weight: bold;
+            page-break-after: avoid;
+            font-family: "Times New Roman", serif;
+        }
+        h3 { /* Introduction Section Titles */
+            color: #007bff; /* Brighter Blue */
+            margin-top: 1.8em;
+            margin-bottom: 0.8em;
+            font-size: 14pt;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        p {
+            margin-bottom: 1em;
+            text-align: justify;
+            font-size: 12pt;
+        }
+
+        .introduction p {
+             text-align: left; /* Intro paragraphs usually not justified */
+        }
+
+        /* Style for verse paragraphs */
+        .verse {
+            padding-left: 3em; /* Indent text */
+            text-indent: -3em; /* Hanging indent for verse number */
+            margin-bottom: 0.4em; /* Tighter spacing between verses */
+        }
+
+        .verse-number {
+            font-weight: bold;
+            color: #6c757d; /* Medium grey for numbers */
+            margin-right: 0.6em;
+            display: inline-block;
+            min-width: 2.2em;
+            text-align: right;
+        }
+
+        .footnote-marker {
+            font-size: 0.75em;
+            vertical-align: super;
+            line-height: 0;
+            color: #007bff;
+        }
+
+        .commentary {
+            font-size: 10pt;
+            color: #495057; /* Darker grey for commentary */
+            margin-left: 3em;
+            margin-top: -0.2em;
+            margin-bottom: 0.8em;
+            padding-left: 1em;
+            border-left: 2px solid #adb5bd; /* Light grey border */
+            font-style: italic;
+        }
+
+        .page-footer {
+            text-align: right;
+            font-size: 9pt;
+            color: #6c757d;
+            margin-top: 2em;
+            border-top: 1px solid #ced4da;
+            padding-top: 0.5em;
+        }
+
+        .footnote-block {
+            font-size: 10pt;
+            color: #495057;
+            margin-top: 1em;
+            padding-top: 0.5em;
+            border-top: 1px dashed #ced4da;
+        }
+        .footnote-block span {
+            font-weight: bold;
+            margin-right: 0.5em;
+        }
+
+
+        /* Basic responsiveness */
+        @media (max-width: 950px) {
+            .container {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                height: auto;
+                position: static;
+                border-right: none;
+                border-bottom: 1px solid #ced4da;
+                overflow-y: visible;
+                padding: 1em;
+            }
+             nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1em 1.5em;
+                justify-content: center;
+             }
+             nav h3 {
+                 text-align: center;
+                 margin-bottom: 0.5em;
+             }
+             main {
+                padding: 1.5em;
+             }
+             .verse {
+                padding-left: 1.5em;
+                text-indent: -1.5em;
+             }
+             .verse-number {
+                min-width: 1.5em;
+             }
+             .commentary {
+                margin-left: 1.5em;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#john1">Chapter 1</a></li>
+                <li><a href="#john2">Chapter 2</a></li>
+                <li><a href="#john3">Chapter 3</a></li>
+                <li><a href="#john4">Chapter 4</a></li>
+                <li><a href="#john5">Chapter 5</a></li>
+                <li><a href="#john6">Chapter 6</a></li>
+                <li><a href="#john7">Chapter 7</a></li>
+                <li><a href="#john8">Chapter 8</a></li>
+                <li><a href="#john9">Chapter 9</a></li>
+                <li><a href="#john10">Chapter 10</a></li>
+                <li><a href="#john11">Chapter 11</a></li>
+                <li><a href="#john12">Chapter 12</a></li>
+                <li><a href="#john13">Chapter 13</a></li>
+                <li><a href="#john14">Chapter 14</a></li>
+                <li><a href="#john15">Chapter 15</a></li>
+                <li><a href="#john16">Chapter 16</a></li>
+                <li><a href="#john17">Chapter 17</a></li>
+                <li><a href="#john18">Chapter 18</a></li>
+                <li><a href="#john19">Chapter 19</a></li>
+                <li><a href="#john20">Chapter 20</a></li>
+                <li><a href="#john21">Chapter 21</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>THE GOSPEL ACCORDING TO JOHN</h1>
+
+            <section id="introduction" class="introduction">
+                <h2>Introduction</h2>
+
+                <h3>NAME, AUTHORSHIP, AND DATE</h3>
+                <p>The Fourth Gospel is named for John, the son of Zebedee, one of the Twelve (see Mk 1.19; 3.17; etc.), traditionally thought to be its author and identified as the "beloved disciple" repeatedly mentioned in the Gospel. Modern scholars think it was more likely written by a disciple of John. It may have been the "beloved disciple," who is never called John in the Gospel, or someone to whom he dictated it (see Jn 21.24n.). Most scholars date the Gospel to about 90 CE, although some have proposed an earlier date for it, or for an earlier version of it.</p>
+
+                <h3>RELATIONSHIP TO THE SYNOPTIC GOSPELS</h3>
+                <p>The author of the Fourth Gospel was apparently familiar with the earlier Synoptic Gospels or with traditions they contain. It includes sayings of Jesus that resemble some in the Synoptics, and such narratives as Jesus and the money changers in the Temple, Jesus multiplying bread and fish, and Jesus walking on water are found in all four Gospels. Moreover, the narrative structure of the Fourth Gospel in general follows that of the earlier Gospels: the preaching of John the Baptist; preaching and healing by Jesus in Galilee and Judea; journey to Jerusalem to celebrate the Passover; arrest, trial, death, burial, and resurrection there; and appearances of Jesus after the resurrection both in Judea and in Galilee.</p>
+                <p>Within this general framework, however, John is very different in many details and in content. For example, the scene in the Temple, which the Synoptic Gospels place in the week before Jesus' death, appears in John near the beginning of Jesus' ministry (2.13-23). In the Synoptics, the adult Jesus journeys to Jerusalem only once, implying that his ministry lasted less than a year, whereas in John, Jesus makes several journeys to Jerusalem, including three Passovers (2.13; 6.4; 11.55), meaning that his ministry lasted several years. Although there is a Last Supper in John, it is not a Passover meal as in the Synoptic Gospels. Rather, in John the first day of Passover is the day of Jesus' death, when he is symbolically identified as the Passover lamb (see 19.36; cf. 1.29,36), and thus the account of the Last Supper does not include the institution of the Eucharist.</p>
+                <p>Most significant are the differences in content. John has a very high Christology: Jesus is repeatedly identified and identifies himself as divine. Many of Jesus' speeches in the Gospel reflect this perspective, and they have few parallels in the Synoptic tradition.</p>
+
+                <h3>HISTORICAL CONTEXT</h3>
+                <p>The Gospel of John thus seems to represent a relatively late stage in the development of earliest Christian beliefs. Its views have much in common with the other Johannine literature, the Letters of John and the book of Revelation. Although it is no longer thought likely that these works have a single author, they do seem to be the product of a "Johannine school,” which ancient tradition perhaps correctly locates at Ephesus in western Asia Minor at a time when persecution by Roman authorities was becoming more frequent, and conflicts between Gentile Christians and Jewish Christians as well as between Christians in general and Jews were becoming more intense.</p>
+
+                <h3>STYLE, STRUCTURE, AND INTERPRETATION</h3>
+                <p>The audience of John consists of Greek speakers, for many Hebrew words are translated into Greek. The "beloved disciple" is considered the "witness” to the story, presumably written in Ephesus. The author (composer and writer), who differs from the “witness,” displays sophisticated literary and rhetorical abilities. He knows the encomium that praises a person because of origins (geography and generation), education and training, virtuous actions, and noble death. Here we find two encomiums, one praiseworthy and one condemnatory, both arguing from the same topics. Opponents know that Jesus comes from Nazareth of Galilee, an insignificant place; his father is the peasant Joseph; he never studied; as for his actions, he deceives and violates the Law; and he died a death befitting a sinner. But insiders know that his geography is heaven, God's world; his generation, son of a heavenly Father; his education, God's instruction on what to say and do; his actions virtuous (obedience, courage, and justice); and his death noble. Antitheses like these occur regularly as crowds voice contrasting judgments about Jesus, either sinner or saint.</p>
+                <p>The Gospel argues through the rhetorical figure "comparison" the superiority of Jesus to Israel's patriarchs: he is "greater than” Jacob (4.12), Abraham (8.52), and Moses (1.17; 3.13–14; 5.45–47). When Jesus says that "I am (something)," he is claiming superiority over some element of Israelite tradition and ritual as well as of nature. “I am...bread... from heaven" (6.41; not mere manna); "light of the world" (8.12; not mere sunlight); “gate” (10.9; no other broker provides access to God); “noble shepherd" (see 10.11n.; not thieves or bandits); "resurrection and ... life" (11.25; apart from me, death), and “vine” (15.1). Jesus speaks eight statements, each of which begin with a demand "Unless . . .”; these require something be done, either to join the group (3.3,5; 12.24; 13.8) or remain in it (8.24; 15.4). They all demand behavior surpassing Israel's transformative and confirmatory rituals.</p>
+                <p>The following division is suggested by the Gospel itself: the prologue (1.1-18); the book of Jesus' signs that he is the revelation of the Father (1.19-12.50); the book of Jesus' glory as it is revealed to those who accept him through his crucifixion, resurrection, and ascension (13.1-20.31); the epilogue, which contains additional accounts of Jesus' postresurrection appearances and comments on the future of Peter and the “beloved disciple” (21.1-25).</p>
+                <p>The author knows traditional literary forms, such as the shape of a miracle narrative. Commonly noted are (1) the severity of the disease; (2) cure by command or use of spit and mud; (3) proof of the cure; and (4) honor awarded the healer. This form illuminates the structure of many of the "signs," especially 5.1-10; 9.1-11 and 11.38-44. The genre of the "farewell address,” known from both Jewish and Greek literature, structures the discourse in John 14-17. It typically contains (1) notice of death or departure (13.33; 14.2-3,28); (2) review of the person's life (14.32; 17.4-8,18,26); (3) relationships to be maintained (14.3-17; 15.1-17); (4) knowledge and revelations given (14.4-11,20-26; 15.25-26); (5) predictions of forthcoming events (14.29; 15.18-25; 16.1-4,29-22); (6) exhortation to virtue (“believe,” 14.10-11; “love,” 14.21-24; 15.12-17; "abide,” 15.1-10); (7) successor named (14.25-26; 16.7-15); and (8) legacy ("greater works,” 14.12-14; "name of God" bestowed, 17.6,11–12,26; knowledge, 17.3-8).</p>
+                <p>Other patterns appear. Four times people request Jesus to act; he refuses, but shortly thereafter acts positively (2.3-7; 4.47-50; 7.3-10; 11.3-7). Only Jesus knows his "hour," and all actions are of his own choosing, a display of his honor and of control. Conflict, which pervades this Gospel, is expressed in forensic trials, which consist of: person charged; witnesses pro and con; judge; sentence and verdict. All trials occur in Jerusalem (chs 5; 7-11; 18-19) where the elite accuse Jesus of violating the sabbath (5.17; 7.21; 9.16) and blasphemy (5.18; 10.33). Witnesses testify both favorably and critically. The judges, who claim to judge according to the law, judge instead according to appearances (7.24; 8.15). Despite their guilty verdict, they cannot execute sentence, and in time they themselves will be judged.</p>
+                <p>Jesus reveals and conceals. As revealer, he is the Word of God who speaks God's words. But he also conceals in that only insiders hear and know his revelation (e.g., 10.27). Outsiders like Nicodemus barely know the workings of the world of matter and flesh below (see 3.12). In one of the notable patterns here, Jesus uses words with double meanings. Nicodemus must be born “again,” he thinks, but Jesus meant “from above.” The Samaritan woman discusses "water” with Jesus but never realizes that Jesus is not speaking of well water (4.7-15); nor do the disciples understand Jesus' "food" (4.31-34). Some interpret “I am going..." as departure or suicide (7.35; 8.22), not as glorious return to the Father. Jesus hides himself (8.59; 12.36), dissembles with his brothers (7.1-11), speaks in parables (10.1-18) and figures of speech (16.25,29-30). A strategy of mystery and concealment occurs frequently in the pattern of statement, misunderstanding, and clarification. Jesus speaks, but all misunderstand; to insiders he clarifies, but to outsiders, he proves them incapable of understanding (e.g., 3.3-5; 6.51-58; 14.4-6,7-11). Readers appreciate the irony of situations and statements, such as claims by enemies and outsiders to "know" (7.27; 9.29) or the prophecy of Caiaphas (11.48-50).</p>
+                <p>The Gospel discredits the religious authorities, whom it calls "the Jews," by portraying them as mercenary and uncaring shepherds (10.12-13), as haughty and condescending to the people (7.15,49; 9.34), as being more concerned with worldly honor than divine favor (12.43), and as maliciously plotting to kill Jesus (11.53). Although its scathing portrayal of "the Jews" has opened John to charges of anti-Semitism, a careful reading reveals "the Jews" to be a class designation, not a religious or ethnic grouping; rather than denoting adherents to Judaism in general, the term primarily refers to the hereditary Temple religious authorities. The Gospel further acknowledges their influential status by including among “the Jews” those who have accepted the worldview and class interests of the hereditary religious authorities as their own. This larger group includes the Pharisees (1.19,24) and even the "crowd" of laypersons whose worth the religious authorities dismissed (7.49; cf. 6.22,41). Thus the rejection and persecution of Jesus by "the Jews" is shown to be not only the result of his words and deeds, but a result of the fact that his healings, pronouncements, and person lack the pedigree and imprimatur of the governing religious elite (7.15,48-49; cf. 9.34).</p>
+                <p>The Gospel of John celebrates Jesus, albeit differently from the other Gospels. Indeed, Jesus is acclaimed Messiah, Son of God, king of Israel, prophet, and Son of Man. But the author understands Jesus in more elevated terms. For example, in the prologue we learn at once that Jesus is a heavenly figure existing with God before the world was created. Thus he is uncreated in the past and brokers God's creative power. Jesus comes from God, is not merely sent by him, and entered this world, becoming flesh. Jesus, moreover, returns to that heavenly world when God glorifies him, God thus vindicating all that he said and did. This descent-ascent motif permeates the narrative, from beginning (1.1-18; 3.13) to end (13.1-3; 20.18).</p>
+                <p>It is false to claim that Jesus "makes himself" anything, for God makes him equal to himself, especially in terms of creative power (1.1-3; all healings) and eschatological power (5.19-29; 10.17-18; 11.38-44). God gives Jesus his own name, which he in turn gives to the disciples: the name "I AM" in 8.58 (see also 4.26n.; cf. Ex 3.14; Isa 43.10; 46.4) expresses uncreated existence in the past and imperishability in the future. All of Jesus' qualities and endowments serve to make him a superior broker or mediator between God who is patron and the disciples who are clients. Disciples pray always in Jesus' name; God's word and power comes to the world through Jesus. In fact, no one can know or see God except through Jesus. Jesus is the ideal broker because he belongs equally to the patron's world and that of the clients.</p>
+
+                <h3>GUIDE TO READING</h3>
+                <p>The Gospel is best read straight through, but readers may wish to attend to significant aspects such as the signs, the "I am" sayings, and other characteristics noted in this introduction. The Gospel itself claims that its narrative should be viewed in service to a larger goal: "that... you [the reader] may have life" (20.31).</p>
+                <p style="text-align: right; font-style: italic;">- Jerome H. Neyrey</p>
+                <p class="page-footer">NEW TESTAMENT | 1879</p>
+            </section>
+
+            <section id="john1">
+                <h2>JOHN 1</h2>
+                <p class="verse"><span class="verse-number">1</span>In the beginning was the Word, and the Word was with God, and the Word was God.</p>
+                <p class="verse"><span class="verse-number">2</span>He was in the beginning with God.</p>
+                <p class="verse"><span class="verse-number">3</span>All things came into being through him, and without him not one thing came into being.</p>
+                <p class="verse"><span class="verse-number">4</span>What has come into being in him was life,<sup class="footnote-marker">a</sup> and the life was the light of all people.</p>
+                <p class="verse"><span class="verse-number">5</span>The light shines in the darkness, and the darkness did not overcome it.</p>
+                <p class="verse"><span class="verse-number">6</span>There was a man sent from God, whose name was John.</p>
+                <p class="verse"><span class="verse-number">7</span>He came as a witness to testify to the light, so that all might believe through him.</p>
+                <p class="verse"><span class="verse-number">8</span>He himself was not the light, but he came to testify to the light.</p>
+                <p class="verse"><span class="verse-number">9</span>The true light, which enlightens everyone, was coming into the world.<sup class="footnote-marker">b</sup></p>
+                <p class="verse"><span class="verse-number">10</span>He was in the world, and the world came into being through him; yet the world did not know him.</p>
+                <p class="verse"><span class="verse-number">11</span>He came to what was his own,<sup class="footnote-marker">c</sup> and his own people did not accept him.</p>
+                <p class="verse"><span class="verse-number">12</span>But to all who received him, who believed in his name, he gave power to become children of God,</p>
+                <p class="verse"><span class="verse-number">13</span>who were born, not of blood or of the will of the flesh or of the will of man, but of God.</p>
+                <p class="verse"><span class="verse-number">14</span>And the Word became flesh and lived among us, and we have seen his glory, the glory as of a father's only son,<sup class="footnote-marker">a</sup> full of grace and truth.</p>
+                <p class="verse"><span class="verse-number">15</span>(John testified to him and cried out, "This was he of whom I said, 'He who comes after me ranks ahead of me because he was before me.'")</p>
+                <p class="verse"><span class="verse-number">16</span>From his fullness we have all received, grace upon grace.</p>
+                <p class="verse"><span class="verse-number">17</span>The law indeed was given through Moses; grace and truth came through Jesus Christ.</p>
+                <p class="verse"><span class="verse-number">18</span>No one has ever seen God. It is God the only Son,<sup class="footnote-marker">b</sup> who is close to the Father's heart,<sup class="footnote-marker">c</sup> who has made him known.</p>
+                 <div class="footnote-block">
+                    <span>a</span> Or <i>through him. And without him not one thing came into being that has come into being. In him was life</i><br>
+                    <span>b</span> Or <i>He was the true light that enlightens everyone coming into the world</i><br>
+                    <span>c</span> Or <i>to his own home</i>
+                 </div>
+                <div class="commentary">
+                    <p><strong>1.1-18: Prologue.</strong> The Gospel begins with a prologue containing important topics to be developed. Jesus is eternal (uncreated and imperishable); the Word who speaks God's words; the light of the world; the one who faces rejection and acceptance; is compared with Israel's patriarchs; and mediates God's blessings (creation, grace, and truth). Here also is the plot of the story: Jesus begins with God in heaven, sojourns on earth, and returns there (3.13; 6.62; 13.1-3), which appears in the repeated discussion of where Jesus comes from and where he is going. <strong>3:</strong> Jesus as mediator or broker: through him all things were made, and through him come grace and truth (v. 17); later the disciples will address God in his name, that is, through him (14.13–14; 16.26). <strong>5:</strong> The world is hostile to the light and “hates” him (7.7; 15.18-19); this is developed in vv. 10-11, and dramatized in the trials in chs 18-19. <strong>6-8:</strong> In contrast to those rejecting the light, John (the Baptist) acknowledges it, even brokering Jesus to Israel. John's subordination to Jesus is found in 1.15,29-34; 3.27-30. <strong>9:</strong> Jesus, true light of the world (see 8.12). True means "authentic, unique"; cf. "true bread" (6.32); "true vine" (15.1). Disciples walk in light (10.9-10) but many prefer darkness (3.19-20; 12.25-26). <strong>10–11:</strong> The world did not know him (i.e., acknowledge him; see 4.44; 7.1-7); nor did his own (blood relatives and Israel) become disciples. The Word is in a hostile place. <strong>12-13:</strong> But he meets with acceptance and gives believers kinship with him and God. This depends not on birth, circumcision, or adoption, but on acceptance of Jesus and honoring his name. <strong>14:</strong> Along with Heb 2.11,14,17, this is the clearest statement of Jesus' humanity; he not only "came into the world" (1.10) but suffered thirst, weariness, and death. Lived among us, lit., “tented among us,” just as the “glory of the Lord” took up residence in the tent of meeting (Ex 40.34). <strong>15:</strong> John repeats the statement about Jesus' eternity in 1.1-2. Temporally Jesus follows John but existed before John, from the beginning: John's testimony is quoted by anticipation from v. 30. <strong>16-17:</strong> Moses gave the law, the Torah; the comparison of Jesus and Moses inaugurates a pattern, which argues that Jesus was "greater" than Moses (see also 3.14; 5.45-46), Jacob (4.12), and Abraham (8.53).</p>
+                 </div>
+                <p class="verse"><span class="verse-number">19</span>This is the testimony given by John when the Jews sent priests and Levites from Jerusalem to ask him, “Who are you?"</p>
+                <p class="verse"><span class="verse-number">20</span>He confessed and did not deny it, but confessed, “I am not the Messiah.”<sup class="footnote-marker">d</sup></p>
+                <p class="verse"><span class="verse-number">21</span>And they asked him, "What then? Are you Elijah?" He said, “I am not.” “Are you the prophet?" He answered, "No."</p>
+                <p class="verse"><span class="verse-number">22</span>Then they said to him, “Who are you? Let us have an answer for those who sent us. What do you say about yourself?”</p>
+                <p class="verse"><span class="verse-number">23</span>He said, “I am the voice of one crying out in the wilderness, 'Make straight the way of the Lord,” as the prophet Isaiah said.</p>
+                <p class="verse"><span class="verse-number">24</span>Now they had been sent from the Pharisees.</p>
+                <p class="verse"><span class="verse-number">25</span>They asked him, “Why then are you baptizing if you are neither the Messiah,<sup class="footnote-marker">d</sup> nor Elijah, nor the prophet?”</p>
+                <p class="verse"><span class="verse-number">26</span>John answered them, “I baptize with water. Among you stands one whom you do not know,</p>
+                <p class="verse"><span class="verse-number">27</span>the one who is coming after me; I am not worthy to untie the thong of his sandal."</p>
+                <p class="verse"><span class="verse-number">28</span>This took place in Bethany across the Jordan where John was baptizing.</p>
+                <p class="verse"><span class="verse-number">29</span>The next day he saw Jesus coming toward him and declared, “Here is the Lamb of God who takes away the sin of the world!</p>
+                <p class="verse"><span class="verse-number">30</span>This is he of whom I said, ‘After me comes a man who ranks ahead of me because he was before me.'</p>
+                <p class="verse"><span class="verse-number">31</span>I myself did not know him; but I came baptizing with water for this reason, that he might be revealed to Israel.”</p>
+                <p class="verse"><span class="verse-number">32</span>And John testified, “I saw the Spirit descending from heaven like a dove, and it remained on him.</p>
+                <p class="verse"><span class="verse-number">33</span>I myself did not know him, but the one who sent me to baptize with water said to me, 'He on whom you see the Spirit descend and remain is the one who baptizes with the Holy Spirit.'</p>
+                <p class="verse"><span class="verse-number">34</span>And I myself have seen and have testified that this is the Son of God."<sup class="footnote-marker">a</sup></p>
+                <div class="footnote-block">
+                     <span>a</span> Or <i>the Father's only Son</i><br>
+                     <span>b</span> Other ancient authorities read <i>It is an only Son, God,</i> or <i>It is the only Son</i><br>
+                     <span>c</span> Gk <i>bosom</i><br>
+                     <span>d</span> Or <i>the Christ</i><br>
+                     <span>a (vs 34)</span> Other ancient authorities read <i>is God's chosen one</i>
+                 </div>
+                <div class="commentary">
+                     <p><strong>1.19-34: John's testimony to hostile outsiders and receptive insiders.</strong> On John the Baptist, cf. Mt 3.1-17; Mk 1.1-11; Lk 3.1-22. In the Gospel of John, John the Baptist does not actually baptize Jesus. <strong>19-23:</strong> Two groups question John, first priests and Levites, then Pharisees. They do not seek information but attempt to discredit him, with questions acting as weapons. He replies that he is not the Messiah, nor Elijah the prophet (despite Mt 11.14; Mk 9.11-12; cf. Mal 4.5), nor another prophet (cf. Deut 18.15), but rather the one described in Isa 40.3. <strong>19:</strong> The Jews, here, as often in this Gospel, referring to religious authorities in Jerusalem. <strong>24-25:</strong> Pharisees continue the attack, demanding to know why he baptizes. John deflects the attack by talking about the one whom he heralds. <strong>26:</strong> They do not know (cf. v. 10) this honorable person in their midst. <strong>28:</strong> Bethany across the Jordan, an unknown location, but different from the Bethany in 11.18. <strong>29-30:</strong> John also testifies about Jesus to receptive people as Lamb of God, a reference to the Passover lamb (Ex 12), as 19.36 makes explicit; cf. Rev 6.6-14. John admits that he did not know him (1.31,33), but God revealed his son to John (cf. Gal 1.15) that he might testify. <strong>30:</strong> cf. v. 15. <strong>32:</strong> The spirit remained on Jesus, a word repeatedly used in this Gospel and in 1 and 2 John that signals belonging and attachment; not a transitory Spirit, it remains upon Jesus. As in the Synoptic Gospels (see Mk 1.9-11), this vision tells of a spirit descending and a heavenly voice affirming Jesus' status. <strong>34:</strong> John as eyewitness validly testifies that Jesus is the Son of God. John is the first of many such witnesses.</p>
+                 </div>
+                 <p class="verse"><span class="verse-number">35</span>The next day John again was standing with two of his disciples,</p>
+                 <p class="verse"><span class="verse-number">36</span>and as he watched Jesus walk by, he exclaimed, “Look, here is the Lamb of God!"</p>
+                 <p class="verse"><span class="verse-number">37</span>The two disciples heard him say this, and they followed Jesus.</p>
+                 <p class="verse"><span class="verse-number">38</span>When Jesus turned and saw them following, he said to them, "What are you looking for?” They said to him, "Rabbi" (which translated means Teacher), “where are you staying?”</p>
+                 <p class="verse"><span class="verse-number">39</span>He said to them, "Come and see.” They came and saw where he was staying, and they remained with him that day. It was about four o'clock in the afternoon.</p>
+                 <p class="verse"><span class="verse-number">40</span>One of the two who heard John speak and followed him was Andrew, Simon Peter's brother.</p>
+                 <p class="verse"><span class="verse-number">41</span>He first found his brother Simon and said to him, “We have found the Messiah" (which is translated Anointed<sup class="footnote-marker">b</sup>).</p>
+                 <p class="verse"><span class="verse-number">42</span>He brought Simon<sup class="footnote-marker">c</sup> to Jesus, who looked at him and said, "You are Simon son of John. You are to be called Cephas" (which is translated Peter<sup class="footnote-marker">d</sup>).</p>
+                 <p class="verse"><span class="verse-number">43</span>The next day Jesus decided to go to Galilee. He found Philip and said to him, “Follow me.”</p>
+                 <p class="verse"><span class="verse-number">44</span>Now Philip was from Bethsaida, the city of Andrew and Peter.</p>
+                 <p class="verse"><span class="verse-number">45</span>Philip found Nathanael and said to him, “We have found him about whom Moses in the law and also the prophets wrote, Jesus son of Joseph from Nazareth."</p>
+                 <p class="verse"><span class="verse-number">46</span>Nathanael said to him, “Can anything good come out of Nazareth?” Philip said to him, “Come and see.”</p>
+                 <p class="verse"><span class="verse-number">47</span>When Jesus saw Nathanael coming toward him, he said of him, "Here is truly an Israelite in whom there is no deceit!"</p>
+                 <p class="verse"><span class="verse-number">48</span>Nathanael asked him, “Where did you get to know me?” Jesus answered, “I saw you under the fig tree before Philip called you."</p>
+                 <p class="verse"><span class="verse-number">49</span>Nathanael replied, “Rabbi, you are the Son of God! You are the King of Israel!”</p>
+                 <p class="verse"><span class="verse-number">50</span>Jesus answered, “Do you believe because I told you that I saw you under the fig tree? You will see greater things than these."</p>
+                 <p class="verse"><span class="verse-number">51</span>And he said to him, “Very truly, I tell you,<sup class="footnote-marker">e</sup> you will see heaven opened and the angels of God ascending and descending upon the Son of Man.”</p>
+                <div class="footnote-block">
+                     <span>b</span> Or <i>Christ</i><br>
+                     <span>c</span> Gk <i>him</i><br>
+                     <span>d</span> From the word for rock in Aramaic (<i>kepha</i>) and Greek (<i>petra</i>), respectively<br>
+                     <span>e</span> Both instances of the Greek word for <i>you</i> in this verse are plural
+                 </div>
+                 <div class="commentary">
+                    <p><strong>1.35-51: Recruitment of the first disciples.</strong> <strong>35-37:</strong> John's testimony about the Lamb of God (see 29-30n.) serves to recruit the first disciples. <strong>38-39:</strong> They come to Jesus, asking where he was staying (“remaining”), and they "remain" with him. <strong>40-42:</strong> The pattern repeats: a disciple tells another about Jesus (the Messiah), bringing him to Jesus. Jesus accepts this recruit by assigning him a new name. Hebrew and Aramaic words are translated: Messiah (i.e., Anointed) and Cephas (i.e., Peter, both mean “rock”), also "Rabbi" (i.e., "Teacher”; v. 38). The Greek-speaking audience of the Gospel seems not to know these languages. <strong>43-44:</strong> The scene shifts from Judea to Galilee, in the north. Philip's recruiter is not named; inasmuch as he comes from Bethsaida, the city of Andrew and Peter, on the northwestern shore of the Sea of Galilee, their network helps to recruit him. <strong>45-46:</strong> The recruitment pattern again but with a twist: told that Jesus was the one about whom Moses ... and also the prophets wrote, Nathanael challenges Philip by noting the low status of Nazareth, Jesus' hometown, in southern Galilee. He typifies others who judge by appearances, denying that Jesus can be Messiah because of the insignificance of Nazareth or Galilee (7.40-43). But Nathanael perseveres, which distinguishes him from outsiders who judge by appearance. <strong>47:</strong> Jesus honors Nathanael, setting him apart from those who judge falsely. How can Jesus know him? He reads and knows the minds and hearts of others (2.24-25; Mk 2.8). <strong>48:</strong> Several Rabbinic texts equate gathering figs with studying Torah, suggesting Nathanael's status as student. <strong>49:</strong> Nathanael's confession climaxes the various labels that believers proclaim: Jesus is “Lamb of God," "Messiah" and "the one of whom Moses and the prophets wrote," and Son of God... King of Israel. This remarkable insight comes from a militant unbeliever. <strong>50:</strong> Greater things, probably the series of signs beginning immediately at Cana in ch 2. <strong>51:</strong> Jesus promises a theophany to all of them: they will see the Son of Man (cf. 3.13-15n.; Dan 7.13), who first descends from heaven's center, then re-ascends to it, with angels streaming toward him from all directions (cf. Gen 28.12). This vision is realized when he ascends "to my God and your God" (20.18), thus returning to the glory he had before the world was made (17.5).</p>
+                 </div>
+                <p class="page-footer">1880-1884 | NEW TESTAMENT</p>
+             </section>
+
+            <!-- Chapters 2-7 content would go here, following the same structure -->
+            <section id="john2"><h2>JOHN 2</h2><p>...</p></section>
+            <section id="john3"><h2>JOHN 3</h2><p>...</p></section>
+            <section id="john4"><h2>JOHN 4</h2><p>...</p></section>
+            <section id="john5"><h2>JOHN 5</h2><p>...</p></section>
+            <section id="john6"><h2>JOHN 6</h2><p>...</p></section>
+            <section id="john7"><h2>JOHN 7</h2><p>...</p></section>
+
+
+             <section id="john8">
+                 <h2>JOHN 8</h2>
+                 <p class="verse"><span class="verse-number">1</span>[<sup class="footnote-marker">c</sup>while Jesus went to the Mount of Olives.</p>
+                 <p class="verse"><span class="verse-number">2</span>Early in the morning he came again to the temple. All the people came to him and he sat down and began to teach them.</p>
+                 <p class="verse"><span class="verse-number">3</span>The scribes and the Pharisees brought a woman who had been caught in adultery; and making her stand before all of them,</p>
+                 <p class="verse"><span class="verse-number">4</span>they said to him, "Teacher, this woman was caught in the very act of committing adultery.</p>
+                 <p class="verse"><span class="verse-number">5</span>Now in the law Moses commanded us to stone such women. Now what do you say?”</p>
+                 <p class="verse"><span class="verse-number">6</span>They said this to test him, so that they might have some charge to bring against him. Jesus bent down and wrote with his finger on the ground.</p>
+                 <p class="verse"><span class="verse-number">7</span>When they kept on questioning him, he straightened up and said to them, “Let anyone among you who is without sin be the first to throw a stone at her."</p>
+                 <p class="verse"><span class="verse-number">8</span>And once again he bent down and wrote on the ground.<sup class="footnote-marker">a</sup></p>
+                 <p class="verse"><span class="verse-number">9</span>When they heard it, they went away, one by one, beginning with the elders; and Jesus was left alone with the woman standing before him.</p>
+                 <p class="verse"><span class="verse-number">10</span>Jesus straightened up and said to her, “Woman, where are they? Has no one condemned you?"</p>
+                 <p class="verse"><span class="verse-number">11</span>She said, “No one, sir.”<sup class="footnote-marker">b</sup> And Jesus said, "Neither do I condemn you. Go your way, and from now on do not sin again.”]</p>
+                 <div class="commentary">
+                     <p><strong>8.1-11: Jesus and the adulteress.</strong> <strong>1:</strong> This story is absent in major manuscripts. <strong>3-6:</strong> Opponents test Jesus, citing the law (Deut 22.23-24) and its punishment. <strong>7:</strong> Jesus' challenge is answered: only the sinless may stone her. <strong>9:</strong> Sinful opponents put to shame. <strong>10–11:</strong> Unlike his challengers, Jesus does not condemn her.</p>
+                 </div>
+                 <p class="verse"><span class="verse-number">12</span>Again Jesus spoke to them, saying, “I am the light of the world. Whoever follows me will never walk in darkness but will have the light of life.”</p>
+                 <p class="verse"><span class="verse-number">13</span>Then the Pharisees said to him, "You are testifying on your own behalf; your testimony is not valid.”</p>
+                 <p class="verse"><span class="verse-number">14</span>Jesus answered, “Even if I testify on my own behalf, my testimony is valid because I know where I have come from and where I am going, but you do not know where I come from or where I am going.</p>
+                 <p class="verse"><span class="verse-number">15</span>You judge by human standards;<sup class="footnote-marker">d</sup> I judge no one.</p>
+                 <p class="verse"><span class="verse-number">16</span>Yet even if I do judge, my judgment is valid; for it is not I alone who judge, but I and the Father<sup class="footnote-marker">e</sup> who sent me.</p>
+                 <p class="verse"><span class="verse-number">17</span>In your law it is written that the testimony of two witnesses is valid.</p>
+                 <p class="verse"><span class="verse-number">18</span>I testify on my own behalf, and the Father who sent me testifies on my behalf."</p>
+                 <p class="verse"><span class="verse-number">19</span>Then they said to him, “Where is your Father?” Jesus answered, “You know neither me nor my Father. If you knew me, you would know my Father also.”</p>
+                 <p class="verse"><span class="verse-number">20</span>He spoke these words while he was teaching in the treasury of the temple, but no one arrested him, because his hour had not yet come.</p>
+                 <div class="commentary">
+                    <p><strong>8.12-20: The feast of Tabernacles, continued.</strong> <strong>12:</strong> Jesus claims to replace the rain (7.37-38) and sunlight (8.12) for which Israel prayed. <strong>13-14:</strong> The trial is resumed: Jesus' testimony is declared invalid; but because Jesus knows his origin and destination, i.e., his authorization, it is valid. <strong>15–16:</strong> They judge by appearances (7.24). Jesus does not but does judge because God stands with him (5.22,27). <strong>17-18:</strong> Two valid witnesses (see Deut 19.15): Jesus and the Father who sent him. <strong>19:</strong> Know means to acknowledge or honor. <strong>20:</strong> Jesus in public space (cf. 18.20).</p>
+                 </div>
+                 <p class="verse"><span class="verse-number">21</span>Again he said to them, “I am going away, and you will search for me, but you will die in your sin. Where I am going, you cannot come."</p>
+                 <p class="verse"><span class="verse-number">22</span>Then the Jews said, “Is he going to kill himself? Is that what he means by saying, 'Where I am going, you cannot come'?”</p>
+                 <p class="verse"><span class="verse-number">23</span>He said to them, “You are from below, I am from above; you are of this world, I am not of this world.</p>
+                 <p class="verse"><span class="verse-number">24</span>I told you that you would die in your sins, for you will die in your sins unless you believe that I am he.”<sup class="footnote-marker">f</sup></p>
+                 <p class="verse"><span class="verse-number">25</span>They said to him, "Who are you?” Jesus said to them, “Why do I speak to you at all?<sup class="footnote-marker">g</sup></p>
+                 <p class="verse"><span class="verse-number">26</span>I have much to say about you and much to condemn; but the one who sent me is true, and I declare to the world what I have heard from him."</p>
+                 <p class="verse"><span class="verse-number">27</span>They did not understand that he was speaking to them about the Father.</p>
+                 <p class="verse"><span class="verse-number">28</span>So Jesus said, "When you have lifted up the Son of Man, then you will realize that I am he,<sup class="footnote-marker">f</sup> and that I do nothing on my own, but I speak these things as the Father instructed me.</p>
+                 <p class="verse"><span class="verse-number">29</span>And the one who sent me is with me; he has not left me alone, for I always do what is pleasing to him."</p>
+                 <p class="verse"><span class="verse-number">30</span>As he was saying these things, many believed in him.</p>
+                 <div class="commentary">
+                    <p><strong>8.21-30: Jesus judges.</strong> <strong>21-25:</strong> Jesus' topic statement contains four points: Going away may imply suicide; search for me, “attempt to kill”; die in your sins, sentence for failing to keep my law (see 4.26n.;7.19,25; 8.58–59); you cannot come, because they belong to irreconcilable worlds (see 3.5-8). <strong>28:</strong> Lifted up, either lifting Jesus on the cross or his glorious return to heaven. I am he, lit., “I am,” the name of God in Ex 3.14; here, a being who is both eternal in the past and imperishable in the future.</p>
+                 </div>
+                 <p class="verse"><span class="verse-number">31</span>Then Jesus said to the Jews who had believed in him, “If you continue in my word, you are truly my disciples;</p>
+                 <p class="verse"><span class="verse-number">32</span>and you will know the truth, and the truth will make you free."</p>
+                 <p class="verse"><span class="verse-number">33</span>They answered him, “We are descendants of Abraham and have never been slaves to anyone. What do you mean by saying, 'You will be made free'?"</p>
+                 <p class="verse"><span class="verse-number">34</span>Jesus answered them, “Very truly, I tell you, everyone who commits sin is a slave to sin.</p>
+                 <p class="verse"><span class="verse-number">35</span>The slave does not have a permanent place in the household; the son has a place there forever.</p>
+                 <p class="verse"><span class="verse-number">36</span>So if the Son makes you free, you will be free indeed.</p>
+                 <p class="verse"><span class="verse-number">37</span>I know that you are descendants of Abraham; yet you look for an opportunity to kill me, because there is no place in you for my word.</p>
+                 <p class="verse"><span class="verse-number">38</span>I declare what I have seen in the Father's presence; as for you, you should do what you have heard from the Father.”<sup class="footnote-marker">a</sup></p>
+                 <p class="verse"><span class="verse-number">39</span>They answered him, “Abraham is our father." Jesus said to them, “If you were Abraham's children,<sup class="footnote-marker">b</sup> you would be doing what Abraham did,</p>
+                 <p class="verse"><span class="verse-number">40</span>but now you are trying to kill me, a man who has told you the truth that I heard from God. This is not what Abraham did.</p>
+                 <p class="verse"><span class="verse-number">41</span>You are indeed doing what your father does." They said to him, “We are not illegitimate children; we have one father, God himself."</p>
+                 <p class="verse"><span class="verse-number">42</span>Jesus said to them, “If God were your Father, you would love me, for I came from God and now I am here. I did not come on my own, but he sent me.</p>
+                 <p class="verse"><span class="verse-number">43</span>Why do you not understand what I say? It is because you cannot accept my word.</p>
+                 <p class="verse"><span class="verse-number">44</span>You are from your father the devil, and you choose to do your father's desires. He was a murderer from the beginning and does not stand in the truth, because there is no truth in him. When he lies, he speaks according to his own nature, for he is a liar and the father of lies.</p>
+                 <p class="verse"><span class="verse-number">45</span>But because I tell the truth, you do not believe me.</p>
+                 <p class="verse"><span class="verse-number">46</span>Which of you convicts me of sin? If I tell the truth, why do you not believe me?</p>
+                 <p class="verse"><span class="verse-number">47</span>Whoever is from God hears the words of God. The reason you do not hear them is that you are not from God."</p>
+                 <p class="verse"><span class="verse-number">48</span>The Jews answered him, “Are we not right in saying that you are a Samaritan and have a demon?"</p>
+                 <p class="verse"><span class="verse-number">49</span>Jesus answered, “I do not have a demon; but I honor my Father, and you dishonor me.</p>
+                 <p class="verse"><span class="verse-number">50</span>Yet I do not seek my own glory; there is one who seeks it and he is the judge.</p>
+                 <p class="verse"><span class="verse-number">51</span>Very truly, I tell you, whoever keeps my word will never see death.”</p>
+                 <p class="verse"><span class="verse-number">52</span>The Jews said to him, “Now we know that you have a demon. Abraham died, and so did the prophets; yet you say, 'Whoever keeps my word will never taste death.'</p>
+                 <p class="verse"><span class="verse-number">53</span>Are you greater than our father Abraham, who died? The prophets also died. Who do you claim to be?”</p>
+                 <p class="verse"><span class="verse-number">54</span>Jesus answered, “If I glorify myself, my glory is nothing. It is my Father who glorifies me, he of whom you say, 'He is our God,'</p>
+                 <p class="verse"><span class="verse-number">55</span>though you do not know him. But I know him; if I would say that I do not know him, I would be a liar like you. But I do know him and I keep his word.</p>
+                 <p class="verse"><span class="verse-number">56</span>Your ancestor Abraham rejoiced that he would see my day; he saw it and was glad."</p>
+                 <p class="verse"><span class="verse-number">57</span>Then the Jews said to him, “You are not yet fifty years old, and have you seen Abraham?"<sup class="footnote-marker">c</sup></p>
+                 <p class="verse"><span class="verse-number">58</span>Jesus said to them, “Very truly, I tell you, before Abraham was, I am.”</p>
+                 <p class="verse"><span class="verse-number">59</span>So they picked up stones to throw at him, but Jesus hid himself and went out of the temple.</p>
+                 <div class="footnote-block">
+                    <span>a</span> Other ancient authorities add <i>the sins of each of them</i><br>
+                    <span>b</span> Or <i>Lord</i><br>
+                    <span>c</span> The most ancient authorities lack 7.53–8.11; other authorities add the passage here or after 7.36 or after 21.25 or after Luke 21.38, with variations of text; some mark the passage as doubtful.<br>
+                    <span>d</span> Gk <i>according to the flesh</i><br>
+                    <span>e</span> Other ancient authorities read <i>he</i><br>
+                    <span>f</span> Gk <i>I am</i><br>
+                    <span>g</span> Or <i>What I have told you from the beginning</i><br>
+                    <span>a (v38)</span> Other ancient authorities read <i>you do what you have heard from your father</i><br>
+                    <span>b (v39)</span> Other ancient authorities read <i>If you are Abraham's children, then do</i><br>
+                    <span>c (v57)</span> Other ancient authorities read <i>has Abraham seen you?</i>
+                 </div>
+                 <div class="commentary">
+                    <p><strong>8.31-59: Exposing lies.</strong> <strong>31-32:</strong> As judge, Jesus examines their testimony according to his criterion for true discipleship. <strong>31:</strong> Believed in him, it is unclear whether this is genuine or a deception. <strong>33:</strong> Abraham had two sons, Ishmael (slave) and Isaac (free); their claim that Isaac was their father is proven false. <strong>34-36:</strong> Slaves of sin (Ishmael) do not remain in the house, but free sons (Isaac) do (Gen 21.9-14). <strong>37:</strong> They are children of Ishmael, sinners trying to kill Jesus. The criterion “continue in my word” (v. 31) is verified: There is no place in you for my word. <strong>38-42:</strong> Abraham did not try to kill heavenly messengers at Mamre (Gen 18.1-9). Masking their illegitimacy, they lie, claiming God as father. But if he were, they would do what their Father does, love Jesus. <strong>43:</strong> The criterion repeated. <strong>44:</strong> Their paternity is revealed: the devil, a murderer, and a liar, like them. <strong>48:</strong> Samaritan, not one of us; see 4.4n. Have a demon, not of God. <strong>49-50:</strong> Denial of demon charge because Jesus honors God and God honors him. <strong>51-52:</strong> Jesus says "never see death,” which they misunderstand as "never taste death." <strong>54-55:</strong> God makes Jesus who he is, but they do not know God; Jesus does not lie, for he knows God and keeps his word. <strong>56-58:</strong> Jesus is "greater" than Abraham (v. 53) because Abraham came into being and died but Jesus as divine (I am; see 8.28.) is uncreated and imperishable. <strong>59:</strong> Trying to stone Jesus, they prove their guilt.</p>
+                 </div>
+                <p class="page-footer">1885-1897 | NEW TESTAMENT</p>
+             </section>
+
+             <section id="john9">
+                 <h2>JOHN 9</h2>
+                 <p class="verse"><span class="verse-number">1</span>As he walked along, he saw a man blind from birth.</p>
+                 <p class="verse"><span class="verse-number">2</span>His disciples asked him, “Rabbi, who sinned, this man or his parents, that he was born blind?"</p>
+                 <p class="verse"><span class="verse-number">3</span>Jesus answered, “Neither this man nor his parents sinned; he was born blind so that God's works might be revealed in him.</p>
+                 <p class="verse"><span class="verse-number">4</span>We<sup class="footnote-marker">a</sup> must work the works of him who sent me<sup class="footnote-marker">b</sup> while it is day; night is coming when no one can work.</p>
+                 <p class="verse"><span class="verse-number">5</span>As long as I am in the world, I am the light of the world.”</p>
+                 <p class="verse"><span class="verse-number">6</span>When he had said this, he spat on the ground and made mud with the saliva and spread the mud on the man's eyes,</p>
+                 <p class="verse"><span class="verse-number">7</span>saying to him, “Go, wash in the pool of Siloam” (which means Sent). Then he went and washed and came back able to see.</p>
+                 <p class="verse"><span class="verse-number">8</span>The neighbors and those who had seen him before as a beggar began to ask, “Is this not the man who used to sit and beg?"</p>
+                 <p class="verse"><span class="verse-number">9</span>Some were saying, “It is he.” Others were saying, “No, but it is someone like him." He kept saying, "I am the man.”</p>
+                 <p class="verse"><span class="verse-number">10</span>But they kept asking him, “Then how were your eyes opened?"</p>
+                 <p class="verse"><span class="verse-number">11</span>He answered, “The man called Jesus made mud, spread it on my eyes, and said to me, 'Go to Siloam and wash.' Then I went and washed and received my sight.”</p>
+                 <p class="verse"><span class="verse-number">12</span>They said to him, “Where is he?" He said, “I do not know."</p>
+                 <p class="verse"><span class="verse-number">13</span>They brought to the Pharisees the man who had formerly been blind.</p>
+                 <p class="verse"><span class="verse-number">14</span>Now it was a sabbath day when Jesus made the mud and opened his eyes.</p>
+                 <p class="verse"><span class="verse-number">15</span>Then the Pharisees also began to ask him how he had received his sight. He said to them, "He put mud on my eyes. Then I washed, and now I see.”</p>
+                 <p class="verse"><span class="verse-number">16</span>Some of the Pharisees said, "This man is not from God, for he does not observe the sabbath.” But others said, “How can a man who is a sinner perform such signs?" And they were divided.</p>
+                 <p class="verse"><span class="verse-number">17</span>So they said again to the blind man, "What do you say about him? It was your eyes he opened." He said, “He is a prophet.”</p>
+                 <p class="verse"><span class="verse-number">18</span>The Jews did not believe that he had been blind and had received his sight until they called the parents of the man who had received his sight</p>
+                 <p class="verse"><span class="verse-number">19</span>and asked them, “Is this your son, who you say was born blind? How then does he now see?"</p>
+                 <p class="verse"><span class="verse-number">20</span>His parents answered, “We know that this is our son, and that he was born blind;</p>
+                 <p class="verse"><span class="verse-number">21</span>but we do not know how it is that now he sees, nor do we know who opened his eyes. Ask him; he is of age. He will speak for himself.”</p>
+                 <p class="verse"><span class="verse-number">22</span>His parents said this because they were afraid of the Jews; for the Jews had already agreed that anyone who confessed Jesus<sup class="footnote-marker">c</sup> to be the Messiah<sup class="footnote-marker">d</sup> would be put out of the synagogue.</p>
+                 <p class="verse"><span class="verse-number">23</span>Therefore his parents said, “He is of age; ask him."</p>
+                 <p class="verse"><span class="verse-number">24</span>So for the second time they called the man who had been blind, and they said to him, “Give glory to God! We know that this man is a sinner."</p>
+                 <p class="verse"><span class="verse-number">25</span>He answered, “I do not know whether he is a sinner. One thing I do know, that though I was blind, now I see.”</p>
+                 <p class="verse"><span class="verse-number">26</span>They said to him, “What did he do to you? How did he open your eyes?”</p>
+                 <p class="verse"><span class="verse-number">27</span>He answered them, “I have told you already, and you would not listen. Why do you want to hear it again? Do you also want to become his disciples?"</p>
+                 <p class="verse"><span class="verse-number">28</span>Then they reviled him, saying, “You are his disciple, but we are disciples of Moses.</p>
+                 <p class="verse"><span class="verse-number">29</span>We know that God has spoken to Moses, but as for this man, we do not know where he comes from."</p>
+                 <p class="verse"><span class="verse-number">30</span>The man answered, “Here is an astonishing thing! You do not know where he comes from, and yet he opened my eyes.</p>
+                 <p class="verse"><span class="verse-number">31</span>We know that God does not listen to sinners, but he does listen to one who worships him and obeys his will.</p>
+                 <p class="verse"><span class="verse-number">32</span>Never since the world began has it been heard that anyone opened the eyes of a person born blind.</p>
+                 <p class="verse"><span class="verse-number">33</span>If this man were not from God, he could do nothing.”</p>
+                 <p class="verse"><span class="verse-number">34</span>They answered him, "You were born entirely in sins, and are you trying to teach us?” And they drove him out.</p>
+                 <p class="verse"><span class="verse-number">35</span>Jesus heard that they had driven him out, and when he found him, he said, “Do you believe in the Son of Man?”<sup class="footnote-marker">a</sup></p>
+                 <p class="verse"><span class="verse-number">36</span>He answered, “And who is he, sir?<sup class="footnote-marker">b</sup> Tell me, so that I may believe in him.”</p>
+                 <p class="verse"><span class="verse-number">37</span>Jesus said to him, “You have seen him, and the one speaking with you is he."</p>
+                 <p class="verse"><span class="verse-number">38</span>He said, “Lord,<sup class="footnote-marker">b</sup> I believe.” And he worshiped him.</p>
+                 <p class="verse"><span class="verse-number">39</span>Jesus said, “I came into this world for judgment so that those who do not see may see, and those who do see may become blind.”</p>
+                 <p class="verse"><span class="verse-number">40</span>Some of the Pharisees near him heard this and said to him, “Surely we are not blind, are we?”</p>
+                 <p class="verse"><span class="verse-number">41</span>Jesus said to them, "If you were blind, you would not have sin. But now that you say, 'We see,' your sin remains.</p>
+                 <div class="footnote-block">
+                    <span>a</span> Other ancient authorities read <i>I</i><br>
+                    <span>b</span> Other ancient authorities read <i>us</i><br>
+                    <span>c</span> Gk <i>him</i><br>
+                    <span>d</span> Or <i>the Christ</i><br>
+                    <span>a (v35)</span> Other ancient authorities read <i>the Son of God</i><br>
+                    <span>b (v36, 38)</span> <i>Sir</i> and <i>Lord</i> translate the same Greek word
+                 </div>
+                 <div class="commentary">
+                    <p><strong>9.1-41: A sign, trial, and testimony.</strong> <strong>1-12: The healing.</strong> <strong>1-3:</strong> Human explanations for blindness are rejected; now it reveals God's works. <strong>4-5:</strong> Day includes sunlight and light of the world (8.12). <strong>6-7:</strong> As a cure Jesus uses saliva and mud (cf. Mk 8.23), then commands washing. Pool, cf. 5.1-9. Siloam, an ancient pool in Jerusalem (see 2 Kings 20.20). <strong>9.13-34: Jesus tried in absentia.</strong> <strong>13-17:</strong> The man whose sight had been restored repeats the facts and interprets them: Jesus is a prophet (see 6.14). <strong>18–23:</strong> To prove whether he was born blind, his parents testify affirmatively that their son was born blind, but they refuse to speak about the healer and the cure because they fear reprisals for witnessing to Jesus (see 12.42-43). <strong>24-27:</strong> Jesus is now on trial. The healed man mocks their demand to repeat the facts of the case, already narrated twice: Will hearing it again make them disciples? <strong>30-33:</strong> Their judgment is judged: if Jesus were not from God, he could do nothing. <strong>34:</strong> The disciples attributed blindness to sin (9.2); now the court judges the man to be a sinner. His fate is that which his parents feared: expulsion from the synagogue. <strong>9.35-41: Final verdicts.</strong> Jesus vindicates the man by leading him into greater believing. He knows that the Son of Man is Jesus; his knowledge becomes belief. Ironically, Jesus makes the blind see and the sighted blind (see 12.40). Physical blindness is morally neutral, not so false claims to sight.</p>
+                 </div>
+                 <p class="page-footer">1897-1899 | NEW TESTAMENT</p>
+             </section>
+
+             <!-- Chapters 10-21 content would go here, following the same structure -->
+            <section id="john10"><h2>JOHN 10</h2><p>...</p></section>
+            <section id="john11"><h2>JOHN 11</h2><p>...</p></section>
+            <section id="john12"><h2>JOHN 12</h2><p>...</p></section>
+            <section id="john13"><h2>JOHN 13</h2><p>...</p></section>
+            <section id="john14"><h2>JOHN 14</h2><p>...</p></section>
+            <section id="john15"><h2>JOHN 15</h2><p>...</p></section>
+            <section id="john16"><h2>JOHN 16</h2><p>...</p></section>
+            <section id="john17"><h2>JOHN 17</h2><p>...</p></section>
+            <section id="john18"><h2>JOHN 18</h2><p>...</p></section>
+            <section id="john19"><h2>JOHN 19</h2><p>...</p></section>
+            <section id="john20"><h2>JOHN 20</h2><p>...</p></section>
+            <section id="john21"><h2>JOHN 21</h2><p>...</p></section>
+
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upanishad Excerpts - Mahavakya-s</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0; /* Remove default body margin */
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 220px; /* Fixed width for sidebar */
+            flex-shrink: 0; /* Prevent sidebar from shrinking */
+            background-color: #f0f0f0;
+            border-right: 1px solid #ccc;
+            padding: 1.5em 1em;
+            height: 100vh; /* Full viewport height */
+            position: sticky; /* Stick to the top */
+            top: 0;
+            overflow-y: auto; /* Add scroll if content overflows */
+            align-self: flex-start; /* Important for sticky positioning in flex */
+        }
+
+        nav h3 {
+            margin-top: 0;
+            color: #8B4513; /* SaddleBrown */
+            font-size: 1.1em;
+            border-bottom: 1px solid #CD853F;
+            padding-bottom: 0.3em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul ul {
+            padding-left: 1em; /* Indent sub-lists */
+            margin-top: 0.3em;
+        }
+
+        nav li {
+            margin-bottom: 0.6em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #A0522D; /* Sienna */
+            display: block; /* Make the whole area clickable */
+            padding: 0.2em 0;
+            font-size: 0.95em;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #D2691E; /* Chocolate */
+            text-decoration: underline;
+        }
+
+        main {
+            flex-grow: 1; /* Allow main content to take remaining space */
+            padding: 2em 3em; /* Add padding around the main content */
+            max-width: 800px; /* Keep content readable width */
+            margin-left: auto; /* Center the main content area if screen is wide */
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8B4513; /* SaddleBrown */
+            border-bottom: 2px solid #8B4513;
+            padding-bottom: 0.5em;
+            margin-top: 0; /* Remove default margin */
+        }
+        h2 {
+            color: #A0522D; /* Sienna */
+            margin-top: 2em;
+            border-bottom: 1px solid #A0522D;
+            padding-bottom: 0.3em;
+        }
+        h3 {
+            color: #CD853F; /* Peru */
+            margin-top: 1.5em;
+        }
+        h4 {
+            color: #D2691E; /* Chocolate */
+            margin-top: 1em;
+            font-style: italic;
+        }
+        p {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+        .verse-number {
+            font-weight: bold;
+            color: #666;
+            margin-right: 0.5em;
+        }
+        .translator-note {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 1em;
+            display: block; /* Ensure it takes its own line */
+        }
+        .analysis-section dt {
+            font-weight: bold;
+            margin-top: 0.5em;
+        }
+        .analysis-section dd {
+            margin-left: 2em;
+            margin-bottom: 0.5em;
+        }
+        .analysis-section ul {
+            list-style-type: disc;
+            margin-left: 2em;
+        }
+        blockquote {
+            margin-left: 2em;
+            font-style: italic;
+            color: #444;
+            border-left: 3px solid #ccc;
+            padding-left: 1em;
+        }
+        .translation-separator {
+            margin-top: 2em;
+            margin-bottom: 1em;
+            border-top: 1px dashed #ccc;
+        }
+
+        /* Basic responsiveness */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                height: auto; /* Auto height */
+                position: static; /* Remove sticky positioning */
+                border-right: none;
+                border-bottom: 1px solid #ccc;
+                overflow-y: visible;
+                padding: 1em;
+            }
+             nav ul {
+                display: flex; /* Arrange items horizontally */
+                flex-wrap: wrap; /* Allow wrapping */
+                gap: 1em; /* Add space between items */
+            }
+             nav ul ul {
+                 display: none; /* Hide sub-menus on small screens for simplicity */
+             }
+             nav h3 {
+                 text-align: center;
+                 margin-bottom: 0.5em;
+             }
+             main {
+                padding: 1.5em; /* Adjust padding for smaller screens */
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#brihadaranyaka"><strong>Bṛhadāraṇyaka Upaniṣad</strong></a>
+                    <ul>
+                        <li><a href="#brihadaranyaka-1-4">Section I.4</a></li>
+                        <li><a href="#brihadaranyaka-2-3">Section II.3</a></li>
+                        <li><a href="#brihadaranyaka-2-4">Section II.4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#chandogya"><strong>Chandogya Upaniṣad</strong></a>
+                    <ul>
+                        <li><a href="#chandogya-6">Chapter 6</a></li>
+                        <li><a href="#chandogya-6-1">Section 6.1</a></li>
+                        <li><a href="#chandogya-6-8">Section 6.8</a></li>
+                        <li><a href="#chandogya-6-9">Section 6.9</a></li>
+                        <li><a href="#chandogya-6-10">Section 6.10</a></li>
+                        <li><a href="#chandogya-6-11">Section 6.11</a></li>
+                        <li><a href="#chandogya-6-12">Section 6.12</a></li>
+                        <li><a href="#chandogya-6-13">Section 6.13</a></li>
+                        <li><a href="#chandogya-6-14">Section 6.14</a></li>
+                        <li><a href="#chandogya-6-15">Section 6.15</a></li>
+                        <li><a href="#chandogya-6-16">Section 6.16</a></li>
+                    </ul>
+                </li>
+                <li><a href="#aitareya"><strong>Aitareya Upanishad</strong></a>
+                    <ul>
+                        <li><a href="#aitareya-3">Chapter 3</a></li>
+                        <li><a href="#aitareya-analysis">Analysis</a></li>
+                    </ul>
+                </li>
+                <li><a href="#mandukya"><strong>Māṇḍūkya Upaniṣad</strong></a>
+                     <ul>
+                        <li><a href="#mandukya-bannon">Bannon Tr.</a></li>
+                        <li><a href="#mandukya-gpt4">GPT-4 Tr.</a></li>
+                    </ul>
+               </li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Mahavakya-s</h1>
+            <p style="text-align: center; font-style: italic;">Selected Upanishad Texts</p>
+
+            <section id="brihadaranyaka">
+                <h2>Bṛhadāraṇyaka Upaniṣad</h2>
+
+                <article id="brihadaranyaka-1-4">
+                    <h3>Bṛhadāraṇyaka Upaniṣad I.4</h3>
+                    <span class="translator-note">(translated by Olivelle with edits by Brad Bannon)</span>
+
+                    <p><span class="verse-number">1.4.1</span> In the beginning this world was just a single Self (<i>ātman</i>) shaped like a man. He looked around and saw nothing but himself. The first thing he said was, “Here I am!” and from that the name “I” came into being. Therefore, even today when you call someone, he first says, “It’s I,” and then states whatever other name he may have. That first being received the name “man” (<i>puruṣa</i>), because ahead (<i>pūrva</i>) of all this he burnt up (<i>uṣ</i>) all evils. When someone knows this, he burns up anyone who may try to get ahead of him.</p>
+                    <p><span class="verse-number">2</span> That first being became afraid; therefore, one becomes afraid when one is alone. Then he thought to himself: “Of what should I be afraid, when there is no one but me?” So his fear left him, for what was he going to be afraid of? One is, after all, afraid of another.</p>
+                    <p><span class="verse-number">3</span> He found no pleasure at all; so one finds no pleasure when one is alone. He wanted to have a companion. Now he was as large as a man and a woman in close embrace. So he split (<i>pat</i>) his body into two, giving rise to husband (<i>pati</i>) and wife (<i>patnī</i>). Surely this is why Yājñavalkya used to say: “The two of us are like two halves of a block.” The space here, therefore, is completely filled by the woman. He copulated with her, and from their union human beings were born.</p>
+                    <p><span class="verse-number">4</span> She then thought to herself: “After begetting me from his own body (<i>ātman</i>), how could he copulate with me? I know-I’ll hide myself.” So she became a cow. But he became a bull and again copulated with her. From their union cattle were born. Then she became a mare, and he a stallion; she became a female donkey, and he, a male donkey. And again he copulated with her, and from their union one-hoofed animals were born. Then she became a female goat, and he, a male goat; she became a ewe, and he, a ram. And again he copulated with her, and from their union goats and sheep were born. In this way, they created every male and female pair that exists, down to the very ants.</p>
+                    <p><span class="verse-number">5</span> It then occurred to him: “I alone am the creation, for I created all this.” From this “creation” came into being. Anyone who knows this prospers in this creation of his.</p>
+                    <p><span class="verse-number">6</span> Then he churned like this and, using his hands, produced fire from his mouth as from a vagina. As a result, the inner sides of both these–the hands and the mouth–are without hair, for the inside of the vagina is without hair. “Sacrifice to this god. Sacrifice to that god”–people do say these things, but in reality each of these gods is his own creation, for he himself is all these gods. From his semen, then, he created all that is moist here, which is really Soma. Food and eater–that is the extent of this whole world. Food is simply Soma, and the eater is fire. This is brahman’s super-creation. It is a super-creation because he created the gods, who are superior to him, and, being a mortal himself, he created the immortals. Anyone who knows this stands within this super-creation of his.</p>
+                    <p><span class="verse-number">7</span> At that time this world was without real distinctions; it was distinguished simply in terms of name and form—”He is so and so by name and has this sort of form.” So even today this world is distinguished simply in terms of name and form, as when we say, “He is so and so by name and has this sort of an appearance.” Penetrating this body up to the very nail-tips, he remains there like a razor within a case or a termite within a termite-hill. People do not see him, for he is incomplete as he comes to be called breath when he is breathing, speech when he is speaking, sight when he is seeing, hearing when he is hearing, and mind when he is thinking. These are only the names of his various activities. A man who considers him to be any one of these does not understand him, for he is incomplete within any one of these. One should consider them as simply his self (<i>ātman</i>), for in it all these become one. This same self (<i>ātman</i>) is the trail to this entire world, for by following it one comes to know this entire world, just as by following their tracks one finds [the cattle]. Whoever knows this finds fame and glory.</p>
+                    <p><span class="verse-number">8</span> This innermost thing, this self (<i>ātman</i>)–it is dearer than a son, it is dearer than wealth, it is dearer than everything else. If a man claims that something other than his self is dear to him, and someone were to tell him that he will lose what he holds dear, that is liable to happen. So a man should regard only his self as dear to him. When a man regards only his self as dear to him, what he holds dear will never perish.</p>
+                    <p><span class="verse-number">9</span> Now, the question is raised: “Since people think that they will become the Whole by knowing brahman, what did brahman know that enabled it to become the Whole?”</p>
+                    <p><span class="verse-number">10</span> In the beginning this world was only brahman, and it knew only itself (<i>ātman</i>), thinking: “I am brahman.” As a result, it became the Whole. Among the gods, likewise, whosoever realized this, only they became the Whole. It was the same also among the seers and among humans. Upon seeing this very point, the seer Vamadeva proclaimed: “I was Manu, and I was the sun.” This is true even now. If a man knows “I am brahman” in this way, he becomes this whole world. Not even the gods are able to prevent it, for he becomes their very self (<i>ātman</i>). So when a man venerates another deity, thinking, “He is one, and I am another,” he does not understand. As livestock is for men, so is he for the gods. As having a lot of livestock is useful to a man, so each man proves useful to the gods. The loss of even a single head of livestock is painful; how much more if many are lost. The gods, therefore, are not pleased at the prospect of men coming to understand this.</p>
+                    <p><span class="verse-number">11</span> In the beginning this world was only brahman, only one. Because it was only one, brahman had not fully developed (or: evolved/unfolded). It then unfolded as the ruling power, a form superior to and surpassing itself, that is, the ruling powers among the gods—Indra, Varuṇa, Soma, Rudra, Parjanya, Yama, Mṛtyu, and Īśāna. Hence there is nothing higher than the ruling power. Accordingly, at a royal anointing a Brahmin pays homage to a Kṣatriya by prostrating himself. He extends this honor only to the ruling power. Now, the priestly power (<i>brahman</i>) is the womb of the ruling power. Therefore, even if a king should rise to the summit of power, it is to the priestly power that he returns in the end as to his own womb. So, one who hurts the latter harms his own womb and becomes so much the worse for harming someone better than him.</p>
+                    <p><span class="verse-number">12</span> Brahman still did not become fully developed (or: evolved/unfolded). So it created the Vaiśya class, that is, the types of gods who are listed in groups—Vasus, Rudras, Ādityas, All­gods, and Maruts.</p>
+                    <p><span class="verse-number">13</span> It still did not become fully developed (or: evolved/unfolded). So it created the Śūdra class, that is, Pūshan. Now, Pūshan is this very earth, for it nourishes this whole world, it nourishes all that exists.</p>
+                    <p><span class="verse-number">14</span> It still did not become fully developed (or: evolved/unfolded), so it created the Law (<i>dharma</i>), a form superior to and surpassing itself. And the Law is here the ruling power standing above the ruling power. Hence there is nothing higher than the Law. Therefore, a weaker man makes demands of a stronger man by appealing to the Law, just as one does by appealing to a king. Now, the Law is nothing but the Truth. Therefore, when a man speaks the Truth, people say that he speaks the Law; and when a man speaks the Law, people say that he speaks the Truth. They are really the same thing.</p>
+                    <p><span class="verse-number">15</span> So there came to be the priestly power, the ruling power, the Vaiśya class, and the Śūdra class. Among the gods the priestly power (<i>brahman</i>) came into being only in the form of fire, and among humans as a Brahmin; it further became a Kṣatriya in the form of a Kṣatriya, a Vaisya in the form of a Vaisya, and a Śūdra in the form of a Śūdra. In the fire, therefore, people seek to find a world for themselves among the gods, and in the Brahmin a world among humans, for brahman came into being in these two forms. If someone were to depart from this world without perceiving his own world, it will be of no use to him as it remains unknown to him, just like the Veda that is not recited or a rite that is left undone. If a man who does not know this performs even a grand and holy rite, it is sure to fade away after his death. It is his self (<i>ātman</i>) alone that a man should venerate as his world. And if someone venerates his self alone as his world, that rite of his will never fade away, because from his very self he will produce whatever he desires.</p>
+                    <p><span class="verse-number">16</span> Now, this self (<i>ātman</i>) is a world for all beings. So, when he makes offerings and sacrifices, he becomes thereby a world for the gods. When he recites the Vedas, he becomes thereby a world for the seers. When he offers libations to his ancestors and seeks to father offspring, he becomes thereby a world for his ancestors. When he provides food and shelter to human beings, he becomes thereby a world for human beings. When he procures fodder and water for livestock, he becomes thereby a world for livestock. When creatures, from wild animals and birds down to the very ants, find shelter in his houses, he becomes thereby a world for them. Just as a man desires the well-being of his own world, so all beings desire the well-being of anyone who knows this. All this is known and has been thoroughly examined.</p>
+                    <p><span class="verse-number">17</span> In the beginning, this world was only the self (<i>ātman</i>), only one. He had this desire: “I wish I had a wife so I could father offspring. I wish I had wealth so I could perform rites.” That is the full extent of desire; one does not get anything more, even if one desires it. So even today when one is single, one has the desire: “I wish I had a wife so I could father offspring. I wish I had wealth so I could perform rites.” As long as someone has not obtained either of these, he considers himself to be utterly incomplete. Now, this is his completeness—his mind is himself (<i>ātman</i>); his speech is his wife; his breath is his offspring; his sight is his human wealth, for people find wealth with their sight, while his hearing is his divine wealth, for people hear it with their hearing; and his body (<i>ātman</i>) is his rites, for one performs rites with one’s body. This is the fivefold sacrifice—the sacrificial animal is fivefold, the human being is fivefold, and this whole world, whatever there is, is fivefold. Anyone who knows this obtains this whole world.</p>
+                </article>
+
+                <article id="brihadaranyaka-2-3">
+                    <h3>Brihadaranyaka Upanishad II.3</h3>
+                    <span class="translator-note">(translated by Patrick Olivelle with edits by Brad Bannon)</span>
+
+                    <p><span class="verse-number">2.3.1</span> There are, indeed, two visible appearances (<i>rupa</i>) of brahman—the one has a fixed shape, and the other is without a fixed shape; the one is mortal, and the other is immortal; the one is stationary, and the other is in motion; the one is Sat, and the other is Tyam.</p>
+                    <p><span class="verse-number">2</span> The one with a fixed shape consists of everything other than air and the intermediate region; it is mortal and stationary; and it is Sat. That which gives warmth is the essence of the one that has a fixed shape, that is mortal and stationary, and that is Sat—for it is the essence of Sat.</p>
+                    <p><span class="verse-number">3</span> The one without a fixed shape, on the other hand, consists of air and the intermediate region; it is immortal and in motion; and it is Tyam. The person within the sun's orb is the essence of the one that is without a fixed shape, that is immortal and in motion, and that is Tyam—for he is the essence of Tyam.</p>
+                    <p>That was with reference to the divine sphere.</p>
+                    <p><span class="verse-number">4</span> The following is with reference to the body (atman).</p>
+                    <p>The one with a fixed shape is this body itself insofar as it is distinct from breath and the space within the body; it is mortal and stationary; and it is Sat. The eye is the essence of the one that has a fixed shape, that is mortal and stationary, and that is Sat—for it is the essence of Sat.</p>
+                    <p><span class="verse-number">5</span> The one without a fixed shape, on the other hand, consists of breath and the space within the body; it is immortal and in motion; and it is Tyam. The person within the right eye is the essence of the one that is without a fixed shape, that is immortal and in motion, and that is Tyam—for he is the essence of Tyam.</p>
+                    <p><span class="verse-number">6</span> Now, the visible appearance of this person is like a golden cloth, or white wool, or a red bug, or a flame, or a white lotus, or a sudden flash of lightning. And when a man knows this, his splendor unfolds like a sudden flash of lightning. Here, then, is the rule of substitution: “not—, not—,” (<i>neti neti</i>) for there is nothing beyond this “not.”</p>
+                    <p>And this is the name—“the real behind the real,” for the real consists of the vital functions, and he is the real behind the vital functions.</p>
+                </article>
+
+                <article id="brihadaranyaka-2-4">
+                    <h3>Brihadaranyaka Upanishad II.4</h3>
+                    <span class="translator-note">(translated by Patrick Olivelle with edits by Brad Bannon)</span>
+
+                    <p><span class="verse-number">2.4.1</span> “Maitreyi!” Yajnavalkya once said. “Look—I am about to depart from this place. So come, let me make a settlement between you and Katyayani.”</p>
+                    <p><span class="verse-number">2</span> Maitreyi asked in reply: “If I were to possess the entire world filled with wealth, sir, would it make me immortal?” “No,” said Yajnavalkya, “it will only permit you to live the life of a wealthy person. Through wealth one cannot expect immortality.”</p>
+                    <p><span class="verse-number">3</span> “What is the point in getting something that will not make me immortal?” retorted Maitreyi. “Tell me instead, sir, all that you know.”</p>
+                    <p><span class="verse-number">4</span> Yajnavalkya said in reply: “You have always been very dear to me, and now you speak something very dear to me! Come and sit down. I will explain it to you. But while I am explaining, try to concentrate.”</p>
+                    <p><span class="verse-number">5</span> Then he spoke:</p>
+                    <blockquote>
+                        <p>“One holds a husband dear, you see, not out of love for the husband; rather, it is out of love for the Self (<i>ātman</i>) that one holds a husband dear.</p>
+                        <p>One holds a wife dear not out of love for the wife; rather, it is out of love for the Self (<i>ātman</i>) that one holds a wife dear.</p>
+                        <p>One holds children dear not out of love for the children; rather, it is out of love for the Self (<i>ātman</i>) that one holds children dear.</p>
+                        <p>One holds wealth dear not out of love for wealth; rather, it is out of love for the Self (<i>ātman</i>) that one holds wealth dear.</p>
+                        <p>One holds the priestly power dear not out of love for the priestly power; rather, it is out of love for the Self (<i>ātman</i>) that one holds the priestly power dear.</p>
+                        <p>One holds the royal power dear not out of love for the royal power; rather, it is out of love for the Self (<i>ātman</i>) that one holds the royal power dear.</p>
+                        <p>One holds the worlds dear not out of love for the worlds; rather, it is out of love for the Self (<i>ātman</i>) that one holds the worlds dear.</p>
+                        <p>One holds the gods dear not out of love for the gods; rather, it is out of love for the Self (<i>ātman</i>) that one holds the gods dear.</p>
+                        <p>One holds beings dear not out of love for beings; rather, it is out of love for the Self (<i>ātman</i>) that one holds beings dear.</p>
+                        <p>One holds the Whole dear not out of love for the Whole; rather, it is out of love for the Self (<i>ātman</i>) that one holds the Whole dear.</p>
+                        <p>“You see, Maitreyi—it is the Self (<i>ātman</i>) which one should see and hear, and on which one should reflect and concentrate. For by seeing and hearing (<i>sravana</i>) the Self (<i>ātman</i>), and by reflecting (<i>manana</i>) and meditating (<i>nididyasana</i>) on the Self (<i>ātman</i>), one gains the knowledge of this whole world.”</p>
+                    </blockquote>
+                    <p><span class="verse-number">6</span> “May the priestly power forsake anyone who considers the priestly power to reside in something other than his self (<i>ātman</i>). May the royal power forsake anyone who considers the royal power to reside in something other than his self (<i>ātman</i>). May the gods forsake anyone who considers the gods to reside in something other than his self (<i>ātman</i>). May beings forsake anyone who considers beings to reside in something other than his self (<i>ātman</i>). May the Whole forsake anyone who considers the Whole to reside in something other than his self (<i>ātman</i>).</p>
+                    <p>“All these—the priestly power, the royal power, worlds, gods, beings, the Whole—all of that is nothing but this self (<i>ātman</i>).”</p>
+                    <p><span class="verse-number">7</span> “It is like this. When a drum is being beaten, you cannot catch the external sounds; you catch them only by getting hold of the drum or the man beating that drum.</p>
+                    <p><span class="verse-number">8</span> Or when a conch is being blown, you cannot catch the external sounds; you catch them only by getting hold of the conch or the man blowing that conch.</p>
+                    <p><span class="verse-number">9</span> Or when a lute is being played, you cannot catch the external sounds; you catch them only by getting hold of the lute or the man playing that lute.”</p>
+                    <p><span class="verse-number">10</span> “It is like this: As clouds of smoke billow from a fire lit with damp fuel, so indeed the Rg-Veda, Yajur-Veda, Sama-Veda, the Atharva-Angirasa, histories, ancient tales, sciences, hidden teachings (<i>upanishads</i>), verses (<i>mantras</i>), aphorisms, explanations, and glosses—all these are the exhalation of this Immense Being. And they are the inhalation of that very Being.”</p>
+                    <p><span class="verse-number">11</span> “It is like this: As the ocean is the point of convergence of all the waters, so the skin is the point of convergence of all sensations of touch; the nostrils, of all odors; the tongue, of all tastes; sight, of all visible appearances; hearing, of all sounds; the mind, of all thoughts; the heart, of all sciences; the hands, of all activities; the sexual organ, of all pleasures; the anus, of all excretions; the feet, of all travels; and speech, of all the Vedas.”</p>
+                    <p><span class="verse-number">12</span> “It is like this: When a chunk of salt is thrown in water, it dissolves into that very water, and it cannot be picked up in any way. Yet, from whichever place one may take a sip, the salt is there! In the same way this Immense Being has no limit or boundary and is a single lump of experience (<i>vijnāna-ghana</i>). It arises out of and together with these beings and disappears after them—so I say, after death there is no cognition (<i>saṃjñā</i>).”</p>
+                    <p>After Yajnavalkya said this,</p>
+                    <p><span class="verse-number">13</span> Maitreyi exclaimed: “Now, sir, you have totally confused me by saying, ‘after death there is no awareness.’” He replied:</p>
+                    <p>“Look, I haven’t said anything confusing; this body, you see, has the capacity to perceive.</p>
+                    <p><span class="verse-number">14</span> For when there is a duality of some kind, then the one can smell the other, the one can see the other, the one can hear the other, the one can greet the other, the one can think of the other, and the one can perceive the other. When, however, the Whole has become one’s very self (<i>ātman</i>), then who is there for one to smell and by what means? Who is there for one to see and by what means? Who is there for one to hear and by what means? Who is there for one to greet and by what means? Who is there for one to think of and by what means? Who is there for one to perceive and by what means?</p>
+                    <p>“By what means can one perceive him by means of whom one perceives this whole world? Look:</p>
+                    <p>By what means can one perceive the perceiver?”</p>
+                </article>
+            </section>
+
+            <section id="chandogya">
+                <h2>Chandogya Upanishad</h2>
+
+                <article id="chandogya-6">
+                    <h3>Chapter 6</h3>
+
+                    <h4 id="chandogya-6-1">Section 1</h4>
+                    <p><span class="verse-number">1.</span> Shvetaketu Aruneya (Shvetaketu, son of Aruna) was (living at home). His father said to him, "Shvetaketu, go and live as a student of sacred knowledge. Indeed, my dear boy, in our family, no one is merely a 'relative of a Brahmin' (<i>brahmabandhu</i>) without having studied sacred knowledge."</p>
+                    <p><span class="verse-number">2.</span> Having gone (to a teacher) at the age of twelve, he returned at the age of twenty-four, having studied all the Vedas, conceited, thinking himself learned, and arrogant. His father said to him:</p>
+                    <p><span class="verse-number">3.</span> "Shvetaketu, my dear boy, since you are so conceited, thinking yourself learned, and arrogant, did you ask about that instruction, by which what is unheard becomes heard, what is unthought becomes thought, and what is unknown becomes known?"</p>
+                    <p>(Shvetaketu replied:) "How, venerable sir, can that instruction be?"</p>
+                    <p><span class="verse-number">4.</span> (Uddalaka said:) "Just as, my dear boy, by knowing a single lump of clay, all that is made of clay is known. The modification is only a verbal designation, a name. The truth is, it is 'clay'."</p>
+                    <p><span class="verse-number">5.</span> "Just as, my dear boy, by knowing a single piece of gold, all that is made of gold is known. The modification is only a verbal designation, a name. The truth is, it is 'gold'."</p>
+                    <p><span class="verse-number">6.</span> "Just as, my dear boy, by knowing a single nail-parer, all that is made of iron is known. The modification is only a verbal designation, a name. The truth is, it is 'iron.' So, my dear boy, is that instruction."</p>
+                    <p><span class="verse-number">7.</span> "Surely," said Shvetaketu, "those venerable teachers did not know this, for if they had known it, why would they not have told me? But you, venerable sir, please tell me." "So be it, my dear boy," said Uddalaka.</p>
+
+                    <h4>[…]</h4>
+
+                    <h4 id="chandogya-6-8">Section 8</h4>
+                    <p><span class="verse-number">1.</span> Uddalaka Haruni said to his son Shvetaketu: “My dear, understand from me the nature of sleep. When a person is said to be asleep, he has become one with Sat (Being). He has gone into his own (<i>Svam</i>), therefore people say he sleeps (<i>Svapiti</i>). He has gone into his own (<i>Svam</i>).”</p>
+                    <p><span class="verse-number">2.</span> “As a bird tied to a string flies in every direction, and finding no resting-place elsewhere, settles down at the very place where it is tied, so also, my dear, the mind, flying in every direction, and finding no resting-place elsewhere, settles down in the Prana (life-force); for the mind is tied to Prana.”</p>
+                    <p><span class="verse-number">3.</span> “Understand from me, my dear, the nature of hunger and thirst. When a person is said to be hungry, water is leading away what has been eaten. Just as a cow-herd is called a leader of cows, a horse-herd is called a leader of horses, and a man is called a leader of men, so also, water is called the leader of food. Know, my dear, that this body is a sprout that has sprung up; it would not have sprung up without a root.”</p>
+                    <p><span class="verse-number">4.</span> “And where could its root be but in food? In the same way, my dear, look for food as the root in water, for water as the root in fire, and for fire as the root in Being (Sat). All these creatures, my dear, have their root in Being, they dwell in Being, they rest in Being.”</p>
+                    <p><span class="verse-number">5.</span> “And when a person is said to be thirsty, fire is leading away what has been drunk. Just as a cow-herd is called a leader of cows, a horse-herd is called a leader of horses, and a man is called a leader of men, so also, fire is called the leader of water. Know, my dear, that this body is a sprout that has sprung up; it would not have sprung up without a root.”</p>
+                    <p><span class="verse-number">6.</span> “And where could its root be but in water? In the same way, my dear, look for water as the root in fire, for fire as the root in Being (Sat). All these creatures, my dear, have their root in Being, they dwell in Being, they rest in Being. In the same way, my dear, as these three deities, reaching the human being, become each of them threefold; that has already been said before. When a person departs from here, his speech is merged in the mind, his mind in the Prana (life-force), his Prana in fire, and the fire in Sat (Being).”</p>
+                    <p><span class="verse-number">7.</span> "That which is the finest essence – this whole world has that as its soul. That is Truth. That is the Self (Atman). <strong>You are that, Shvetaketu!</strong>"</p>
+                    <p>"Venerable sir, please explain this to me further," said Shvetaketu.</p>
+                    <p>"So be it, my dear boy," said Uddalaka.</p>
+
+                    <h4 id="chandogya-6-9">Section 9</h4>
+                    <p><span class="verse-number">1.</span> "My dear boy, as bees make honey by collecting the essences from different trees, and reduce all those essences into one honey,"</p>
+                    <p><span class="verse-number">2.</span> "And as these (essences) do not have any discrimination there, so that they might say, ‘I am the essence of this tree, I am the essence of that tree,’ even so, indeed, my dear boy, all these creatures, when they have merged in Being (Sat), know it not that they have merged in Being.”</p>
+                    <p><span class="verse-number">3.</span> "Whatever they are in this world, whether tiger, lion, wolf, boar, worm, fly, gnat, or mosquito, that they become again and again.”</p>
+                    <p><span class="verse-number">4.</span> "That which is the finest essence – this whole world has that as its soul. That is Truth. That is the Self (Atman). <strong>You are that, Shvetaketu!</strong>"</p>
+                    <p>"Venerable sir, please explain this to me further," said Shvetaketu.</p>
+                    <p>"So be it, my dear boy," said Uddalaka.</p>
+
+                    <h4 id="chandogya-6-10">Section 10</h4>
+                    <p><span class="verse-number">1.</span> "My dear boy, these rivers flow, the eastern ones to the east, the western ones to the west. They arise from the ocean, and go to the ocean. They become the ocean itself. And as there they do not know, ‘I am this one, I am that one,’"</p>
+                    <p><span class="verse-number">2.</span> "Even so, indeed, my dear boy, all these creatures, when they have come back from Being (Sat), know it not that they have come back from Being. Whatever they are in this world, whether tiger, lion, wolf, boar, worm, fly, gnat, or mosquito, that they become again and again.”</p>
+                    <p><span class="verse-number">3.</span> "That which is the finest essence – this whole world has that as its soul. That is Truth. That is the Self (Atman). <strong>You are that, Shvetaketu!</strong>"</p>
+                    <p>"Venerable sir, please explain this to me further," said Shvetaketu.</p>
+                    <p>"So be it, my dear boy," said Uddalaka.</p>
+
+                    <h4 id="chandogya-6-11">Section 11</h4>
+                    <p><span class="verse-number">1.</span> “If someone were to strike at the root of this large tree, it would bleed but still live. If someone were to strike in the middle, it would bleed but still live. If someone were to strike at the top, it would bleed but still live. Being pervaded by the living Self (<i>Jivatman</i>), it stands firm, drinking in its nourishment and rejoicing.”</p>
+                    <p><span class="verse-number">2.</span> “If the life (<i>Jiva</i>) leaves one of its branches, that branch withers. If it leaves a second branch, that branch withers. If it leaves a third branch, that branch withers. If it leaves the whole tree, the whole tree withers away. Know this, my dear,” said Uddalaka.</p>
+                    <p><span class="verse-number">3.</span> "Truly, this body dies when it is without the life (<i>Jiva</i>), but the life does not die. That which is the finest essence – this whole world has that as its soul. That is Truth. That is the Self (Atman). <strong>You are that, Shvetaketu!</strong>"</p>
+                    <p>"Venerable sir, please explain this to me further," said Shvetaketu.</p>
+                    <p>"So be it, my dear boy," said Uddalaka.</p>
+
+                    <h4 id="chandogya-6-12">Section 12</h4>
+                    <p><span class="verse-number">1.</span> "Bring a fruit of the nyagrodha tree," Uddalaka said.</p>
+                    <p>"Here it is, venerable sir," said Shvetaketu.</p>
+                    <p>"Break it open," said Uddalaka.</p>
+                    <p>"It is broken open, venerable sir," said Shvetaketu.</p>
+                    <p>"What do you see there?" said Uddalaka.</p>
+                    <p>"These seeds, almost like specks," said Shvetaketu.</p>
+                    <p>"Break one of them open," said Uddalaka.</p>
+                    <p>"It is broken open, venerable sir," said Shvetaketu.</p>
+                    <p>"What do you see there?" said Uddalaka.</p>
+                    <p>"Nothing, venerable sir," said Shvetaketu.</p>
+                    <p><span class="verse-number">2.</span> Uddalaka said to him, "My dear boy, that finest essence which you do not perceive – from that finest essence this great nyagrodha tree has sprung up. Believe me, my dear boy."</p>
+                    <p><span class="verse-number">3.</span> "That which is the finest essence – this whole world has that as its soul. That is Truth. That is the Self (Atman). <strong>You are that, Shvetaketu!</strong>"</p>
+                    <p>"Venerable sir, please explain this to me further," said Shvetaketu.</p>
+                    <p>"So be it, my dear boy," said Uddalaka.</p>
+
+                    <h4 id="chandogya-6-13">Section 13</h4>
+                    <p><span class="verse-number">1.</span> “Put this salt in water, and then come to me in the morning.” Then he did so. Uddalaka said to him, “Bring me the salt that you put in the water last night.” Then he groped for it, but could not find it, as it had dissolved.</p>
+                    <p><span class="verse-number">2.</span> "Take a sip from this side," Uddalaka said. "How does it taste?" "Salty." "Take a sip from the middle," Uddalaka said. "How does it taste?" "Salty." "Take a sip from that side," Uddalaka said. "How does it taste?" "Salty." "Throw it away and come to me." He did so; yet the salt remained. Uddalaka said to him, “Here also, in this body, you do not perceive the Being (Sat), my dear; but it is there nonetheless."</p>
+                    <p><span class="verse-number">3.</span> "That which is the finest essence – this whole world has that as its soul. That is Truth. That is the Self (Atman). <strong>You are that, Shvetaketu!</strong>"</p>
+                    <p>"Venerable sir, please explain this to me further," said Shvetaketu.</p>
+                    <p>"So be it, my dear boy," said Uddalaka.</p>
+
+                    <h4 id="chandogya-6-14">Section 14</h4>
+                    <p><span class="verse-number">1.</span> "Just as, my dear boy, someone might bring a man from the region of Gandhara with his eyes bound, and leave him in a deserted place. He would wander east, north, south, and west because his eyes were bound; he was brought with his eyes bound and left with his eyes bound."</p>
+                    <p><span class="verse-number">2.</span> "Then someone might loosen the binding from his eyes and tell him, 'In that direction is Gandhara; go in that direction.' Asking his way from village to village, he would reach Gandhara, instructed and intelligent. So also, in this world, one who has a teacher (<i>acharya</i>) knows (the truth). For him, there is only delay until he is freed (from the body); then he will attain perfection."</p>
+                    <p><span class="verse-number">3.</span> "That which is the finest essence – this whole world has that as its soul. That is Truth. That is the Self (Atman). <strong>You are that, Shvetaketu!</strong>"</p>
+                    <p>"Venerable sir, please explain this to me further," said Shvetaketu.</p>
+                    <p>"So be it, my dear boy," said Uddalaka.</p>
+
+                    <h4 id="chandogya-6-15">Section 15</h4>
+                    <p><span class="verse-number">1.</span> "My dear boy, when a person is near death, his relatives gather around him and ask, 'Do you recognize me? Do you recognize me?' As long as his speech is not merged in the mind, the mind in the Prana, the Prana in fire, and the fire in the Supreme Divinity, so long he knows."</p>
+                    <p><span class="verse-number">2.</span> "But when his speech is merged in the mind, the mind in the Prana, the Prana in fire, and the fire in the Supreme Divinity, then he does not know."</p>
+                    <p><span class="verse-number">3.</span> "That which is the finest essence – this whole world has that as its soul. That is Truth. That is the Self (Atman). <strong>You are that, Shvetaketu!</strong>"</p>
+                    <p>"Venerable sir, please explain this to me further," said Shvetaketu.</p>
+                    <p>"So be it, my dear boy," said Uddalaka.</p>
+
+                    <h4 id="chandogya-6-16">Section 16</h4>
+                    <p><span class="verse-number">1.</span> "My dear boy, they bring a man seized by the hand, (saying) 'He has taken something; he has committed theft. Heat the ax for him.' If he is the doer of that (the theft), then he makes himself untrue. Being attached to untruth, he covers himself with untruth and seizes the heated ax. He is burned, and then he is killed.”</p>
+                    <p><span class="verse-number">2.</span> “But if he is not the doer of that (the theft), then he makes himself true. Being attached to truth, he covers himself with truth and seizes the heated ax. He is not burned, and then he is released.”</p>
+                    <p><span class="verse-number">3.</span> "Just as he is not burned there, so also, my dear boy, this whole world has That as its soul. That is the Truth. That is the Self (Atman). <strong>You are that, Shvetaketu!</strong>"</p>
+                    <p>Then he (Shvetaketu) understood it (the truth); indeed, he understood it.</p>
+
+                </article>
+            </section>
+
+            <section id="aitareya">
+                <h2>Aitareya Upanishad</h2>
+
+                <article id="aitareya-3">
+                    <h3>Chapter 3</h3>
+                    <p><span class="verse-number">[1]</span> Which is this Self (Atman) that we worship? Which one is that Self? Is it that by which one sees, by which one hears, by which one smells fragrances, by which one articulates speech, by which one distinguishes between the sweet and the not sweet?</p>
+                    <p><span class="verse-number">[2]</span> That which is this heart and mind - it is consciousness, perception, discrimination, wisdom, mental power, vision, steadiness, thinking, intelligence, impulse, memory, conception, purpose, life, desire, and control. All these indeed are names of consciousness (<i>Prajna</i>).</p>
+                    <p><span class="verse-number">[3]</span> This is Brahman, this is Indra, this is Prajapati, this is all the gods, and these five great elements - earth, air, space, water, and light; and these combined with the minute; and other seeds of various kinds; and those born from eggs, and those born from wombs, and those born from sweat, and those born from sprouts; horses, cows, humans, elephants, and whatever else that breathes, that moves, that flies, and that is immovable - all this is guided by consciousness, is established in consciousness. The world is guided by consciousness. Consciousness is the foundation. <strong>Brahman is consciousness.</strong></p>
+                    <p><span class="verse-number">[4]</span> Through this conscious Self, rising from this world and attaining all desires in that heavenly world, he became immortal - he became immortal.</p>
+                </article>
+                <article id="aitareya-analysis">
+                    <h4>Analysis of Consciousness Terms</h4>
+                    <p>The verse lists several facets of consciousness, with various types of "<i>jñāna</i>" (knowledge/consciousness) being key terms. Let's analyze these:</p>
+                    <dl class="analysis-section">
+                        <dt>1. Sajñāna (सञ्ज्ञान):</dt>
+                        <dd>
+                            <ul>
+                                <li>Etymology: <i>sam</i> (together) + <i>jñāna</i> (knowledge)</li>
+                                <li>Means integrated or complete awareness/consciousness</li>
+                                <li>Often refers to proper perception or recognition</li>
+                            </ul>
+                        </dd>
+                        <dt>2. Ājñāna (आज्ञान):</dt>
+                        <dd>
+                            <ul>
+                                <li>Etymology: <i>ā</i> (towards/complete) + <i>jñāna</i> (knowledge)</li>
+                                <li>Refers to complete understanding or comprehensive knowledge</li>
+                                <li>Not to be confused with <i>ajñāna</i> (ignorance)</li>
+                            </ul>
+                        </dd>
+                        <dt>3. Vijñāna (विज्ञान):</dt>
+                        <dd>
+                            <ul>
+                                <li>Etymology: <i>vi</i> (divided/special) + <i>jñāna</i> (knowledge)</li>
+                                <li>Refers to discriminative or specialized knowledge</li>
+                                <li>Often translated as science or distinct understanding</li>
+                                <li>Implies the ability to distinguish between different things</li>
+                            </ul>
+                        </dd>
+                        <dt>4. Prajñāna (प्रज्ञान):</dt>
+                        <dd>
+                            <ul>
+                                <li>Etymology: <i>pra</i> (forward/excellent) + <i>jñāna</i> (knowledge)</li>
+                                <li>Refers to wisdom or supreme knowledge</li>
+                                <li>Considered the highest form of knowledge in this context</li>
+                                <li>Contains the sense of foreknowledge or profound understanding</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <p>The root "<i>jñāna</i>" (ज्ञान) itself comes from the Sanskrit root "<i>jñā</i>" meaning "to know." This root is Indo-European and is related to English "know," Greek "gnosis," and Latin "cognoscere."</p>
+                    <p>The verse then lists other mental faculties that are considered names or aspects of <i>prajñāna</i>:</p>
+                    <ul class="analysis-section">
+                        <li>Medhā (मेधा): intellectual vigor</li>
+                        <li>Dṛṣṭi (दृष्टि): vision/insight</li>
+                        <li>Dhṛti (धृति): steadfastness</li>
+                        <li>Mati (मति): thought/understanding</li>
+                        <li>Manīṣā (मनीषा): intelligence/reflection</li>
+                        <li>Jūti (जूति): impulse/urge</li>
+                        <li>Smṛti (स्मृति): memory</li>
+                        <li>Saṅkalpa (सङ्कल्प): determination/will</li>
+                        <li>Kratu (क्रतु): power/intelligence</li>
+                        <li>Asu (असु): life force</li>
+                        <li>Kāma (काम): desire</li>
+                        <li>Vaśa (वश): control</li>
+                    </ul>
+                    <p>The text is suggesting that all these mental faculties are ultimately manifestations of <i>prajñāna</i> (supreme consciousness). This reflects the Upanishadic tendency to unify seemingly diverse phenomena under a single principle, in this case, consciousness itself.</p>
+                    <p>This analysis also reveals a sophisticated understanding of different levels and types of knowledge, from basic awareness to discriminative knowledge to supreme wisdom, all integrated into a cohesive whole.</p>
+                </article>
+            </section>
+
+            <section id="mandukya">
+                <h2>Māṇḍūkya Upaniṣad</h2>
+
+                <article id="mandukya-bannon">
+                    <h4>Māṇḍūkya Upaniṣad (translated by Brad Bannon)</h4>
+                    <p><span class="verse-number">1</span> “AUM”—that sacred syllable is all this. Its explanation is: All that was, is, and shall be is simply AUM. And, moreover, that which transcends the three periods of time, that, too, is simply AUM.</p>
+                    <p><span class="verse-number">2</span> All this is certainly Brahman. <strong>This Self is Brahman.</strong> That [Brahman] is this Self, possessed of four quarters.</p>
+                    <p><span class="verse-number">3</span> Vaiśvānara (the Universal One), who is fixed in the waking state, who is conscious of the external, who possesses seven limbs and nineteen mouths, and who enjoys material things, is the first quarter.</p>
+                    <p><span class="verse-number">4</span> Taijasa (the Luminous One), who is fixed in the dream state, who is conscious of the thing, who possesses seven limbs and nineteen mouths, and who enjoys subtle things, is the second quarter.</p>
+                    <p><span class="verse-number">5</span> Where the sleeper does not desire any desirable thing [and] does not see any dream, that is deep sleep. Prājña (The Wise One), who is fixed in the state of deep sleep, who is unified, who is a lump of consciousness, who consists of bliss, who is certainly an enjoyer of bliss, [and] who is the entrance to the mind, is the third quarter.</p>
+                    <p><span class="verse-number">6</span> This is the Lord of all. This is the knower of all. This is the inner controller. This is the womb of all, indeed the origin and dissolution of beings.</p>
+                    <p><span class="verse-number">7</span> They consider the fourth [to be]: Not conscious of internal things, not conscious of external things, not conscious of both (internal and external things), not a lump of consciousness, not conscious, not unconscious. Unseen, beyond the ordinary, ungrasped, undefined, unthought, not to be defined, whose essence is certainty of the one Self, tranquility of the manifold, pacified, auspicious, [and] non-dual. That is the Self; that is to be known.</p>
+                    <p><span class="verse-number">8</span> With respect to the syllables, AUM is this Self. With respect to the measures, the quarters are the measures and the measures are the quarters: “A”, “U”, [and] “M”.</p>
+                    <p><span class="verse-number">9</span> Vaiśvānara, whose place is the waking state, is the first measure, “a”, [so named] because of obtaining (<i>āpti</i>) or because of being first (<i>ādimattva</i>). One who knows this certainly obtains all that is desired and becomes first.</p>
+                    <p><span class="verse-number">10</span> Taijasa, whose place is the dream state, is the second measure, “u”, [so named] because of raising upwards (<i>utkarṣa</i>) or from equanimity (<i>ubhayatva</i>). One who knows this certainly elevates the expanse of knowledge, becomes equal, and no one in his/her lineage will be ignorant of Brahman.</p>
+                    <p><span class="verse-number">11</span> Prājña, whose place is the state of deep sleep, is the third measure, “m”, [so named] because of measuring (<i>miti</i>) or merging (<i>apīti</i>). One who knows this verily measures all this and becomes its mergence.</p>
+                    <p><span class="verse-number">12</span> The Fourth is without measure, beyond the ordinary, the tranquility of the manifold, auspicious, [and] non-dual. Thus, AUM is indeed the Self. One who knows this enters the Self by the Self.</p>
+                </article>
+
+                <div class="translation-separator"></div>
+
+                <article id="mandukya-gpt4">
+                    <h4>Mandukya Upanishad (GPT-4 translation)</h4>
+                    <p><span class="verse-number">1.</span> "AUM, this syllable is all this. A further explanation of it is: What has become, what is becoming, what will become – verily, all of this is AUM. And what is beyond these three states of the world of time – that too, indeed, is AUM."</p>
+                    <p><span class="verse-number">2.</span> "All this is indeed Brahman. <strong>This Self is Brahman.</strong> This Self has four quarters."</p>
+                    <p><span class="verse-number">3.</span> "The first quarter is Vaisvanara, whose sphere is the waking state, who is conscious of the external world, who has seven limbs and nineteen mouths, and who enjoys the gross."</p>
+                    <p><span class="verse-number">4.</span> "The second quarter is Taijasa, whose sphere is the dream state, who is conscious of the internal world, who has seven limbs and nineteen mouths, and who enjoys the subtle."</p>
+                    <p><span class="verse-number">5.</span> "When the sleeper desires no desires, sees no dreams, that is deep sleep. The deep sleep state is unified consciousness, a lump of awareness, full of bliss, enjoying bliss, whose face is thought, is Prajna, the third quarter."</p>
+                    <p><span class="verse-number">6.</span> "This is the Lord of all; this is the knower of all; this is the inner controller; this is the source of all; this is the beginning and the end of beings."</p>
+                    <p><span class="verse-number">7.</span> "Not inwardly cognitive, not outwardly cognitive, not both-wise cognitive, not a lump of cognition, not cognitive, not non-cognitive, unseen, with which there can be no dealing, ungraspable, having no distinctive mark, non-thinkable, that cannot be designated, the essence of the assurance of which is the state of being one with the Self, the cessation of development, tranquil, benign, without a second (such is the fourth quarter), they think of him as the Self, that is to be known."</p>
+                    <p><span class="verse-number">8.</span> "That is the Self, of which 'AUM' is the element. This has all its desires fulfilled, for it is the beginning, and it is without a second."</p>
+                    <p><span class="verse-number">9.</span> "The waking state, externalizing consciousness, having seven limbs and nineteen mouths, enjoying the gross, Vaisvanara, 'A', the first letter (of AUM), due to its all-pervasiveness or being the first. He who knows this obtains all desires and becomes first among the great."</p>
+                    <p><span class="verse-number">10.</span> "The dream state, internal consciousness, enjoying the subtle, Taijasa, 'U', the second letter (of AUM), owing to its superiority or intermediacy. He surely comes to know the dream state, whose brightness is uninterrupted."</p>
+                    <p><span class="verse-number">11.</span> "The state of deep sleep, where one becomes unified, enjoying bliss, Prajna, 'M', the third letter, because of measure or merging. He who knows this measures all this and merges as well."</p>
+                    <p><span class="verse-number">12.</span> "The fourth is without parts, without development, peaceful, not dual, AUM itself, the Self to be entered by the Self. He who knows this merges his self in the Self."</p>
+                </article>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

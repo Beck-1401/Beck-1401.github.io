@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rg Veda Samhita - Three Hymns</title>
+    <style>
+        body {
+            font-family: Georgia, serif; /* Serif font suitable for scripture */
+            line-height: 1.6;
+            margin: 0; /* Remove default body margin */
+            background-color: #f5f5f5; /* Light grey background */
+            color: #333; /* Dark grey text */
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 230px; /* Adjusted width */
+            flex-shrink: 0; /* Prevent sidebar from shrinking */
+            background-color: #e0e0e0; /* Medium grey for nav */
+            border-right: 1px solid #bdbdbd; /* Darker grey border */
+            padding: 1.5em 1em;
+            height: 100vh; /* Full viewport height */
+            position: sticky; /* Stick to the top */
+            top: 0;
+            overflow-y: auto; /* Add scroll if content overflows */
+            align-self: flex-start; /* Important for sticky positioning in flex */
+        }
+
+        nav h3 {
+            margin-top: 0;
+            color: #424242; /* Darker grey heading */
+            font-size: 1.1em;
+            border-bottom: 1px solid #757575; /* Medium-dark grey */
+            padding-bottom: 0.3em;
+            font-family: sans-serif; /* Sans-serif for nav heading */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+         nav ul ul {
+            padding-left: 1em; /* Indent sub-lists */
+            margin-top: 0.3em;
+        }
+
+        nav li {
+            margin-bottom: 0.6em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #616161; /* Medium grey link */
+            display: block; /* Make the whole area clickable */
+            padding: 0.2em 0;
+            font-size: 0.95em;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #212121; /* Darkest grey */
+            text-decoration: underline;
+        }
+
+        main {
+            flex-grow: 1; /* Allow main content to take remaining space */
+            padding: 2em 3em; /* Add padding around the main content */
+            max-width: 800px; /* Keep content readable width */
+            margin-left: auto; /* Center the main content area if screen is wide */
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #424242; /* Darker grey heading */
+            border-bottom: 2px solid #424242;
+            padding-bottom: 0.5em;
+            margin-top: 0; /* Remove default margin */
+            font-size: 26pt;
+            font-family: "Times New Roman", serif; /* Title font */
+        }
+        h2 { /* Hymn Titles */
+            color: #616161; /* Medium grey */
+            margin-top: 2.5em;
+            border-bottom: 1px solid #757575;
+            padding-bottom: 0.3em;
+            font-size: 18pt;
+            font-weight: bold;
+            page-break-after: avoid;
+            font-family: "Times New Roman", serif;
+        }
+         h3 { /* Translation Source/Title */
+            color: #757575; /* Medium-dark grey */
+            margin-top: 2em;
+            font-size: 14pt;
+            font-weight: bold;
+            font-style: italic;
+         }
+
+        p {
+            margin-bottom: 0.8em;
+            text-align: justify;
+            font-size: 12pt;
+        }
+
+        /* Style for verse paragraphs */
+        .verse {
+            padding-left: 3em; /* Indent text */
+            text-indent: -3em; /* Hanging indent for verse number */
+            margin-bottom: 0.3em; /* Tighter spacing between verses */
+        }
+
+        .verse-number {
+            font-weight: bold;
+            color: #888; /* Lighter grey for numbers */
+            margin-right: 0.6em;
+            display: inline-block; /* Keep number and text together */
+            min-width: 2.2em; /* Ensure consistent spacing */
+            text-align: right;
+        }
+
+        .translation-separator {
+            margin-top: 2.5em;
+            margin-bottom: 1.5em;
+            border: 0;
+            border-top: 1px dashed #bdbdbd; /* Dashed separator */
+        }
+
+        /* Introductory text style */
+        .intro-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.5em;
+            text-align: left;
+        }
+
+
+        /* Basic responsiveness */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                height: auto; /* Auto height */
+                position: static; /* Remove sticky positioning */
+                border-right: none;
+                border-bottom: 1px solid #bdbdbd;
+                overflow-y: visible;
+                padding: 1em;
+            }
+             nav ul {
+                display: flex; /* Arrange items horizontally */
+                flex-wrap: wrap; /* Allow wrapping */
+                gap: 1.5em; /* Add space between items */
+                justify-content: center;
+             }
+             nav ul ul {
+                 display: none; /* Hide sub-menus on small screens */
+             }
+             nav h3 {
+                 text-align: center;
+                 margin-bottom: 0.5em;
+             }
+             main {
+                padding: 1.5em; /* Adjust padding for smaller screens */
+             }
+             .verse {
+                padding-left: 1.5em; /* Reduce indent on smaller screens */
+                text-indent: -1.5em;
+             }
+             .verse-number {
+                min-width: 1.5em;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#nasadiya">Nāsadīya Sūkta</a>
+                    <ul>
+                        <li><a href="#nasadiya-a">Translation A</a></li>
+                        <li><a href="#nasadiya-b">Translation B</a></li>
+                    </ul>
+                </li>
+                <li><a href="#hiranyagarbha">Hiranyagarbha Sūkta</a>
+                     <ul>
+                        <li><a href="#hiranyagarbha-a">Translation A</a></li>
+                        <li><a href="#hiranyagarbha-b">Translation B</a></li>
+                    </ul>
+                </li>
+                <li><a href="#purusa">Puruṣa Sūkta</a>
+                    <ul>
+                        <li><a href="#purusa-a">Translation A</a></li>
+                        <li><a href="#purusa-b">Translation B</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Rg Veda Samhita - Three Hymns</h1>
+
+             <section id="intro">
+                 <!-- No heading needed for this short intro part -->
+                 <p class="intro-text">we know that we do not know, which would then be mere pretending, but that we really do not know even if it is at all knowable by any possible knowledge. The hymn concludes with this query, this constitutive uncertainty which is of infinite magnitude, because we are all involved in it. To answer the query would amount to killing the very unfolding of reality. It is the openness of this interrogation which allows the universe to emerge and to exist.</p>
+            </section>
+
+            <section id="nasadiya">
+                <h2>Nāsadīya Sūkta (RV X, 129)</h2>
+
+                <article id="nasadiya-a">
+                     <h3>Translation A</h3>
+                     <p class="verse"><span class="verse-number">1.</span>At first was neither Being nor Nonbeing.<br>
+                        There was not air nor yet sky beyond.<br>
+                        What was its wrapping? Where? In whose protection?<br>
+                        Was Water there, unfathomable and deep?</p>
+                    <p class="verse"><span class="verse-number">2.</span>There was no death then, nor yet deathlessness;<br>
+                        of night or day there was not any sign.<br>
+                        The One breathed without breath, by its own impulse.<br>
+                        Other than that was nothing else at all.</p>
+                    <p class="verse"><span class="verse-number">3.</span>Darkness was there, all wrapped around by darkness,<br>
+                        and all was Water indiscriminate. Then<br>
+                        that which was hidden by the Void, that One, emerging,<br>
+                        stirring, through power of Ardor, came to be.</p>
+                    <p class="verse"><span class="verse-number">4.</span>In the beginning Love arose,<br>
+                        which was the primal germ cell of the mind.<br>
+                        The Seers, searching in their hearts with wisdom,<br>
+                        discovered the connection of Being in Nonbeing.</p>
+                    <p class="verse"><span class="verse-number">5.</span>A crosswise line cut Being from Nonbeing.<br>
+                        What was described above it, what below?<br>
+                        Bearers of seed there were and mighty forces,<br>
+                        thrust from below and forward move above.</p>
+                    <p class="verse"><span class="verse-number">6.</span>Who really knows? Who can presume to tell it?<br>
+                        Whence was it born? Whence issued this creation?<br>
+                        Even the Gods came after its emergence.<br>
+                        Then who can tell from whence it came to be?</p>
+                    <p class="verse"><span class="verse-number">7.</span>That out of which creation has arisen,<br>
+                        whether it held it firm or it did not,<br>
+                        He who surveys it in the highest heaven,<br>
+                        He surely knows-or maybe He does not!</p>
+                 </article>
+
+                 <hr class="translation-separator">
+
+                 <article id="nasadiya-b">
+                     <h3>Translation B (The Rig Veda 10.129 Creation Hymn)</h3>
+                     <p class="verse"><span class="verse-number">1.</span>There was neither non-existence nor existence then; there was neither the realm of space nor the sky which is beyond. What stirred? Where? In whose protection? Was there water, bottomlessly deep?</p>
+                     <p class="verse"><span class="verse-number">2.</span>There was neither death nor immortality then. There was no distinguishing sign of night nor of day. That one breathed, windless, by its own impulse. Other than that there was nothing beyond.</p>
+                     <p class="verse"><span class="verse-number">3.</span>Darkness was hidden by darkness in the beginning; with no distinguishing sign, all this was water. The life force that was covered with emptiness, that one arose through the power of heat.</p>
+                     <p class="verse"><span class="verse-number">4.</span>Desire came upon that one in the beginning; that was the first seed of mind. Poets seeking in their heart with wisdom found the bond of existence in non-existence.</p>
+                     <p class="verse"><span class="verse-number">5.</span>Their cord was extended across. Was there below? Was there above? There were seed-placers; there were powers. There was impulse beneath; there was giving-forth above.</p>
+                     <p class="verse"><span class="verse-number">6.</span>Who really knows? Who will here proclaim it? Whence was it produced? Whence is this creation? The gods came afterwards, with the creation of this universe. Who then knows whence it has arisen?</p>
+                     <p class="verse"><span class="verse-number">7.</span>Whence this creation has arisen – perhaps it formed itself, or perhaps it did not – the one who looks down on it, in the highest heaven, only he knows or perhaps he does not know.</p>
+                 </article>
+            </section>
+
+            <section id="hiranyagarbha">
+                 <h2>Hiranyagarbha Sūkta (RV X, 121)</h2>
+
+                 <article id="hiranyagarbha-a">
+                    <h3>Translation A</h3>
+                    <p class="verse"><span class="verse-number">1.</span>In the beginning arose the Golden Germ:<br>
+                        he was, as soon as born, the Lord of Being,<br>
+                        sustainer of the Earth and of this Heaven.<br>
+                        What God shall we adore with our oblation?</p>
+                    <p class="verse"><span class="verse-number">2.</span>He who bestows life-force and hardy vigor,<br>
+                        whose ordinances even the Gods obey,<br>
+                        whose shadow is immortal life-and death-<br>
+                        What God shall we adore with our oblation?</p>
+                    <p class="verse"><span class="verse-number">3.</span>Who by his grandeur has emerged sole sovereign<br>
+                        of every living thing that breathes and slumbers,<br>
+                        he who is Lord of man and four-legged creatures-<br>
+                        What God shall we adore with our oblation?</p>
+                    <p class="verse"><span class="verse-number">4.</span>To him of right belong, by his own power,<br>
+                        the snow-clad mountains, the world-stream, and the sea.<br>
+                        His arms are the four quarters of the sky.<br>
+                        What God shall we adore with our oblation?</p>
+                    <p class="verse"><span class="verse-number">5.</span>Who held secure the mighty Heavens and Earth,<br>
+                        who established light and sky's vast vault above,<br>
+                        who measured out the ether in mid-spheres-<br>
+                        What God shall we adore with our oblation?</p>
+                    <p class="verse"><span class="verse-number">6.</span>Toward him, trembling, the embattled forces,<br>
+                        riveted by his glory, direct their gaze.<br>
+                        Through him the risen sun sheds forth its light.<br>
+                        What God shall we adore with our oblation?</p>
+                    <p class="verse"><span class="verse-number">7.</span>When came the mighty Waters, bringing with them<br>
+                        the universal Germ, whence sprang the Fire,<br>
+                        thence leapt the God's One Spirit into being.<br>
+                        What God shall we adore with our oblation?</p>
+                    <p class="verse"><span class="verse-number">8.</span>This One who in his might surveyed the Waters<br>
+                        pregnant with vital forces, producing sacrifice,<br>
+                        he is the God of Gods and none beside him.<br>
+                        What God shall we adore with our oblation?</p>
+                    <p class="verse"><span class="verse-number">9.</span>O Father of the Earth, by fixed laws ruling,<br>
+                        O Father of the Heavens, pray protect us,<br>
+                        O Father of the great and shining Waters!<br>
+                        What God shall we adore with our oblation?</p>
+                    <p class="verse"><span class="verse-number">10.</span>O Lord of creatures, Father of all beings,<br>
+                        you alone pervade all that has come to birth.<br>
+                        Grant us our heart's desire for which we pray.<br>
+                        May we become the lords of many treasures!</p>
+                 </article>
+
+                 <hr class="translation-separator">
+
+                 <article id="hiranyagarbha-b">
+                    <h3>Translation B (10.121 The Unknown God, the Golden Embryo)</h3>
+                    <p class="verse"><span class="verse-number">1.</span>In the beginning the Golden Embryo arose. Once he was born, he was the one lord of creation. He held in place the earth and this sky. Who is the god whom we should worship with the oblation?</p>
+                    <p class="verse"><span class="verse-number">2.</span>He who gives life, who gives strength, whose command all the gods, his own, obey; his shadow is immortality and death. Who is the god whom we should worship with the oblation?</p>
+                    <p class="verse"><span class="verse-number">3.</span>He who by his greatness became the one king of the world that breathes and blinks, who rules over his two-footed and four-footed creatures – who is the god whom we should worship with the oblation?</p>
+                    <p class="verse"><span class="verse-number">4.</span>He who through his power owns these snowy mountains, and the ocean together with the river Rasā, they say; who has the quarters of the sky as his two arms who is the god whom we should worship with the oblation?</p>
+                    <p class="verse"><span class="verse-number">5.</span>He by whom the awesome sky and the earth were made firm, by whom the dome of the sky was propped up, and the sun, who measured out the middle realm of space who is the god whom we should worship with the oblation?</p>
+                    <p class="verse"><span class="verse-number">6.</span>He to whom the two opposed masses looked with trembling in their hearts, supported by his help, on whom the rising sun shines down – who is the god whom we should worship with the oblation?</p>
+                    <p class="verse"><span class="verse-number">7.</span>When the high waters came, pregnant with the embryo that is everything, bringing forth fire, he arose from that as the one life's breath of the gods. Who is the god whom we should worship with the oblation?</p>
+                    <p class="verse"><span class="verse-number">8.</span>He who in his greatness looked over the waters, which were pregnant with Dakṣa, bringing forth the sacrifice, he who was the one god among all the gods – who is the god whom we should worship with the oblation?</p>
+                    <p class="verse"><span class="verse-number">9.</span>Let him not harm us, he who fathered the earth and created the sky, whose laws are true, who created the high, shining waters. Who is the god whom we should worship with the oblation?</p>
+                    <p class="verse"><span class="verse-number">10.</span>O Prajāpati, lord of progeny, no one but you embraces all these creatures. Grant us the desires for which we offer you oblation. Let us be lords of riches.</p>
+                 </article>
+            </section>
+
+            <section id="purusa">
+                <h2>Puruṣa Sūkta (RV X, 90)</h2>
+
+                <article id="purusa-a">
+                    <h3>Translation A</h3>
+                    <p class="verse"><span class="verse-number">1.</span>A thousand-headed is the Man<br>
+                        with a thousand eyes, a thousand feet;<br>
+                        encompassing the Earth all sides,<br>
+                        he exceeded it by ten fingers' breadth.</p>
+                    <p class="verse"><span class="verse-number">2.</span>The Man, indeed, is this All,<br>
+                        what has been and what is to be,<br>
+                        the Lord of the immortal spheres<br>
+                        which he surpasses by consuming food.</p>
+                    <p class="verse"><span class="verse-number">3.</span>Such is the measure of his might,<br>
+                        and greater still than this is Man.<br>
+                        All beings are a fourth of him,<br>
+                        three fourths are the immortal in heaven.</p>
+                    <p class="verse"><span class="verse-number">4.</span>Three fourths of Man ascended high,<br>
+                        one fourth took birth again down here.<br>
+                        From this he spread in all directions<br>
+                        into animate and inanimate things.</p>
+                    <p class="verse"><span class="verse-number">5.</span>From him the Shining one was born;<br>
+                        from this Shining one Man again took birth.<br>
+                        As soon as born, he extended himself.<br>
+                        all over the Earth both behind and before.</p>
+                    <p class="verse"><span class="verse-number">6.</span>Using the Man as their oblation,<br>
+                        the Gods performed the sacrifice.<br>
+                        Spring served them for the clarified butter,<br>
+                        Summer for the fuel, and Autumn for the offering.</p>
+                    <p class="verse"><span class="verse-number">7.</span>This evolved Man, then first born,<br>
+                        they besprinkled on the sacred grass.<br>
+                        With him the Gods performed the sacrifice,<br>
+                        as did also the heavenly beings and seers.</p>
+                    <p class="verse"><span class="verse-number">8.</span>From this sacrifice, fully accomplished,<br>
+                        was gathered curd mixed with butter.<br>
+                        Thence came the creatures of the air,<br>
+                        beasts of the forest and those of the village.</p>
+                    <p class="verse"><span class="verse-number">9.</span>From this sacrifice, fully accomplished,<br>
+                        were born the hymns and the melodies;<br>
+                        from this were born the various meters;<br>
+                        from this were born the sacrificial formulas.</p>
+                    <p class="verse"><span class="verse-number">10.</span>From this were horses born, all creatures<br>
+                        such as have teeth in either jaw;<br>
+                        from this were born the breeds of cattle;<br>
+                        from this were born sheep and goats.</p>
+                    <p class="verse"><span class="verse-number">11.</span>When they divided up the Man,<br>
+                        into how many parts did they divide him?<br>
+                        What did his mouth become? What his arms?<br>
+                        What are his legs called? What his feet?</p>
+                    <p class="verse"><span class="verse-number">12.</span>His mouth became the brahmin; his arms<br>
+                        became the warrior-prince, his legs<br>
+                        the common man who plies his trade.<br>
+                        The lowly serf was born from his feet.</p>
+                    <p class="verse"><span class="verse-number">13.</span>The Moon was born from his mind; the Sun<br>
+                        came into being from his eye;<br>
+                        from his mouth came Indra and Agni,<br>
+                        while from his breath the Wind was born.</p>
+                    <p class="verse"><span class="verse-number">14.</span>From his navel issued the Air;<br>
+                        from his head unfurled the Sky,<br>
+                        the Earth from his feet, from his ear the four directions.<br>
+                        Thus have the worlds been organized.</p>
+                    <p class="verse"><span class="verse-number">15.</span>Seven were the sticks of the enclosure,<br>
+                        thrice seven the fuel sticks were made,<br>
+                        when the Gods, performing the sacrifice,<br>
+                        bound the Man as the victim.</p>
+                    <p class="verse"><span class="verse-number">16.</span>With the sacrifice the Gods sacrificed to the sacrifice..<br>
+                        Those were the first established rites.<br>
+                        These powers ascended up to heaven<br>
+                        where dwell the ancient Gods and other beings.</p>
+                </article>
+
+                <hr class="translation-separator">
+
+                <article id="purusa-b">
+                    <h3>Translation B (RgVeda 10.90 Purusha-Sukta ["The Hymn of The Person"])</h3>
+                    <p class="verse"><span class="verse-number">1.</span>The Person has a thousand heads, a thousand eyes, a thousand feet. It pervaded the earth on all sides and extended beyond it as far as ten fingers.</p>
+                    <p class="verse"><span class="verse-number">2.</span>It is the Person who is all this, whatever has been and whatever is to be. It is the ruler of immortality, growing beyond everything through food.</p>
+                    <p class="verse"><span class="verse-number">3.</span>Such is the Person's greatness, and the Person is yet more than this. All creatures are a quarter of it; three quarters are what is immortal in heaven.</p>
+                    <p class="verse"><span class="verse-number">4.</span>With three quarters the Person rose upwards, and one quarter still remains here. From this, it spread out in all directions, into that which eats and that which does not eat.</p>
+                    <p class="verse"><span class="verse-number">5.</span>Viraj [the "golden embryo”] was born from this Person, and from Viraj came the Person. When it was born, it ranged beyond the earth behind and before.</p>
+                    <p class="verse"><span class="verse-number">6.</span>When the gods spread the sacrifice with the Person as the offering, spring was the clarified butter, summer the fuel, autumn the oblation.</p>
+                    <p class="verse"><span class="verse-number">7.</span>They anointed the Person, the sacrifice born at the beginning, upon the sacred grass. With the Person, the gods, Sadhyas, and sages sacrificed.</p>
+                    <p class="verse"><span class="verse-number">8.</span>From that sacrifice in which everything was offered, the melted fat was collected, and the Person made it into those beasts who live in the air, in the forest, and in villages.</p>
+                    <p class="verse"><span class="verse-number">9.</span>From that sacrifice in which everything was offered, the verses and chants were born, the meters were born from it, and from it the mantras were born.</p>
+                    <p class="verse"><span class="verse-number">10.</span>Horses were born from it, and those other animals that have two rows of teeth; cows were born from it, and from it goats and sheep were born.</p>
+                    <p class="verse"><span class="verse-number">11.</span>When they divided the Person, into how many parts did they apportion it? What do they call its mouth, its two arms and thighs and feet?</p>
+                    <p class="verse"><span class="verse-number">12.</span>Its mouth became the Brahmin [priests/scholars]; its arms were made into the Warriors, its thighs the Merchants/craftsmen, and from its feet the Servants were born.</p>
+                    <p class="verse"><span class="verse-number">13.</span>The moon was born from its mind; from its eye the sun was born. Indra [God] and Agni [Fire] came from its mouth, and from its vital breath the Wind was born.</p>
+                    <p class="verse"><span class="verse-number">14.</span>From its navel the middle realm of space arose; from its head the sky evolved. From its two feet came the earth, and the quarters of the sky from its ear. Thus, they set the worlds in order.</p>
+                    <p class="verse"><span class="verse-number">15.</span>There were seven enclosing-sticks for it, and thrice seven fuel-sticks, when the gods, spreading the sacrifice, bound the Person as the sacrificial beast.</p>
+                    <p class="verse"><span class="verse-number">16.</span>With the sacrifice, the gods sacrificed to the sacrifice. These were the first ritual laws [Dharmas]. These very powers reached the dome of the sky where dwell the Sadhyas, the ancient gods.</p>
+                </article>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

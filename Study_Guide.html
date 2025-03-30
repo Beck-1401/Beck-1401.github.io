@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THEO 1432: The Religious Quest - Comprehensive Study Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+        #navbar {
+            background-color: #4a001e; /* BC Maroon */
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        #navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        #navbar li {
+            margin: 0 15px;
+        }
+        #navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        #navbar a:hover, #navbar a.active {
+            background-color: #b3a369; /* BC Gold */
+            color: #4a001e;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3, h4 {
+            color: #4a001e; /* BC Maroon */
+            margin-top: 1.5em;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #b3a369; /* BC Gold */
+            padding-bottom: 10px;
+            margin-bottom: 1em;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 2em;
+        }
+        h3 {
+            color: #6a1a3e; /* Darker shade of maroon */
+            margin-top: 1.8em;
+            border-bottom: none;
+        }
+        h4 {
+             color: #80405e;
+             font-style: italic;
+             margin-top: 1.5em;
+        }
+        ul, ol {
+            margin-bottom: 1.5em;
+        }
+        li {
+            margin-bottom: 0.8em;
+        }
+        .vocab-list dt {
+            font-weight: bold;
+            color: #4a001e; /* BC Maroon */
+            margin-top: 1em;
+        }
+        .vocab-list dd {
+            margin-left: 25px;
+            margin-bottom: 1em;
+            font-style: italic;
+            color: #444;
+        }
+        .original-script {
+            font-family: 'Noto Sans Devanagari', 'Noto Sans Hebrew', 'Noto Sans Greek', 'Times New Roman', serif;
+            color: #666;
+            font-style: normal;
+            margin-left: 5px;
+        }
+        .highlight {
+            background-color: #fef9e7; /* Light yellow highlight */
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .brad-quote {
+            border-left: 4px solid #b3a369; /* BC Gold */
+            padding-left: 15px;
+            margin: 1em 0;
+            font-style: italic;
+            color: #555;
+            background-color: #fafafa;
+        }
+        .takeaways li {
+            position: relative;
+            padding-left: 25px;
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        .takeaways li::before {
+            content: '💡'; /* Lightbulb emoji */
+            position: absolute;
+            left: 0;
+            font-size: 1.1em;
+        }
+        .study-tips li::before {
+            content: '➡️';
+        }
+        .text-ref {
+            font-weight: bold;
+            font-family: monospace;
+            color: #6a1a3e;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #888;
+        }
+        /* Style for the floating Table of Contents */
+        #toc-float {
+            position: fixed;
+            left: 20px;
+            top: 100px; /* Adjust as needed below navbar */
+            width: 200px;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        }
+        #toc-float h3 {
+             margin-top: 0;
+             color: #4a001e;
+             font-size: 1.1em;
+             text-align: center;
+             border-bottom: 1px solid #ccc;
+             padding-bottom: 5px;
+        }
+        #toc-float ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #toc-float li {
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+        #toc-float a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+         #toc-float a:hover {
+            text-decoration: underline;
+            color: #b3a369;
+        }
+        /* Adjust main container margin to accommodate ToC */
+        .container {
+            margin-left: 250px; /* Width of ToC + padding */
+        }
+        /* Responsive adjustments */
+        @media (max-width: 1300px) {
+            #toc-float {
+                display: none; /* Hide floating ToC on smaller screens */
+            }
+            .container {
+                margin-left: auto; /* Center container when ToC is hidden */
+                margin-right: auto;
+            }
+        }
+        @media (max-width: 600px) {
+            body { margin: 10px; }
+            .container { padding: 15px; }
+            h1 { font-size: 1.5em; }
+            h2 { font-size: 1.2em; }
+        }
+    </style>
+    <!-- Include fonts for special characters if needed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Noto+Sans+Greek&family=Noto+Sans+Hebrew&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#introduction">Intro</a></li>
+            <li><a href="#overall-themes">Themes</a></li>
+            <li><a href="#unit-summaries">Unit Summaries</a></li>
+            <li><a href="#key-concepts">Key Concepts</a></li>
+            <li><a href="#vocabulary">Vocabulary</a></li>
+            <li><a href="#comparative-points">Comparisons</a></li>
+            <li><a href="#study-tips">Study Tips</a></li>
+        </ul>
+    </nav>
+
+    <!-- Floating Table of Contents -->
+    <div id="toc-float">
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#overall-themes">Overall Themes</a></li>
+            <li><a href="#unit-summaries">Unit Summaries</a>
+                <ul>
+                     <li><a href="#unit-foundations">Foundations & Methods</a></li>
+                     <li><a href="#unit-genesis">Genesis 1-3 & Creation</a></li>
+                     <li><a href="#unit-vedic-hymns">Vedic Hymns (ṚgVeda)</a></li>
+                     <li><a href="#unit-proverbs">Proverbs 8-9 & Wisdom</a></li>
+                     <li><a href="#unit-devi">Devī Māhātmyam</a></li>
+                     <li><a href="#unit-advaita">Advaita Vedānta & Mahāvākyas</a></li>
+                     <li><a href="#unit-lila-krishna">Līlā & Kṛṣṇa</a></li>
+                     <li><a href="#unit-gita">Bhagavad Gītā</a></li>
+                     <li><a href="#unit-john">Gospel of John</a></li>
+                </ul>
+            </li>
+            <li><a href="#key-concepts">Key Concepts</a>
+                <ul>
+                    <li><a href="#concept-advaita">Advaita Vedānta</a></li>
+                    <li><a href="#concept-visishta">Viśiṣṭādvaita Vedānta</a></li>
+                    <li><a href="#concept-lila">Līlā</a></li>
+                    <li><a href="#concept-dharma">Dharma</a></li>
+                    <li><a href="#concept-karma">Karma</a></li>
+                    <li><a href="#concept-pramanas">Pramāṇas</a></li>
+                    <li><a href="#concept-causality">Causality</a></li>
+                    <li><a href="#concept-shruti-smriti">Śruti vs. Smṛti</a></li>
+                    <li><a href="#concept-mahavakyas">Mahāvākyas</a></li>
+                    <li><a href="#concept-trimarga">Trimārga</a></li>
+                    <li><a href="#concept-avatara">Avatāra</a></li>
+                    <li><a href="#concept-logos">Logos & Sophia</a></li>
+                    <li><a href="#concept-imago-dei">Imago Dei</a></li>
+                </ul>
+            </li>
+            <li><a href="#vocabulary">Vocabulary</a></li>
+            <li><a href="#comparative-points">Comparative Points</a></li>
+            <li><a href="#study-tips">Study Tips</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>THEO 1432: The Religious Quest<br>Comprehensive Study Guide</h1>
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Welcome to the study guide for THEO 1432: The Religious Quest. This guide synthesizes lectures, discussions, readings, and key concepts covered throughout the semester, focusing on the comparative study of Hindu and Christian sacred texts. Use the navigation bar above or the Table of Contents (on wider screens) to jump between sections. The goal is to provide a helpful resource for reviewing material, preparing for assignments (like podcasts and the midterm), and consolidating your understanding of the course's core themes.</p>
+            <p>Remember Brad's emphasis: theology is <span class="highlight">faith seeking understanding</span> (*fides quaerens intellectum*), a dynamic process anchored in sacred texts. Engage with this material actively, questioning and seeking connections.</p>
+        </section>
+
+        <section id="overall-themes">
+            <h2>Overall Course Themes</h2>
+            <p>Several recurring themes connect the diverse texts and traditions studied:</p>
+            <ul>
+                <li><strong>Creation & Causality:</strong> Exploring narratives of origin (Genesis, Vedic hymns, Purāṇas) and philosophical concepts of material, efficient, and final causes.</li>
+                <li><strong>Nature of Reality:</strong> Examining concepts like non-dualism (Advaita), qualified non-dualism (Viśiṣṭādvaita), the relationship between the One and the Many, and the interplay of matter and spirit/energy.</li>
+                <li><strong>Divine Play (Līlā):</strong> Understanding creation and divine action not just as purposeful but also as spontaneous, joyful play.</li>
+                <li><strong>Ethics & Duty (Dharma):</strong> Investigating moral responsibility, right action, and one's role within cosmic and social order.</li>
+                <li><strong>Knowledge & Ignorance:</strong> Exploring paths to wisdom (Jñāna Mārga), the nature of consciousness, and the overcoming of ignorance (avidyā).</li>
+                <li><strong>Devotion (Bhakti):</strong> Understanding the path of love and devotion to a personal deity (Kṛṣṇa, Devī, Christ).</li>
+                <li><strong>Scriptural Interpretation (Hermeneutics):</strong> Recognizing the importance of context, language, genre (Śruti, Smṛti, Purāṇa, Gospel), and interpretive methods (allegory, Mīmāṃsā rules, Saṅgraha-Vistara).</li>
+                <li><strong>Self & Identity:</strong> Questioning the nature of the self (Ātman, "I"), its relationship to the divine (Brahman, God), and its role in the world.</li>
+                <li><strong>Comparative Method:</strong> Engaging deeply with individual traditions before allowing comparisons to emerge organically.</li>
+            </ul>
+        </section>
+
+        <section id="unit-summaries">
+            <h2>Unit Summaries</h2>
+
+            <h3 id="unit-foundations">Foundations & Methods (Approx. Jan 14 - Jan 21)</h3>
+            <p>The course began by establishing its theological framework, distinguishing it from religious studies. Key methods like the Saṅgraha-Vistara approach (summary/elaboration) were introduced. Foundational concepts like the Vedic canon (Śruti, Vedas structure), the Ṣaḍ-darśana (six orthodox schools), and particularly the Mīmāṃsā school (ritual focus, hermeneutics, arthavāda, dharma as "what is to be done") were covered.</p>
+            <p class="brad-quote">Brad emphasized: "Theology is philosophical discourse anchored in canonical texts."</p>
+
+            <h3 id="unit-genesis">Genesis 1-3 & Creation (Approx. Jan 16 - Jan 30)</h3>
+            <p>Focus on the Hebrew creation accounts. Discussion covered oral tradition vs. written text (Essenes), names of God (Elohim vs. YHWH/Tetragrammaton), the goodness of creation, creation by speech vs. hands-on forming, the concept of Imago Dei, human purpose (dominion/tending), the Sabbath, the Tree of Knowledge, and the contrast between Genesis 1 and 2-3. Crucial context was provided by comparing Genesis 1 to the Babylonian *Enūma Eliš*, highlighting Genesis as a potentially liberative counter-narrative against the idea of humans as slaves to gods. Rashi's interpretation of *bara* (separate) and *creatio continua* was introduced.</p>
+            <p class="brad-quote">Key insight: Reading Genesis 1 against the *Enūma Eliš* reveals its message that humans are made in God's image, not as slaves.</p>
+
+            <h3 id="unit-vedic-hymns">Vedic Hymns (ṚgVeda) (Approx. Jan 21)</h3>
+            <p>Exploration of three ancient hymns: Nāsadīya Sūkta (X.129), Hiraṇyagarbha Sūkta (X.121), and Puruṣa Sūkta (X.90). Themes included radical questioning of origins beyond being/non-being (Nāsadīya), creation from a "Golden Embryo" (Hiraṇyagarbha), and creation via the cosmic sacrifice of the primordial Person (Puruṣa). Read through the lens of Mīmāṃsā, these hymns function as *arthavāda* (motivating ritual action) rather than purely historical or descriptive accounts.</p>
+
+            <h3 id="unit-proverbs">Proverbs 8-9 & Wisdom (Approx. Jan 23)</h3>
+            <p>Analysis of Wisdom personified as a feminine figure (Ḥokmāh/Sophia). Discussion centered on the contrast between Wisdom in Ch. 8 and the "stupid woman" in Ch. 9, the tension with Genesis 3's view of seeking knowledge, Wisdom's pre-existence before creation (acting as a "prequel" to Genesis 1), and the meaning of "fear of the Lord." Connections were drawn to Genesis 1 (creation via Word/Logos) and the significance of the Greek *Sophia* for early Christians.</p>
+
+            <h3 id="unit-devi">Devī Māhātmyam (Approx. Jan 28)</h3>
+            <p>Introduction to Devī worship (Śāktism). Distinction between Śruti and Smṛti scriptures, placing the Devī Māhātmyam (part of Mārkaṇḍeya Purāṇa) in the Smṛti category. The text was interpreted allegorically: the frame story (Suratha, Samādhi, Medhas representing body, spirit, mind) and the battles against demons (Mahīṣāsura, Raktabīja) symbolizing inner struggles against ignorance (Tamas), passion/ego (Rajas), leading to purity (Sattva). The nature of Śakti (divine power) and the iconography of Durgā and Kālī were discussed.</p>
+
+            <h3 id="unit-advaita">Advaita Vedānta & Mahāvākyas (Approx. Feb 4 - Feb 13)</h3>
+            <p>Deep dive into Advaita Vedānta (non-dualism). Review of Vedānta vs. Mīmāṃsā. Introduction of the four Mahāvākyas ("Great Sayings"). Focused study of the *Bṛhadāraṇyaka Upaniṣad* (Ahaṃ Brahmāsmi - "I am Brahman") and the *Chāndogya Upaniṣad* (Tat Tvam Asi - "Thou Art That"). Analogies (clay, rivers, honey, salt, seeds) explored the relationship between the particular self (Ātman) and the universal reality (Brahman). Concepts of creation as unfolding (*śṛṣṭi*), the meaning of "I" (Aham), causality, and the Trimārga were discussed. Introduction to the *Aitareya Upaniṣad* (Prajñānam Brahma - "Consciousness is Brahman") and *Māṇḍūkya Upaniṣad* (Ayam Ātmā Brahma - "This Self is Brahman"), emphasizing interpretive harmony (*Samanvaya*). Analysis of Om and the four states of consciousness (waking, dream, deep sleep, Turīya).</p>
+            <p class="brad-quote">Brad's key analogy: The coin - ontologically one, but with ontic distinctions (heads/tails, knower/known).</p>
+
+            <h3 id="unit-lila-krishna">Līlā & Kṛṣṇa (Approx. Feb 20 - Feb 25)</h3>
+            <p>Shift towards Viśiṣṭādvaita (qualified non-dualism, theistic) and the concept of Līlā (divine play). Review of Vedānta schools, causality (material, efficient, final/Līlā), and introduction of *Abhāva Pramāṇa* (knowledge via absence, using milk-to-curd example from Kumārila Bhaṭṭa) and *Satkāryavāda* (effect pre-exists in cause). Introduction to Kṛṣṇa via the Bhāgavata Purāṇa, discussion of *avatāra* concept (descent), and stories illustrating Līlā (Kṛṣṇa eating mud, dancing on Kaliya). Readings from Sachs and Johnston Lørgen explored *līlā*'s meanings and Kṛṣṇa's *soteriology* (how he saves).</p>
+
+             <h3 id="unit-gita">Bhagavad Gītā (Approx. Mar 11 - Mar 25)</h3>
+             <p>Introduction to the Bhagavad Gītā: context within the Mahābhārata (Pāṇḍavas vs. Kauravas), Arjuna's crisis, Kṛṣṇa's role as charioteer/guide. Discussion of Chapters 1-5. Key themes: *dharma* (duty), *karma* (action, reinterpreted beyond ritual), detachment from fruits (*niṣkāma karma*), the eternal self (*Ātman*) vs. the perishable body, sacrifice (*yajña*, reinterpreted), desire as an obstacle, *lokasaṅgraha* (world-maintenance), and integrating the three *mārgas* (Karma, Jñāna, Bhakti). Readings by Stoler Miller emphasized. Comparisons drawn to Gandhi's interpretation and the Kaṭha Upaniṣad's chariot allegory.</p>
+
+             <h3 id="unit-john">Gospel of John (Approx. Mar 13 - Mar 27)</h3>
+             <p>Introduction to the Gospel of John: authorship (likely Johannine school, connected to "beloved disciple"), dating (c. 90-95 CE), sophisticated Greek style, historical context (conflicts within Judaism and with Rome), high Christology. Discussion of Chapters 1-13. Key themes: *Logos* (Word) in the Prologue, creation parallels (Genesis 1, Proverbs 8), Jesus's titles (Lamb of God, Son of God, Son of Man), miracles as "signs" (*sēmeia*), knowing vs. believing, seeing vs. signs, John the Baptist as witness, being "born again/from above," the Samaritan woman (living water), Jesus's humanity and divinity, the body as temple (*kenosis*), Father-Son relationship, and apparent contradictions within the text. Focus on unique Johannine perspective compared to Synoptics.</p>
+        </section>
+
+        <section id="key-concepts">
+            <h2>Key Concepts & Philosophies</h2>
+
+            <h3 id="concept-advaita">Advaita Vedānta (Non-Dualism)</h3>
+            <p>One of the major schools of Vedānta, strongly associated with Śaṅkara. Its core teaching is *Advaita* - "not two." It asserts that the individual self (*Ātman*) and the ultimate reality (*Brahman*) are ontologically one. The perceived multiplicity of the world is ultimately illusory (*māyā*) or arises from distinctions (*ontic*) within the single reality (*ontological*). Liberation (*mokṣa*) comes through *jñāna* (knowledge/wisdom) – realizing this non-dual identity. Often seen as non-theistic in the sense of denying a separate, personal creator God distinct from Brahman/Ātman.</p>
+            <p class="brad-quote">Analogy: The two sides of a coin are distinct (ontic difference) but belong to one coin (ontological unity). They are "not two."</p>
+
+            <h3 id="concept-visishta">Viśiṣṭādvaita Vedānta (Qualified Non-Dualism)</h3>
+            <p>A major school of Vedānta, associated with Rāmānuja. It means "qualified non-dualism." It agrees that Brahman is the ultimate reality but posits that Brahman possesses real attributes and includes within itself the distinct realities of individual souls (*cit*) and matter (*acit*). These form the "body" of Brahman (God/Īśvara), who is personal and the object of devotion (*bhakti*). God is seen as both the material and efficient cause. Allows for a devotional relationship with a personal God while maintaining ultimate non-duality in a qualified sense.</p>
+
+            <h3 id="concept-lila">Līlā (Divine Play)</h3>
+            <p>Meaning "play," "sport," or "pastime." In theology, it explains divine action, especially creation, not as arising from need or lack, but as a spontaneous, joyful expression of the divine nature, like a child playing or an artist creating. It emphasizes freedom, creativity, and delight. Kṛṣṇa's activities, particularly in his youth, are seen as quintessential examples of Līlā. It is also associated with certain forms of religious drama.</p>
+
+            <h3 id="concept-dharma">Dharma</h3>
+            <p>A foundational concept with multiple meanings: duty, righteousness, cosmic law, ethics, inherent nature, that which upholds order. For Mīmāṃsā, Dharma is primarily "what is to be done," established by Vedic injunctions (rituals). In the Bhagavad Gītā, it refers to one's societal duty (e.g., Arjuna's duty as a warrior, *svadharma*) as well as universal righteousness.</p>
+
+            <h3 id="concept-karma">Karma</h3>
+            <p>Meaning "action," "work," or "deed." In Mīmāṃsā, it specifically refers to Vedic ritual action (*yajña*). In broader philosophy, it includes all actions and the principle of cause and effect, where actions create consequences (*saṃskāras*) that influence future lives. The Bhagavad Gītā reinterprets Karma Yoga as the path of selfless action performed without attachment to results.</p>
+
+             <h3 id="concept-pramanas">Pramāṇas (Valid Sources of Knowledge)</h3>
+             <p>The means by which valid knowledge (*pramā*) is acquired in Indian philosophy. Key pramāṇas include *Pratyakṣa* (direct perception), *Anumāna* (inference), and *Śabda* (verbal testimony, especially scripture like the Vedas). The Mīmāṃsā school, particularly Kumārila Bhaṭṭa, also discussed *Abhāva* (non-existence/absence) as a distinct pramāṇa revealing causality (the cause ceases as the effect begins).</p>
+
+             <h3 id="concept-causality">Causality</h3>
+             <p>Examined through different lenses: Material Cause (the substance from which something is made, e.g., clay, Brahman), Efficient Cause (the agent that shapes or brings about the effect, e.g., the potter, God, self/world), and Final Cause (the purpose, goal, or *telos*, often identified as *Līlā*). *Satkāryavāda* is the theory that the effect pre-exists in the cause.</p>
+
+             <h3 id="concept-shruti-smriti">Śruti vs. Smṛti</h3>
+             <p>Two categories of Hindu scripture. *Śruti* ("that which is heard") refers to the Vedas, considered divinely revealed and authorless (*apauruṣeya*). Interpretation often focuses on the precise meaning of every word. *Smṛti* ("that which is remembered") includes epics (Mahābhārata, Rāmāyaṇa), Purāṇas, law texts, etc., derived from tradition and considered secondary to Śruti. Interpretation often focuses more on the overall narrative and meaning.</p>
+
+             <h3 id="concept-mahavakyas">Mahāvākyas</h3>
+             <p>"Great Sayings" - four key aphorisms from the Upaniṣads considered to encapsulate the essence of Vedānta, particularly Advaita:</p>
+             <ol>
+                 <li>*Ahaṃ Brahmāsmi* ("I am Brahman") - Bṛhadāraṇyaka Upaniṣad</li>
+                 <li>*Tat Tvam Asi* ("Thou Art That") - Chāndogya Upaniṣad</li>
+                 <li>*Prajñānam Brahma* ("Consciousness is Brahman") - Aitareya Upaniṣad</li>
+                 <li>*Ayam Ātmā Brahma* ("This Self is Brahman") - Māṇḍūkya Upaniṣad</li>
+             </ol>
+
+             <h3 id="concept-trimarga">Trimārga (Three Paths)</h3>
+             <p>The three main paths to liberation (*mokṣa*) in Hinduism:</p>
+             <ul>
+                 <li>*Karma Mārga*: The path of action (often ritual action).</li>
+                 <li>*Jñāna Mārga*: The path of knowledge/wisdom.</li>
+                 <li>*Bhakti Mārga*: The path of devotion.</li>
+             </ul>
+             <p>Different schools and texts may emphasize one path over others or integrate them.</p>
+
+             <h3 id="concept-avatara">Avatāra</h3>
+             <p>"Descent." The concept of a deity (especially Viṣṇu) manifesting in a worldly form to restore dharma or engage in līlā. Unlike incarnation in some traditions, the avatāra is typically understood as fully divine, merely appearing in a form, not becoming limited by it.</p>
+
+             <h3 id="concept-logos">Logos & Sophia</h3>
+             <p>*Logos* (Greek: Word, Reason, Principle) is central to the Prologue of John's Gospel, describing the pre-existent, divine agent of creation. *Sophia* (Greek: Wisdom) is the translation of Hebrew *Ḥokmāh*, personified in Proverbs 8, providing a crucial link for early Greek-speaking Christians.</p>
+
+            <h3 id="concept-imago-dei">Imago Dei</h3>
+             <p>(Latin: Image of God). The concept from Genesis 1:26-27 that humankind is created in the image and likeness of God. Discussed in contrast to the *Enūma Eliš* view of humans as slaves, highlighting the potential interpretations (physical likeness, rationality, creativity, moral capacity, relationality).</p>
+
+        </section>
+
+        <section id="vocabulary">
+            <h2>Comprehensive Vocabulary List</h2>
+            <p><em>(This list combines terms from all sessions. Refer back to unit summaries for context.)</em></p>
+            <dl class="vocab-list">
+                <dt>Abhava Pramāṇa (<span class="original-script">अभाव प्रमाण</span>)</dt> <dd>Valid source of knowledge through non-existence or absence (Kumārila Bhaṭṭa).</dd>
+                <dt>Adhikara (<span class="original-script">अधिकार</span>)</dt> <dd>Qualification, authority (esp. for rituals).</dd>
+                <dt>Aditam (<span class="original-script">अदितम्</span>)</dt> <dd>Things accomplished together (from mantra).</dd>
+                <dt>Advaita (<span class="original-script">अद्वैत</span>)</dt> <dd>"Non-duality"; school emphasizing oneness of Ātman and Brahman.</dd>
+                <dt>Advaita Vedānta (<span class="original-script">अद्वैत वेदान्त</span>)</dt> <dd>The non-dualistic school of Vedānta.</dd>
+                <dt>Agni (<span class="original-script">अग्नि</span>)</dt> <dd>Vedic god of fire.</dd>
+                <dt>Aham (<span class="original-script">अहम्</span>)</dt> <dd>"I."</dd>
+                <dt>Aham Brahmāsmi (<span class="original-script">अहं ब्रह्मास्मि</span>)</dt> <dd>"I am Brahman" (Mahāvākya).</dd>
+                <dt>Aitareya Upaniṣad (<span class="original-script">ऐतरेय उपनिषद्</span>)</dt> <dd>An Upaniṣad of the Ṛg Veda.</dd>
+                <dt>Ājñāna (<span class="original-script">आज्ञान</span>)</dt> <dd>Comprehensive knowledge.</dd>
+                <dt>Akṣa (<span class="original-script">अक्ष</span>)</dt> <dd>Eye.</dd>
+                <dt>Amṛtam (<span class="original-script">अमृतम्</span>)</dt> <dd>Immortality, nectar.</dd>
+                <dt>Ananta (<span class="original-script">अनन्त</span>)</dt> <dd>Endless, eternal (describing Vedas).</dd>
+                <dt>Anu (<span class="original-script">अनु</span>)</dt> <dd>After.</dd>
+                <dt>Anumāna (<span class="original-script">अनुमान</span>)</dt> <dd>Inference (Pramāṇa).</dd>
+                <dt>Anuśloka (<span class="original-script">अनुश्लोक</span>)</dt> <dd>A specific Sanskrit verse meter.</dd>
+                <dt>Anuṣṭubh (<span class="original-script">अनुष्टुभ्</span>)</dt> <dd>A common Sanskrit poetic meter.</dd>
+                <dt>Apauruṣeya (<span class="original-script">अपौरुषेय</span>)</dt> <dd>Not of human origin (describing Vedas).</dd>
+                <dt>Apīti (<span class="original-script">अपीति</span>)</dt> <dd>Merging (related to 'M' of Om).</dd>
+                <dt>Apophatic / Apophasis (<span class="original-script">ἀπόφασις</span>)</dt> <dd>Theology via negation.</dd>
+                <dt>Āpti (<span class="original-script">आप्ति</span>)</dt> <dd>Obtaining (related to 'A' of Om).</dd>
+                <dt>Āraṇyaka (<span class="original-script">आरण्यक</span>)</dt> <dd>"Forest texts" (part of Veda).</dd>
+                <dt>Arjuna (<span class="original-script">अर्जुन</span>)</dt> <dd>Pāṇḍava hero in the Bhagavad Gītā.</dd>
+                <dt>Artha (<span class="original-script">अर्थ</span>)</dt> <dd>Goal, purpose; material wealth (Purushartha).</dd>
+                <dt>Arthavāda (<span class="original-script">अर्थवाद</span>)</dt> <dd>Motivating/explanatory statement in scripture (Mīmāṃsā).</dd>
+                <dt>Āryan</dt> <dd>Term for Indo-European migrants (historical context).</dd>
+                <dt>Asat (<span class="original-script">असत्</span>)</dt> <dd>Non-being, untruth.</dd>
+                <dt>Asato mā sadgamaya (<span class="original-script">असतो मा सद्गमय</span>)</dt> <dd>"Lead me from non-being to being."</dd>
+                <dt>Āśrama (<span class="original-script">आश्रम</span>)</dt> <dd>Stages of life.</dd>
+                <dt>Astika (<span class="original-script">आस्तिक</span>)</dt> <dd>Orthodox (accepting Veda).</dd>
+                <dt>Asura (<span class="original-script">असुर</span>)</dt> <dd>Demon, anti-god.</dd>
+                <dt>Atharva Veda (<span class="original-script">अथर्ववेद</span>)</dt> <dd>The fourth Veda.</dd>
+                <dt>Ātman (<span class="original-script">आत्मन्</span>)</dt> <dd>The Self, soul, individual consciousness.</dd>
+                <dt>Atmos (<span class="original-script">ἀτμός</span>)</dt> <dd>Greek for vapor.</dd>
+                <dt>Avatāra (<span class="original-script">अवतार</span>)</dt> <dd>"Descent"; incarnation/manifestation of a deity.</dd>
+                <dt>Ayam Ātmā Brahma (<span class="original-script">अयम् आत्मा ब्रह्म</span>)</dt> <dd>"This Self is Brahman" (Mahāvākya).</dd>
+                <dt>Baal (<span class="original-script">בַּעַל</span>)</dt> <dd>Canaanite storm/fertility god.</dd>
+                <dt>Bāla Kṛṣṇa (<span class="original-script">बालकृष्ण</span>)</dt> <dd>Child Kṛṣṇa.</dd>
+                <dt>Bara (<span class="original-script">בָּרָא</span>)</dt> <dd>Hebrew verb: create, separate.</dd>
+                <dt>Bereshit (<span class="original-script">בְּרֵאשִׁית</span>)</dt> <dd>"In the beginning" (Genesis 1:1).</dd>
+                <dt>Bereshit Bara Elohim (<span class="original-script">בְּרֵאשִׁית בָּרָא אֱלֹהִים</span>)</dt> <dd>First words of Genesis.</dd>
+                <dt>Bhagavad Gītā (<span class="original-script">भगवद् गीता</span>)</dt> <dd>"Song of the Lord," key Hindu scripture.</dd>
+                <dt>Bhagavān (<span class="original-script">भगवान्</span>)</dt> <dd>Lord, Blessed One (title for Kṛṣṇa).</dd>
+                <dt>Bhāgavata Purāṇa (<span class="original-script">भागवतपुराण</span>)</dt> <dd>A major Purāṇa focusing on Kṛṣṇa.</dd>
+                <dt>Bhakti (<span class="original-script">भक्ति</span>)</dt> <dd>Devotion.</dd>
+                <dt>Bhakti Mārga (<span class="original-script">भक्तिमार्ग</span>)</dt> <dd>The path of devotion.</dd>
+                <dt>Bharata (<span class="original-script">भारत</span>)</dt> <dd>Traditional name for India; ancient king/clan.</dd>
+                <dt>Bhāva (<span class="original-script">भाव</span>)</dt> <dd>Being, existence.</dd>
+                <dt>Bīja (<span class="original-script">बीज</span>)</dt> <dd>Seed.</dd>
+                <dt>Brahmacarya (<span class="original-script">ब्रह्मचर्य</span>)</dt> <dd>Student stage of life.</dd>
+                <dt>Brahman (<span class="original-script">ब्रह्मन्</span>)</dt> <dd>The ultimate reality, the Absolute.</dd>
+                <dt>Brāhmaṇa (<span class="original-script">ब्राह्मण</span>)</dt> <dd>Vedic ritual texts; priestly/scholarly varṇa.</dd>
+                <dt>Bṛhad (<span class="original-script">बृहद्</span>)</dt> <dd>Great, large.</dd>
+                <dt>Bṛhadāraṇyaka Upaniṣad (<span class="original-script">बृहदारण्यक उपनिषद्</span>)</dt> <dd>An early, major Upaniṣad.</dd>
+                <dt>Canaanite</dt> <dd>Ancient Near Eastern people/culture.</dd>
+                <dt>Cataphasis (<span class="original-script">κατάφασις</span>)</dt> <dd>Theology via affirmation.</dd>
+                <dt>Chāndogya Upaniṣad (<span class="original-script">छान्दोग्य उपनिषद्</span>)</dt> <dd>A major Upaniṣad of the Sāma Veda.</dd>
+                <dt>Christos (<span class="original-script">Χριστός</span>)</dt> <dd>Greek for "anointed one."</dd>
+                <dt>Creatio continua</dt> <dd>Latin for "continuous creation."</dd>
+                <dt>Dakṣa (<span class="original-script">दक्ष</span>)</dt> <dd>Creator deity/skillful.</dd>
+                <dt>Darśana (<span class="original-script">दर्शन</span>)</dt> <dd>Seeing, perspective, philosophical school.</dd>
+                <dt>Deva (<span class="original-script">देव</span>)</dt> <dd>God, deity.</dd>
+                <dt>Devanāgarī (<span class="original-script">देवनागरी</span>)</dt> <dd>Script for Sanskrit.</dd>
+                <dt>Devatā (<span class="original-script">देवता</span>)</dt> <dd>Deity, godhead.</dd>
+                <dt>Devī (<span class="original-script">देवी</span>)</dt> <dd>Goddess.</dd>
+                <dt>Devī Māhātmya (<span class="original-script">देवी माहात्म्यम्</span>)</dt> <dd>"Glory of the Goddess," a key Śākta text.</dd>
+                <dt>Dharma (<span class="original-script">धर्म</span>)</dt> <dd>Duty, righteousness, cosmic law.</dd>
+                <dt>Dharmakṣetre Kurukṣetre (<span class="original-script">धर्मक्षेत्रे कुरुक्षेत्रे...</span>)</dt> <dd>Opening words of Bhagavad Gītā.</dd>
+                <dt>Dhṛtarāṣṭra (<span class="original-script">धृतराष्ट्र</span>)</dt> <dd>Blind king, father of Kauravas.</dd>
+                <dt>Drish (<span class="original-script">दृश्</span>)</dt> <dd>To see.</dd>
+                <dt>Durgā (<span class="original-script">दुर्गा</span>)</dt> <dd>Major form of the Goddess.</dd>
+                <dt>Dvaita (<span class="original-script">द्वैत</span>)</dt> <dd>Dual.</dd>
+                <dt>Ecclesiastes (<span class="original-script">קֹהֶלֶת</span>)</dt> <dd>Book of Hebrew Bible.</dd>
+                <dt>Ēl (<span class="original-script">אֵל</span>)</dt> <dd>Semitic word for God.</dd>
+                <dt>Elohim (<span class="original-script">אֱלֹהִים</span>)</dt> <dd>Hebrew name for God (plural form).</dd>
+                <dt>En archē ēn ho logos... (<span class="original-script">Ἐν ἀρχῇ ἦν ὁ Λόγος...</span>)</dt> <dd>Beginning of Gospel of John.</dd>
+                <dt>Ēn (<span class="original-script">ἦν</span>)</dt> <dd>Was (Greek).</dd>
+                <dt>Enūma Eliš</dt> <dd>Babylonian creation myth.</dd>
+                <dt>Eros (<span class="original-script">Ἔρως</span>)</dt> <dd>Greek for passionate love.</dd>
+                <dt>Essenes</dt> <dd>Jewish sect associated with Dead Sea Scrolls.</dd>
+                <dt>fides quaerens intellectum</dt> <dd>Faith seeking understanding (Anselm).</dd>
+                <dt>Gaia (<span class="original-script">Γαῖα</span>)</dt> <dd>Greek Earth goddess.</dd>
+                <dt>Gamaya (<span class="original-script">गमय</span>)</dt> <dd>Lead me.</dd>
+                <dt>Gaṇeśa (<span class="original-script">गणेश</span>)</dt> <dd>Elephant-headed god.</dd>
+                <dt>Gaṅgā (<span class="original-script">गंगा</span>)</dt> <dd>Ganges river/goddess.</dd>
+                <dt>Garbha (<span class="original-script">गर्भ</span>)</dt> <dd>Embryo, womb.</dd>
+                <dt>Gaurī (<span class="original-script">गौरी</span>)</dt> <dd>Form of Devī.</dd>
+                <dt>Genesis (<span class="original-script">בְּרֵאשִׁית</span>)</dt> <dd>First book of Hebrew Bible.</dd>
+                <dt>Ghana (<span class="original-script">घन</span>)</dt> <dd>Lump, mass.</dd>
+                <dt>Gītā (<span class="original-script">गीता</span>)</dt> <dd>Song.</dd>
+                <dt>Gopīs (<span class="original-script">गोपी</span>)</dt> <dd>Cowherd women devoted to Kṛṣṇa.</dd>
+                <dt>Graha (<span class="original-script">ग्रह</span>)</dt> <dd>Grasping.</dd>
+                <dt>Grihasta (<span class="original-script">गृहस्थ</span>)</dt> <dd>Householder stage.</dd>
+                <dt>Guru (<span class="original-script">गुरु</span>)</dt> <dd>Teacher.</dd>
+                <dt>Hashem (<span class="original-script">הַשֵּׁם</span>)</dt> <dd>"The Name" (substitute for YHWH).</dd>
+                <dt>Hashamayim (<span class="original-script">הַשָּׁמַיִם</span>)</dt> <dd>The heavens.</dd>
+                <dt>Hebrew</dt> <dd>Language of Tanakh/Old Testament.</dd>
+                <dt>Hermeneutics</dt> <dd>Theory of interpretation.</dd>
+                <dt>Hiranya (<span class="original-script">हिरण्य</span>)</dt> <dd>Gold.</dd>
+                <dt>Hiranyagarbha (<span class="original-script">हिरण्यगर्भ</span>)</dt> <dd>"Golden Embryo."</dd>
+                <dt>Hiranyakashipu (<span class="original-script">हिरण्यकशिपु</span>)</dt> <dd>Demon king killed by Narasimha.</dd>
+                <dt>Ḥokmāh (<span class="original-script">חָכְמָה</span>)</dt> <dd>Hebrew for Wisdom.</dd>
+                <dt>Imago Dei</dt> <dd>Image of God (Latin).</dd>
+                <dt>Indra (<span class="original-script">इन्द्र</span>)</dt> <dd>Vedic king of gods.</dd>
+                <dt>Indriya (<span class="original-script">इन्द्रिय</span>)</dt> <dd>The senses.</dd>
+                <dt>Īśvara (<span class="original-script">ईश्वर</span>)</dt> <dd>Lord, personal God.</dd>
+                <dt>Isha (<span class="original-script">ईश</span>)</dt> <dd>Lord.</dd>
+                <dt>Iti (<span class="original-script">इति</span>)</dt> <dd>Thus, so.</dd>
+                <dt>Itihāsa (<span class="original-script">इतिहास</span>)</dt> <dd>"History"; epic texts.</dd>
+                <dt>Itikartavyatavadin (<span class="original-script">इतिकर्तव्यतावादिन्</span>)</dt> <dd>Term for Mīmāṁsakas ("how-to-do-it" proponents).</dd>
+                <dt>Jīva / Jīva Ātman (<span class="original-script">जीव / जीव आत्मन्</span>)</dt> <dd>The living self, individual soul.</dd>
+                <dt>Jñāna (<span class="original-script">ज्ञान</span>)</dt> <dd>Knowledge, wisdom.</dd>
+                <dt>Jñāna Mārga (<span class="original-script">ज्ञानमार्ग</span>)</dt> <dd>The path of knowledge.</dd>
+                <dt>Jyotir (<span class="original-script">ज्योतिर्</span>)</dt> <dd>Light.</dd>
+                <dt>Kāla (<span class="original-script">काल</span>)</dt> <dd>Time.</dd>
+                <dt>Kāli (<span class="original-script">काली</span>)</dt> <dd>"The Black One," fierce goddess.</dd>
+                <dt>Kāliya (<span class="original-script">कालिय</span>)</dt> <dd>Serpent demon subdued by Kṛṣṇa.</dd>
+                <dt>Kāma (<span class="original-script">काम</span>)</dt> <dd>Desire, pleasure (Purushartha).</dd>
+                <dt>Kara (<span class="original-script">कर</span>)</dt> <dd>Making, doing; hand.</dd>
+                <dt>Karavāvahai (<span class="original-script">करवावहै</span>)</dt> <dd>"Let us accomplish together."</dd>
+                <dt>Karma (<span class="original-script">कर्म</span>)</dt> <dd>Action, ritual action; causal law.</dd>
+                <dt>Karma Kāṇḍa (<span class="original-script">कर्मकाण्ड</span>)</dt> <dd>Vedic section on ritual.</dd>
+                <dt>Karma Mārga (<span class="original-script">कर्म मार्ग</span>)</dt> <dd>The path of action.</dd>
+                <dt>Kartavyata (<span class="original-script">कर्तव्यता</span>)</dt> <dd>Obligation, how something should be done.</dd>
+                <dt>Kārtikeya (<span class="original-script">कार्तिकेय</span>)</dt> <dd>God of war.</dd>
+                <dt>Katha Upaniṣad (<span class="original-script">कठोपनिषद्</span>)</dt> <dd>An Upaniṣad featuring Nachiketa and Yama.</dd>
+                <dt>Kathenotheism</dt> <dd>Worshipping one god at a time from a pantheon.</dd>
+                <dt>Kaurava (<span class="original-script">कौरव</span>)</dt> <dd>Antagonists in Mahābhārata.</dd>
+                <dt>Kenosis (<span class="original-script">κένωσις</span>)</dt> <dd>Self-emptying (theological term).</dd>
+                <dt>Kṛṣṇa (<span class="original-script">कृष्ण</span>)</dt> <dd>Major Hindu deity, avatar of Viṣṇu.</dd>
+                <dt>Kṣatriya (<span class="original-script">क्षत्रिय</span>)</dt> <dd>Warrior/administrator varṇa.</dd>
+                <dt>Kumārila Bhaṭṭa (<span class="original-script">कुमारिल भट्ट</span>)</dt> <dd>Influential Mīmāṁsā philosopher.</dd>
+                <dt>Kuru (<span class="original-script">कुरु</span>)</dt> <dd>Ancient king/clan in Mahābhārata.</dd>
+                <dt>Kurukṣetra (<span class="original-script">कुरुक्षेत्र</span>)</dt> <dd>Battlefield in Mahābhārata.</dd>
+                <dt>Kurma (<span class="original-script">कूर्म</span>)</dt> <dd>Tortoise avatar.</dd>
+                <dt>Leviathan (<span class="original-script">לִוְיָתָן</span>)</dt> <dd>Biblical sea monster.</dd>
+                <dt>Līlā (<span class="original-script">लीला</span>)</dt> <dd>Divine play.</dd>
+                <dt>Logos (<span class="original-script">λόγος</span>)</dt> <dd>Greek for Word, Reason, Principle.</dd>
+                <dt>Lux</dt> <dd>Latin for light.</dd>
+                <dt>Mā (<span class="original-script">मा</span>)</dt> <dd>Me; Not.</dd>
+                <dt>Mā vidviṣāvahai (<span class="original-script">मा विद्विषावहै</span>)</dt> <dd>"May we not hate each other."</dd>
+                <dt>Mahā (<span class="original-script">महा</span>)</dt> <dd>Great.</dd>
+                <dt>Mahābhārata (<span class="original-script">महाभारत</span>)</dt> <dd>Major Sanskrit epic.</dd>
+                <dt>Mahāvākya(s) (<span class="original-script">महावाक्य / महावाक्यानि</span>)</dt> <dd>"Great Sentence(s)" of the Upaniṣads.</dd>
+                <dt>Mahīṣa / Mahiṣāsura (<span class="original-script">महिष / महिषासुर</span>)</dt> <dd>Buffalo demon.</dd>
+                <dt>Makhan Chor (<span class="original-script">माखन चोर</span>)</dt> <dd>"Butter Thief" (Kṛṣṇa).</dd>
+                <dt>Māna (<span class="original-script">मान</span>)</dt> <dd>Thinking, measuring.</dd>
+                <dt>Māṇḍūkya Upaniṣad (<span class="original-script">माण्डूक्य उपनिषद्</span>)</dt> <dd>An Upaniṣad focusing on Om.</dd>
+                <dt>Mantra (<span class="original-script">मन्त्र</span>)</dt> <dd>Sacred utterance.</dd>
+                <dt>Marduk</dt> <dd>Babylonian chief god.</dd>
+                <dt>Mārga (<span class="original-script">मार्ग</span>)</dt> <dd>Path.</dd>
+                <dt>Mārkaṇḍeya Purāṇa (<span class="original-script">मार्कण्डेय पुराण</span>)</dt> <dd>A Purāṇa containing Devī Māhātmyam.</dd>
+                <dt>Matsya (<span class="original-script">मत्स्य</span>)</dt> <dd>Fish avatar.</dd>
+                <dt>Matram (<span class="original-script">मात्रं</span>)</dt> <dd>Only, merely.</dd>
+                <dt>Medhas (<span class="original-script">मेधस्</span>)</dt> <dd>Intellect, wisdom (character name).</dd>
+                <dt>Mela (<span class="original-script">मेला</span>)</dt> <dd>Fair, gathering.</dd>
+                <dt>Mīmāṃsā (<span class="original-script">मीमांसा</span>)</dt> <dd>Vedic exegesis school.</dd>
+                <dt>Miti (<span class="original-script">मिति</span>)</dt> <dd>Measuring (related to 'M' of Om).</dd>
+                <dt>Mokṣa (<span class="original-script">मोक्ष</span>)</dt> <dd>Liberation.</dd>
+                <dt>Morphē (<span class="original-script">μορφή</span>)</dt> <dd>Greek for form.</dd>
+                <dt>Mṛt / Mṛtyu (<span class="original-script">मृत्यु</span>)</dt> <dd>Death.</dd>
+                <dt>Mṛtyor mā amṛtaṃ gamaya (<span class="original-script">मृत्योर्मा अमृतं गमय</span>)</dt> <dd>"Lead me from death to immortality."</dd>
+                <dt>Nāma (<span class="original-script">नाम</span>)</dt> <dd>Name.</dd>
+                <dt>Nara (<span class="original-script">नर</span>)</dt> <dd>Man.</dd>
+                <dt>Narasimha (<span class="original-script">नरसिंह</span>)</dt> <dd>"Man-Lion" avatar.</dd>
+                <dt>Nāsadīya Sūkta (<span class="original-script">नासदीय सूक्त</span>)</dt> <dd>ṚgVeda hymn on creation.</dd>
+                <dt>Nastika (<span class="original-script">नास्तिक</span>)</dt> <dd>Heterodox (not accepting Veda).</dd>
+                <dt>Nau (<span class="original-script">नौ</span>)</dt> <dd>Us two.</dd>
+                <dt>Nirguṇa Brahman (<span class="original-script">निर्गुण ब्रह्मन्</span>)</dt> <dd>Brahman without qualities.</dd>
+                <dt>Nirvana (<span class="original-script">निर्वाण</span>)</dt> <dd>"To blow out"; liberation.</dd>
+                <dt>Nyagrodha (<span class="original-script">न्यग्रोध</span>)</dt> <dd>Banyan tree.</dd>
+                <dt>Nyāya (<span class="original-script">न्याय</span>)</dt> <dd>School of logic.</dd>
+                <dt>Om (<span class="original-script">ॐ</span>)</dt> <dd>Sacred syllable.</dd>
+                <dt>Ontic</dt> <dd>Relating to existence or distinctions within being.</dd>
+                <dt>Ontological</dt> <dd>Relating to the nature of being.</dd>
+                <dt>Pāda (<span class="original-script">पाद</span>)</dt> <dd>Foot, quarter (of a verse).</dd>
+                <dt>Pāṇḍava (<span class="original-script">पाण्डव</span>)</dt> <dd>The five sons of Pāṇḍu.</dd>
+                <dt>Pāṇḍu (<span class="original-script">पाण्डु</span>)</dt> <dd>Father of the Pāṇḍavas.</dd>
+                <dt>Pārvatī (<span class="original-script">पार्वती</span>)</dt> <dd>Consort of Śiva.</dd>
+                <dt>Perichoresis (<span class="original-script">περιχώρησις</span>)</dt> <dd>Mutual indwelling (theological term).</dd>
+                <dt>Pleroma (<span class="original-script">πλήρωμα</span>)</dt> <dd>Fullness (Greek).</dd>
+                <dt>Prajāpati (<span class="original-script">प्रजापति</span>)</dt> <dd>"Lord of Creatures."</dd>
+                <dt>Prajñā (<span class="original-script">प्रज्ञा</span>)</dt> <dd>Consciousness, wisdom (deep sleep state).</dd>
+                <dt>Prajñāna Ghana (<span class="original-script">प्रज्ञानघन</span>)</dt> <dd>"Mass/lump of consciousness."</dd>
+                <dt>Prajñānam Brahma (<span class="original-script">प्रज्ञानं ब्रह्म</span>)</dt> <dd>"Consciousness is Brahman" (Mahāvākya).</dd>
+                <dt>Prakṛti (<span class="original-script">प्रकृति</span>)</dt> <dd>Matter, nature (Sāṃkhya).</dd>
+                <dt>Pramāṇa (<span class="original-script">प्रमाण</span>)</dt> <dd>Valid source of knowledge.</dd>
+                <dt>Prāṇa (<span class="original-script">प्राण</span>)</dt> <dd>Breath, life force.</dd>
+                <dt>Pratyakṣa (<span class="original-script">प्रत्यक्ष</span>)</dt> <dd>Direct perception (Pramāṇa).</dd>
+                <dt>Pros (<span class="original-script">πρός</span>)</dt> <dd>Towards, with (Greek preposition).</dd>
+                <dt>Pros ton Theon (<span class="original-script">πρὸς τὸν θεόν</span>)</dt> <dd>"Towards/with God" (John 1:1).</dd>
+                <dt>Proverbs (<span class="original-script">מִשְׁלֵי</span>)</dt> <dd>Book of Hebrew Bible.</dd>
+                <dt>Psalm 104 (<span class="original-script">תְּהִלִּים 104</span>)</dt> <dd>Psalm discussed.</dd>
+                <dt>Purāṇa (<span class="original-script">पुराण</span>)</dt> <dd>"Ancient"; genre of Hindu texts.</dd>
+                <dt>Puruṣa (<span class="original-script">पुरुष</span>)</dt> <dd>Person, cosmic being, consciousness.</dd>
+                <dt>Puruṣa Sūkta (<span class="original-script">पुरुष सूक्त</span>)</dt> <dd>ṚgVeda hymn on cosmic sacrifice.</dd>
+                <dt>Puruṣārtha (<span class="original-script">पुरुषार्थ</span>)</dt> <dd>Aims of human life.</dd>
+                <dt>Pūrva Mīmāṃsā (<span class="original-script">पूर्वमीमांसा</span>)</dt> <dd>"Early Mīmāṃsā."</dd>
+                <dt>Quaerens</dt> <dd>Seeking, questioning (Latin).</dd>
+                <dt>Quid est veritas?</dt> <dd>"What is truth?" (Latin).</dd>
+                <dt>Rabbi Rashi (<span class="original-script">רַשִׁ"י</span>)</dt> <dd>Influential medieval Jewish commentator.</dd>
+                <dt>Rāja (<span class="original-script">राज</span>)</dt> <dd>King.</dd>
+                <dt>Rājas / Rajas (<span class="original-script">रजस्</span>)</dt> <dd>Passion, activity (guna).</dd>
+                <dt>Raktabīja (<span class="original-script">रक्तबीज</span>)</dt> <dd>"Blood-seed" demon.</dd>
+                <dt>Rāma (<span class="original-script">राम</span>)</dt> <dd>Avatar of Viṣṇu, hero of Rāmāyaṇa.</dd>
+                <dt>Rāmāyaṇa (<span class="original-script">रामायण</span>)</dt> <dd>Major Sanskrit epic.</dd>
+                <dt>Rāsa Līlā (<span class="original-script">रास लीला</span>)</dt> <dd>Kṛṣṇa's divine dance.</dd>
+                <dt>Ratha (<span class="original-script">रथ</span>)</dt> <dd>Chariot.</dd>
+                <dt>Rāvaṇa (<span class="original-script">रावण</span>)</dt> <dd>Demon king in Rāmāyaṇa.</dd>
+                <dt>Ṛg Veda (<span class="original-script">ऋग्वेद</span>)</dt> <dd>Oldest Veda.</dd>
+                <dt>Ṛṣi (<span class="original-script">ऋषि</span>)</dt> <dd>Seer, sage.</dd>
+                <dt>Rūaḥ ʾĔlōhīm (<span class="original-script">רוּחַ אֱלֹהִים</span>)</dt> <dd>Spirit/Wind/Breath of God (Hebrew).</dd>
+                <dt>Rūpa (<span class="original-script">रूप</span>)</dt> <dd>Form.</dd>
+                <dt>Śabara</dt> <dd>Ancient Mīmāṃsā commentator.</dd>
+                <dt>Śabda (<span class="original-script">शब्द</span>)</dt> <dd>Word, sound; verbal testimony (Pramāṇa).</dd>
+                <dt>Śabda Mātraṃ Devatā (<span class="original-script">शब्दमात्रं देवता</span>)</dt> <dd>"God is nothing but a word."</dd>
+                <dt>Ṣaḍ-darśana (<span class="original-script">षड्दर्शन</span>)</dt> <dd>Six orthodox schools.</dd>
+                <dt>Sadhu (<span class="original-script">साधु</span>)</dt> <dd>Holy person, ascetic.</dd>
+                <dt>Saguna Brahman (<span class="original-script">सगुण ब्रह्मन्</span>)</dt> <dd>Brahman with qualities.</dd>
+                <dt>Saha (<span class="original-script">सह</span>)</dt> <dd>Together.</dd>
+                <dt>Saha nāvavatu (<span class="original-script">सह नाववतु</span>)</dt> <dd>"May He protect us together."</dd>
+                <dt>Saha nau bhunaktu (<span class="original-script">सह नौ भुनक्तु</span>)</dt> <dd>"May He nourish us together."</dd>
+                <dt>Saha vīryaṁ karavāvahai (<span class="original-script">सह वीर्यं करवावहै</span>)</dt> <dd>"May we work together heroically."</dd>
+                <dt>Śaiva (<span class="original-script">शैव</span>)</dt> <dd>Devotee of Śiva.</dd>
+                <dt>Śaiva Siddhanta (<span class="original-script">शैव सिद्धान्त</span>)</dt> <dd>School of Śaivism.</dd>
+                <dt>Śākta (<span class="original-script">शाक्त</span>)</dt> <dd>Devotee of Śakti (Goddess).</dd>
+                <dt>Śakti (<span class="original-script">शक्ति</span>)</dt> <dd>Power, energy, the Goddess.</dd>
+                <dt>Sāma Veda (<span class="original-script">सामवेद</span>)</dt> <dd>Veda of chants.</dd>
+                <dt>Samādhi (<span class="original-script">समाधि</span>)</dt> <dd>Meditative absorption; character name.</dd>
+                <dt>Samanvaya (<span class="original-script">समन्वय</span>)</dt> <dd>Harmonization (interpretive principle).</dd>
+                <dt>Samavetā Yuyutsavaḥ (<span class="original-script">समवेता युयुत्सवः</span>)</dt> <dd>"Assembled desiring to fight" (Gītā 1.1).</dd>
+                <dt>Saṃhitā (<span class="original-script">संहिता</span>)</dt> <dd>Collection (Vedic hymns).</dd>
+                <dt>Saṃjñāna (<span class="original-script">संज्ञान</span>)</dt> <dd>Consciousness, perception.</dd>
+                <dt>Saṃkalpa (<span class="original-script">सङ्कल्प</span>)</dt> <dd>Determination, will.</dd>
+                <dt>Sāṃkhya (<span class="original-script">सांख्य</span>)</dt> <dd>Dualistic school (Puruṣa/Prakṛti).</dd>
+                <dt>Saṃgraha (<span class="original-script">संग्रह</span>)</dt> <dd>Grasping together, summary.</dd>
+                <dt>Saṃsāra (<span class="original-script">संसार</span>)</dt> <dd>Cycle of birth and death.</dd>
+                <dt>Saṃskāra (<span class="original-script">संस्कार</span>)</dt> <dd>Mental impression from action.</dd>
+                <dt>Śaṅkara (<span class="original-script">शंकर</span>)</dt> <dd>Adi Shankara, Advaita philosopher.</dd>
+                <dt>Sañjaya (<span class="original-script">सञ्जय</span>)</dt> <dd>Narrator in Mahābhārata.</dd>
+                <dt>Sannyāsa (<span class="original-script">संन्यास</span>)</dt> <dd>Renunciation stage.</dd>
+                <dt>Sannyāsin (<span class="original-script">संन्यासिन्</span>)</dt> <dd>Renunciate.</dd>
+                <dt>Sat (<span class="original-script">सत्</span>)</dt> <dd>Being, existence, reality, truth.</dd>
+                <dt>Satkāryavāda (<span class="original-script">सत्कार्यवाद</span>)</dt> <dd>Doctrine that effect pre-exists in cause.</dd>
+                <dt>Sattva (<span class="original-script">सत्त्व</span>)</dt> <dd>Purity, harmony (guna).</dd>
+                <dt>Satya (<span class="original-script">सत्य</span>)</dt> <dd>Truth (derived from Sat).</dd>
+                <dt>Sēmeia (<span class="original-script">σημεῖα</span>)</dt> <dd>Signs (Greek, used in John's Gospel).</dd>
+                <dt>Shringeri Matha (<span class="original-script">शृङ्गेरी मठ</span>)</dt> <dd>Important monastery.</dd>
+                <dt>Śiva (<span class="original-script">शिव</span>)</dt> <dd>Major Hindu deity (destroyer/transformer).</dd>
+                <dt>Śloka (<span class="original-script">श्लोक</span>)</dt> <dd>Sanskrit verse form.</dd>
+                <dt>Smārta (<span class="original-script">स्मार्त</span>)</dt> <dd>Hindu tradition following Smṛti.</dd>
+                <dt>Smṛti (<span class="original-script">स्मृति</span>)</dt> <dd>"Remembered" scripture.</dd>
+                <dt>Soma (<span class="original-script">सोम</span>)</dt> <dd>Vedic ritual drink/deity.</dd>
+                <dt>Sophia (<span class="original-script">σοφία</span>)</dt> <dd>Greek for Wisdom.</dd>
+                <dt>Soteriology (<span class="original-script">σωτηριολογία</span>)</dt> <dd>Study of salvation.</dd>
+                <dt>Spanda (<span class="original-script">स्पन्द</span>)</dt> <dd>Vibration.</dd>
+                <dt>Śrī (<span class="original-script">श्री</span>)</dt> <dd>Auspiciousness; Lakṣmī.</dd>
+                <dt>Śrī Vaiṣṇava (<span class="original-script">श्री वैष्णव</span>)</dt> <dd>Vaishnava tradition emphasizing Śrī.</dd>
+                <dt>Śṛṣṭi (<span class="original-script">सृष्टि</span>)</dt> <dd>Creation, unfolding.</dd>
+                <dt>Śruti (<span class="original-script">श्रुति</span>)</dt> <dd>"Heard" scripture (Vedas).</dd>
+                <dt>Śūdra (<span class="original-script">शूद्र</span>)</dt> <dd>Laborer/service varṇa.</dd>
+                <dt>Suratha (<span class="original-script">सुरथ</span>)</dt> <dd>"Good Chariot" (character name).</dd>
+                <dt>Sūra (<span class="original-script">सूर</span>)</dt> <dd>God, deity (Deva).</dd>
+                <dt>Śvetaketu (<span class="original-script">श्वेतकेतु</span>)</dt> <dd>Figure in Chāndogya Upaniṣad.</dd>
+                <dt>Swami (<span class="original-script">स्वामी</span>)</dt> <dd>Spiritual teacher title.</dd>
+                <dt>Taitirīya Upaniṣad (<span class="original-script">तैत्तिरीय उपनिषद्</span>)</dt> <dd>An Upaniṣad of the Yajur Veda.</dd>
+                <dt>Taijasa (<span class="original-script">तैजस</span>)</dt> <dd>Dream state consciousness.</dd>
+                <dt>Tamas (<span class="original-script">तमस्</span>)</dt> <dd>Darkness, inertia (guna).</dd>
+                <dt>Tamaso mā jyotir gamaya (<span class="original-script">तमसो मा ज्योतिर्गमय</span>)</dt> <dd>"Lead me from darkness to light."</dd>
+                <dt>Tanakh (<span class="original-script">תַּנַ״ךְ</span>)</dt> <dd>The Hebrew Bible.</dd>
+                <dt>Tantra (<span class="original-script">तन्त्र</span>)</dt> <dd>Body of esoteric texts/practices.</dd>
+                <dt>Tat Tvam Asi (<span class="original-script">तत् त्वम् असि</span>)</dt> <dd>"Thou Art That" (Mahāvākya).</dd>
+                <dt>Tehom (<span class="original-script">תְּהוֹם</span>)</dt> <dd>The Deep (Hebrew).</dd>
+                <dt>Tejas (<span class="original-script">तेजस्</span>)</dt> <dd>Light, brilliance; heat (at death).</dd>
+                <dt>Tejasvi nāvadhītamastu (<span class="original-script">तेजस्वि नावधीतमस्तु</span>)</dt> <dd>"May our study be illuminating."</dd>
+                <dt>Telos (<span class="original-script">τέλος</span>)</dt> <dd>Greek for goal, purpose.</dd>
+                <dt>Tetragrammaton (<span class="original-script">יהוה</span>)</dt> <dd>Four-letter name of God (YHWH).</dd>
+                <dt>Theon (<span class="original-script">θεόν</span>)</dt> <dd>God (Greek accusative).</dd>
+                <dt>Theophany (<span class="original-script">θεοφάνεια</span>)</dt> <dd>Visible manifestation of God.</dd>
+                <dt>Theos (<span class="original-script">θεός</span>)</dt> <dd>God (Greek nominative).</dd>
+                <dt>Tiamat</dt> <dd>Primordial goddess in Enūma Eliš.</dd>
+                <dt>Trimārga (<span class="original-script">त्रिमार्ग</span>)</dt> <dd>Three paths to liberation.</dd>
+                <dt>Trimurti (<span class="original-script">त्रिमूर्ति</span>)</dt> <dd>Hindu trinity (Brahma, Vishnu, Shiva).</dd>
+                <dt>Turīya (<span class="original-script">तुरीय</span>)</dt> <dd>"The Fourth" state of consciousness.</dd>
+                <dt>Tva (<span class="original-script">त्व</span>)</dt> <dd>Suffix creating abstract noun ("-ness").</dd>
+                <dt>Tvam (<span class="original-script">त्वम्</span>)</dt> <dd>Thou/You.</dd>
+                <dt>Ubhayatva (<span class="original-script">उभयत्व</span>)</dt> <dd>Equanimity (related to 'U' of Om).</dd>
+                <dt>Ugaritic</dt> <dd>Ancient Near Eastern language/culture.</dd>
+                <dt>Upamāna (<span class="original-script">उपमान</span>)</dt> <dd>Comparison/analogy (Pramāṇa).</dd>
+                <dt>Upaniṣad (<span class="original-script">उपनिषद्</span>)</dt> <dd>Philosophical texts of Vedas.</dd>
+                <dt>Upasaṃhāra (<span class="original-script">उपसंहार</span>)</dt> <dd>Coordination (interpretive principle).</dd>
+                <dt>Utkarṣa (<span class="original-script">उत्कर्ष</span>)</dt> <dd>Raising upwards (related to 'U' of Om).</dd>
+                <dt>Uttara Mīmāṃsā (<span class="original-script">उत्तरमीमांसा</span>)</dt> <dd>"Later Mīmāṃsā" (Vedānta).</dd>
+                <dt>Vada (<span class="original-script">वाद</span>)</dt> <dd>Speech, doctrine.</dd>
+                <dt>Vadin (<span class="original-script">वादिन्</span>)</dt> <dd>One who speaks/propounds.</dd>
+                <dt>Vāhana (<span class="original-script">वाहन</span>)</dt> <dd>Vehicle/mount of a deity.</dd>
+                <dt>Vaiśeṣika (<span class="original-script">वैशेषिक</span>)</dt> <dd>Atomistic school.</dd>
+                <dt>Vaiṣṇava (<span class="original-script">वैष्णव</span>)</dt> <dd>Devotee of Viṣṇu.</dd>
+                <dt>Vaiśvānara (<span class="original-script">वैश्वानर</span>)</dt> <dd>Waking state consciousness.</dd>
+                <dt>Vaiśya (<span class="original-script">वैश्य</span>)</dt> <dd>Merchant/producer varṇa.</dd>
+                <dt>Vānaprastha (<span class="original-script">वानप्रस्थ</span>)</dt> <dd>Forest-dweller/retirement stage.</dd>
+                <dt>Varāha (<span class="original-script">वराह</span>)</dt> <dd>Boar avatar.</dd>
+                <dt>Varṇa (<span class="original-script">वर्ण</span>)</dt> <dd>Societal division/class.</dd>
+                <dt>Vavatu</dt> <dd>"May he protect."</dd>
+                <dt>Veda (<span class="original-script">वेद</span>)</dt> <dd>Knowledge; primary Hindu scriptures.</dd>
+                <dt>Vedānta (<span class="original-script">वेदान्त</span>)</dt> <dd>"End of the Vedas"; philosophical school.</dd>
+                <dt>Vedāntin</dt> <dd>Follower of Vedānta.</dd>
+                <dt>Via negativa</dt> <dd>Negative theology (Latin).</dd>
+                <dt>Via positiva</dt> <dd>Affirmative theology (Latin).</dd>
+                <dt>Vid (<span class="original-script">विद्</span>)</dt> <dd>To know; hostility.</dd>
+                <dt>Vijñāna (<span class="original-script">विज्ञान</span>)</dt> <dd>Discriminative knowledge.</dd>
+                <dt>Vīryam (<span class="original-script">वीर्यम्</span>)</dt> <dd>Heroism, energy.</dd>
+                <dt>Virāj (<span class="original-script">विराज्</span>)</dt> <dd>Radiant principle/feminine creation aspect.</dd>
+                <dt>Viśiṣṭa (<span class="original-script">विशिष्ट</span>)</dt> <dd>Qualified, distinct.</dd>
+                <dt>Viśiṣṭādvaita (<span class="original-script">विशिष्टाद्वैत</span>)</dt> <dd>Qualified non-dualism.</dd>
+                <dt>Viṣṇu (<span class="original-script">विष्णु</span>)</dt> <dd>Major Hindu deity (preserver).</dd>
+                <dt>Vistāra (<span class="original-script">विस्तार</span>)</dt> <dd>Expansion, elaboration.</dd>
+                <dt>Yajña (<span class="original-script">यज्ञ</span>)</dt> <dd>Sacrifice, ritual.</dd>
+                <dt>Yajur Veda (<span class="original-script">यजुर्वेद</span>)</dt> <dd>Veda of ritual formulas.</dd>
+                <dt>Yajñavalkya (<span class="original-script">याज्ञवल्क्य</span>)</dt> <dd>Sage in Bṛhadāraṇyaka Upaniṣad.</dd>
+                <dt>Yam (<span class="original-script">ים</span>)</dt> <dd>Canaanite sea god.</dd>
+                <dt>Yaśodā (<span class="original-script">यशोदा</span>)</dt> <dd>Kṛṣṇa's foster mother.</dd>
+                <dt>YHWH (<span class="original-script">יהוה</span>)</dt> <dd>Tetragrammaton.</dd>
+                <dt>Yoga (<span class="original-script">योग</span>)</dt> <dd>Union, discipline; philosophical school.</dd>
+                <dt>Yoke</dt> <dd>Joining bar (analogy for yoga).</dd>
+                <dt>Yud He Vav He (<span class="original-script">יהוה</span>)</dt> <dd>Hebrew letters for YHWH.</dd>
+            </dl>
+        </section>
+
+        <section id="comparative-points">
+            <h2>Key Comparative Points</h2>
+            <ul>
+                <li><strong>Creation Narratives:</strong> Contrasting Genesis 1 (speech, order, goodness, Imago Dei) with Genesis 2-3 (hands-on, garden, prohibition), Vedic Hymns (questioning, sacrifice, unfolding), Proverbs 8 (pre-existent Wisdom), and Enūma Eliš (cosmic battle, humans as slaves).</li>
+                <li><strong>Nature of God/Ultimate Reality:</strong> Exploring concepts like Elohim vs. YHWH, the Trinity, Brahman (Nirguṇa vs. Saguṇa), Ātman, the relationship between the One and Many (Advaita vs. Viśiṣṭādvaita).</li>
+                <li><strong>Divine Manifestation:</strong> Comparing concepts like Avatāra (divine descent in Hinduism, e.g., Kṛṣṇa) with Incarnation (Christianity, the Word becoming flesh in John).</li>
+                <li><strong>Paths to Liberation/Salvation:</strong> Examining the Trimārga (Karma, Jñāna, Bhakti) in Hinduism vs. Christian concepts of salvation through faith, grace, and works (as interpreted through John's Gospel).</li>
+                <li><strong>Role of Scripture:</strong> Understanding the authority and function of Śruti vs. Smṛti in Hinduism compared to the role of the Hebrew Bible and New Testament in Christianity.</li>
+                <li><strong>Ethics and Duty:</strong> Comparing the concept of Dharma with notions of divine law, commandment, and love in the Judeo-Christian tradition.</li>
+                <li><strong>Knowledge vs. Devotion:</strong> The tension and synthesis between Jñāna Mārga and Bhakti Mārga finds parallels in discussions of faith vs. reason or intellectual understanding vs. relational knowing in Christianity.</li>
+            </ul>
+        </section>
+
+        <section id="study-tips">
+            <h2>Study Tips & How to Use This Guide</h2>
+            <ul>
+                <li>Use the navigation links (top bar or side Table of Contents) to jump to specific topics.</li>
+                <li>Review the <strong>Synopsis</strong> and <strong>Key Takeaways</strong> for each unit to grasp the main points covered in those classes.</li>
+                <li>Pay close attention to the <strong>Vocabulary</strong> list. Understanding these terms is essential for discussing the course material accurately. Practice using them!</li>
+                <li>Use the <strong>Key Concepts</strong> section to deepen your understanding of major philosophical and theological ideas. Note Brad's analogies.</li>
+                <li>Refer to the <strong>Comparative Points</strong> section to prepare for discussions that bridge the two traditions.</li>
+                <li>Revisit the source texts (Genesis, Vedic Hymns, Upanishads, Bhagavad Gita, Gospel of John, etc.) alongside this guide. Remember Brad's emphasis: <span class="highlight">keep the text central!</span></li>
+                <li>Think about the podcast structure: focus on a specific passage, explain its context and meaning, raise discussion questions, and engage with your team members' interpretations.</li>
+                <li>Practice the <span class="highlight">Saṅgraha-Vistara</span> method: try summarizing complex ideas concisely and then elaborating on their nuances.</li>
+                <li>Don't just memorize facts; strive for *understanding* (as per Anselm and the course goal). Question assumptions and explore different interpretations (*Advaita* vs. *Viśiṣṭādvaita*, etc.).</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <p>Study Guide compiled from THEO 1432 class materials. Remember to consult original texts and class notes for full context.</p>
+        </footer>
+
+    </div> <!-- report-container -->
+
+    <!-- Basic script for potential future interactivity, e.g., highlighting active nav item -->
+    <script>
+        // Simple script to potentially highlight active navbar link based on scroll position later
+        // Or use for collapsible sections, etc.
+        document.addEventListener('DOMContentLoaded', (event) => {
+            console.log('Study guide loaded.');
+            // Add interactive JS here if needed
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THEO 1432: The Religious Quest - Course Hub & Study Guide</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --bc-maroon: #4a001e;
+            --bc-gold: #b3a369;
+            --bc-blue: #005a9c;
+            --text-dark: #333;
+            --text-light: #555;
+            --bg-light: #fdfdfd;
+            --bg-alt: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-alt);
+            color: var(--text-dark);
+        }
+
+        /* Navigation Bar */
+        #navbar {
+            background-color: var(--bc-maroon);
+            padding: 12px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        #navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        #navbar li {
+            margin: 5px 15px; /* Add vertical margin for wrap */
+        }
+        #navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 0.95em;
+        }
+        #navbar a:hover, #navbar a.active {
+            background-color: var(--bc-gold);
+            color: var(--bc-maroon);
+        }
+
+        /* Floating Table of Contents */
+        #toc-float {
+            position: fixed;
+            left: 15px;
+            top: 80px; /* Below navbar */
+            width: 210px;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            max-height: calc(100vh - 100px); /* Adjust based on top position + desired bottom margin */
+            overflow-y: auto;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+            font-size: 0.85em;
+            z-index: 900; /* Below navbar */
+        }
+        #toc-float h3 {
+             margin-top: 0;
+             margin-bottom: 10px;
+             color: var(--bc-maroon);
+             font-size: 1.2em;
+             text-align: center;
+             border-bottom: 1px solid #ccc;
+             padding-bottom: 8px;
+        }
+        #toc-float ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+         #toc-float ul ul { /* Indent nested lists */
+             padding-left: 15px;
+         }
+        #toc-float li {
+            margin-bottom: 6px;
+        }
+        #toc-float a {
+            text-decoration: none;
+            color: var(--bc-blue);
+            display: block;
+            padding: 3px 0;
+        }
+         #toc-float a:hover {
+            text-decoration: underline;
+            color: var(--bc-gold);
+            background-color: rgba(74, 0, 30, 0.05); /* Subtle hover */
+         }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto 30px 250px; /* Left margin for ToC */
+            padding: 30px 45px;
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Headings */
+        h1, h2, h3, h4 {
+            color: var(--bc-maroon);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid var(--bc-gold);
+            padding-bottom: 15px;
+            margin-bottom: 1.2em;
+            font-size: 2.4em;
+            font-family: Georgia, serif;
+        }
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 2.5em;
+            font-size: 1.9em;
+             font-family: Georgia, serif;
+        }
+        h3 {
+            color: #6a1a3e;
+            margin-top: 2em;
+            border-bottom: none;
+            font-size: 1.5em;
+        }
+        h4 {
+             color: #80405e;
+             font-style: italic;
+             margin-top: 1.8em;
+             font-size: 1.2em;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-bottom: 1.5em;
+            padding-left: 25px; /* Standard indent */
+        }
+        li {
+            margin-bottom: 0.8em;
+        }
+        .schedule-list, .text-resource-list, .image-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .schedule-list li {
+            margin-bottom: 1.5em; /* More spacing between dates */
+            padding-left: 10px;
+            border-left: 4px solid var(--bc-gold);
+        }
+        .schedule-list strong {
+            font-weight: 600;
+            color: var(--text-dark);
+            display: block;
+            margin-bottom: 5px;
+        }
+         .schedule-list a {
+             display: inline-block; /* Keep links on same line */
+             margin-right: 15px; /* Space between links */
+             font-size: 0.95em;
+         }
+         .missing-resource {
+             display: inline-block;
+             margin-left: 0; /* Adjust as needed */
+             color: #888;
+             font-style: italic;
+             font-size: 0.9em;
+         }
+
+        /* Vocabulary List */
+        .vocabulary-list dt {
+            font-weight: bold;
+            color: var(--bc-maroon);
+            margin-top: 1.2em;
+            font-size: 1.05em;
+        }
+        .vocabulary-list dd {
+            margin-left: 25px;
+            margin-bottom: 1.2em;
+            font-style: italic;
+            color: var(--text-light);
+        }
+        .original-script {
+            font-family: 'Noto Sans Devanagari', 'Noto Sans Hebrew', 'Noto Sans Greek', 'Times New Roman', serif;
+            color: #666;
+            font-style: normal;
+            margin-left: 5px;
+            font-size: 1.1em; /* Slightly larger for readability */
+        }
+
+        /* Takeaways List */
+         .takeaways li {
+            position: relative;
+            padding-left: 30px;
+            list-style: none;
+            margin-bottom: 12px;
+            background-color: #f1f8ff; /* Light blue background */
+            padding: 10px 15px 10px 30px;
+            border-radius: 4px;
+            border-left: 4px solid var(--bc-blue);
+        }
+        .takeaways li::before {
+            content: '💡'; /* Lightbulb emoji */
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Study Tips List */
+        .study-tips li {
+            position: relative;
+            padding-left: 30px;
+            list-style: none;
+            margin-bottom: 12px;
+        }
+         .study-tips li::before {
+            content: '✅'; /* Check mark */
+            position: absolute;
+            left: 8px;
+            top: 1px; /* Adjust vertical alignment */
+            font-size: 1em;
+            color: #28a745; /* Green color */
+        }
+
+        /* Details / Summary for Collapsible Sections */
+        details {
+            background-color: #f1f3f5;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 12px 18px;
+            margin-bottom: 12px;
+            transition: background-color 0.2s ease;
+        }
+        details[open] {
+            background-color: #e9ecef;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--bc-maroon);
+            font-size: 1.1em;
+        }
+         summary:hover {
+             color: var(--bc-gold);
+         }
+        summary::marker { /* Style the default arrow */
+            color: var(--bc-blue);
+        }
+
+        /* Links */
+        a {
+            color: var(--bc-blue);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #003865; /* Darker BC Blue */
+        }
+
+        /* Misc */
+        .highlight {
+            background-color: #fff3cd; /* Light yellow */
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-style: italic;
+        }
+         .text-ref { /* For referencing texts like Upanishads */
+            font-weight: bold;
+            font-family: Georgia, serif;
+            color: #6a1a3e;
+        }
+         .centered-image {
+             display: block;
+             margin: 20px auto;
+             max-width: 80%;
+             height: auto;
+             border-radius: 5px;
+             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+         }
+         .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1300px) {
+            #toc-float {
+                display: none;
+            }
+            .container {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 95%; /* Use more width when ToC is hidden */
+            }
+        }
+        @media (max-width: 768px) {
+             body { margin: 0; }
+            .container {
+                padding: 20px;
+                margin: 15px;
+                max-width: none;
+                width: auto;
+                 border-radius: 0;
+                 box-shadow: none;
+            }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.3em; }
+             #navbar ul { justify-content: space-around; }
+             #navbar li { margin: 5px 5px; }
+             #navbar a { padding: 5px; font-size: 0.9em;}
+             .centered-image { max-width: 100%; }
+        }
+         @media (max-width: 480px) {
+             h1 { font-size: 1.5em; }
+             h2 { font-size: 1.3em; }
+             h3 { font-size: 1.1em; }
+             .container { padding: 15px; margin: 10px;}
+         }
+
+    </style>
+    <!-- Google Fonts for Noto Sans Devanagari, Hebrew, Greek -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Noto+Sans+Greek&family=Noto+Sans+Hebrew&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#introduction">Intro</a></li>
+            <li><a href="#overall-themes">Themes</a></li>
+            <li><a href="#unit-summaries">Unit Summaries</a></li>
+            <li><a href="#class-agenda">Agenda</a></li>
+            <li><a href="#key-concepts">Concepts</a></li>
+            <li><a href="#vocabulary">Vocabulary</a></li>
+            <li><a href="#primary-texts">Readings</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#study-tips">Study Tips</a></li>
+        </ul>
+    </nav>
+
+    <!-- Floating Table of Contents -->
+    <aside id="toc-float">
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#overall-themes">Overall Themes</a></li>
+            <li><a href="#unit-summaries">Unit Summaries</a>
+                <ul>
+                     <li><a href="#unit-foundations">Foundations</a></li>
+                     <li><a href="#unit-creation">Creation Myths</a></li>
+                     <li><a href="#unit-advaita">Advaita Vedānta</a></li>
+                     <li><a href="#unit-lila-krishna">Līlā & Kṛṣṇa</a></li>
+                     <li><a href="#unit-gita-john">Gītā & John</a></li>
+                </ul>
+            </li>
+            <li><a href="#class-agenda">Class Agenda</a></li>
+            <li><a href="#key-concepts">Key Concepts</a></li>
+            <li><a href="#vocabulary">Vocabulary</a></li>
+            <li><a href="#comparative-points">Comparative Points</a></li>
+            <li><a href="#primary-texts">Primary Texts</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#study-tips">Study Tips</a></li>
+        </ul>
+    </aside>
+
+    <main class="container">
+        <h1>THEO 1432: The Religious Quest<br>Course Hub & Study Guide</h1>
+        <img src="Jesus_Krishna_Apple.png" alt="Artistic depiction of Jesus and Krishna sitting together under a tree, sharing an apple." class="centered-image">
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Welcome to the central hub for THEO 1432: The Religious Quest. This page serves as a dynamic study guide, consolidating resources, key concepts, vocabulary, and summaries from our comparative exploration of Hindu and Christian sacred texts. Our journey focuses on themes of <span class="highlight">Creation, Creativity, and Recreation/Play (Līlā)</span>.</p>
+            <p>This guide integrates the essential content previously found in `Study_Guide.html`. Use the navigation above or the table of contents (on larger screens) to explore. Remember, theology is <span class="highlight">faith seeking understanding</span> – let's engage with these rich traditions thoughtfully and respectfully.</p>
+             <p><em>(Looking for the course syllabus? <a href="syllabus.html">Click here</a>)</em></p>
+        </section>
+
+        <section id="overall-themes">
+            <h2>Overall Course Themes</h2>
+             <p>These themes weave through our comparative study:</p>
+            <details>
+                 <summary>View Overall Themes</summary>
+                 <ul>
+                    <li><strong>Creation & Causality:</strong> Narratives of origin (Genesis, Vedic hymns, Purāṇas) and philosophical concepts of material, efficient, and final causes.</li>
+                    <li><strong>Nature of Reality:</strong> Concepts like non-dualism (Advaita), qualified non-dualism (Viśiṣṭādvaita), the One and the Many, matter and spirit/energy.</li>
+                    <li><strong>Divine Play (Līlā):</strong> Understanding divine action as spontaneous, joyful play rather than necessity.</li>
+                    <li><strong>Ethics & Duty (Dharma):</strong> Investigating moral responsibility, right action, and cosmic/social order.</li>
+                    <li><strong>Knowledge & Ignorance:</strong> Exploring paths to wisdom (Jñāna Mārga) and overcoming ignorance (avidyā).</li>
+                    <li><strong>Devotion (Bhakti):</strong> Understanding the path of love towards a personal deity (Kṛṣṇa, Devī, Christ).</li>
+                    <li><strong>Scriptural Interpretation:</strong> Recognizing context, language, genre (Śruti, Smṛti, Gospel), and interpretive methods (allegory, Mīmāṃsā).</li>
+                    <li><strong>Self & Identity:</strong> Questioning the nature of the self (Ātman, "I") and its relationship to the divine (Brahman, God).</li>
+                    <li><strong>Comparative Method:</strong> Engaging deeply with individual traditions before drawing comparisons.</li>
+                 </ul>
+            </details>
+        </section>
+
+        <section id="unit-summaries">
+            <h2>Unit Summaries</h2>
+            <details id="unit-foundations">
+                <summary>Unit 1: Foundations & Methods (Approx. Jan 14 - Jan 21)</summary>
+                <p>Established the course's theological framework (*fides quaerens intellectum*). Introduced the Hindu canon (*Śruti* - Vedas, its structure: *Saṃhitā, Brāhmaṇa, Āraṇyaka, Upaniṣad*) and the six orthodox schools (*Ṣaḍ-darśana*). Focused on *Mīmāṃsā* (ritual interpretation, *arthavāda*, *dharma* as action).</p>
+            </details>
+             <details id="unit-creation">
+                <summary>Unit 2: Creation Narratives (Approx. Jan 16 - Jan 30)</summary>
+                <p>Comparative analysis of creation accounts: Genesis 1-3 (Elohim/YHWH, Imago Dei, Garden narrative, contrast with *Enūma Eliš*), ṚgVeda Hymns (X.90, X.121, X.129 - sacrifice, golden embryo, questioning), Proverbs 8-9 (Wisdom/Sophia personified, creation role), Psalm 104 (parallels/contrasts with Genesis 1, Canaanite context).</p>
+            </details>
+             <details id="unit-devi">
+                 <summary>Unit 3: Devī & Divine Power (Approx. Jan 28)</summary>
+                 <p>Introduction to Śāktism (Devī worship). Explored the *Devī Māhātmyam* (Smṛti text) through an allegorical lens (Suratha/Samādhi/Medhas, demons as inner obstacles). Discussed *Śakti* (divine power), the three *guṇas* (Tamas, Rajas, Sattva), and the iconography of Durgā and Kālī.</p>
+             </details>
+             <details id="unit-advaita">
+                <summary>Unit 4: Advaita Vedānta & Mahāvākyas (Approx. Feb 4 - Feb 13)</summary>
+                <p>Focused on Advaita Vedānta (non-dualism). Studied the four *Mahāvākyas* ("Great Sayings") through key Upaniṣads: *Bṛhadāraṇyaka* (Ahaṃ Brahmāsmi), *Chāndogya* (Tat Tvam Asi - using analogies like clay, rivers, salt, seed), *Aitareya* (Prajñānam Brahma), and *Māṇḍūkya* (Ayam Ātmā Brahma - exploring Om and states of consciousness). Emphasized interpretive harmony (*Samanvaya*).</p>
+            </details>
+             <details id="unit-lila-krishna">
+                <summary>Unit 5: Līlā, Kṛṣṇa & Bhakti (Approx. Feb 18 - Feb 27)</summary>
+                <p>Introduced *Līlā* (divine play) via Sachs and Johnston Lørgen readings. Reviewed Vedānta schools (*Advaita* vs. *Viśiṣṭādvaita*) and causality. Introduced *Pramāṇas* (sources of knowledge), focusing on *Abhāva* (non-being/absence) via Kumārila Bhaṭṭa (milk-to-curd). Introduced Kṛṣṇa, the *avatāra* concept (using Narasimha story), and stories from the Bhāgavata Purāṇa (Kṛṣṇa eating mud, dancing on Kaliya) illustrating Līlā and the *Bhakti Mārga*.</p>
+            </details>
+             <details id="unit-gita-john">
+                <summary>Unit 6: Bhagavad Gītā & Gospel of John (Approx. Mar 11 - Apr 15)</summary>
+                <p>Comparative study of central texts. *Bhagavad Gītā*: Context (Mahābhārata), Arjuna's dilemma, Kṛṣṇa's teachings on *Dharma*, *Karma Yoga* (detached action), the immortal *Ātman*, *Jñāna*, *Bhakti*, *Lokasaṅgraha*, *Brahman Nirvana*. *Gospel of John*: High Christology, *Logos* prologue, miracles as "signs" (*sēmeia*), "I AM" statements, knowing vs. believing, themes of light/darkness, water/spirit, role of the "beloved disciple," Father/Son relationship, foot washing.</p>
+            </details>
+            <!-- Add more units as the course progresses -->
+        </section>
+
+        <section id="class-agenda">
+            <h2>Class Agenda & Resources</h2>
+            <ul class="schedule-list">
+                 <li><strong>Tuesday, January 14, 2025</strong> (<a href="RQ_01_14_1030.html">10:30 Notes</a>) (<a href="RQ_01_14_1200.html">Noon Notes</a>)<br>Introduction to the Course</li>
+                 <li><strong>Thursday, January 16, 2025</strong> (<a href="RQ_01_16_1030.html">10:30 Notes</a>) (<span class="missing-resource">Noon Notes Missing</span>)<br>Reading: <a href="Genesis_1-3.html">Genesis 1&ndash;3</a></li>
+                 <li><strong>Tuesday, January 21, 2025</strong> (<span class="missing-resource">10:30 Notes Missing</span>) (<a href="RQ_01_21_1200.html">Noon Notes</a>)<br>Reading: <a href="RgVedaSamhita_three_hymns.html">ṚgVeda X.90, X.121, X.129</a></li>
+                 <li><strong>Thursday, January 23, 2025</strong> (<a href="RQ_01_23_noon.html">Noon Notes</a>)<br>Reading: <a href="Proverbs_8-9.html">Proverbs 8&ndash;9</a></li>
+                 <li><strong>Tuesday, January 28, 2025</strong> (<a href="RQ_01_28_1030.html">10:30 Notes</a>) (<a href="RQ_01_28_1200.html">Noon Notes</a>)<br>Reading: <a href="DeviMahatmya_Selections.html">Devī Māhātmya (Excerpts)</a></li>
+                 <li><strong>Thursday, January 30, 2025</strong> (<a href="RQ_01_30_noon.html">Noon Notes</a>)<br>Reading: Psalm 104 (JPS Translation link needed, or provide file)</li>
+                 <li><strong>Podcast 1 due Sunday, Feb 2</strong></li>
+                 <li><strong>Tuesday, February 4, 2025</strong> (<a href="RQ_02_04_1030.html">10:30 Notes</a>) (<a href="RQ_02_04_noon.html">Noon Notes</a>)<br>Reading: Bṛhadāraṇyaka Upaniṣad I.4 (<a href="Mahavakyas.html#brihadaranyaka-1-4">Link to section</a>)</li>
+                 <li><strong>Thursday, February 6, 2025</strong><br>Reading: Aitareya Upaniṣad III (<a href="Mahavakyas.html#aitareya-3">Link to section</a>)</li>
+                 <li><strong>Tuesday, February 11, 2025</strong> (<a href="RQ_02_11_1030.html">10:30 Notes</a>) (<a href="RQ_02_11_noon.html">Noon Notes</a>)<br>Reading: Chāndogya Upaniṣad VI (<a href="Mahavakyas.html#chandogya-6">Link to section</a>)</li>
+                 <li><strong>Thursday, February 13, 2025</strong> (<a href="RQ_02_13_1030.html">10:30 Notes</a>) (<a href="RQ_02_13_noon.html">Noon Notes</a>)<br>Reading: <a href="Mahavakyas.html#mandukya">Māṇḍūkya Upaniṣad</a></li>
+                 <li><strong>Podcast 2 due Sunday, Feb 16</strong></li>
+                 <li><strong>Tuesday, February 18, 2025</strong> (<a href="RQ_02_18_1030.html">10:30 Notes</a>) (<a href="RQ_03_18_NOON.html">Noon Notes</a>)<br>Review: Advaita Vedānta, Ṣaḍ Darśana</li>
+                 <li><strong>Thursday, February 20, 2025</strong> (<a href="RQ_02_20_1030.html">10:30 Notes</a>) (<a href="RQ_02_20_noon.html">Noon Notes</a>)<br>Reading: <a href="IntrotoHinduTheology.html">Hindu Theology Overview</a> & Intro to Līlā</li>
+                 <li><strong>Tuesday, February 25, 2025</strong> (<a href="RQ_02_25_1030.html">10:30 Notes</a>) (<a href="RQ_02_25_noon.html">Noon Notes</a>)<br>Readings: <a href="Sax_William_Lila.html">William Sax on Līlā</a>, <a href="Johnston_Largen_2-3.html">Johnston Lørgen Ch 2-3</a></li>
+                 <li><strong>Thursday, February 27, 2025</strong> (<a href="RQ_02_27_1030.html">10:30 Notes</a>) (<a href="RQ_02_27_noon.html">Noon Notes</a>)<br>Review Game & Podcast Prep</li>
+                 <li><strong>Podcast 3 due Sunday, March 2 (or after break)</strong></li>
+                 <li><em>SPRING BREAK</em></li>
+                 <li><strong>Tuesday, March 11, 2025</strong> (<a href="RQ_03_11_1030.html">10:30 Notes</a>) (<a href="RQ_03_11_noon.html">Noon Notes</a>)<br>Intro to Gītā and Gospel</li>
+                 <li><strong>Thursday, March 13, 2025</strong> (<a href="RQ_03_13_1030.html">10:30 Notes</a>) (<a href="RQ_03_13_noon.html">Noon Notes</a>)<br>Reading: <a href="The Gospel According to John, chapters 1-21.html#chapter-1">John 1-5</a></li>
+                 <li><strong>Tuesday, March 18, 2025</strong> (<a href="RQ_03_18_1030.html">10:30 Notes</a>) (<a href="RQ_03_18_NOON.html">Noon Notes</a>)<br>Leadership Group A<br>Reading: <a href="Bhagavad_Gita_Stoller_Miller_full_text.html#h.eptt6guir0zj">Bhagavad Gītā 1&ndash;2</a></li>
+                 <li><strong>Thursday, March 20, 2025</strong><br>Leadership Group B<br>Reading: <a href="The Gospel According to John, chapters 1-21.html#chapter-6">John 6-9</a></li>
+                 <li><strong>Tuesday, March 25, 2025</strong> (<a href="RQ_03_25_1030.html">10:30 Notes</a>) (<a href="RQ_03_25_noon.html">Noon Notes</a>)<br>Leadership Group C<br>Reading: <a href="Bhagavad_Gita_Stoller_Miller_full_text.html#h.f03fp9zd043c">Bhagavad Gītā 3-5</a></li>
+                 <li><strong>Thursday, March 27, 2025</strong> (<a href="RQ_03_27_1030.html">10:30 Notes</a>) (<a href="RQ_03_27_noon.html">Noon Notes</a>)<br>Leadership Group D<br>Reading: <a href="The Gospel According to John, chapters 1-21.html#chapter-10">John 10-13</a></li>
+                 <li><strong>Podcast 4 due Sunday March 30, 2025</strong></li>
+                 <li><strong>Tuesday, April 1, 2025</strong><br>Leadership Group D<br>Reading: <a href="Bhagavad_Gita_Stoller_Miller_full_text.html#h.m7xdaeq1sxx">Bhagavad Gītā 6-8</a></li>
+                 <li><strong>Thursday, April 3, 2025</strong><br>Leadership Group C<br>Reading: <a href="The Gospel According to John, chapters 1-21.html#chapter-14">John 14&ndash;17</a></li>
+                 <li><strong>Tuesday, April 8, 2025</strong><br>Leadership Group B<br>Reading: <a href="Bhagavad_Gita_Stoller_Miller_full_text.html#h.wtnkjdcp1bz8">Bhagavad Gītā 9-11</a></li>
+                 <li><strong>Thursday, April 10, 2025</strong><br>Leadership Group A<br>Reading: <a href="The Gospel According to John, chapters 1-21.html#chapter-18">John 18-21</a></li>
+                 <li><strong>Tuesday, April 15, 2025</strong><br>Reading: <a href="Bhagavad_Gita_Stoller_Miller_full_text.html#h.fm2y8vbwwd89">Bhagavad Gītā 15</a> & <a href="Bhagavad_Gita_Stoller_Miller_full_text.html#h.o1md3enxn9rx">18</a></li>
+                 <li><strong>No class April 17 (Maundy Thursday)</strong></li>
+                 <li><strong>No class April 22 (Monday class schedule)</strong></li>
+                 <li><strong>Podcast 5 due Wednesday April 23, 2025</strong></li>
+                 <li><strong>Thursday, April 24, 2025</strong><br>Flex Day</li>
+                 <li><strong>Podcast 6 due Sunday April 27, 2025</strong></li>
+                 <li><strong>Tuesday, April 29, 2025</strong><br>Concluding Lecture</li>
+                 <li><strong>Thursday, May 1, 2025</strong><br>Exam Review Day</li>
+                 <li><strong>Final Comprehensive Podcast Exams (During Finals Week)</strong></li>
+            </ul>
+        </section>
+
+        <section id="key-concepts">
+            <h2>Key Concepts & Philosophies</h2>
+             <details>
+                 <summary>Expand Key Concepts</summary>
+                 <h3 id="concept-advaita">Advaita Vedānta (Non-Dualism)</h3>
+                 <p>School asserting *Advaita* ("not two"). Ātman = Brahman. Multiplicity is ultimately illusory (*māyā*) or relative (*ontic* difference within *ontological* unity). Liberation (*mokṣa*) through knowledge (*jñāna*). (See <a href="RQ_02_04_noon.html">Feb 4 Notes</a>, <a href="RQ_02_13_1030.html">Feb 13 Notes</a>)</p>
+                 <h3 id="concept-visishta">Viśiṣṭādvaita Vedānta (Qualified Non-Dualism)</h3>
+                 <p>School asserting "qualified non-dualism." Brahman is ultimate but possesses real attributes, including distinct souls (*cit*) and matter (*acit*) as its "body". Theistic, emphasizing *bhakti* to a personal God (Īśvara/Viṣṇu). (See <a href="RQ_02_18_1030.html">Feb 18 Notes</a>)</p>
+                 <h3 id="concept-lila">Līlā (Divine Play)</h3>
+                 <p>Divine action as spontaneous, joyful play, not driven by necessity. Explains creation and divine interaction (esp. Kṛṣṇa). (See <a href="Sax_William_Lila.html">Sax Reading</a>, <a href="Johnston_Largen_2-3.html">Johnston Lørgen</a>, <a href="RQ_02_20_noon.html">Feb 20 Notes</a>)</p>
+                 <h3 id="concept-dharma">Dharma</h3>
+                 <p>Complex term: duty, righteousness, cosmic law, ethics, inherent nature. In Mīmāṃsā, it's "what is to be done" via ritual. In Gītā, includes societal duty (*svadharma*) and universal righteousness. (See <a href="IntrotoHinduTheology.html">Intro Handout</a>, <a href="RQ_01_21_1030.html">Jan 21 Notes</a>, <a href="RQ_03_18_NOON.html">Mar 18 Notes</a>)</p>
+                 <h3 id="concept-karma">Karma</h3>
+                 <p>Action, work, deed. In Mīmāṃsā, specifically Vedic ritual. Broadened in Gītā to all action. Includes the law of cause and effect shaping future lives (*saṃskāra*). *Karma Yoga* is detached action. (See <a href="RQ_03_25_noon.html">Mar 25 Notes</a>)</p>
+                 <h3 id="concept-pramanas">Pramāṇas (Sources of Knowledge)</h3>
+                 <p>Valid means of knowing: *Pratyakṣa* (perception), *Anumāna* (inference), *Śabda* (testimony/scripture), *Upamāna* (analogy), *Arthāpatti* (postulation), *Abhāva* (non-perception/absence). (See <a href="RQ_02_25_noon.html">Feb 25 Notes</a>)</p>
+                 <h3 id="concept-causality">Causality</h3>
+                 <p>Types: Material (substance), Efficient (agent/shaper), Final (*telos*/purpose, e.g., Līlā). Discussed in relation to creation and different Vedānta schools. (See <a href="RQ_02_18_1030.html">Feb 18 Notes</a>, <a href="RQ_03_11_noon.html">Mar 11 Notes</a>)</p>
+                 <h3 id="concept-shruti-smriti">Śruti vs. Smṛti</h3>
+                 <p>*Śruti*: "Heard," revealed, authorless scripture (Vedas). *Smṛti*: "Remembered," traditional texts derived from Śruti (Epics, Purāṇas). (See <a href="IntrotoHinduTheology.html">Intro Handout</a>, <a href="RQ_01_21_1030.html">Jan 21 Notes</a>)</p>
+                 <h3 id="concept-mahavakyas">Mahāvākyas</h3>
+                 <p>"Great Sayings" summarizing Upaniṣadic truth: *Ahaṃ Brahmāsmi*, *Tat Tvam Asi*, *Prajñānam Brahma*, *Ayam Ātmā Brahma*. (See <a href="Mahavakyas.html">Mahavakyas Handout</a>, <a href="RQ_02_04_noon.html">Feb 4 Notes</a> - <a href="RQ_02_13_1030.html">Feb 13 Notes</a>)</p>
+                 <h3 id="concept-trimarga">Trimārga</h3>
+                 <p>Three paths to liberation: *Karma Mārga* (action), *Jñāna Mārga* (knowledge), *Bhakti Mārga* (devotion). (See <a href="IntrotoHinduTheology.html">Intro Handout</a>, <a href="RQ_03_18_NOON.html">Mar 18 Notes</a>)</p>
+                 <h3 id="concept-avatara">Avatāra</h3>
+                 <p>"Descent"; divine manifestation (esp. Viṣṇu) in worldly form. (See <a href="IntrotoHinduTheology.html">Intro Handout</a>, <a href="RQ_02_20_noon.html">Feb 20 Notes</a>)</p>
+                 <h3 id="concept-logos">Logos & Sophia</h3>
+                 <p>*Logos* (Greek): Word, Reason. Central in John 1. *Sophia* (Greek) / *Ḥokmāh* (Hebrew): Wisdom. Personified in Proverbs 8. (See <a href="RQ_01_23_noon.html">Jan 23 Notes</a>, <a href="RQ_03_13_noon.html">Mar 13 Notes</a>)</p>
+                 <h3 id="concept-imago-dei">Imago Dei</h3>
+                 <p>"Image of God" (Latin). Concept from Genesis 1:26-27. (See <a href="RQ_01_16_1030.html">Jan 16 Notes</a>)</p>
+            </details>
+        </section>
+
+        <section id="vocabulary">
+            <h2>Comprehensive Vocabulary</h2>
+             <details>
+                <summary>Expand Vocabulary List</summary>
+                <dl class="vocabulary-list">
+                    <!-- Consolidated list will be populated here -->
+                    <dt>Abhava Pramāṇa (<span class="original-script">अभाव प्रमाण</span>)</dt> <dd>Valid source of knowledge through non-existence or absence.</dd>
+                    <dt>Abhiṣikta (<span class="original-script">अभिषिक्त</span>)</dt> <dd>Anointed one (Sanskrit for Christos).</dd>
+                    <dt>Adhikara (<span class="original-script">अधिकार</span>)</dt> <dd>Qualification, authority (esp. for rituals).</dd>
+                    <dt>Aditam (<span class="original-script">अदितम्</span>)</dt> <dd>Things accomplished together (from mantra).</dd>
+                    <dt>Adonai (<span class="original-script">אֲדֹנָי</span>)</dt> <dd>Hebrew term meaning "My Lord," used as a substitute for the Tetragrammaton.</dd>
+                    <dt>Advaita (<span class="original-script">अद्वैत</span>)</dt> <dd>Non-dualism; "not two".</dd>
+                    <dt>Aham (<span class="original-script">अहम्</span>)</dt> <dd>"I."</dd>
+                    <dt>Aham Brahmāsmi (<span class="original-script">अहं ब्रह्मास्मि</span>)</dt> <dd>"I am Brahman" (Mahāvākya).</dd>
+                    <dt>Aitareya Upaniṣad (<span class="original-script">ऐतरेय उपनिषद्</span>)</dt> <dd>An Upaniṣad of the Ṛg Veda.</dd>
+                    <dt>Akarma (<span class="original-script">अकर्म</span>)</dt> <dd>Inaction.</dd>
+                    <dt>Akṣa (<span class="original-script">अक्ष</span>)</dt> <dd>Eye.</dd>
+                    <dt>Amṛtam (<span class="original-script">अमृतम्</span>)</dt> <dd>Immortality, nectar.</dd>
+                    <dt>Ananta (<span class="original-script">अनन्त</span>)</dt> <dd>Endless, eternal.</dd>
+                    <dt>Anu (<span class="original-script">अनु</span>)</dt> <dd>After.</dd>
+                    <dt>Anumāna (<span class="original-script">अनुमान</span>)</dt> <dd>Inference (Pramāṇa).</dd>
+                    <dt>Anuśloka (<span class="original-script">अनुश्लोक</span>)</dt> <dd>Sanskrit verse meter.</dd>
+                    <dt>Anuṣṭubh (<span class="original-script">अनुष्टुभ्</span>)</dt> <dd>Common Sanskrit poetic meter.</dd>
+                    <dt>Apauruṣeya (<span class="original-script">अपौरुषेय</span>)</dt> <dd>Not of human origin (describing Vedas).</dd>
+                    <dt>Apīti (<span class="original-script">अपीति</span>)</dt> <dd>Merging ('M' of Om).</dd>
+                    <dt>Apophatic / Apophasis (<span class="original-script">ἀπόφασις</span>)</dt> <dd>Theology via negation.</dd>
+                    <dt>Āpti (<span class="original-script">आप्ति</span>)</dt> <dd>Obtaining ('A' of Om).</dd>
+                    <dt>Āraṇyaka (<span class="original-script">आरण्यक</span>)</dt> <dd>"Forest texts" (part of Veda).</dd>
+                    <dt>Arjuna (<span class="original-script">अर्जुन</span>)</dt> <dd>Pāṇḍava hero in Bhagavad Gītā.</dd>
+                    <dt>Artha (<span class="original-script">अर्थ</span>)</dt> <dd>Goal; material wealth (Purushartha).</dd>
+                    <dt>Arthavāda (<span class="original-script">अर्थवाद</span>)</dt> <dd>Motivating statement in scripture.</dd>
+                    <dt>Āryan</dt> <dd>Historical term for Indo-European migrants.</dd>
+                    <dt>Asat (<span class="original-script">असत्</span>)</dt> <dd>Non-being, untruth.</dd>
+                    <dt>Āśrama (<span class="original-script">आश्रम</span>)</dt> <dd>Stages of life.</dd>
+                    <dt>Astika (<span class="original-script">आस्तिक</span>)</dt> <dd>Orthodox (accepting Veda).</dd>
+                    <dt>Asura (<span class="original-script">असुर</span>)</dt> <dd>Demon, anti-god.</dd>
+                    <dt>Atharva Veda (<span class="original-script">अथर्ववेद</span>)</dt> <dd>The fourth Veda.</dd>
+                    <dt>Ātman (<span class="original-script">आत्मन्</span>)</dt> <dd>The Self, soul.</dd>
+                    <dt>Atmos (<span class="original-script">ἀτμός</span>)</dt> <dd>Greek for vapor.</dd>
+                    <dt>Atomist</dt> <dd>Philosophy based on indivisible units.</dd>
+                    <dt>Avatāra (<span class="original-script">अवतार</span>)</dt> <dd>"Descent"; divine manifestation.</dd>
+                    <dt>Ayam Ātmā Brahma (<span class="original-script">अयम् आत्मा ब्रह्म</span>)</dt> <dd>"This Self is Brahman" (Mahāvākya).</dd>
+                    <dt>Baal (<span class="original-script">בַּעַל</span>)</dt> <dd>Canaanite god.</dd>
+                    <dt>Bāla Kṛṣṇa (<span class="original-script">बालकृष्ण</span>)</dt> <dd>Child Kṛṣṇa.</dd>
+                    <dt>Bara (<span class="original-script">בָּרָא</span>)</dt> <dd>Hebrew: create/separate.</dd>
+                    <dt>Bereshit (<span class="original-script">בְּרֵאשִׁית</span>)</dt> <dd>"In the beginning" (Hebrew).</dd>
+                    <dt>Bhagavad Gītā (<span class="original-script">भगवद् गीता</span>)</dt> <dd>"Song of the Lord."</dd>
+                    <dt>Bhāgavata Purāṇa (<span class="original-script">भागवतपुराण</span>)</dt> <dd>Purāṇa focusing on Kṛṣṇa.</dd>
+                    <dt>Bhagavān (<span class="original-script">भगवान्</span>)</dt> <dd>Lord, Blessed One.</dd>
+                    <dt>Bhakti (<span class="original-script">भक्ति</span>)</dt> <dd>Devotion.</dd>
+                    <dt>Bhakti Mārga (<span class="original-script">भक्तिमार्ग</span>)</dt> <dd>Path of devotion.</dd>
+                    <dt>Bharata (<span class="original-script">भारत</span>)</dt> <dd>Traditional name for India; ancient clan.</dd>
+                    <dt>Bhāva (<span class="original-script">भाव</span>)</dt> <dd>Being, existence.</dd>
+                    <dt>bhuj (<span class="original-script">भुज्</span>)</dt> <dd>Sanskrit root: eat/enjoy.</dd>
+                    <dt>bhunaktu (<span class="original-script">भुनक्तु</span>)</dt> <dd>"Let us be nourished."</dd>
+                    <dt>Bīja (<span class="original-script">बीज</span>)</dt> <dd>Seed.</dd>
+                    <dt>Brahmacarya (<span class="original-script">ब्रह्मचर्य</span>)</dt> <dd>Student stage of life.</dd>
+                    <dt>Brahman (<span class="original-script">ब्रह्मन्</span>)</dt> <dd>The ultimate reality.</dd>
+                    <dt>Brāhmaṇa (<span class="original-script">ब्राह्मण</span>)</dt> <dd>Vedic ritual texts; priestly varṇa.</dd>
+                    <dt>Bṛhad (<span class="original-script">बृहद्</span>)</dt> <dd>Great, large.</dd>
+                    <dt>Bṛhadāraṇyaka Upaniṣad (<span class="original-script">बृहदारण्यक उपनिषद्</span>)</dt> <dd>Major Upaniṣad.</dd>
+                    <dt>Canaanite</dt> <dd>Ancient Near Eastern people.</dd>
+                    <dt>Caste</dt> <dd>Social stratification system.</dd>
+                    <dt>Cataphasis (<span class="original-script">κατάφασις</span>)</dt> <dd>Theology via affirmation.</dd>
+                    <dt>Chāndogya Upaniṣad (<span class="original-script">छान्दोग्य उपनिषद्</span>)</dt> <dd>Major Upaniṣad.</dd>
+                    <dt>Christos (<span class="original-script">Χριστός</span>)</dt> <dd>Greek for "anointed one."</dd>
+                    <dt>Creatio continua</dt> <dd>"Continuous creation" (Latin).</dd>
+                     <!-- ... Add ALL other terms alphabetically ... -->
+                    <dt>Yam (<span class="original-script">ים</span>)</dt> <dd>Canaanite sea god.</dd>
+                    <dt>Yajña (<span class="original-script">यज्ञ</span>)</dt> <dd>Sacrifice, ritual.</dd>
+                    <dt>Yajur Veda (<span class="original-script">यजुर्वेद</span>)</dt> <dd>Veda of ritual formulas.</dd>
+                    <dt>Yajñavalkya (<span class="original-script">याज्ञवल्क्य</span>)</dt> <dd>Sage in Bṛhadāraṇyaka Upaniṣad.</dd>
+                    <dt>Yashoda (<span class="original-script">यशोदा</span>)</dt> <dd>Kṛṣṇa's foster mother.</dd>
+                    <dt>YHWH (<span class="original-script">יהוה</span>)</dt> <dd>Tetragrammaton.</dd>
+                    <dt>Yoga (<span class="original-script">योग</span>)</dt> <dd>Union, discipline; philosophical school.</dd>
+                    <dt>Yoke</dt> <dd>Joining bar (analogy for yoga).</dd>
+                    <dt>Yud He Vav He (<span class="original-script">יהוה</span>)</dt> <dd>Hebrew letters for YHWH.</dd>
+                </dl>
+            </details>
+        </section>
+
+        <section id="comparative-points">
+            <h2>Key Comparative Points</h2>
+            <details>
+                <summary>Expand Comparative Points</summary>
+                <ul>
+                    <li><strong>Creation:</strong> Genesis (speech, order, Imago Dei) vs. Vedic Hymns (sacrifice, emanation, questioning) vs. Enūma Eliš (conflict).</li>
+                    <li><strong>God/Ultimate Reality:</strong> YHWH/Elohim vs. Brahman/Ātman (Advaita vs. Viśiṣṭādvaita) vs. Greek Logos.</li>
+                    <li><strong>Divine Manifestation:</strong> Avatāra (Hinduism) vs. Incarnation (Christianity).</li>
+                    <li><strong>Paths to Goal:</strong> Trimārga (Hinduism) vs. Faith/Grace/Works (Christianity).</li>
+                    <li><strong>Scripture:</strong> Śruti/Smṛti authority vs. Bible authority and interpretation.</li>
+                    <li><strong>Ethics:</strong> Dharma vs. Divine Law/Commandment/Love.</li>
+                    <li><strong>Knowledge vs. Devotion:</strong> Jñāna Mārga vs. Bhakti Mārga parallels Faith vs. Reason.</li>
+                </ul>
+            </details>
+        </section>
+
+        <section id="primary-texts">
+            <h2>Primary Text Resources</h2>
+            <ul class="text-resource-list">
+                 <li><a href="Bhagavad_Gita_Stoller_Miller_full_text.html">Bhagavad Gītā (Translator: Barbara Stoller Miller)</a></li>
+                 <li><a href="DeviMahatmya_Selections.html">Devī Māhātmyam (Excerpts)</a></li>
+                 <li><a href="Genesis_1-3.html">Genesis Chapters 1-3 (JPS Translation)</a></li>
+                 <li><a href="IntrotoHinduTheology.html">Introduction to Hindu Theology (Handout)</a></li>
+                 <li><a href="Mahavakyas.html">Mahāvākyas (Upaniṣad Excerpts Handout)</a></li>
+                 <li><a href="Proverbs_8-9.html">Proverbs Chapters 8-9 (JPS Translation)</a></li>
+                 <li><a href="RgVedaSamhita_three_hymns.html">Ṛg Veda Saṃhitā (Three Hymns)</a></li>
+                 <li><a href="Sax_William_Lila.html">William Sax on Līlā</a></li>
+                 <li><a href="The Gospel According to John, chapters 1-21.html">The Gospel According to John (NRSVUE with notes)</a></li>
+            </ul>
+        </section>
+
+        <section id="images">
+             <h2>Images & Descriptions</h2>
+             <ul class="image-list">
+                <li><a href="Jesus_Krishna_Apple.png">Jesus & Kṛṣṇa Sharing an Apple</a> (Title Image)</li>
+                <li><a href="God_Yoga.png">Figure in Yoga Pose</a> (Line art)</li>
+                <li><a href="ReCreation.png">"ReCreation" Landscape</a> (Word art)</li>
+                <li><a href="Sadhus_Teaching.png">Sadhus Teaching by Water</a> (AI illustration)</li>
+                <li><a href="Durga_Mahisha.png">Durgā Slaying Mahiṣāsura</a> (Madhubani style)</li>
+                <li><a href="Shaktis_Kali.png">Various Goddess Forms (Śaktis) & Kālī</a> (Painting)</li>
+                <li><a href="RQ_01_14_1.jpg">Mantra Chalkboard</a> (<a href="RQ_01_14_1.txt">Description</a>)</li>
+                <li><a href="RQ_01_16_1.jpg">Brad Selfie</a> (<a href="RQ_01_16_1.txt">Description</a>)</li>
+                <li><a href="RQ_01_21_1.jpg">Vedas/Darshana Chalkboard 1</a> (<a href="RQ_01_21_1.txt">Description</a>)</li>
+                <li><a href="RQ_01_21_2.jpg">Vedas/Darshana Chalkboard 2</a> (<a href="RQ_01_21_2.txt">Description</a>)</li>
+                <li><a href="RQ_01_23_1.jpg">Sophia/Chochmah Chalkboard</a> (<a href="RQ_01_23_1.txt">Description</a>)</li>
+                <li><a href="RQ_01_28_1.jpg">Allegory/Smṛti Chalkboard</a> (<a href="RQ_01_28_1.txt">Description</a>)</li>
+                <li><a href="RQ_01_30_1.jpg">Imago Dei/Podcast Chalkboard</a> (<a href="RQ_01_30_1.txt">Description</a>)</li>
+                <li><a href="RQ_01_30_2.jpg">Creatio Continua/Kenosis Chalkboard</a> (<a href="RQ_01_30_2.txt">Description</a>)</li>
+                <li><a href="RQ_02_04_1.jpg">Vedānta/Mahāvākya Chalkboard</a> (<a href="RQ_02_04_1.txt">Description</a>)</li>
+                <li><a href="RQ_02_11_1.jpg">Play-Doh Model 1</a> (<a href="RQ_02_11_1.txt">Description</a>)</li>
+                <li><a href="RQ_02_11_2.jpg">Play-Doh Rose</a> (<a href="RQ_02_11_2.txt">Description</a>)</li>
+                <li><a href="RQ_02_11_3.jpg">Play-Doh Arrangement</a> (<a href="RQ_02_11_3.txt">Description</a>)</li>
+                <li><a href="RQ_02_11_4.jpg">Advaita/Mahāvākya Chalkboard</a> (<a href="RQ_02_11_4.txt">Description</a>)</li>
+                <li><a href="RQ_02_11_5.jpg">Play-Doh & Text 1</a> (<a href="RQ_02_11_5.txt">Description</a>)</li>
+                <li><a href="RQ_02_11_7.jpg">Play-Doh & Text 2</a> (<a href="RQ_02_11_7.txt">Description</a>)</li>
+                <li><a href="RQ_02_11_9.jpg">Hand Holding Clay Head</a> (<a href="RQ_02_11_9.txt">Description</a>)</li>
+                <li><a href="RQ_02_11_10.jpg">Play-Doh Rose 2</a> (<a href="RQ_02_11_10.txt">Description</a>)</li>
+                <li><a href="RQ_02_11_11.jpg">Play-Doh Sculptures</a> (<a href="RQ_02_11_11.txt">Description</a>)</li>
+                <li><a href="RQ_02_13_1.jpg">Mimamsa/Advaita Chalkboard 1</a> (<a href="RQ_02_13_1.txt">Description</a>)</li>
+                <li><a href="RQ_02_13_2.jpg">Mimamsa/Advaita Chalkboard 2</a> (<a href="RQ_02_13_2.txt">Description</a>)</li>
+                <li><a href="RQ_02_18_1.jpg">Sankhya/Yoga/Advaita Chalkboard</a> (<a href="RQ_02_18_1.txt">Description</a>)</li>
+                <li><a href="RQ_02_20_1.jpg">Hindu Concepts Overview Chalkboard</a> (<a href="RQ_02_20_1.txt">Description</a>)</li>
+                <li><a href="RQ_02_25_1.jpg">Lila/Pramanas Chalkboard</a> (<a href="RQ_02_25_1.txt">Description</a>)</li>
+                 <li><a href="RQ_03_11_1.jpg">Mahābhārata Battle Diagram 1</a> (<a href="RQ_03_11_1.txt">Description</a>)</li>
+                <li><a href="RQ_03_11_2.jpg">Causality/Kurus Chalkboard</a> (<a href="RQ_03_11_2.txt">Description</a>)</li>
+                <li><a href="RQ_03_11_3.jpg">Gita/John/Vedanta Chalkboard</a> (<a href="RQ_03_11_3.txt">Description</a>)</li>
+                 <li><a href="RQ_03_25_1.jpg">Gita Books & Singing Bowl</a> (<a href="RQ_03_25_1.txt">Description</a>)</li>
+                 <li><a href="RQ_03_27_1.jpg">Classroom Scene with Books/Jenga</a> (<a href="RQ_03_27_1.txt">Description</a>)</li>
+             </ul>
+        </section>
+
+        <section id="study-tips">
+            <h2>Study Tips & How to Use This Guide</h2>
+            <ul class="study-tips">
+                <li>Use the navigation aids to quickly find information.</li>
+                <li>Review Unit Summaries and Key Takeaways for high-level understanding.</li>
+                <li>Deepen knowledge with the Key Concepts and Vocabulary sections.</li>
+                <li>Refer back to linked Primary Texts and Class Notes (RQ files) for details.</li>
+                <li>Think comparatively using the Comparative Points section.</li>
+                <li>Practice the Saṅgraha-Vistara method: summarize, then elaborate.</li>
+                <li>Engage actively: question, connect, discuss with your podcast team!</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <p>THEO 1432 Course Hub | Compiled from Semester Materials | Refer to original texts and notes for complete context.</p>
+        </footer>
+
+    </main> <!-- /container -->
+
+    <!-- Basic script for potential future interactivity -->
+    <script>
+        // Simple script example: could highlight active nav link based on scroll
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('#navbar a');
+            const tocLinks = document.querySelectorAll('#toc-float a');
+
+            function changeActiveLink() {
+                let index = sections.length;
+
+                while(--index && window.scrollY + 100 < sections[index].offsetTop) {} // 100px offset
+
+                navLinks.forEach((link) => link.classList.remove('active'));
+                tocLinks.forEach((link) => link.classList.remove('active'));
+
+                // Find matching main nav link
+                let currentNavLink = document.querySelector(`#navbar a[href="#${sections[index].id}"]`);
+                if(currentNavLink) {
+                    currentNavLink.classList.add('active');
+                }
+                 // Find matching ToC link
+                 let currentTocLink = document.querySelector(`#toc-float a[href="#${sections[index].id}"]`);
+                 if(currentTocLink) {
+                     currentTocLink.classList.add('active');
+                 }
+            }
+
+            // Initial check
+            changeActiveLink();
+            // Add listener
+            window.addEventListener('scroll', changeActiveLink);
+
+             // Smooth scroll for ToC links if needed (redundant with CSS html {scroll-behavior: smooth;})
+             tocLinks.forEach(anchor => {
+                 anchor.addEventListener('click', function (e) {
+                     // e.preventDefault(); // Keep default behavior with CSS smooth scroll
+                     // Manually implement smooth scroll if CSS isn't sufficient/supported
+                 });
+             });
+        });
+    </script>
+
+</body>
+</html>
