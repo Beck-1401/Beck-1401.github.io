@@ -1,0 +1,73 @@
+Here's a detailed description of the image:
+
+**Overall Impression:**
+
+The image shows a classroom chalkboard filled with handwritten notes and diagrams. The chalkboard is divided into sections, and the writing is in white chalk. The image includes a location marker in the bottom right corner.
+
+**Detailed Description of Content:**
+
+**Left Side:**
+
+*   The top left section has a list of concepts including: "Rationality", "Physical apperance", "Morality/Ethics/Godsman", and "Creativity".
+*   Below is "imago Dei" and "Image of God Creator", with "Gen 3" and "Eckhat" written below.
+*   Genesis 1:26-27 is also mentioned in this section.
+
+**Right Side:**
+
+*   The right-hand side has:
+    *   Two lists, labeled "①" and "②",
+    *   The first list begins with "Rig Veda" and has a bullet point mentioning "X.90." and "Respond."
+    *   "Gen 1:26-27" is also written.
+
+**Central Area:**
+
+*   A diagram to the left, of a circle, with the word "Creatio Continua."
+*   The text says "God is Creator and as such involved in ongoing creative activity".
+
+**Right Side:**
+
+*   "kenosis" and "ebullitio" appear in the right corner.
+*   A diagram with circles, arrows, and labels such as "Prime Mover," "exitus," "H₂O," "reditus," "Perichoresis."
+
+**Additional Elements:**
+
+*   The background is a black chalkboard.
+*   The edges of the board are framed in wooden molding.
+*   In the bottom right, a colorful marker that says "STOKES HALL."
+
+**OCR Results:**
+
+```
+① Rig Veda
+- X.90.
+Sorpply chach
+- Respond
+Gen 1:26-27
+Genesis 1:26-27
+-Rationality imago Dei
+- Physical apperance
+Image of God 3 Creator
+Morality/Ethics / GOD SRCA Gen 3
+-Creativity
+Eckhat
+BC_TOY_El.mya/.mp3
+mpy
+◎ STOKES HALL
+iin Pleskan
+Rashi
+Kenosis
+ebullitio
+emptying
+Boiling over
+Creatio Continua
+Prime
+exitus H₂O) Jack
+Mover
+Creativity
+God is Creator l
+Spini son reditus
+and as such
+Perichoresis
+in Volved in ongoing
+Creative activity
+```
