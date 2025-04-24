@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potters, Human and Divine by Brad Bannon</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 240px; /* Adjust as needed */
+            flex-shrink: 0;
+            background-color: #eee;
+            border-right: 1px solid #ccc;
+            padding: 1.5em 1em;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            overflow-y: auto;
+            align-self: flex-start;
+            font-size: 0.9em;
+        }
+
+        nav h3 {
+            margin-top: 0;
+            color: #555;
+            font-size: 1.1em;
+            border-bottom: 1px solid #bbb;
+            padding-bottom: 0.3em;
+            font-family: sans-serif;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul ul {
+             padding-left: 1em;
+             margin-top: 0.2em;
+        }
+
+        nav li {
+            margin-bottom: 0.5em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            display: block;
+            padding: 0.15em 0;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 2em 3em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 { /* Essay Title */
+            text-align: center;
+            color: #333;
+            font-size: 24pt;
+            margin-bottom: 0.2em;
+            font-family: "Times New Roman", Times, serif;
+        }
+         h2 { /* Author Name */
+             text-align: center;
+             color: #555;
+             font-size: 16pt;
+             margin-top: 0;
+             margin-bottom: 2em;
+             font-weight: normal;
+             font-family: "Times New Roman", Times, serif;
+         }
+        h3 { /* Main Section Titles */
+            color: #444;
+            margin-top: 2.5em;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.2em;
+            font-size: 16pt;
+            font-weight: bold;
+            font-family: "Times New Roman", Times, serif;
+        }
+         h4 { /* Sub-section Titles */
+            color: #555;
+            margin-top: 2em;
+            font-size: 14pt;
+            font-weight: bold;
+            font-style: italic;
+            font-family: "Times New Roman", Times, serif;
+         }
+
+        p {
+            margin-bottom: 1em;
+            text-align: justify;
+            font-size: 12pt;
+        }
+
+        blockquote {
+            margin-left: 2em;
+            margin-right: 1em;
+            font-style: italic;
+            color: #555;
+            border-left: 2px solid #ddd;
+            padding-left: 1em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+         blockquote p {
+             text-align: left;
+         }
+
+        sup {
+            font-size: 0.75em;
+            vertical-align: super;
+            line-height: 0;
+        }
+
+        .footnotes, .bibliography {
+            margin-top: 3em;
+            padding-top: 1em;
+            border-top: 1px solid #ccc;
+            font-size: 10pt;
+            color: #444;
+        }
+        .footnotes h3, .bibliography h3 {
+            font-size: 14pt;
+            font-style: normal;
+            border-bottom: none;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+        .footnotes p, .bibliography p {
+            margin-bottom: 0.5em;
+            text-indent: -2em; /* Hanging indent for numbers/entries */
+            padding-left: 2em;
+            text-align: left;
+        }
+
+        .bibliography h4 { /* Primary/Secondary Lit headings */
+             font-size: 12pt;
+             font-style: normal;
+             text-align: left;
+             margin-top: 1.5em;
+             margin-bottom: 0.8em;
+             color: #444;
+             border-bottom: 1px dotted #ccc;
+             padding-bottom: 0.1em;
+        }
+
+        /* Basic responsiveness */
+        @media (max-width: 950px) {
+            .container {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                height: auto;
+                position: static;
+                border-right: none;
+                border-bottom: 1px solid #ccc;
+                overflow-y: visible;
+                padding: 1em;
+            }
+             nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1em 1.5em;
+                justify-content: center;
+             }
+             nav ul ul {
+                 display: none; /* Hide sub-menus */
+             }
+             nav h3 {
+                 text-align: center;
+                 margin-bottom: 0.5em;
+             }
+             main {
+                padding: 1.5em;
+             }
+             .footnotes p, .bibliography p {
+                 padding-left: 1em;
+                 text-indent: -1em;
+             }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#plato-microcosm">Plato & Microcosm</a>
+                    <ul>
+                        <li><a href="#personhood-hermeneutics">Personhood & Hermeneutics</a></li>
+                        <li><a href="#plato-classroom">Plato's Classroom</a></li>
+                    </ul>
+                </li>
+                <li><a href="#pedagogy">Pedagogical Possibilities</a></li>
+                <li><a href="#playdough-potters">Playdough: Potters Human & Divine</a>
+                     <ul>
+                         <li><a href="#playdough-effects">Playdough & Effects</a></li>
+                         <li><a href="#potters-causes">Potters & Causes</a></li>
+                     </ul>
+                </li>
+                 <li><a href="#dharmic-playdough">Dharmic Playdough</a></li>
+                 <li><a href="#karma-isvara">Karma & Īśvara</a></li>
+                 <li><a href="#comparative-theology">Comparative Theology & Alterity</a></li>
+                 <li><a href="#personhood-possibility">Personhood & Possibility</a>
+                     <ul>
+                         <li><a href="#material-limit">Material Limitation</a></li>
+                         <li><a href="#technical-limit">Technical Limitation</a></li>
+                         <li><a href="#creative-limit">Creative Limitation</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#bibliography">Bibliography</a></li>
+                 <li><a href="#footnotes">Footnotes</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Potters, Human and Divine:<br>Manifesting Śańkara's Īśvara through Pedagogy, Playdough, and Personhood</h1>
+            <h2>Brad Bannon</h2>
+
+            <blockquote>
+                <p>I am well aware that none of these ideas can have come from me – I know my own ignorance. The only other possibility, I think, is that I was filled, like an empty jar, by the words of other people streaming in through my ears, though I'm so stupid that I've even forgotten where and from whom I heard them.¹</p>
+            </blockquote>
+
+            <section id="intro">
+                <!-- No heading needed for intro -->
+                <p>There is a story I heard long ago, but because of my ignorance, I have forgotten whence it came. In this story, a teacher asks a young girl what picture she is drawing. The girl responds, “I am drawing a picture of God.” The teacher laughs mindlessly² and says, “No one knows what God looks like!” Without pausing from her task, the young girl responds, “They will in a minute.”</p>
+                <p>Teachers who are convinced that they have nothing to learn from their students are likely to find their presumption confirmed. Socrates argues that there is no room for hierarchy or hegemony in the quest for truth; a true philosopher is neither a teacher nor a student, but a lover of wisdom, eager to learn from anyone wise enough to question. A good teacher is not one whose jar is full, but one whose jar is large enough to be empty, who knows one's own ignorance and who is, therefore, ever eager to listen.</p>
+                <p>The story of the little girl, despite its simplicity and brevity, illustrates three points I seek to establish in this chapter, alliteratively addressed through Plato and pedagogy, playdough and potters, personhood and possibility. Our thoughts about God – and even our very ability to think about transcendence – are determined by our human interactions and the contexts within which we contemplate transcendence. Bernhard Nitsche challenged the contributors of this anthology to reflect upon the “dimensions of human existence as dimensions of the hermeneutics of transcendence.”³ Because of the simple fact that transcendence transcends worldly existence, the “little world” in which we think about transcendence shapes our thoughts about that “other world.”</p>
+                <p>Guided by Nitsche's insights, I argue in the first section of this chapter that the classroom is a microcosm (“little world”) wherein the personal, interpersonal, and embodied dimensions of human existence establish (for good or ill) the epistemic structures by which we contemplate that which transcends these dimensions. I further argue that the transient, liminal nature of the university classroom links personhood and transcendence with ethics. Though prompted by Nitsche's guiding questions, my argument is grounded in Plato's dialogues on education and inspired by the teaching philosophies of Paolo Freire and bell hooks.</p>
+                <p>The story of the little girl's drawing of God (<em>imago Dei</em>) foreshadows a classroom scenario I describe in section two regarding my experiences teaching Śankara's Advaita Vedānta and nondual understandings of God (<em>īśvara</em>). The scenario attempts to consider from a student's perspective the well-known metaphor of clay from Chāndogya Upaniṣad VI.1. My argument is fourfold. If we expect undergraduate students to understand the clay metaphor, then we must endeavor, as much as possible, to meet them where they are and think through the metaphor from their perspective. Thinking through the metaphor in this way – and genuinely listening to our students – deepens our understanding and makes us better readers of Śankara. The best way to understand the role, place, and ontology of God (<em>īśvara</em>) within Śańkara's nondualism is by emulating, as much as possible, the pedagogical context advocated by Śańkara himself. The materiality of the clay metaphor and the intimate context of a dialogue between father and son exemplify and particularize my thesis that the physical and interpersonal dimensions of human existence determine how we think and interpret that which transcends these dimensions. Stated plainly: We interpret Śankara's "potter" differently when we and those around us have playdough in our hands than we do when sitting alone, silently clutching Śankara's written word. The embodied, intersubjective pedagogical context manifestly reveals the inherent relationship between nondual ontology (<em>ātman-brahman</em>), God (<em>Īśvara</em>), and ethically responsible action (<em>dharma</em>).</p>
+                <p>The teacher's response to the little girl in the story above provides a counter-example of the epistemic humility necessary for contemplating transcendence and undermines the value of subjective diversity. In the third section, I affirm Bernhard Nitsche's intuition that the intersection of personhood and existential horizon motivate and "support the process of lending importance to different interpretations.”⁴ Guided by Nitsche's insights, I conclude on a comparative note, rethinking the personhood of Śańkara's <em>Īśvara</em> in light of Nicholas of Cusa's theology of possibility and actuality. As potters in the transient “little world” of the classroom, students are “led out” (<em>ēducāre</em>) of this cavernous microcosm to actualize <em>dharmic</em> possibilities.</p>
+            </section>
+
+            <section id="plato-microcosm">
+                <h3>Plato and the Classroom as Microcosm</h3>
+
+                <section id="personhood-hermeneutics">
+                     <h4>Personhood and the Hermeneutics of Transcendence</h4>
+                    <p>The story above recounting an encounter between a teacher and a little girl's <em>imago Dei</em> (image of God) exemplifies the primary thesis I seek to advance in this essay: The classroom is a microcosm (“little world”) wherein the <em>particular</em> subjective, social, and embodied dimensions of personhood determine the <em>particular</em> possibilities for interpreting transcendence. The little girl's drawing is a subjective, kataphatic theological expression of transcendence. Her speech and drawing within the classroom mark an interpersonal and material context through which the epistemic structures of transcendence manifest. Failing to understand this, the teacher laughs.⁵</p>
+                    <p>Insofar as theology is a human discourse (<em>logos</em>) about God (<em>Theos</em>), it is necessarily a discourse about human intellect and knowledge (<em>epistemology</em>). Because transcendence <em>transcends</em> human knowledge and experience, the particular dimensions of human existence determine the hermeneutics of transcendence. This is far from a novel insight. It is, after all, the logical basis and motivating force behind all apophatic discourse.</p>
+                    <p>However, this intuition entails a point that is sometimes (perhaps frequently) forgotten: While asserting that the divine transcends <em>all</em> human knowledge and worldly experience, one must not overlook the fact that <em>each</em> human person has a different history of knowledge and experience and will, therefore, interpret transcendence as that which transcends <em>his/her particular</em> knowledge and experience of the world. This insight can be expressed in other words that seem to describe the fact of religious diversity in our world: While human persons frequently describe the divine as that which transcends <em>all</em> human knowledge and worldly experience, they nevertheless understand the divine in widely diverse ways for the simple reason that the <em>particular</em> socio-cultural dimensions of human knowledge and experience determine the epistemic possibilities by which to contemplate transcendence. Simply put: We think transcendence differently because we live in different “little worlds." Restated yet again in subjective terms: I understand transcendence as that which transcends <em>all my</em> knowledge and <em>all my</em> experiences of the world. Hence, even though my definition of God or the divine remains constant, my <em>understanding</em> of God or the divine is as dynamic as this transient world in which we live, move, and have our being.</p>
+                    <p>This is, I believe, why Bernhard Nitsche challenged the contributors of this anthology to reflect upon the "dimensions of human existence as dimensions of the hermeneutics of transcendence.”⁶ If we aspire to move beyond a purely subjective understanding of transcendence in order to think transcendence from an/other's perspective, then we must take seriously the existential condition of this other in terms of material and interpersonal environment. Insofar as theology is a <em>human</em> discourse about a divine reality which transcends <em>particular</em> human knowledge and experience of the world, then any study of theology is at best fruitless (and at worst solipsistic) if it fails to take account of the <em>particular</em> dimensions of human existence whenever possible.</p>
+                </section>
+
+                <section id="plato-classroom">
+                    <h4>Plato's Cavernous Classroom</h4>
+                    <p>Given this, I argue that it is both reasonable and beneficial to take the classroom as an object of reflection. The classroom is a microcosm – a "little world" – wherein theology, epistemology, and ethics manifest in and through the subjective, social, and embodied/environmental encounters of human persons. The transient nature of the classroom (typically 75 minutes, twice a week for a dozen weeks) reflects the hermeneutic spiral of transcendent reflection and living in the world whereby any discussion of transcendence becomes practical, fruitful, and thus intrinsically valuable. As a microcosm wherein discussions of transcendence are both transformative and transient, the classroom might be allegorically compared to a cave, set apart from the everyday world of becoming.</p>
+                    <p>The "Allegory of the Cave" is perhaps the most famous pericope within Plato's broad body (<em>platýs</em>) of pedagogical dialogues.⁷ Sometimes overlooked, however, is the fact that Socrates offers this allegory as a means to “compare the effect of education and the lack of it on our [human] nature.”⁸ It addresses, on the one hand, the challenge of <em>turning</em> students from the everyday world of transient human existence towards intellectual reflection on transcendence. On the other hand, it also addresses the challenge of <em>turning back</em> from intellectual reflection on transcendence to the actual world of human existence. Without the former, one acts without teleological purpose. Without the latter, one will “refuse to act."⁹</p>
+                    <p>Socrates eschewed writing, insisting that the love of wisdom (<em>philosophy</em>) demands intersubjective discourse.¹⁰ To have a fruitful discourse about transcendence, each dialogue partner must know “where” the other is coming from. This is illustrated by Socrates' cave allegory. Confusion and disorientation abound when one turns from the darkness of the everyday world to the light of transcendent discourse, but <em>also</em> when one turns from transcendent introspection to transient existence. Any teacher who ridicules students is ridiculous, explains Socrates, but would be all the more so if he/she unwittingly “laughed at a soul that has come from the light above.”¹¹ Socrates asserts: “Education isn't what some people declare it to be, namely, putting knowledge into souls that lack it, like putting sight into blind eyes."¹² Rather, "the instrument with which each learns is like an eye that cannot be turned around from darkness to light <em>without turning the whole body</em>.”¹³ In Plato's cavernous classroom, the subjective, interpersonal, and embodied dimensions of human existence are the very dimensions by which one interprets transcendence. Etymologically, “education" entails “leading one out.” To lead students out toward a <em>particular</em> transcendental light (whether Platonic or Christian or Advaitin), one must first lead students to the <em>particular</em> cave from which to emerge.</p>
+                    <p>The physical classroom is a “little world” wherein the inextricable relationship between personhood and transcendence are made manifest, but it is also a liminal and transient space wherein ethics are performed. It is, therefore, a political venue. The classroom fails to be an edifying context for learning about transcendence if it is a space wherein the diversity of human existence is ignored or ridiculed. <em>Every</em> classroom is a microcosm wherein ethics are learned through praxis, regardless of academic subject.¹⁴ While true in a math or physics classroom, it is all the more so when ethics and transcendence are the very topic of discussion. The logic of this assertion can be stated quite simply: Because ethics pertains to both praxis and the transcendent discourse of <em>what ought to be done</em>, students learn ethics both from the words uttered by professors, but also (and especially) through our teaching praxis. Ethics and transcendence are learned by students in every classroom insofar as every teacher normatively models what ought to be done in and through subjective, interpersonal, and embodied praxis. The classroom, therefore, is an inherently political space.</p>
+                    <p>One misses Plato's point, I think, if one interprets his “philosopher king" as a governor with a diploma. The classroom is political because it is a “little world" wherein the dimensions of personhood epistemically structure transcendence. To suggest, as Bernhard Nitsche has, that the subjective, social, and embodied dimensions of human existence are the dimensions of the hermeneutics of transcendence necessarily implies that our embodied discourse about transcendence (in both <em>content and form</em>) is the very means by which the conditions of human existence are either transcended or calcified.¹⁵ Like the inhabitants of Plato's cavernous classroom, we and our students are “led out” to rejoin the world that was ever so temporarily transcended.</p>
+                </section>
+            </section>
+
+            <section id="pedagogy">
+                 <h3>Pedagogical Possibilities</h3>
+                 <p>It stands to reason, therefore, that if one desires to understand <em>God</em> or <em>the Divine</em> from the perspective of Śankara's Advaita Vedānta, one must seriously consider the microcosm (“little world”) wherein the transcendent is presented for interpretation. It is widely accepted that a teacher should consider <em>and model</em> the Socratic method in order to enable students to interpret the transcendent ideas of Justice, Virtue, Beauty, or the Good within Plato's dialogues. I argue that a teacher should likewise consider <em>and model</em> the traditional pedagogical methods of Vedānta and Śańkara's <em>paramparā</em>, including the intimate, embodied relationship between <em>guru</em> and <em>śiṣya</em>, in order to interpret <em>īśvara</em>, <em>dharma</em>, <em>ātman</em>, and <em>brahman</em> within Śańkara's commentaries.</p>
+                 <p>While I think this argument is logically sufficient to justify my thesis above and my method below, I wish to bridge theory and method with a summary and three concrete examples.</p>
+                 <p>Human persons are subjective, social, and materially embodied. As Nitsche reminds us, these dimensions of human existence correspond, more or less, to the three grammatical points-of-view: I, Thou, and He/She/It. By definition, "transcendence” transcends these dimensions of personhood. Hence, it is necessarily true that the dimensions of human existence are the very epistemic means for contemplating transcendence. Because interpretations of transcendence vary, so too do the “little worlds” they transcend. Therefore, the pedagogical microcosm in which we discuss transcendence (pre)determines the hermeneutic possibilities for interpreting transcendence.</p>
+                 <p>Suppose, for example, that a teacher stands at the front of a classroom lecturing about God to students who are seated, motionless, and silent. Like passive receptacles, they await deposits of information revealed by authoritative instructors.¹⁶ This would be an ideal microcosm in which to think transcendence in terms of divine hierarchy, dogmatic decree, impassivity, and radical alterity. The same teaching praxis, however, is at least an obstacle (if not overtly antithetical) to a hermeneutic of transcendence in terms of liberation, creativity, empathy, possibility, and relationality. A dance class may be a more suitable "little world" from which to interpret the <em>perichoresis</em> of the Social Trinity.</p>
+                 <p>Similarly, insofar as epistemic humility is foundational to theology, ethics, and philosophy, then humility must likewise be a manifest feature of the human context in which these are discussed. Humility is noticeably absent from the story of the little girl recounted earlier. While the teacher's assertion that "no one knows what God looks like” echoes the epistemic humility that motivates apophatic theological discourse and postmodern deconstruction, his/her laugh manifests a kataphatic praxis that precludes and thus betrays the very hermeneutic of transcendence to which he/she gives voice. The medium overwhelms the message. Insofar as epistemic humility founds a hermeneutic of transcendence, humility must, to that extent, shape every pedagogical method, regardless of venue: from the private confines of academic research to the university classroom to our prestigious conferences, colloquia, and written anthologies such as this one.</p>
+                 <p>For example: After successfully defending my dissertation on Śankara and Nicholas of Cusa at Harvard, I felt confident in my grasp of Śankara's theological anthropology and I was (ironically) proud of my knowledge of Cusa's learned ignorance. Borrowing Socrates' metaphor, my jar of wisdom felt full. Thanks to my students, however, my jar is quite empty once again. This is not because I have forgotten some of what I once knew (though I certainly have), but because my <em>jñāna</em> is becoming <em>vijñāna</em>.¹⁷ Through teaching, my ignorance is becoming learned. Socrates resounds: As the wise words of others flow into our ears, the jar grows ever larger.</p>
+                 <p>To illustrate how the <em>particular</em> dimensions of human existence structure <em>particular</em> hermeneutics of transcendence, we turn now to the pedagogical context of Śankara's Advaita Vedānta.</p>
+            </section>
+
+             <section id="playdough-potters">
+                 <h3>Playdough: Potters Human and Divine</h3>
+                 <p>The Upaniṣads recount ancient dialogues between teachers and students. Some occur in especially intimate contexts, such as a conversation between husband and wife.¹⁸ In the Chāndogya Upaniṣad, one finds an especially influential teaching given by a father to his son. While this level of trust and familiarity between <em>guru</em> (teacher) and <em>śiṣya</em> (student) are impossible to recreate in the university classroom, it is nevertheless important to draw attention to the intimate dimensions of this intersubjective discussion of transcendence, at least to eschew orientalism and promote epistemic humility, retracing faded lines between emic and etic perspectives. My assertion, however, is that we must go a step further. Since the classroom is a microcosm from which one thinks transcendence, then the "little world” from which one interprets the Chāndogya Upaniṣad should recreate, to a reasonable extent, the "little world” wherein Uddālaka teaches his son, Śvetaketu.</p>
+
+                <section id="playdough-effects">
+                    <h4>Playdough and Effects</h4>
+                    <p>Uddālaka provides his son with a trio of metaphors concerning ontic distinctions within non-dual ontology. Since the three metaphors differ only slightly (clay, gold, and iron), I focus here only on the first. While the commentaries and discussions generated by this metaphor are decidedly extensive, the teaching itself is quite brief:</p>
+                    <blockquote>
+                         <p>Consider this example, my dear son: With one lump of clay, everything composed of clay may be intellectually grasped. The Being/Truth (<em>satyam</em>) that is simply “clay” is given a name – modification grasped by speech.¹⁹</p>
+                    </blockquote>
+                    <p>The clay metaphor persists as one of the most effective and successful metaphors for teaching and thinking about nondualism. We know relatively little about Śankara's historical context and even less about the upaniṣadic authors, but it seems reasonable to assume that young children in those contexts had some experience playing with wet mud or clay. Since my students are more familiar with playdough, I supply each student with a small container of playdough.</p>
+                    <p>Both the metaphor and the hands-on experience of playing with clay (playdough) enable students to grasp the relationship between the One and the Many without falling into the alluring trap of a part/whole metaphysics. A clay pot, after all, is not a “part” of clay; the clay pot <em>is</em> clay. The clay pot is not <em>other than</em> clay, but clay is not limited to this or that clay pot. While this concept is difficult to grasp, it becomes easier to understand when each student in the class is literally holding clay in their hands. First, they tear the clay into many parts and press them back together, thinking they have understood that the one is the many. This <em>pūrvapakṣa</em> is rebutted as they remember that their neighbors also have clay and there is more clay at the store. Before long, the students are able to distinguish between “clay” as that which they have in their hands, "clay” as a name (an English word), and “clay” as an abstract, immaterial idea which is <em>one</em>, and yet not altogether different from the <em>many</em> lumps of clay they are holding.</p>
+                    <p>I inevitably have a student ask, “so is it kinda like saying that every square is a rectangle but not every rectangle is a square?" This is no <em>siddhānta</em>, but it seems apt, so I answer affirmatively (“yeah, kinda”), and then clarify. Clay <em>qua</em> clay is unmanifest (<em>avyākṛta</em>), but clay <em>qua</em> clay lump or clay pot, etc., is manifest (<em>vyākṛta</em>) such that they can see it on their desk, hold it in their hands, smell it, and (as at least one student in every class decides to do to generate a laugh) taste it. Śańkara argues that it is illogical to suppose that notions of past causes (such as a lump) and future effects (such as a jar) should be independent of presently existing objects.²⁰ Insofar as transcendence transcends human knowledge and experience, it can only be thought within a <em>particular</em> world of human knowledge and experience.</p>
+                    <p>The singular, unmanifest “clay” and the many manifestations of clay (referred to by various names corresponding to various ontic modifications), are not two ontologically distinct realities, but simply the immanent, manifest being of the transcendent, unmanifest truth of that being. Because these are mutually constitutive, they are neither two nor one, and therefore serve to exemplify Uddālaka's subsequent teaching, discussed below. Hence, Uddālaka sets the stage, so-to-speak, for his teaching on that which transcends human knowledge and experience by contextualizing that teaching within a particular epistemic framework of human experience. This exemplifies my thesis that the particular dimensions of human existence determine the hermeneutic possibilities for transcendental thought. Importantly, the <em>particular</em> “little world” that Uddālaka's trio of metaphors constructs highlights not only the transience of reality but also our causal role in that transience.</p>
+                </section>
+
+                <section id="potters-causes">
+                    <h4>Potters and Causes</h4>
+                    <p>In his next lesson, Uddālaka explains to his son that it is unreasonable to suppose that the existent universe arose from some nonexistent cause. In his commentary thereupon, Śańkara explains that one must distinguish between the efficient cause of material transformations, such as a potter (<em>kulāla</em>), and the material cause, such as clay. He offers an interesting allegory to explain this:</p>
+                    <blockquote>
+                        <p>Suppose one morning, you walk past a lump of clay that is being squeezed by a potter who <em>desires</em> to make pots.²¹ (As I point out (parenthetically) to my students, it is both interesting and significant that the lump of clay is the direct object of this sentence, rather than the potter). When returning home in the afternoon, you observe that the lump of clay has become pots and jars and other such things. Śankara explains that in the same way that you might say “this jar and dish were nothing but clay this morning,” Uddālaka has said to his son, “In the beginning, dear boy, this [world] was simply what exists – one only without a second."²²</p>
+                    </blockquote>
+                    <p>This and similar passages have generated voluminous and various interpretations. I argue that if we reflect on this teaching while literally squeezing clay in our hands, sitting in a room with other potters doing the same, then we are likely to interpret this non-dual teaching on transcendence differently than we would sitting alone, squeezing the pages of a book. To do so, moreover, takes seriously the pedagogical context as it is narrated in the Chāndogya Upaniṣad.</p>
+                    <p>As Śankara explains, the pre-existence of the effect, such as a clay jar, prior to its production by a potter is proved by the fact that the particles of clay belonging to the lump are perceptible in the clay jar.²³ The material cause of the clay jar is not the lump of clay that precedes it; the clay lump is merely an alternative effect of the same material cause, which is the clay itself.²⁴ Through the actions of the potter, the unmanifest clay, which was previously manifest as a clay lump, becomes manifest as a clay jar.</p>
+                    <p>In Śankara's commentary, a student poses a question: Does the clay jar exist before the potter shapes the clay into a clay pot? As I explain to my students, this is a thinly veiled way of asking whether “Brad” (<em>jīva</em>) existed prior to being born in this body. According to Śankara, even though the clay jar does not exist <em>in the same way</em> as the potter who is engaged in its production, it is foolish to say that the clay jar is altogether nonexistent prior to its manifestation. He offers several straightforward reasons for this: (1) a person who desires (<em>sisrukșuṇā</em>) to have a jar is seen working to bring it about, (2) we do not see people striving to attain things they know to be nonexistent, (3) if the jar were nonexistent, then the Lord's perception of the future jar would be false, and (4) because the jar exists in its future (potential) form.²⁵</p>
+                    <p>This is an argument that is quite easy for students to follow, particularly when squeezing playdough in their hands. Surrounded by their peers, they endeavor to <em>conceive</em> some creative form to give to their clay. They will obviously be unable to bring into being an unmanifest form if they cannot imagine what they desire to make. Having begun class with a lump of playdough, they will end class with a lump of playdough, thus generating zero likes on Instagram. Such students become attached to inaction,²⁶ confessing, “I don't know what to make."</p>
+                    <p>Other students, however, conceive an idea and thus face a second challenge – a technical one. Like Śańkara's <em>īśvara</em>, they have a perception of an unmanifest future form and are desirous (<em>sisrukșuṇā</em>) of bringing it about. Having conceived this potential form, they must labor to give birth to that idea – to make manifest the transcendent form by transforming the material cause (playdough) in which that future effect has been perceived.</p>
+                    <p>My thesis, once again, is that insofar as transcendence transcends human knowledge and worldly experience, the particular experiential context in which one thinks about transcendence determines the hermeneutic possibilities of transcendence. Furthermore, in order to interpret <em>God</em> or <em>the divine</em> from the perspective of Śankara's reflections on <em>īśvara</em>, one must consider the material and intersubjective environment most conducive to those transcendental possibilities. Hence, one should emulate, to a reasonable extent, the pedagogical context described by Śankara and narrated by the Upaniṣads in order to establish the <em>particular</em> subjective, intersubjective, and embodied conditions most conducive to Advaita's <em>particular</em> interpretation of transcendence. In the pedagogical scenario I have described thus far, the students have become potters in a worldly sense and can therefore conceptualize Śańkara's “potter” from an “everyday" (<em>vyāvahārika</em>) perspective. This is so not simply because they hold playdough in their hands, but because they have knowledge and experience of the two particular challenges mentioned above: (1) What is to be brought into being? and (2) By what means? The particular dimensions of human existence are, therefore, conducive to Advaita's particular hermeneutic of transcendence.</p>
+                </section>
+            </section>
+
+            <section id="dharmic-playdough">
+                 <h3>Dharmic Playdough</h3>
+                 <p>At this point, I ask my students to show and discuss their artefacts. What form have these undergraduate potters given to their clay? What function can these clay figures perform? To what purpose are they ideally suited? The material cause, as we have seen, is simply clay. The creations they have effected pre-existed in their material cause, but the forms, I remind them, are not intrinsic to the clay; hence, they must be accounted for. As seen above, Śankara links these transformations in name and form (from clay lump to clay pot, etc.) to the potter's desires.²⁷ Likewise, Uddālaka explains to his dear son that the primordial One became many due to its own thought and will.²⁸ Similar revelations arise in the Bṛhadāraṇyaka and Taittirīya Upaniṣads.²⁹ Since each student is a potter, desirous of effecting some transformation, then each must give account for what he/she has created, explaining its manifest <em>dharma</em> in relation to the unmanifest <em>Dharma</em>.</p>
+                 <p>The clay metaphor is effective for conveying the Mīmāṁsaka understanding of <em>dharma</em>.³⁰ The <em>dharma</em> of a bowl is its being a receptacle for things like lentil soup and fruit loops whereas the <em>dharma</em> of a cup is its being a vessel for drinking chai or single-malt whiskey. From this, students are able to understand that <em>dharma</em> pertains to purpose, duty, and function, but is a necessarily flexible concept pertaining to a particular person's talents, gifts, relationships, and (most importantly) context.³¹ <em>Dharma</em>, in other words, relates to form, function, and process (<em>itikartavyatā</em>) within a particular context. In fact, it is frequently the students themselves who raise the point that while it is possible to drink chai from a bowl and eat soup from a cup, these forms are better suited to function otherwise. Some students grow ever more attentive when realizing that they can use playdough and <em>dharma</em> to explain to their parents why they are switching majors.</p>
+                 <p>Like clay itself, the metaphor is malleable and relatable. Just as the <em>dharma</em> of a clay vase is to hold flowers, the <em>dharma</em> of a police office is to protect victims and stop perpetrators of injustice. The <em>dharma</em> of a nurse is to provide physical and emotional care for those who are ill or injured.</p>
+                 <p>From a Mīmāṁsaka perspective, <em>dharma</em> is inextricably linked to context. Material form matters, but so does spatial, temporal, and relational context. Francis Clooney explains:</p>
+                 <blockquote>
+                    <p>The Vedic "experience” does not contain unique elements different in essence from those of ordinary experience. The transcendence “occurs” when the performer finds himself in a world which accounts for his viewpoint without making him the center of the world... He himself is transcended because the event of the sacrifice is primary, its action the referent of all value and existence.³²</p>
+                 </blockquote>
+                 <p>The "world" of a Brahminic <em>yajña</em>, is one in which the human person transcends egoism through a decentering. The human participant in the Vedic sacrifice is no more or less important than the other aspects of the event. The <em>dharma</em> of ghee, rice, <em>mantra</em>, <em>deva</em>, human participants, and lunar phase, etc., are inextricably linked to one another. The proper contextual arrangement of self, other, and environment, in which each is necessary and yet none is primary is precisely what makes the "little world” of the sacrifice <em>Dharmic</em>. Moreover, transforming the mundane world by (re)arranging it for the sake of manifesting this Dharmic microcosm is what makes the <em>yajña</em> cosmogonic. Because one becomes the kind of person who is keenly attentive to the intersubjective dharmic relation between each and every element of the “little world” of the Vedic sacrifice, one becomes the kind of person who is likewise attentive to the intersubjective dharmic relations of the everyday (<em>vyāvahārika</em>) world.³³ Each element in the sacrifice has its own <em>dharma</em>; one who understands the <em>yajña</em> well will not only have cognitive knowledge (<em>jñāna</em>) of the <em>dharma</em> of each element of the sacrifice, but will glimpse, through intellectual intuition and experience (<em>vijñānānubhāva</em>), the unprecedented (<em>apūrva</em>) and transcendent <em>Dharma</em> made manifest through the sacrificial event.³⁴</p>
+                 <p>Obviously, the meaning and details of the foregoing explanation thoroughly evade my undergraduate students, most of whom have become preoccupied with their playdough. Nevertheless, they grasp the point that Advaita Vedānta is far from some abstract new age, philosophical system; it is an ancient theology deeply rooted in sacred texts, ritual performance, and ethics. They also (I hope) begin to recognize that our discourse about the ontologically nondual relationship between unmanifest clay and manifest clay figures is inseparable from our discourse about ethics and is directly pertinent to their own lives and existential angst.</p>
+                 <p>I typically do not attempt to explain to students the ontological significance of the verbs √<em>bhū</em> and √<em>as</em> or about the ontological difference between ghee at the dinner table and ghee within the <em>yoni</em> after it has been introduced into the sacrificial event. I do, though, ensure that they understand that in the same way that unmanifest clay is only made manifest in, through, and as the clay that they are shaping (and sometimes tasting) in their hands, unmanifest <em>Dharma</em> exists only as a possibility lest they give it shape through their actions and choices. Consistent with my thesis, the possibilities for thinking transcendence are conditioned by the “little world” from which this thinking emerges. <em>Dharma's</em> transcendent, unprecedented (<em>apūrva</em>) nature is thought differently when holding playdough in a room filled with potters.</p>
+            </section>
+
+            <section id="karma-isvara">
+                 <h3>Karma and Īśvara</h3>
+                 <p>What's the point?³⁵ The Lord (<em>Īśvara</em>) is the potter – the one who shapes the clay into this or that form. Why would the Lord shape the clay into this/that form? This should now be evident. A bowl is better suited to perform some functions whereas a pot or cup or vase is better suited for other functions. The <em>dharma</em> of a bowl is to perform the function of being a bowl; the <em>dharma</em> of a cup is to perform the function of being a cup. Likewise, the <em>dharma</em> of a nurse is to perform the function of providing care for his patients (i.e., to meet the physical, medical, and emotional needs of his patients). The <em>dharma</em> of a police officer is to perform the function of justice (i. e., she should protect victims of injustice and arrest perpetrators of injustice). Hence, the Lord (<em>Īśvara</em>) shapes each person (each <em>jīva</em>, each man, woman, and child) in such a way that he/she is ideally suited to perform his/her <em>dharma</em>.</p>
+                 <p>Because <em>dharma</em> is inextricably linked to embodied context, the rigidity or malleability of clay may be an asset or a challenge, depending on the situation. Clay is malleable, but it can become rigid and dry over time. Our past actions (<em>karmāņi</em>), past thoughts, experiences, and socio-cultural perspectives leave impressions (<em>saṃskāras</em>) which cause us to become set in our ways. Noting that the term <em>karma</em> is frequently misunderstood as deterministic, Harold Coward explains that <em>karma</em> is well described as a psychological predisposition:</p>
+                 <blockquote>
+                    <p>Through the use of your free will, you decide either to go along with the karmic impulse, in which case it is reinforced and strengthened, or to say no and negate it, in which case its strength diminishes until it is finally removed.³⁶</p>
+                 </blockquote>
+                 <p>The benefit and detriment of this karmic impulse is effectively taught through the clay metaphor. For a clay cup to perform its duty, it must be fired and glazed. An archer like Arjuna should not be thinking about how to shoot an arrow when he's on the battlefield, nor should Steph Curry shouldn't be thinking about his technique when shooting a three-point shot. I would prefer a surgeon who sutures mindlessly over one who contemplates each stitch. But the transcendent and contextual nature of <em>dharma</em> require malleability due to the transient nature of human existence. Insofar as <em>īśvara</em> is non-dual, the Lord must be transcendent and immanent: clay and potter.</p>
+            </section>
+
+            <section id="comparative-theology">
+                 <h3>Comparative Theology, and the Alterity of the Potter</h3>
+                 <p>Who is this potter? This question is simply a restatement of the central, guiding question raised by Bernhard Nitsche and Marcus Schmücker at our conference in Schwerte. To ask <em>who is this potter?</em> is to ask <em>how are we to think about God from a nondualist perspective?</em> My assertion is that because the transcendent transcends the dimensions of human existence, it must be interpreted within <em>particular</em> dimensions of human existence. To extricate <em>Īśvara</em> from Advaita's pedagogical context entails thinking <em>Īśvara</em> through a hermeneutic that no longer transcends the particular “little world” so carefully constructed by the Upaniṣads and Śańkara's <em>paramparā</em>, but instead thinks <em>īśvara</em> from (at best) a nonexistent view from nowhere or (at worst) a neocolonial “little world" that is dualist and occidental.</p>
+                 <p>I am certainly not suggesting that playdough solves the problem of intellectual colonialism. Neither am I suggesting that intellectual colonialism is a problem that is “solvable.” Rather, I am suggesting that if we admit a diversity of transcendental hermeneutics, then transcendental thought cannot be divorced from the particular microcosms such thoughts transcend. The alternative either objectifies human subjectivity <em>ab initio</em> or relativizes transcendence to a fixed, hegemonic (read: occidental) point of reference. The particular subjective, social, and material dimensions of human existence found the particular dimensions that any particular transcendence transcends. To the extent that a scholar is able to think transcendence from what Gayatri Spivak has called an "imagined subjectivity," we not only mitigate reductive essentializations, but (speaking as a theologian) we faithfully seek understanding of that which transcends each particular dimension of human existence.</p>
+                 <p>Even if one is able to emulate, to some small extent, the pedagogical context of Śankara's teachings on <em>Īśvara</em>, this merely mitigates the challenge of attempting to think transcendentally from a non-dual perspective. Another obstacle, discussed earlier, confronts every teacher, especially in the humanities. Plato's Socratic insight bears repetition:</p>
+                 <blockquote>
+                     <p>Education isn't... putting knowledge into souls that lack it, like putting sight into blind eyes... the instrument with which each learns is like an eye that cannot be turned around from darkness to light without turning the whole body.³⁷</p>
+                 </blockquote>
+                 <p>While I do think that one is better able to interpret Śankara's <em>Īśvara</em> while squeezing clay, desirous of manifesting some <em>dharmic</em> form, one must consider where students are coming from, lest "turning the whole body" be analogous to dizzying some blindfolded soul before turning them loose on a <em>piñata</em>. To turn a student's eye, as Socrates suggests, a teacher must discern which way the student is facing. To do so, it is helpful to consider how Śankara's teachings on <em>Īśvara</em> are likely to be <em>mis</em>-understood by our students.</p>
+                 <p>The potter metaphor lends itself all too easily to preconceived, dualistic notions of God, particularly within the context of an American university classroom. While this obviously poses a pedagogical challenge, it also presents an opportunity for reflecting on transcendence and alterity. A nearly ubiquitous feature of human persons which Bernhard Nitsche calls the <em>dynamic of transcending</em>.³⁸ As Nitsche points out, some religious traditions regard the “unconditioned dynamic of human striving” in terms of “radical alterity,” while others reject this view.³⁹ The clay metaphor, especially within the pedagogical context, enables us to understand this erudite and abstract dynamic in a straightforward and concrete way.</p>
+                 <p>Clearly, the "potter” represents an instance of the unconditioned, transcending dimension of human striving. The pedagogical challenge, though, is to overcome students' tendency to conceive of <em>Īśvara</em> without resorting to radical alterity. More simply, the problem can be described in terms of two common misunderstandings held by students: (1) The potter cannot be <em>Īśvara</em> because <em>I</em> am the potter, but God is radically other than myself; (2) If I am <em>Īśvara</em> (the “potter”), then <em>Īśvara</em> (“the Lord”) cannot be “God” because “God” is a word that can only refer to a radically other transcendent being. If we deny (or ignore) the problem, then we deny (or ignore) the fact that religious traditions differ from one another regarding the alterity of <em>God or the Divine</em>.⁴⁰ Alternatively, the pedagogical problem itself presents a promising opportunity for reflecting on the “potter” in a manner that lends importance to different interpretations of transcendence, alterity, and existential purpose.</p>
+                 <p>Far from detrimental, this scenario highlights the pedagogical benefits of comparative theology. This is because the very thing that opens the metaphor to misunderstanding is precisely that which distinguishes many (not all!) Christian conceptions of God from Advaita's conception of <em>Īśvara</em>. By teaching <em>advaita</em> in a comparative context, I encourage students to carefully consider the "potter" in two distinct ways. Rather than present one way as “correct” and the other as “incorrect,” as might be necessary if <em>advaita's</em> conception of <em>Īśvara</em> were my only pedagogical priority, I instead encourage students to try to think about the “potter" in both ways, emphasizing that one is distinctly Christian while the other is distinctly Advaitin. Moreover, the ability to think clearly about <em>Īśvara</em> in two distinct ways is emblematic of <em>viveka</em> (“logical discernment”), a traditional requirement of studying <em>advaita</em>.</p>
+            </section>
+
+            <section id="personhood-possibility">
+                 <h3>Personhood and Possibility</h3>
+                 <p>Among his guiding insights and questions provided to the contributors of this volume, Bernhard Nitsche reminds us that various religious traditions conceive of the Absolute in terms of personhood while others describe it as impersonal. Though seemingly straightforward, it is anything but. Nitsche points out that from the impersonal approach emerge many questions and possibilities. He explains:</p>
+                 <blockquote>
+                    <p>The apophatic hiddenness extends beyond determinations such as being and non-being (Plato: <em>epekeina tes ousias</em>). It describes a trans-categorical "beyond" and a pre-categorical "before", which itself cannot be called personal or impersonal. In its strict beyondness, it is a complete emptiness of finite entities or concepts and a perfect and unfathomable completeness. It can thus, in a strict sense, not be called personal or impersonal, since logically it precedes any definition.⁴¹</p>
+                 </blockquote>
+                 <p>While this is certainly a good point, it does not, <em>on its own</em>, provide us for a way to think about <em>Īśvara</em> in a manner that is consistent with Śankara's Advaita. Fortunately, Nitsche offers another possibility, which “is for the unconditioned to be imagined as a free activity, which is how it is unconditioned. And it is possible that these two perspectives are not separable in a strict sense, but should be seen as mutually complementary.” Śankara's <em>advaita</em> fits comfortably within this latter category. As Anantanand Rambachan argues elsewhere in this anthology, the tendency to privilege <em>nirguņa brahman</em> over <em>saguņa brahman</em> is misguided and problematically dualistic. The challenge to think about these two perspectives as mutually complementary is difficult, of course, but it is also utterly necessary lest Advaita be yet again misunderstood as either monistic or dualistic. In order to think through this complementarity, I turn, once again, to a pedagogical context.</p>
+                 <p>Though it may seem counterintuitive or even absurd, an easy way to begin is by introducing students to Martin Heidegger's identification of the ontological difference between Being and beings. As students can readily observe in the classroom, beings exist. Since beings exist, they must have come from some source. However, insofar as it is the <em>source</em> of beings, then it logically and necessarily follows that it is <em>not a being</em>. Hence, we quickly arrive at the paradox that beings must have a source which does not exist.</p>
+                 <p>I then propose that we think through the problem again, distinguishing between possibility and actuality. Assuming that our senses are properly functional, we can say that each being/entity in the room <em>actually exists</em>. If it actually exists, then it is obviously <em>possible</em> for it to exist. Since I love pizza, I then ask the students if any pizza <em>actually exists</em> in the room. They say no. I ask them if it would be <em>possible</em> for pizza to exist in the room. They say yes (and ask me to order one). I ask them if it would be possible for a square circle to exist. They respond with furrowed brows.</p>
+                 <p>This simple exercise (adapted liberally from Nicholas of Cusa's <em>Trialogus de possest</em>) enables us to distinguish between three distinct ontological modalities: <em>actualized possibility</em>, <em>possible possibility</em>, and <em>actual impossibility</em>. More importantly, though, it enables us to think through Heidegger's ontological difference in a manner that seems consistent with what Bernhard Nitsche describes as the mutual complementarity of the unconditioned as free act and the unconditioned as beyond being (<em>epekeina tês ousias</em>).⁴² Furthermore, since boundless <em>brahman</em> (<em>anantamātra</em>)⁴³ is our aim, it is helpful to introduce language of infinity to this teaching scenario:</p>
+                 <p>I ask my students: Do you agree that the beings/entities in this (class)room actually exist and are a finite cluster of things in an infinite universe of actually existing entities. Yes. If that is the case, then, is it necessarily true that every entity that actually exists also exists as a possibility? Yes. Since the set of actually existing things in the universe is infinite, then the set of possible possibilities must also be infinite? Yes. And since we can imagine entities such as pizza that could possibly exist but do not actually exist, then the infinite set of possible possibilities must be larger than the set of actualized possibilities? Yes, but it will still exclude things that are actually impossible, such as square circles.</p>
+                 <p>In this light, we return to Heidegger's ontological difference between Being and beings. Since beings exist actually, then they must have a source. Insofar as it is the <em>source</em> of actual entities, then it cannot be an actual entity. We can assert that the infinite set of possible possibilities is the <em>source</em> of actual entities, thus resolving the paradox of beings and their source, but doing so raises a new issue: What is the source of possibilities?</p>
+                 <p>The answer to this question, at least from an Advaitin perspective, must be <em>Īśvara</em>, the “potter.” As we have seen earlier, the material cause of clay pot is simply clay. The potter does not create clay <em>ex nihilo</em>. The potter forms and reforms material clay into various forms for some intended purpose/function which, as we have seen, is its <em>dharma</em>. The possible forms that the potter can give to the clay are limited by three factors: (1) the actual material limitations (e.g., I can only shape as many bowls as I have clay for), (2) the potter's technical abilities (e. g., I am personally unable to replicate Michelangelo's David, but a more talented sculptor perhaps could), and (3) the potter's creative imagination. For example, actual lightbulbs abound today, but prior to Thomas Edison's conception, the possibility of a lightbulb was unborn.</p>
+                 <p>I emphasize again the importance of the pedagogical context. As Bernhard Nitsche has urged us to bear in mind, the subjective, intersubjective, and bodily dimensions of human existence are the very dimensions from which we are able to think and approach transcendence. I contend that two of these three important dimensions are lost when transcendence becomes a mere topic of reflection through words on a page such as this one. The intellectual intuition (<em>vijñāna</em>) that emerges when thinking both the transcendence and immanence (read: unconditioned beyond being and unconditioned as free act) while literally and bodily giving form to clay is quite different from cognitive knowledge (<em>jñāna</em>) about <em>Īśvara</em> gained from reading words on a page.</p>
+                 <p>As already noted, while the familial intimacy of Chāndogya VI cannot be replicated in a university classroom (much less in a book), it should not be overlooked. Concluding his teaching about clay, Uddālaka turns to his son (who presumably loves and trusts his father) to utter the words <em>tat tvam asi Śvetaketo</em>. As I have written elsewhere, the intimacy of the vocative and the indexical nature of the pronouns (<em>Thou art that, O Śvetaketu</em>) open possible hermeneutics of transcendence that are ostensibly beyond the scope of possibility in a typical university classroom.⁴⁴ Likewise, in his commentary on another <em>mahāvākya</em> (“great saying"), Śańkara instructs his reader to gesture to the student's physical body when uttering <em>ayam ātmā brahma, This Self is brahman</em>.⁴⁵</p>
+                 <p>If radical alterity stands at one end of the hermeneutic spectrum of transcendence, then Advaita would seem to stand at the other. Transcendence is taught within a "little world” that is intimate, faithful, and embodied. As such, Nitsche's hermeneutic category of mutual complementarity must be adapted to suit Advaita's particular transcendental dynamic. Nitsche's category of "the unconditioned beyond being” seems to correspond to the “unmanifest” (<em>avyākṛta</em>),⁴⁶ whereas "the unconditioned as free act" is somewhat analogous to the “manifest" (<em>vyākṛta</em>) insofar as a liberated soul acts without attachment desirous of the welfare of beings. Insofar as <em>Īśvara qua</em> "potter" is the efficient cause by which <em>dharma</em> is brought into being through <em>dharmic</em> action, these two transcendental possibilities can be understood as not only mutually complementary, but mutually constitutive and non-dual.</p>
+                 <p>That these two are complementary should be clear. But what “little world” of human existence enables us to interpret <em>Īśvara qua</em> “unmanifest” and <em>Īśvara qua</em> "manifest” as mutually constitutive and non-dual? At the nexus of these two sits the potter, and thus the possibility of giving shape (or not) to ethics. A potter, as we have seen, faces three limitations: material, technical, and creative. These correspond, though not precisely, to the basic conditions of human existence: environment, self-understanding, and society.</p>
+
+                <section id="material-limit">
+                    <h4>Material Limitation and Environmental Dimension</h4>
+                    <p><em>Ayam idam brahma</em>. All this is <em>brahman</em>.⁴⁷ Having been thrown into this world of becoming, we find ourselves within a social and natural world that we did not shape. This world is <em>brahman</em> and has <em>brahman</em> as its material cause, but <em>brahman</em>, like clay, is beyond all name and form. Hence, both oppressor and oppressed, both abuser and abused, are <em>brahman</em>. Their nature and potential are divine. Just as there is no part of a clay pot or clay bowl that is not clay, there is no part of an oppressor or oppressed that is not <em>brahman</em>. The names and forms, however, are transient, malleable, and dynamic. To the extent that I am a “potter,” I am free to oppress and abuse, consume and enjoy as I see fit. But to the extent that I have an intellectual intuition (<em>vijñāna</em>) of <em>Īśvara qua</em> the unconditioned beyond being, then my function, purpose, and duty (<em>dharma</em>) as potter is to give form to <em>Dharma</em>. Just as the pot and bowl can be reformed by a dedicated potter, so, too, can the oppressor and oppressed.</p>
+                </section>
+
+                <section id="technical-limit">
+                     <h4>Technical Limitation and Subjective Dimension</h4>
+                     <p><em>Aham brahmāsmi</em>. I am <em>brahman</em>.⁴⁸ <em>Ayam ātmā brahma</em>. This Self is <em>brahman</em>.⁴⁹ Just as I find myself thrown into a natural and social world, I find myself to be an embodied subject. Though my true nature is the transcendent and universal Self of all beings, my cognitive, intellectual, emotional, and physical qualities are transient, malleable, and dynamic. These are not intrinsic to my inherent nature (<em>svabhāva</em>) and thus can be molded, shaped, and reformed. Because I am a “potter,” I am <em>ahaṃkāra</em> (“I-maker”), and thus free to be selfish and introspective, ignorant of my true nature. But to the extent that I have an intellectual intuition (<em>vijñāna</em>) of <em>Īśvara qua</em> the unconditioned beyond being, then my function, purpose, and duty (<em>dharma</em>) as potter is to give form to <em>Dharma</em>. As the potter standing at the nondual nexus of transcendence and immanence, I form and reform my embodied subjectivity, acting without attachment, <em>desiring to hold the world and its people together (cikīrșur lokasaṃgraham)</em>.⁵⁰</p>
+                </section>
+
+                 <section id="creative-limit">
+                     <h4>Creative Limitation and Intersubjective Dimension</h4>
+                    <p><em>Tat tvam asi</em>. Thou art that.⁵¹ The “little world” of the university classroom is markedly different from the context portrayed by the Chāndogya Upaniṣad, wherein a father looks his son in the eyes and says “you, my dear, are transcendent.” This moment cannot be replicated in the classroom. And yet, naming this etic limitation already, in some sense, enables us to transcend it. When teaching the Chandogya Upaniṣad, I literally point to each student in turn, address them by name, and say “you are <em>brahman</em>,” or “you are <em>Īśvara</em>,” or “you are the potter." I do so because the dimensions of human existence <em>are</em> the dimensions which epistemically structure transcendence. The transcendental nature of the non-dual Lord simply <em>cannot</em> be thought outside an intersubjective microcosm. However, each time that I have performed this ritualistic recreation of the Chāndogya's microcosm, it seems to have a transformative effect. Each student becomes, in turn, the center of attention, a “thou” called into being, as if from a height. And yet the ritual decenters each of us such that the subjective, interpersonal, and embodied dimensions of human existence seem to become transcendent, rather than transcended.</p>
+                    <p>This, it seems to me, is a necessary condition of any “little world" from which to grasp Advaita's particular transcendental hermeneutic. Led out (<em>educare</em>) from this cavernous microcosm, I am reminded of the story I once heard, though, due to my ignorance I cannot recall from whom, about a teacher who once laughed at a girl's image of God. I laugh.</p>
+                </section>
+            </section>
+
+            <section class="bibliography">
+                 <h3>Bibliography</h3>
+
+                 <h4>Primary Literature</h4>
+                 <p>Nicholas of Cusa, <em>Trialogus de possest</em>. Nicholas of Cusa. On Actualized Possibility (Trialogus de possest). Translated by Jasper Hopkins. Minneapolis: Banning Press 1986.</p>
+                 <p>Plato, <em>Phaedrus</em>. Translated by Alexander Nehamas and Paul Woodruff. Plato: Complete Works. Ed. John. M. Cooper. Indianapolis: Hackett 1997.</p>
+                 <p>Plato, <em>Republic</em>. Translated by G.M.A. Grube, revised by C.D.C. Reeve. Plato: Complete Works. John. M. Cooper (Ed.). Indianapolis: Hackett 1997.</p>
+                 <p>BhG/BhGBh: Śańkarācārya, <em>Bhagavadgītā Bhāṣya</em>. Prasthanatraya: With the Text and Commentary in the Original Sanskrit, Introductory Notes, Explanatory Notes, and Footnotes, Vol. 1. Third Edition. Translated by Vidyavachaspati Panoli. Calicut: Mathrubhumi 2003.</p>
+                 <p>BĀU/BĀUBh: Śańkarācārya, <em>Bṛhadāraṇyaka Upaniṣad Bhāṣya</em>. Prasthanatraya: With the Text and Commentary in the Original Sanskrit, Introductory Notes, Explanatory Notes, and Footnotes, Vol. 5. Translated by Vidyavachaspati Panoli. Calicut: Mathrubhumi 2008.</p>
+                 <p>ChU/ChUBh: Śańkarācārya, <em>Chāndogya Upaniṣad Bhāṣya</em>. Prasthanatraya: With the Text and Commentary in the Original Sanskrit, Introductory Notes, Explanatory Notes, and Footnotes, Vol. 4. Translated by Vidyavachaspati Panoli. Calicut: Mathrubhumi 2008.</p>
+                 <p>MU/MUBh: Śańkarācārya, <em>Māņdūkya Upaniṣad Bhāṣya</em>. Prasthanatraya: With the Text and Commentary in the Original Sanskrit, Introductory Notes, Explanatory Notes, and Footnotes, Vol. 2. Translated by Vidyavachaspati Panoli. Calicut: Mathrubhumi 2006.</p>
+                 <p>Śabarasvāmi. <em>Śabara-Bhāṣya</em>. Translated by Ganganatha Jha. Oriental Institute 1933.</p>
+
+                 <h4>Secondary Literature</h4>
+                 <p>Bannon 2014. R. Brad Bannon, Thou, That, and An/Other: Hearing Śańkara's Indexicals and Finding Cusa's Seeking God. In: Journal of Hindu-Christian Studies 27/1 (2014): 48–61.</p>
+                 <p>Bannon 2015. R. Brad Bannon, Apophatic Measures: Toward a Theology of Irreducible Particularity. Doctoral dissertation, Harvard Divinity School 2015.</p>
+                 <p>Bannon 2018. R. Brad Bannon, Incarnational Speech: Comparative Theology as Learning to Hear and Preach. In: How to do Comparative Theology. Ed. Francis X. Clooney, S.J., Karl von Stosch. New York: Fordham University Press 2018.</p>
+                 <p>Bronkhorst 2007. Johannes Bronkhorst (ed.), Mīmāmsā and Vedānta: Interaction and Continuity. Delhi: Motilal Banarsidass 2007.</p>
+                 <p>Clooney 1993. Francis Xavier Clooney, Theology After Vedānta: An Experiment in Comparative Theology. Albany (NY): State University of New York Press 1993.</p>
+                 <p>Clooney 1990. Francis Xavier Clooney, Thinking Ritually: Rediscovering the Pūrva Mīmāmsā of Jaimini. [Publications of the De Nobili Research Library 7]. Vienna: Institute for Indology, University of Vienna 1990.</p>
+                 <p>Coward 2008. Harold Coward, The Perfectibility of Human Nature in Eastern and Western Thought. The Central Story. Suny Press 2008.</p>
+                 <p>Freire 1972. Paulo Freire, Pedagogy of the Oppressed. New York: Herder and Herder 1972.</p>
+                 <p>Hooks 1994. bell hooks, Teaching to Transgress: Education as the Practice of Freedom. New York: Routledge 1994.</p>
+                 <p>Jha 1978. Ganganatha Jha, The Prābhākara School of Pūrva Mīmāmsā. Delhi: Motilal Banarsidass [1st.] 1978.</p>
+                 <p>Nitsche paper. Bernhard Nitsche's reflections on the central concepts of this anthology, translated by Marcus Schmücker. [In this volume]</p>
+                 <p>Parpola 1981. Asko Parpola, On the Formation of the Mīmāmsā and the Problems Concerning Jaimini, with Particular Reference to the Teacher Quotations and the Vedic Schools. In: Wiener Zeitschrift für die Kunde Südasiens 25 (1981): 145–77.</p>
+                 <p>Rambachan 2006 A. Anantanand Rambachan, The Advaita Worldview: God, World, and Humanity. State University of New York Press 2006.</p>
+             </section>
+
+             <section class="footnotes">
+                <h3>Footnotes</h3>
+                <p>1 Plato, <em>Phaedrus</em> 235c-d.</p>
+                <p>2 Plato, <em>Republic</em> 518a.</p>
+                <p>3 In the following referred to as Nitsche paper #.</p>
+                <p>4 Cf. Nitsche paper #.</p>
+                <p>5 As I address later, the teacher's laughter calls to mind Socrates' ridicule of ridicule within the context of education (Plato's <em>Republic</em> 518a).</p>
+                <p>6 Cf. Nitsche paper #.</p>
+                <p>7 Plato, <em>Republic</em>, Book VII. Presuming familiarity, I refrain from recounting the allegory here.</p>
+                <p>8 Plato, <em>Republic</em>, 514a.</p>
+                <p>9 Plato, <em>Republic</em>, 519c.</p>
+                <p>10 Plato, <em>Phaedrus</em>.</p>
+                <p>11 Plato, <em>Republic</em>, 518b.</p>
+                <p>12 Plato, <em>Republic</em>, 518b.</p>
+                <p>13 Plato, <em>Republic</em>, 518c, emphasis added.</p>
+                <p>14 See Freire 1972 and hooks 1994.</p>
+                <p>15 Cf. Nitsche paper #.</p>
+                <p>16 Cf. Freire 1972.</p>
+                <p>17 See BGBh 6.8.</p>
+                <p>18 BĀU II.4.</p>
+                <p>19 ChU VI.1.3, my translation.</p>
+                <p>20 BĀUBh I.2.1.</p>
+                <p>21 ChUBh VI.2.1: <em>ghaṭādi sisrukșuņā kulālena mṛtpiṇḍaṃ gatvā</em>.</p>
+                <p>22 ChUBh VI.2.1.</p>
+                <p>23 BĀUBh I.2.1. This is often referred to as the <em>satkāryavāda</em>, the doctrine that effects pre-exist in their causes.</p>
+                <p>24 BĀUBh I.2.1.</p>
+                <p>25 BĀUBh I.2.1.</p>
+                <p>26 BhG 2:47.</p>
+                <p>27 ChUBh VI.2.1 and BĀUBh I.2.1.</p>
+                <p>28 ChU VI.2.3.</p>
+                <p>29 BĀU I.4 and Taittirīya Upaniṣad II.6.</p>
+                <p>30 The thesis that Śańkara's Advaita Vedānta is properly understood as Uttaramīmāṁsā (i.e., as a scholastic theology grounded in and continuous with Pūrvamīmāṁsā has been argued in Parpola 1981, Clooney 1990, Clooney 1993, Bannon 2015, to name a few, and is presumptively accepted by my argument. See also Bronkhorst 2007.</p>
+                <p>31 See Clooney 1990, Chapter 4.</p>
+                <p>32 Clooney 1990, 149.</p>
+                <p>33 See Clooney 1990 on <em>saṃskāra</em>.</p>
+                <p>34 The unprecedented nature of Dharma as that which is to be done establishes the authority of <em>śabda</em> as a <em>pramāṇa</em>. On this, see Śabara's commentary on <em>Pūrvamīmāṁsāsūtra</em> I.1.1–5. Regarding the diverse interpretations of <em>apūrva</em> within Mīmāṁsā, see Clooney 1990 and Jha 1978.</p>
+                <p>35 The classroom is an effective “little world" for reflections upon transcendence because students frequently (sometimes impatiently and prematurely) ask the “so what?" question. The empty jar grows ever larger.</p>
+                <p>36 Coward 2008, 104.</p>
+                <p>37 Plato, <em>Republic</em>, 518b-c.</p>
+                <p>38 Cf. Nitsche paper #.</p>
+                <p>39 Cf. Nitsche paper #.</p>
+                <p>40 The title of our conference, <em>God or the Divine</em>, accentuates the issue. If "God" must refer to a transcendent, wholly other being, then it has no place in a nondual ontology. The word “divine,” on the other hand, is readily accepted as a term that can signify self and other, immanence and transcendence. If this is the case, however, then the question <em>God or the Divine?</em> ceases to introduce a discourse on transcendence and is reduced to a discourse on semantics.</p>
+                <p>41 Nitsche paper #.</p>
+                <p>42 Plato, <em>Republic</em>, 509b.</p>
+                <p>43 Māņḍūkya Kārika I.29.</p>
+                <p>44 Bannon 2014.</p>
+                <p>45 Bannon 2018.</p>
+                <p>46 <em>Nirguṇa, pāramārthika</em>, or other names would also suffice here.</p>
+                <p>47 MU 2.</p>
+                <p>48 BU I.4.10.</p>
+                <p>49 MU 2.</p>
+                <p>50 BhG 3:25.</p>
+                <p>51 ChU 2.</p> <!-- Assuming this refers to ChU VI.8.7 onwards where Tat Tvam Asi appears repeatedly -->
+             </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
