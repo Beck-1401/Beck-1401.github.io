@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHIL 3610 Study Groups</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #D6E9E1 0%, #FFF5D6 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #4A4A4A;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #00693E, #004D2E);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 105, 62, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid #FFB81C;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-header {
+            background: linear-gradient(135deg, #00693E, #004D2E);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .team-header h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .members-section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            color: #004D2E;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: #D6E9E1;
+            border-radius: 8px;
+        }
+
+        .member {
+            background: #F0F0F0;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 6px;
+            border-left: 3px solid #FFB81C;
+        }
+
+        .member-name {
+            font-weight: bold;
+            color: #004D2E;
+        }
+
+        .member-email {
+            font-size: 0.9em;
+            color: #4A4A4A;
+            margin-top: 2px;
+        }
+
+        .schedule-section {
+            margin-top: 15px;
+        }
+
+        .day-schedule {
+            margin-bottom: 12px;
+        }
+
+        .day-name {
+            font-weight: bold;
+            color: #00693E;
+            margin-bottom: 5px;
+        }
+
+        .time-slot {
+            background: #FFF5D6;
+            padding: 4px 8px;
+            margin: 2px 4px 2px 0;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.85em;
+            border: 1px solid #FFB81C;
+        }
+
+        .preferred-time {
+            background: #D6E9E1;
+            border: 1px solid #00693E;
+            color: #004D2E;
+            font-weight: bold;
+        }
+
+        .no-overlap {
+            color: #B28013;
+            font-style: italic;
+            padding: 10px;
+            background: #FFF5D6;
+            border-radius: 6px;
+            border-left: 3px solid #FFB81C;
+        }
+
+        .legend {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .legend h3 {
+            color: #004D2E;
+            margin-bottom: 10px;
+        }
+
+        .legend-item {
+            display: inline-block;
+            margin: 5px 15px 5px 0;
+            font-size: 0.9em;
+        }
+
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 15px;
+            margin-right: 8px;
+            border-radius: 3px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PHIL 3610 Study Groups</h1>
+            <p>Weekly Discussion Groups - Spring 2024</p>
+        </div>
+
+        <div class="legend">
+            <h3>Legend</h3>
+            <div class="legend-item">
+                <span class="legend-color preferred-time"></span>
+                Preferred Times (All Members)
+            </div>
+            <div class="legend-item">
+                <span class="legend-color time-slot"></span>
+                Available Times (All Members)
+            </div>
+        </div>
+
+        <div class="teams-grid">
+            <!-- Team 1 -->
+            <div class="team-card">
+                <div class="team-header">
+                    <h2>Team 1</h2>
+                    <p>Monday-Thursday Group</p>
+                </div>
+                <div class="members-section">
+                    <div class="section-title">Team Members</div>
+                    <div class="member">
+                        <div class="member-name">Beatrice Nababi</div>
+                        <div class="member-email">bnababi8@gmail.com</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Esther Young</div>
+                        <div class="member-email">eyoung14@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Matthew Sheehan</div>
+                        <div class="member-email">msheeh19@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Tamika Lezin</div>
+                        <div class="member-email">tlezin@student.fitchburgstate.edu</div>
+                    </div>
+                </div>
+                <div class="schedule-section">
+                    <div class="section-title">Common Meeting Times</div>
+                    <div class="day-schedule">
+                        <div class="day-name">Monday:</div>
+                        <span class="time-slot preferred-time">10am-11am</span>
+                        <span class="time-slot preferred-time">11am-Noon</span>
+                        <span class="time-slot preferred-time">Noon-1pm</span>
+                        <span class="time-slot preferred-time">1pm-2pm</span>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-name">Tuesday:</div>
+                        <span class="time-slot preferred-time">11am-Noon</span>
+                        <span class="time-slot preferred-time">Noon-1pm</span>
+                        <span class="time-slot preferred-time">1pm-2pm</span>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-name">Friday:</div>
+                        <span class="time-slot preferred-time">11am-Noon</span>
+                        <span class="time-slot preferred-time">Noon-1pm</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 2 -->
+            <div class="team-card">
+                <div class="team-header">
+                    <h2>Team 2</h2>
+                    <p>Afternoon Flexibility Group</p>
+                </div>
+                <div class="members-section">
+                    <div class="section-title">Team Members</div>
+                    <div class="member">
+                        <div class="member-name">Eliane Goncalves</div>
+                        <div class="member-email">egoncal2@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Natalia Chagnon</div>
+                        <div class="member-email">nchagnon@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Taylor Crout</div>
+                        <div class="member-email">tcrout@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Zachary McKnight</div>
+                        <div class="member-email">zmcknigh@student.fitchburgstate.edu</div>
+                    </div>
+                </div>
+                <div class="schedule-section">
+                    <div class="section-title">Common Meeting Times</div>
+                    <div class="day-schedule">
+                        <div class="day-name">Monday:</div>
+                        <span class="time-slot preferred-time">4pm-5pm</span>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-name">Wednesday:</div>
+                        <span class="time-slot preferred-time">4pm-5pm</span>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-name">Friday:</div>
+                        <span class="time-slot preferred-time">4pm-5pm</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 3 -->
+            <div class="team-card">
+                <div class="team-header">
+                    <h2>Team 3</h2>
+                    <p>Late Afternoon Group</p>
+                </div>
+                <div class="members-section">
+                    <div class="section-title">Team Members</div>
+                    <div class="member">
+                        <div class="member-name">Geybrell Liriano</div>
+                        <div class="member-email">Gliriano@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Celia Gaskin</div>
+                        <div class="member-email">cgaskin1@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Julian Morley</div>
+                        <div class="member-email">jmorley1@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Kenny Nazaire</div>
+                        <div class="member-email">knazaire@student.fitchburgstate.edu</div>
+                    </div>
+                </div>
+                <div class="schedule-section">
+                    <div class="section-title">Common Meeting Times</div>
+                    <div class="day-schedule">
+                        <div class="day-name">Monday:</div>
+                        <span class="time-slot preferred-time">5pm-6pm</span>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-name">Tuesday:</div>
+                        <span class="time-slot preferred-time">5pm-6pm</span>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-name">Wednesday:</div>
+                        <span class="time-slot preferred-time">5pm-6pm</span>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-name">Thursday:</div>
+                        <span class="time-slot preferred-time">5pm-6pm</span>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-name">Friday:</div>
+                        <span class="time-slot preferred-time">5pm-6pm</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 4 -->
+            <div class="team-card">
+                <div class="team-header">
+                    <h2>Team 4</h2>
+                    <p>Weekend & Evening Group</p>
+                </div>
+                <div class="members-section">
+                    <div class="section-title">Team Members</div>
+                    <div class="member">
+                        <div class="member-name">Juan Pacheco Sambrano</div>
+                        <div class="member-email">jpache10@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Keirsten Anderson</div>
+                        <div class="member-email">kander65@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Kristin Platek</div>
+                        <div class="member-email">kplatek@student.fitchburgstate.edu</div>
+                    </div>
+                    <div class="member">
+                        <div class="member-name">Sid Cheickna Camara</div>
+                        <div class="member-email">scamara1@student.fitchburgstate.edu</div>
+                    </div>
+                </div>
+                <div class="schedule-section">
+                    <div class="section-title">Common Meeting Times</div>
+                    <div class="day-schedule">
+                        <div class="day-name">Saturday:</div>
+                        <span class="time-slot preferred-time">2pm-3pm</span>
+                        <span class="time-slot preferred-time">3pm-4pm</span>
+                    </div>
+                    <div class="day-schedule">
+                        <div class="day-name">Sunday:</div>
+                        <span class="time-slot time-slot">2pm-3pm</span>
+                        <span class="time-slot time-slot">3pm-4pm</span>
+                        <span class="time-slot time-slot">4pm-5pm</span>
+                        <span class="time-slot time-slot">5pm-6pm</span>
+                        <span class="time-slot time-slot">6pm-7pm</span>
+                        <span class="time-slot time-slot">7pm-8pm</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team 5 (Jalisa Luna - needs individual attention) -->
+            <div class="team-card">
+                <div class="team-header">
+                    <h2>To-Be-Determined</h2>
+                    <p>Requires Special Scheduling</p>
+                </div>
+                <div class="members-section">
+                    <div class="section-title">Student</div>
+                    <div class="member">
+                        <div class="member-name">Jalisa Luna</div>
+                        <div class="member-email">jluna3@student.fitchburgstate.edu</div>
+                    </div>
+                
+                <div class="no-overlap">
+                    <strong>Note:</strong> Jalisa has a limited and changing schedule. Jalisa: Please review the times that the other teams have available and reach out to one or more teams. Otherwise, you can meet with me each week to discuss the unit.
+                </div>
+                <div class="member">
+                        <div class="member-name">Meadow	Worsley</div>
+                        <div class="member-email">mworsley@student.fitchburgstate.edu</div>
+                    </div>
+                </div>
+                <div class="no-overlap">
+                    <strong>Note:</strong> Meadow is out of the country this week and has a limited internet access this week. Meadow: Please review the times that the other teams have available and reach out to one or more teams. Otherwise, you can meet with me each week to discuss the unit.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
